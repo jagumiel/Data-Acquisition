@@ -1,0 +1,4 @@
+1.- Cargar el programa arduino_dht11 en la placa Arduino utilizando el IDE de Arduino.
+2.- Abrir el script de MATLAB lector_datos.m y ejecutarlo para la recogida de datos.
+
+El fichero de Arduino y las cabeceras deben estar en el mismo directorio.
