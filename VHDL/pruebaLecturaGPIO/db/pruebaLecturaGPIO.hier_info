@@ -1,0 +1,6 @@
+|pruebaLecturaGPIO
+FPGA_CLK1_50 => go.CLK
+GPIO_0[0] => go.DATAIN
+LED[0] << go.DB_MAX_OUTPUT_PORT_TYPE
+
+

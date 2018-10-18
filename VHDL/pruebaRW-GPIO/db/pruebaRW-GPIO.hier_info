@@ -1,0 +1,34 @@
+|pruebaRW_GPIO
+FPGA_CLK1_50 => LED[0]~reg0.CLK
+FPGA_CLK1_50 => GPIO_0[0]~reg0.CLK
+FPGA_CLK1_50 => cont[0].CLK
+FPGA_CLK1_50 => cont[1].CLK
+FPGA_CLK1_50 => cont[2].CLK
+FPGA_CLK1_50 => cont[3].CLK
+FPGA_CLK1_50 => cont[4].CLK
+FPGA_CLK1_50 => cont[5].CLK
+FPGA_CLK1_50 => cont[6].CLK
+FPGA_CLK1_50 => cont[7].CLK
+FPGA_CLK1_50 => cont[8].CLK
+FPGA_CLK1_50 => cont[9].CLK
+FPGA_CLK1_50 => cont[10].CLK
+FPGA_CLK1_50 => cont[11].CLK
+FPGA_CLK1_50 => cont[12].CLK
+FPGA_CLK1_50 => cont[13].CLK
+FPGA_CLK1_50 => cont[14].CLK
+FPGA_CLK1_50 => cont[15].CLK
+FPGA_CLK1_50 => cont[16].CLK
+FPGA_CLK1_50 => cont[17].CLK
+FPGA_CLK1_50 => cont[18].CLK
+FPGA_CLK1_50 => cont[19].CLK
+FPGA_CLK1_50 => cont[20].CLK
+FPGA_CLK1_50 => cont[21].CLK
+FPGA_CLK1_50 => cont[22].CLK
+FPGA_CLK1_50 => cont[23].CLK
+FPGA_CLK1_50 => cont[24].CLK
+FPGA_CLK1_50 => cont[25].CLK
+FPGA_CLK1_50 => go.CLK
+GPIO_0[0] <> GPIO_0[0]~reg0
+LED[0] <= LED[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

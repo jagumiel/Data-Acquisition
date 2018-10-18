@@ -1,0 +1,33 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity pruebaPWM is
+	port(
+		FPGA_CLK1_50: in  std_logic; --Hay que coger uno de los relojes con el nombre que aparece en el manual.
+		GPIO_0	 	: out  std_logic_vector(0 downto 0);--Voy a obtener una única señal por GPIO_0(0), la declaro como entrada.
+		KEY			: out std_logic_vector(0 downto 0)
+	);
+end pruebaPWM;
+
+
+
+architecture a of pruebaPWM is
+	component PWM is 
+	  port (
+		 clk      : in  std_logic;
+		 rst      : in  std_logic;
+		
+		 -- signals from top module to registers sub-module
+		 en       : in std_logic;	
+		 duty     : in std_logic_vector(DUTY_CYCLE_W-1 downto 0);	
+		 pwm_out  : out std_logic
+	  );
+	end component;
+	
+	signal reset : std_logic;
+	
+begin
+		reset <= not(KEY(0));
+		
+end a;

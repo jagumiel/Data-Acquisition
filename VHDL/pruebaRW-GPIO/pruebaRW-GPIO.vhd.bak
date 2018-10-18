@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity pruebaRW-GPIO is
+	port(
+		FPGA_CLK1_50: in  	std_logic; 
+		GPIO_0		: inout 	std_logic_vector(7 downto 0);
+		SW 			: in  	std_logic_vector(3 downto 0);
+		LED 			: out 	std_logic_vector(7 downto 0)
+	);
+end pruebaRW-GPIO;
+	
+architecture a of pruebaRW-GPIO is
+	--signal reset	: std_logic;
+BEGIN
+	--reset <= not(KEY(0));
+	LED<="0000" & SW(3 downto 0);
+--	process(FPGA_CLK1_50)
+--	begin
+--		LED<="01011010";
+--	end process;
+
+end a;
+
+
+
+
+
+
+
+
+
+
+
+pruebaRW-GPIO

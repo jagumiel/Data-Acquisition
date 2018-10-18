@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all; 
+
+
+entity pruebaGPIO is
+	port(
+		FPGA_CLK1_50: in  std_logic; --Hay que coger uno de los relojes con el nombre que aparece en el manual.
+		GPIO_0	 	: in  std_logic_vector(0 downto 0);--Voy a sacar una única señal por la salida GPIO_0(0).
+	);
+end pruebaGPIO;
+
+architecture a of pruebaGPIO is
+begin
+
+
+end a;

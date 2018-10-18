@@ -1,0 +1,10 @@
+
+State Machine - |pruebaOnBoardADC|AD7928_cyclic:inst1|ep
+Name ep.sready ep.save ep.rd1 ep.rd0 ep.idle ep.conf1 ep.conf0 
+ep.conf0 0 0 0 0 0 0 0 
+ep.conf1 0 0 0 0 0 1 1 
+ep.idle 0 0 0 0 1 0 1 
+ep.rd0 0 0 0 1 0 0 1 
+ep.rd1 0 0 1 0 0 0 1 
+ep.save 0 1 0 0 0 0 1 
+ep.sready 1 0 0 0 0 0 1 
