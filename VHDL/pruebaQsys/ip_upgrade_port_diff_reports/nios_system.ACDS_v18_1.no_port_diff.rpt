@@ -1,0 +1,23 @@
+IP Ports Diff Report for nios_system
+Thu Oct 25 09:29:06 2018
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. IP Information
+
+
+
++--------------------------------------------------------------+
+; IP Information                                               ;
++----------------------+---------------------------------------+
+; IP Variation Name    ; nios_system                           ;
+; Prior Version        ; ACDS_v17.1                            ;
+; New Version          ; ACDS_v18.1                            ;
+; New File             ; nios_system/synthesis/nios_system.vhd ;
+; Has Port Differences ; No                                    ;
++----------------------+---------------------------------------+
+
+

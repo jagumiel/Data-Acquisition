@@ -1,0 +1,20 @@
+Fitter Status : Successful - Thu Oct 25 09:31:17 2018
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : lights
+Top-level Entity Name : lights
+Family : Cyclone V
+Device : 5CSEBA6U23I7
+Timing Models : Final
+Logic utilization (in ALMs) : 693 / 41,910 ( 2 % )
+Total registers : 965
+Total pins : 14 / 314 ( 4 % )
+Total virtual pins : 0
+Total block memory bits : 44,032 / 5,662,720 ( < 1 % )
+Total RAM Blocks : 9 / 553 ( 2 % )
+Total DSP Blocks : 0 / 112 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

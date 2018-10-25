@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -3.861
+TNS   : -30.815
+
+Type  : Slow 1100mV 100C Model Setup 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : -2.094
+TNS   : -93.941
+
+Type  : Slow 1100mV 100C Model Hold 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.429
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : -0.538
+TNS   : -44.761
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.538
+TNS   : -19.764
+
+Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -3.637
+TNS   : -32.906
+
+Type  : Slow 1100mV -40C Model Setup 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : -2.147
+TNS   : -89.685
+
+Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.124
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : 0.379
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : -0.538
+TNS   : -43.935
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.538
+TNS   : -21.020
+
+Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -2.952
+TNS   : -8.172
+
+Type  : Fast 1100mV 100C Model Setup 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : -0.996
+TNS   : -31.600
+
+Type  : Fast 1100mV 100C Model Hold 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.413
+TNS   : -2.564
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : 0.021
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -2.193
+TNS   : -5.328
+
+Type  : Fast 1100mV -40C Model Setup 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : -0.750
+TNS   : -22.681
+
+Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : -0.102
+TNS   : -0.102
+
+Type  : Fast 1100mV -40C Model Hold 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : 0.125
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.379
+TNS   : -2.504
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'AD7928_cyclic:inst1|clkdiv[11]'
+Slack : 0.063
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,46 @@
+
+WORK > DEFAULT
+DEFAULT:                                      ./libraries/work/                                        
+work:                                         ./libraries/work/                                        
+error_adapter_0:                              ./libraries/error_adapter_0/                             
+avalon_st_adapter:                            ./libraries/avalon_st_adapter/                           
+rsp_mux_001:                                  ./libraries/rsp_mux_001/                                 
+rsp_mux:                                      ./libraries/rsp_mux/                                     
+rsp_demux:                                    ./libraries/rsp_demux/                                   
+cmd_mux_001:                                  ./libraries/cmd_mux_001/                                 
+cmd_mux:                                      ./libraries/cmd_mux/                                     
+cmd_demux_001:                                ./libraries/cmd_demux_001/                               
+cmd_demux:                                    ./libraries/cmd_demux/                                   
+router_003:                                   ./libraries/router_003/                                  
+router_002:                                   ./libraries/router_002/                                  
+router_001:                                   ./libraries/router_001/                                  
+router:                                       ./libraries/router/                                      
+jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo: ./libraries/jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo/
+jtag_uart_0_avalon_jtag_slave_agent:          ./libraries/jtag_uart_0_avalon_jtag_slave_agent/         
+nios2_gen2_0_data_master_agent:               ./libraries/nios2_gen2_0_data_master_agent/              
+jtag_uart_0_avalon_jtag_slave_translator:     ./libraries/jtag_uart_0_avalon_jtag_slave_translator/    
+nios2_gen2_0_data_master_translator:          ./libraries/nios2_gen2_0_data_master_translator/         
+cpu:                                          ./libraries/cpu/                                         
+rst_controller:                               ./libraries/rst_controller/                              
+irq_mapper:                                   ./libraries/irq_mapper/                                  
+mm_interconnect_0:                            ./libraries/mm_interconnect_0/                           
+switches:                                     ./libraries/switches/                                    
+onchip_memory2_0:                             ./libraries/onchip_memory2_0/                            
+nios2_gen2_0:                                 ./libraries/nios2_gen2_0/                                
+jtag_uart_0:                                  ./libraries/jtag_uart_0/                                 
+LEDs:                                         ./libraries/LEDs/                                        
+altera_ver:                                   ./libraries/altera_ver/                                  
+lpm_ver:                                      ./libraries/lpm_ver/                                     
+sgate_ver:                                    ./libraries/sgate_ver/                                   
+altera_mf_ver:                                ./libraries/altera_mf_ver/                               
+altera_lnsim_ver:                             ./libraries/altera_lnsim_ver/                            
+cyclonev_ver:                                 ./libraries/cyclonev_ver/                                
+cyclonev_hssi_ver:                            ./libraries/cyclonev_hssi_ver/                           
+cyclonev_pcie_hip_ver:                        ./libraries/cyclonev_pcie_hip_ver/                       
+altera:                                       ./libraries/altera/                                      
+lpm:                                          ./libraries/lpm/                                         
+sgate:                                        ./libraries/sgate/                                       
+altera_mf:                                    ./libraries/altera_mf/                                   
+altera_lnsim:                                 ./libraries/altera_lnsim/                                
+cyclonev:                                     ./libraries/cyclonev/                                    
+LIBRARY_SCAN = TRUE
