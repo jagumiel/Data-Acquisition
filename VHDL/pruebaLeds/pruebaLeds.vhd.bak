@@ -1,0 +1,14 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity pruebaLeds is
+	port(
+		CLOCK_50: in  std_logic; 
+		KEY 	: in  std_logic_vector(0 downto 0);
+		SW 		: in  std_logic_vector(3 downto 0);
+		LED 	: out std_logic_vector(8 downto 0)
+	);
+	
+	architecture a of pruebaLeds is
+		LED<="0000" & SW(3 downto 0);
+	end a;

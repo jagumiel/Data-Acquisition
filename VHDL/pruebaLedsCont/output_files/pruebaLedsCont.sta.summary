@@ -1,0 +1,133 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -3.758
+TNS   : -132.814
+
+Type  : Slow 1100mV 100C Model Setup 'go'
+Slack : -2.360
+TNS   : -23.403
+
+Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.477
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'go'
+Slack : 0.682
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Recovery 'go'
+Slack : -1.767
+TNS   : -22.859
+
+Type  : Slow 1100mV 100C Model Removal 'go'
+Slack : 1.130
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.550
+TNS   : -31.578
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'go'
+Slack : -0.538
+TNS   : -10.028
+
+Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -3.956
+TNS   : -128.512
+
+Type  : Slow 1100mV -40C Model Setup 'go'
+Slack : -2.543
+TNS   : -24.849
+
+Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.480
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'go'
+Slack : 0.658
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Recovery 'go'
+Slack : -1.710
+TNS   : -22.112
+
+Type  : Slow 1100mV -40C Model Removal 'go'
+Slack : 1.076
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.570
+TNS   : -33.798
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'go'
+Slack : -0.538
+TNS   : -10.068
+
+Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -1.930
+TNS   : -53.186
+
+Type  : Fast 1100mV 100C Model Setup 'go'
+Slack : -0.774
+TNS   : -6.847
+
+Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.224
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'go'
+Slack : 0.268
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Recovery 'go'
+Slack : -0.493
+TNS   : -6.355
+
+Type  : Fast 1100mV 100C Model Removal 'go'
+Slack : 0.489
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.517
+TNS   : -4.091
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'go'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -1.689
+TNS   : -41.399
+
+Type  : Fast 1100mV -40C Model Setup 'go'
+Slack : -0.647
+TNS   : -5.917
+
+Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.196
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'go'
+Slack : 0.216
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Recovery 'go'
+Slack : -0.385
+TNS   : -4.960
+
+Type  : Fast 1100mV -40C Model Removal 'go'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.533
+TNS   : -4.112
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'go'
+Slack : 0.145
+TNS   : 0.000
+
+------------------------------------------------------------

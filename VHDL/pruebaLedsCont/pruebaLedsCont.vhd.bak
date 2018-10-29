@@ -1,0 +1,26 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity pruebaLedsCont is
+	port(
+		FPGA_CLK1_50: in  std_logic; 
+		KEY 	: in  std_logic_vector(0 downto 0);
+		SW 	: in  std_logic_vector(3 downto 0);
+		LED 	: out std_logic_vector(7 downto 0)
+	);
+end pruebaLedsCont;
+	
+architecture a of pruebaLedsCont is
+	signal reset	: std_logic;
+	signal go		: std_logic;
+	signal cont		: std_logic_vector(25 downto 0) := "00000000000000000000000000";
+BEGIN
+	reset <= not(KEY(0));
+	LED<="0000" & SW(3 downto 0);
+	process(FPGA_CLK1_50)
+	begin
+		10111110101111000001111111
+		LED<="01011010";
+	end process;
+
+end a;
