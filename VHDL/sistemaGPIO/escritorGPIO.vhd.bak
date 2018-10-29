@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all; 
+
+
+entity escritorGPIO is
+	port(
+		pwm: in  std_logic; --Hay que coger uno de los relojes con el nombre que aparece en el manual.
+		GPIO_0	: out std_logic_vector(39 downto 0)
+	);
+end escritorGPIO;
+
+architecture a of escritorGPIO is
+
+	signal pwma	: std_logic; --Señal auxiliar. No puedo actuar directamente con las señales del sistema.
+	
+	begin
+	
+		pwma<=pwm;
+		GPIO_0(0)<=pwma;
+
+end a;
