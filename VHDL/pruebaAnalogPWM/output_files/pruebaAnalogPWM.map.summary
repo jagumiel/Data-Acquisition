@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Oct 25 16:09:30 2018
+Analysis & Synthesis Status : Successful - Mon Oct 29 16:36:22 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pruebaAnalogPWM
 Top-level Entity Name : pruebaAnalogPWM
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 71
+Total registers : 73
 Total pins : 15
 Total virtual pins : 0
 Total block memory bits : 0

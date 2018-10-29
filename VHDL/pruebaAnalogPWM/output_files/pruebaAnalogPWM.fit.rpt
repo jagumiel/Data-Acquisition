@@ -1,5 +1,5 @@
 Fitter report for pruebaAnalogPWM
-Thu Oct 25 16:10:08 2018
+Mon Oct 29 16:37:01 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -62,15 +62,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Thu Oct 25 16:10:08 2018       ;
+; Fitter Status                   ; Successful - Mon Oct 29 16:37:01 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaAnalogPWM                             ;
 ; Top-level Entity Name           ; pruebaAnalogPWM                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 36 / 41,910 ( < 1 % )                       ;
-; Total registers                 ; 79                                          ;
+; Logic utilization (in ALMs)     ; 37 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 84                                          ;
 ; Total pins                      ; 15 / 314 ( 5 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
@@ -157,7 +157,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.4%      ;
+;     Processor 2            ;   0.3%      ;
 ;     Processor 3            ;   0.3%      ;
 ;     Processor 4            ;   0.3%      ;
 +----------------------------+-------------+
@@ -169,14 +169,17 @@ refer to the applicable agreement for further details.
 ; Node                            ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                          ; Destination Port ; Destination Port Name ;
 +---------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-------------------------------------------+------------------+-----------------------+
 ; FPGA_CLK1_50~inputCLKENA0       ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                           ;                  ;                       ;
-; AD7928_cyclic:inst1|clkdiv[0]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|clkdiv[0]~DUPLICATE   ;                  ;                       ;
-; AD7928_cyclic:inst1|cs_cycle[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|cs_cycle[0]~DUPLICATE ;                  ;                       ;
-; AD7928_cyclic:inst1|cs_cycle[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|cs_cycle[1]~DUPLICATE ;                  ;                       ;
+; AD7928_cyclic:inst1|cs_cycle[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|cs_cycle[2]~DUPLICATE ;                  ;                       ;
+; AD7928_cyclic:inst1|cs_cycle[3] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|cs_cycle[3]~DUPLICATE ;                  ;                       ;
 ; AD7928_cyclic:inst1|ep.conf1    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|ep.conf1~DUPLICATE    ;                  ;                       ;
-; AD7928_cyclic:inst1|ep.save     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|ep.save~DUPLICATE     ;                  ;                       ;
+; AD7928_cyclic:inst1|sr_din[0]   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|sr_din[0]~DUPLICATE   ;                  ;                       ;
+; AD7928_cyclic:inst1|sr_dout[12] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|sr_dout[12]~DUPLICATE ;                  ;                       ;
+; AD7928_cyclic:inst1|sr_dout[13] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|sr_dout[13]~DUPLICATE ;                  ;                       ;
+; AD7928_cyclic:inst1|sr_dout[14] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; AD7928_cyclic:inst1|sr_dout[14]~DUPLICATE ;                  ;                       ;
+; PWM:inst2|clk_en                ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:inst2|clk_en~DUPLICATE                ;                  ;                       ;
 ; PWM:inst2|cnt_duty[0]           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:inst2|cnt_duty[0]~DUPLICATE           ;                  ;                       ;
 ; PWM:inst2|cnt_duty[2]           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:inst2|cnt_duty[2]~DUPLICATE           ;                  ;                       ;
-; PWM:inst2|cnt_duty[3]           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:inst2|cnt_duty[3]~DUPLICATE           ;                  ;                       ;
+; PWM:inst2|cnt_duty[4]           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; PWM:inst2|cnt_duty[4]~DUPLICATE           ;                  ;                       ;
 +---------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-------------------------------------------+------------------+-----------------------+
 
 
@@ -186,8 +189,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 150 ) ; 0.00 % ( 0 / 150 )         ; 0.00 % ( 0 / 150 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 150 ) ; 0.00 % ( 0 / 150 )         ; 0.00 % ( 0 / 150 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 162 ) ; 0.00 % ( 0 / 162 )         ; 0.00 % ( 0 / 162 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 162 ) ; 0.00 % ( 0 / 162 )         ; 0.00 % ( 0 / 162 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -210,7 +213,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 150 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 162 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -226,14 +229,14 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 36 / 41,910        ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 36                 ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 37 / 41,910        ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 37                 ;       ;
 ;     [A] ALMs used in final placement [=a+b+c+d]             ; 44 / 41,910        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 19                 ;       ;
+;         [a] ALMs used for LUT logic and registers           ; 24                 ;       ;
 ;         [b] ALMs used for LUT logic                         ; 8                  ;       ;
-;         [c] ALMs used for registers                         ; 17                 ;       ;
+;         [c] ALMs used for registers                         ; 12                 ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 8 / 41,910         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 41,910         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41,910         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -246,21 +249,21 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ;     -- Logic LABs                                           ; 6                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 48                 ;       ;
+; Combinational ALUT usage for logic                          ; 58                 ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
 ;     -- 6 input functions                                    ; 6                  ;       ;
-;     -- 5 input functions                                    ; 6                  ;       ;
-;     -- 4 input functions                                    ; 4                  ;       ;
-;     -- <=3 input functions                                  ; 32                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 26                 ;       ;
+;     -- 5 input functions                                    ; 7                  ;       ;
+;     -- 4 input functions                                    ; 6                  ;       ;
+;     -- <=3 input functions                                  ; 39                 ;       ;
+; Combinational ALUT usage for route-throughs                 ; 18                 ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 79                 ;       ;
+; Dedicated logic registers                                   ; 84                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
 ;         -- Primary logic registers                          ; 71 / 83,820        ; < 1 % ;
-;         -- Secondary logic registers                        ; 8 / 83,820         ; < 1 % ;
+;         -- Secondary logic registers                        ; 13 / 83,820        ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 71                 ;       ;
-;         -- Routing optimization registers                   ; 8                  ;       ;
+;         -- Design implementation registers                  ; 73                 ;       ;
+;         -- Routing optimization registers                   ; 11                 ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 15 / 314           ; 5 %   ;
@@ -316,11 +319,11 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 1              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.1% / 0.1% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 1.5% / 1.6% / 1.2% ;       ;
-; Maximum fan-out                                             ; 79                 ;       ;
-; Highest non-global fan-out                                  ; 79                 ;       ;
-; Total fan-out                                               ; 496                ;       ;
-; Average fan-out                                             ; 2.70               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 1.8% / 1.9% / 1.4% ;       ;
+; Maximum fan-out                                             ; 84                 ;       ;
+; Highest non-global fan-out                                  ; 84                 ;       ;
+; Total fan-out                                               ; 521                ;       ;
+; Average fan-out                                             ; 2.73               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -329,14 +332,14 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Statistic                                                   ; Top                  ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 36 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 36                   ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 37 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 37                   ; 0                              ;
 ;     [A] ALMs used in final placement [=a+b+c+d]             ; 44 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 19                   ; 0                              ;
+;         [a] ALMs used for LUT logic and registers           ; 24                   ; 0                              ;
 ;         [b] ALMs used for LUT logic                         ; 8                    ; 0                              ;
-;         [c] ALMs used for registers                         ; 17                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 12                   ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 8 / 41910 ( < 1 % )  ; 0 / 41910 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 41910 ( < 1 % )  ; 0 / 41910 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41910 ( 0 % )    ; 0 / 41910 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -349,13 +352,13 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ;     -- Logic LABs                                           ; 6                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 48                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 58                   ; 0                              ;
 ;     -- 7 input functions                                    ; 0                    ; 0                              ;
 ;     -- 6 input functions                                    ; 6                    ; 0                              ;
-;     -- 5 input functions                                    ; 6                    ; 0                              ;
-;     -- 4 input functions                                    ; 4                    ; 0                              ;
-;     -- <=3 input functions                                  ; 32                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 26                   ; 0                              ;
+;     -- 5 input functions                                    ; 7                    ; 0                              ;
+;     -- 4 input functions                                    ; 6                    ; 0                              ;
+;     -- <=3 input functions                                  ; 39                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 18                   ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
 ;     -- 32-address deep                                      ; 0                    ; 0                              ;
@@ -363,10 +366,10 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
 ;         -- Primary logic registers                          ; 71 / 83820 ( < 1 % ) ; 0 / 83820 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 8 / 83820 ( < 1 % )  ; 0 / 83820 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 13 / 83820 ( < 1 % ) ; 0 / 83820 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
-;         -- Design implementation registers                  ; 71                   ; 0                              ;
-;         -- Routing optimization registers                   ; 8                    ; 0                              ;
+;         -- Design implementation registers                  ; 73                   ; 0                              ;
+;         -- Routing optimization registers                   ; 11                   ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
@@ -383,8 +386,8 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 496                  ; 0                              ;
-;     -- Registered Connections                               ; 251                  ; 0                              ;
+;     -- Total Connections                                    ; 521                  ; 0                              ;
+;     -- Registered Connections                               ; 275                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -418,7 +421,7 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; ADC_SDO      ; AD4   ; 3A       ; 6            ; 0            ; 51           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; FPGA_CLK1_50 ; V11   ; 3B       ; 32           ; 0            ; 0            ; 25                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; KEY[0]       ; AH17  ; 4A       ; 64           ; 0            ; 34           ; 79                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; KEY[0]       ; AH17  ; 4A       ; 64           ; 0            ; 34           ; 84                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -1173,9 +1176,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name     ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+-----------------+--------------+
-; |pruebaAnalogPWM           ; 35.5 (0.5)           ; 43.5 (0.5)                       ; 8.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 48 (1)              ; 79 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 15   ; 0            ; |pruebaAnalogPWM                     ; pruebaAnalogPWM ; work         ;
-;    |AD7928_cyclic:inst1|   ; 28.5 (28.5)          ; 36.0 (36.0)                      ; 7.5 (7.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 36 (36)             ; 67 (67)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaAnalogPWM|AD7928_cyclic:inst1 ; AD7928_cyclic   ; work         ;
-;    |PWM:inst2|             ; 6.5 (6.5)            ; 7.0 (7.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 11 (11)             ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaAnalogPWM|PWM:inst2           ; PWM             ; work         ;
+; |pruebaAnalogPWM           ; 36.5 (0.5)           ; 43.0 (0.5)                       ; 6.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 58 (1)              ; 84 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 15   ; 0            ; |pruebaAnalogPWM                     ; pruebaAnalogPWM ; work         ;
+;    |AD7928_cyclic:inst1|   ; 28.8 (28.8)          ; 34.5 (34.5)                      ; 5.7 (5.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 46 (46)             ; 71 (71)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaAnalogPWM|AD7928_cyclic:inst1 ; AD7928_cyclic   ; work         ;
+;    |PWM:inst2|             ; 7.2 (7.2)            ; 8.0 (8.0)                        ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 11 (11)             ; 13 (13)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaAnalogPWM|PWM:inst2           ; PWM             ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1198,7 +1201,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ADC_CONVST   ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; ADC_SDI      ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; FPGA_CLK1_50 ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[0]       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[0]       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; ADC_SDO      ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +--------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
@@ -1211,104 +1214,109 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; FPGA_CLK1_50                                     ;                   ;         ;
 ;      - AD7928_cyclic:inst1|clkdiv[11]            ; 1                 ; 0       ;
 ; KEY[0]                                           ;                   ;         ;
-;      - AD7928_cyclic:inst1|ch_on[0][4]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ch_on[0][5]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ch_on[0][6]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ch_on[0][7]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ch_on[0][8]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ch_on[0][9]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ch_on[0][10]          ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ch_on[0][11]          ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[15]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[11]            ; 1                 ; 0       ;
-;      - PWM:inst2|pwm_out                         ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[0]                     ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[1]                     ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[2]                     ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[3]                     ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[4]                     ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[13]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[12]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[11]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[10]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[6]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[5]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[3]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[2]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[1]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[0]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.conf1              ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.rd1                ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.save               ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[4]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[12]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[5]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[6]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[7]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[8]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[9]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[10]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[11]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cs_cycle[0]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cs_cycle[3]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cs_cycle[2]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cs_cycle[1]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.conf0              ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.rd0                ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[14]            ; 1                 ; 0       ;
-;      - PWM:inst2|clk_en                          ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[3]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cmd_addr[1]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cmd_addr[0]           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.idle               ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[0]             ; 1                 ; 0       ;
-;      - PWM:inst2|cnt[2]                          ; 1                 ; 0       ;
-;      - PWM:inst2|cnt[1]                          ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[2]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[10]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.sready             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[1]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[9]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_dout[0]            ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[8]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[7]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[9]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[6]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[8]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[5]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[7]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[4]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[3]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[2]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|sr_din[4]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[1]             ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.conf1~DUPLICATE    ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|ep.save~DUPLICATE     ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[2]~DUPLICATE           ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[3]~DUPLICATE           ; 1                 ; 0       ;
-;      - PWM:inst2|cnt_duty[0]~DUPLICATE           ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cs_cycle[0]~DUPLICATE ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|cs_cycle[1]~DUPLICATE ; 1                 ; 0       ;
-;      - AD7928_cyclic:inst1|clkdiv[0]~DUPLICATE   ; 1                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][4]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][5]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][6]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][7]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][8]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][9]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][10]          ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ch_on[0][11]          ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[15]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[11]            ; 0                 ; 0       ;
+;      - PWM:inst2|pwm_out                         ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[0]                     ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[1]                     ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[2]                     ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[3]                     ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[4]                     ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[0]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.conf1              ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.rd1                ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.save               ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[4]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[13]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[12]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[14]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[5]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[6]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[7]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[8]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[9]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[10]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[11]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cs_cycle[0]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cs_cycle[3]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cs_cycle[2]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cs_cycle[1]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.conf0              ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.rd0                ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[14]            ; 0                 ; 0       ;
+;      - PWM:inst2|clk_en                          ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[3]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cmd_addr[1]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cmd_addr[0]           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.idle               ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[13]            ; 0                 ; 0       ;
+;      - PWM:inst2|cnt[1]                          ; 0                 ; 0       ;
+;      - PWM:inst2|cnt[0]                          ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[2]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[10]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.sready             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[12]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[1]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[9]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[11]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[0]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[8]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[10]            ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[7]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[9]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[6]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[8]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[5]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[7]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[4]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[6]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[3]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[5]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[2]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[4]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[0]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|clkdiv[1]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[3]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[2]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[1]             ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_din[0]~DUPLICATE   ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|ep.conf1~DUPLICATE    ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[2]~DUPLICATE           ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[4]~DUPLICATE           ; 0                 ; 0       ;
+;      - PWM:inst2|cnt_duty[0]~DUPLICATE           ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[13]~DUPLICATE ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[12]~DUPLICATE ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|sr_dout[14]~DUPLICATE ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cs_cycle[3]~DUPLICATE ; 0                 ; 0       ;
+;      - AD7928_cyclic:inst1|cs_cycle[2]~DUPLICATE ; 0                 ; 0       ;
+;      - PWM:inst2|clk_en~DUPLICATE                ; 0                 ; 0       ;
 ; ADC_SDO                                          ;                   ;         ;
 ;      - AD7928_cyclic:inst1|sr_dout[0]~feeder     ; 0                 ; 0       ;
 +--------------------------------------------------+-------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                ;
-+-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                              ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; AD7928_cyclic:inst1|ch_on[0][4]~0 ; LABCELL_X36_Y2_N0  ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; AD7928_cyclic:inst1|clkdiv[11]    ; FF_X33_Y2_N32      ; 56      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; AD7928_cyclic:inst1|ep.conf0      ; FF_X35_Y2_N29      ; 20      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; AD7928_cyclic:inst1|ep.rd1        ; FF_X34_Y2_N20      ; 19      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; AD7928_cyclic:inst1|sr_din[15]~1  ; LABCELL_X35_Y2_N15 ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; FPGA_CLK1_50                      ; PIN_V11            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; FPGA_CLK1_50                      ; PIN_V11            ; 24      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; KEY[0]                            ; PIN_AH17           ; 79      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-+-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                 ;
++-----------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                              ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; AD7928_cyclic:inst1|ch_on[0][4]~0 ; MLABCELL_X28_Y3_N48 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; AD7928_cyclic:inst1|clkdiv[11]    ; FF_X31_Y3_N32       ; 61      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; AD7928_cyclic:inst1|ep.conf0      ; FF_X30_Y3_N29       ; 21      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; AD7928_cyclic:inst1|ep.rd1        ; FF_X29_Y3_N17       ; 24      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; AD7928_cyclic:inst1|sr_din[15]~1  ; LABCELL_X30_Y3_N3   ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; FPGA_CLK1_50                      ; PIN_V11             ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; FPGA_CLK1_50                      ; PIN_V11             ; 24      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; KEY[0]                            ; PIN_AH17            ; 84      ; Async. clear ; no     ; --                   ; --               ; --                        ;
++-----------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -1325,14 +1333,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 129 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 8 / 13,420 ( < 1 % )    ;
-; C2 interconnects                            ; 50 / 119,108 ( < 1 % )  ;
-; C4 interconnects                            ; 36 / 56,300 ( < 1 % )   ;
+; Block interconnects                         ; 130 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 3 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 66 / 119,108 ( < 1 % )  ;
+; C4 interconnects                            ; 29 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 14 / 289,320 ( < 1 % )  ;
+; Direct links                                ; 19 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -1388,12 +1396,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 30 / 84,580 ( < 1 % )   ;
+; Local interconnects                         ; 28 / 84,580 ( < 1 % )   ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 56 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 60 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 95 / 130,992 ( < 1 % )  ;
-; R6 interconnects                            ; 112 / 266,960 ( < 1 % ) ;
+; R14 interconnects                           ; 50 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 52 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 98 / 130,992 ( < 1 % )  ;
+; R6 interconnects                            ; 110 / 266,960 ( < 1 % ) ;
 ; Spine clocks                                ; 1 / 360 ( < 1 % )       ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
@@ -1524,9 +1532,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+--------------------------------+-------------------+
 ; Source Clock(s)                             ; Destination Clock(s)           ; Delay Added in ns ;
 +---------------------------------------------+--------------------------------+-------------------+
-; AD7928_cyclic:inst1|clkdiv[11]              ; AD7928_cyclic:inst1|clkdiv[11] ; 67.1              ;
-; AD7928_cyclic:inst1|clkdiv[11]              ; FPGA_CLK1_50                   ; 22.8              ;
-; FPGA_CLK1_50                                ; FPGA_CLK1_50                   ; 14.3              ;
+; AD7928_cyclic:inst1|clkdiv[11]              ; AD7928_cyclic:inst1|clkdiv[11] ; 89.7              ;
+; AD7928_cyclic:inst1|clkdiv[11]              ; FPGA_CLK1_50                   ; 22.9              ;
+; FPGA_CLK1_50                                ; FPGA_CLK1_50                   ; 16.0              ;
 ; FPGA_CLK1_50,AD7928_cyclic:inst1|clkdiv[11] ; FPGA_CLK1_50                   ; 4.5               ;
 +---------------------------------------------+--------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
@@ -1538,70 +1546,74 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------------+----------------------------------+-------------------+
 ; Source Register                  ; Destination Register             ; Delay Added in ns ;
 +----------------------------------+----------------------------------+-------------------+
-; AD7928_cyclic:inst1|clkdiv[11]   ; AD7928_cyclic:inst1|clkdiv[11]   ; 5.486             ;
-; AD7928_cyclic:inst1|ch_on[0][11] ; PWM:inst2|pwm_out                ; 4.749             ;
-; AD7928_cyclic:inst1|ch_on[0][10] ; PWM:inst2|pwm_out                ; 4.683             ;
-; AD7928_cyclic:inst1|ch_on[0][6]  ; PWM:inst2|pwm_out                ; 4.550             ;
-; AD7928_cyclic:inst1|ch_on[0][7]  ; PWM:inst2|pwm_out                ; 4.544             ;
-; AD7928_cyclic:inst1|ch_on[0][9]  ; PWM:inst2|pwm_out                ; 4.513             ;
-; AD7928_cyclic:inst1|ch_on[0][8]  ; PWM:inst2|pwm_out                ; 4.403             ;
+; AD7928_cyclic:inst1|clkdiv[11]   ; AD7928_cyclic:inst1|clkdiv[11]   ; 5.580             ;
+; AD7928_cyclic:inst1|ch_on[0][11] ; PWM:inst2|pwm_out                ; 4.725             ;
+; AD7928_cyclic:inst1|ch_on[0][10] ; PWM:inst2|pwm_out                ; 4.668             ;
+; AD7928_cyclic:inst1|ch_on[0][6]  ; PWM:inst2|pwm_out                ; 4.566             ;
+; AD7928_cyclic:inst1|ch_on[0][9]  ; PWM:inst2|pwm_out                ; 4.534             ;
+; AD7928_cyclic:inst1|ch_on[0][7]  ; PWM:inst2|pwm_out                ; 4.523             ;
+; AD7928_cyclic:inst1|ch_on[0][8]  ; PWM:inst2|pwm_out                ; 4.385             ;
 ; PWM:inst2|cnt_duty[1]            ; PWM:inst2|pwm_out                ; 2.272             ;
 ; PWM:inst2|cnt_duty[0]            ; PWM:inst2|pwm_out                ; 2.272             ;
 ; PWM:inst2|cnt_duty[3]            ; PWM:inst2|pwm_out                ; 2.272             ;
-; PWM:inst2|cnt_duty[4]            ; PWM:inst2|pwm_out                ; 2.212             ;
-; AD7928_cyclic:inst1|ep.conf0     ; AD7928_cyclic:inst1|sr_din[15]   ; 1.165             ;
-; AD7928_cyclic:inst1|ep.conf1     ; AD7928_cyclic:inst1|ep.conf0     ; 1.092             ;
-; AD7928_cyclic:inst1|ep.rd1       ; AD7928_cyclic:inst1|ep.save      ; 1.066             ;
-; AD7928_cyclic:inst1|ep.save      ; AD7928_cyclic:inst1|ep.rd0       ; 1.066             ;
-; AD7928_cyclic:inst1|cmd_addr[0]  ; AD7928_cyclic:inst1|ep.idle      ; 1.058             ;
-; AD7928_cyclic:inst1|cs_cycle[0]  ; AD7928_cyclic:inst1|ep.save      ; 1.051             ;
-; AD7928_cyclic:inst1|cs_cycle[2]  ; AD7928_cyclic:inst1|ep.save      ; 1.050             ;
-; AD7928_cyclic:inst1|sr_din[14]   ; AD7928_cyclic:inst1|sr_din[15]   ; 1.046             ;
-; AD7928_cyclic:inst1|sr_din[7]    ; AD7928_cyclic:inst1|sr_din[8]    ; 1.035             ;
-; AD7928_cyclic:inst1|cmd_addr[1]  ; AD7928_cyclic:inst1|ep.idle      ; 1.034             ;
-; AD7928_cyclic:inst1|sr_din[3]    ; AD7928_cyclic:inst1|sr_din[4]    ; 1.031             ;
-; AD7928_cyclic:inst1|sr_din[13]   ; AD7928_cyclic:inst1|sr_din[14]   ; 1.031             ;
-; AD7928_cyclic:inst1|sr_din[8]    ; AD7928_cyclic:inst1|sr_din[9]    ; 1.028             ;
-; AD7928_cyclic:inst1|cs_cycle[3]  ; AD7928_cyclic:inst1|ep.save      ; 1.025             ;
-; AD7928_cyclic:inst1|ep.idle      ; AD7928_cyclic:inst1|ep.rd0       ; 1.025             ;
-; AD7928_cyclic:inst1|cs_cycle[1]  ; AD7928_cyclic:inst1|ep.conf0     ; 1.000             ;
-; AD7928_cyclic:inst1|sr_dout[11]  ; AD7928_cyclic:inst1|ch_on[0][11] ; 0.956             ;
-; AD7928_cyclic:inst1|sr_dout[2]   ; AD7928_cyclic:inst1|sr_dout[3]   ; 0.945             ;
-; AD7928_cyclic:inst1|sr_dout[3]   ; AD7928_cyclic:inst1|sr_dout[4]   ; 0.945             ;
-; AD7928_cyclic:inst1|sr_dout[5]   ; AD7928_cyclic:inst1|sr_dout[6]   ; 0.945             ;
-; AD7928_cyclic:inst1|sr_dout[6]   ; AD7928_cyclic:inst1|sr_dout[7]   ; 0.945             ;
-; AD7928_cyclic:inst1|sr_dout[7]   ; AD7928_cyclic:inst1|sr_dout[8]   ; 0.945             ;
-; AD7928_cyclic:inst1|sr_dout[9]   ; AD7928_cyclic:inst1|sr_dout[10]  ; 0.945             ;
-; AD7928_cyclic:inst1|ep.sready    ; AD7928_cyclic:inst1|ep.idle      ; 0.942             ;
-; AD7928_cyclic:inst1|sr_dout[0]   ; AD7928_cyclic:inst1|sr_dout[1]   ; 0.932             ;
-; AD7928_cyclic:inst1|sr_dout[1]   ; AD7928_cyclic:inst1|sr_dout[2]   ; 0.932             ;
-; AD7928_cyclic:inst1|sr_dout[4]   ; AD7928_cyclic:inst1|sr_dout[5]   ; 0.932             ;
-; AD7928_cyclic:inst1|sr_dout[8]   ; AD7928_cyclic:inst1|sr_dout[9]   ; 0.932             ;
-; AD7928_cyclic:inst1|sr_dout[12]  ; AD7928_cyclic:inst1|ep.rd0       ; 0.644             ;
-; AD7928_cyclic:inst1|sr_din[0]    ; AD7928_cyclic:inst1|sr_din[1]    ; 0.634             ;
-; AD7928_cyclic:inst1|sr_din[9]    ; AD7928_cyclic:inst1|sr_din[10]   ; 0.629             ;
-; AD7928_cyclic:inst1|sr_din[5]    ; AD7928_cyclic:inst1|sr_din[6]    ; 0.616             ;
-; AD7928_cyclic:inst1|sr_din[10]   ; AD7928_cyclic:inst1|sr_din[11]   ; 0.616             ;
-; AD7928_cyclic:inst1|sr_din[12]   ; AD7928_cyclic:inst1|sr_din[13]   ; 0.616             ;
-; AD7928_cyclic:inst1|sr_din[1]    ; AD7928_cyclic:inst1|sr_din[2]    ; 0.610             ;
-; AD7928_cyclic:inst1|sr_din[2]    ; AD7928_cyclic:inst1|sr_din[3]    ; 0.610             ;
-; AD7928_cyclic:inst1|sr_din[4]    ; AD7928_cyclic:inst1|sr_din[5]    ; 0.610             ;
-; AD7928_cyclic:inst1|sr_din[11]   ; AD7928_cyclic:inst1|sr_din[12]   ; 0.610             ;
-; AD7928_cyclic:inst1|sr_din[6]    ; AD7928_cyclic:inst1|sr_din[7]    ; 0.515             ;
-; AD7928_cyclic:inst1|clkdiv[0]    ; PWM:inst2|cnt[1]                 ; 0.427             ;
-; PWM:inst2|cnt_duty[2]            ; PWM:inst2|cnt_duty[4]            ; 0.418             ;
-; PWM:inst2|cnt[1]                 ; PWM:inst2|cnt[2]                 ; 0.418             ;
-; AD7928_cyclic:inst1|clkdiv[10]   ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.408             ;
-; PWM:inst2|cnt[2]                 ; PWM:inst2|clk_en                 ; 0.378             ;
-; AD7928_cyclic:inst1|ep.rd0       ; AD7928_cyclic:inst1|ep.rd1       ; 0.355             ;
-; AD7928_cyclic:inst1|clkdiv[9]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.315             ;
-; AD7928_cyclic:inst1|clkdiv[8]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.260             ;
-; AD7928_cyclic:inst1|sr_dout[10]  ; AD7928_cyclic:inst1|ch_on[0][10] ; 0.220             ;
-; AD7928_cyclic:inst1|clkdiv[7]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.160             ;
-; AD7928_cyclic:inst1|clkdiv[1]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.140             ;
-; AD7928_cyclic:inst1|clkdiv[6]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.091             ;
+; PWM:inst2|cnt_duty[4]            ; PWM:inst2|pwm_out                ; 2.206             ;
+; AD7928_cyclic:inst1|ep.conf0     ; AD7928_cyclic:inst1|sr_din[1]    ; 1.138             ;
+; AD7928_cyclic:inst1|ep.rd1       ; AD7928_cyclic:inst1|ep.save      ; 1.135             ;
+; AD7928_cyclic:inst1|ep.save      ; AD7928_cyclic:inst1|ep.rd0       ; 1.135             ;
+; AD7928_cyclic:inst1|ep.conf1     ; AD7928_cyclic:inst1|ep.conf0     ; 1.135             ;
+; AD7928_cyclic:inst1|cs_cycle[3]  ; AD7928_cyclic:inst1|ep.save      ; 1.119             ;
+; AD7928_cyclic:inst1|cs_cycle[0]  ; AD7928_cyclic:inst1|ep.save      ; 1.103             ;
+; AD7928_cyclic:inst1|sr_din[2]    ; AD7928_cyclic:inst1|sr_din[3]    ; 1.102             ;
+; AD7928_cyclic:inst1|sr_din[4]    ; AD7928_cyclic:inst1|sr_din[5]    ; 1.102             ;
+; AD7928_cyclic:inst1|sr_din[12]   ; AD7928_cyclic:inst1|sr_din[13]   ; 1.102             ;
+; AD7928_cyclic:inst1|sr_din[6]    ; AD7928_cyclic:inst1|sr_din[7]    ; 1.096             ;
+; AD7928_cyclic:inst1|sr_din[8]    ; AD7928_cyclic:inst1|sr_din[9]    ; 1.096             ;
+; AD7928_cyclic:inst1|sr_din[10]   ; AD7928_cyclic:inst1|sr_din[11]   ; 1.096             ;
+; AD7928_cyclic:inst1|sr_din[11]   ; AD7928_cyclic:inst1|sr_din[12]   ; 1.096             ;
+; AD7928_cyclic:inst1|sr_din[1]    ; AD7928_cyclic:inst1|sr_din[2]    ; 1.089             ;
+; AD7928_cyclic:inst1|sr_din[5]    ; AD7928_cyclic:inst1|sr_din[6]    ; 1.089             ;
+; AD7928_cyclic:inst1|sr_din[3]    ; AD7928_cyclic:inst1|sr_din[4]    ; 1.081             ;
+; AD7928_cyclic:inst1|sr_din[7]    ; AD7928_cyclic:inst1|sr_din[8]    ; 1.081             ;
+; AD7928_cyclic:inst1|sr_din[9]    ; AD7928_cyclic:inst1|sr_din[10]   ; 1.081             ;
+; AD7928_cyclic:inst1|sr_din[13]   ; AD7928_cyclic:inst1|sr_din[14]   ; 1.081             ;
+; AD7928_cyclic:inst1|sr_din[14]   ; AD7928_cyclic:inst1|sr_din[15]   ; 1.081             ;
+; AD7928_cyclic:inst1|ep.idle      ; AD7928_cyclic:inst1|ep.rd0       ; 1.064             ;
+; AD7928_cyclic:inst1|cs_cycle[1]  ; AD7928_cyclic:inst1|ep.save      ; 1.064             ;
+; AD7928_cyclic:inst1|sr_dout[14]  ; AD7928_cyclic:inst1|ep.rd0       ; 1.063             ;
+; AD7928_cyclic:inst1|sr_dout[13]  ; AD7928_cyclic:inst1|ep.rd0       ; 1.041             ;
+; AD7928_cyclic:inst1|sr_dout[12]  ; AD7928_cyclic:inst1|ep.rd0       ; 1.039             ;
+; AD7928_cyclic:inst1|cs_cycle[2]  ; AD7928_cyclic:inst1|ep.save      ; 1.024             ;
+; AD7928_cyclic:inst1|cmd_addr[1]  ; AD7928_cyclic:inst1|ep.conf0     ; 0.993             ;
+; AD7928_cyclic:inst1|sr_din[0]    ; AD7928_cyclic:inst1|sr_din[1]    ; 0.920             ;
+; AD7928_cyclic:inst1|sr_dout[3]   ; AD7928_cyclic:inst1|sr_dout[4]   ; 0.915             ;
+; AD7928_cyclic:inst1|sr_dout[6]   ; AD7928_cyclic:inst1|sr_dout[7]   ; 0.915             ;
+; AD7928_cyclic:inst1|sr_dout[11]  ; AD7928_cyclic:inst1|sr_dout[12]  ; 0.915             ;
+; AD7928_cyclic:inst1|sr_dout[0]   ; AD7928_cyclic:inst1|sr_dout[1]   ; 0.914             ;
+; AD7928_cyclic:inst1|sr_dout[1]   ; AD7928_cyclic:inst1|sr_dout[2]   ; 0.914             ;
+; AD7928_cyclic:inst1|sr_dout[5]   ; AD7928_cyclic:inst1|ch_on[0][5]  ; 0.908             ;
+; AD7928_cyclic:inst1|sr_dout[4]   ; AD7928_cyclic:inst1|sr_dout[5]   ; 0.902             ;
+; AD7928_cyclic:inst1|sr_dout[7]   ; AD7928_cyclic:inst1|ch_on[0][7]  ; 0.901             ;
+; AD7928_cyclic:inst1|sr_dout[2]   ; AD7928_cyclic:inst1|sr_dout[3]   ; 0.775             ;
+; AD7928_cyclic:inst1|sr_dout[8]   ; AD7928_cyclic:inst1|ch_on[0][8]  ; 0.764             ;
+; AD7928_cyclic:inst1|cmd_addr[0]  ; AD7928_cyclic:inst1|ep.conf0     ; 0.750             ;
+; AD7928_cyclic:inst1|sr_dout[9]   ; AD7928_cyclic:inst1|ch_on[0][9]  ; 0.603             ;
+; AD7928_cyclic:inst1|ep.sready    ; AD7928_cyclic:inst1|ep.idle      ; 0.565             ;
+; AD7928_cyclic:inst1|sr_dout[10]  ; AD7928_cyclic:inst1|ch_on[0][10] ; 0.564             ;
+; AD7928_cyclic:inst1|clkdiv[10]   ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.490             ;
+; PWM:inst2|clk_en                 ; PWM:inst2|cnt_duty[2]            ; 0.452             ;
+; PWM:inst2|cnt_duty[2]            ; PWM:inst2|pwm_out                ; 0.444             ;
+; AD7928_cyclic:inst1|ep.rd0       ; AD7928_cyclic:inst1|ep.rd1       ; 0.424             ;
+; PWM:inst2|cnt[1]                 ; PWM:inst2|clk_en                 ; 0.412             ;
+; AD7928_cyclic:inst1|clkdiv[9]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.397             ;
+; PWM:inst2|cnt[0]                 ; PWM:inst2|cnt[1]                 ; 0.395             ;
+; AD7928_cyclic:inst1|clkdiv[8]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.342             ;
+; AD7928_cyclic:inst1|clkdiv[7]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.242             ;
+; AD7928_cyclic:inst1|clkdiv[1]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.220             ;
+; AD7928_cyclic:inst1|clkdiv[6]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.173             ;
+; AD7928_cyclic:inst1|clkdiv[4]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.017             ;
+; AD7928_cyclic:inst1|clkdiv[2]    ; AD7928_cyclic:inst1|clkdiv[11]   ; 0.013             ;
 +----------------------------------+----------------------------------+-------------------+
-Note: This table only shows the top 62 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 66 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1627,7 +1639,7 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:12
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:11
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
@@ -1636,22 +1648,23 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X33_Y0 to location X44_Y10
+    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X22_Y0 to location X32_Y10
+Info (188005): Design requires adding a large amount of routing delay for some signals to meet hold time requirements, and there is an excessive demand for the available routing resources. The Fitter is reducing the routing delays of some signals to help the routing algorithm converge, but doing so may cause hold time failures. For more information, refer to the "Estimated Delay Added for Hold Timing" section in the Fitter report.
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.28 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
+Info (11888): Total time spent on timing analysis during the Fitter is 0.29 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
 Info (144001): Generated suppressed messages file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaAnalogPWM/output_files/pruebaAnalogPWM.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 2438 megabytes
-    Info: Processing ended: Thu Oct 25 16:10:08 2018
-    Info: Elapsed time: 00:00:37
-    Info: Total CPU time (on all processors): 00:00:59
+    Info: Peak virtual memory: 2441 megabytes
+    Info: Processing ended: Mon Oct 29 16:37:01 2018
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:01:02
 
 
 +----------------------------+

@@ -1,5 +1,5 @@
 Timing Analyzer report for pruebaAnalogPWM
-Thu Oct 25 16:10:26 2018
+Mon Oct 29 16:37:19 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -106,7 +106,7 @@ refer to the applicable agreement for further details.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   2.5%      ;
 ;     Processor 3            ;   2.4%      ;
-;     Processor 4            ;   2.4%      ;
+;     Processor 4            ;   2.3%      ;
 +----------------------------+-------------+
 
 
@@ -125,8 +125,8 @@ refer to the applicable agreement for further details.
 +------------+-----------------+--------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                     ; Note ;
 +------------+-----------------+--------------------------------+------+
-; 221.14 MHz ; 221.14 MHz      ; FPGA_CLK1_50                   ;      ;
-; 323.21 MHz ; 323.21 MHz      ; AD7928_cyclic:inst1|clkdiv[11] ;      ;
+; 240.62 MHz ; 240.62 MHz      ; FPGA_CLK1_50                   ;      ;
+; 329.92 MHz ; 329.92 MHz      ; AD7928_cyclic:inst1|clkdiv[11] ;      ;
 +------------+-----------------+--------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -142,19 +142,19 @@ HTML report is unavailable in plain text report export.
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; FPGA_CLK1_50                   ; -3.861 ; -30.815       ;
-; AD7928_cyclic:inst1|clkdiv[11] ; -2.094 ; -93.941       ;
+; FPGA_CLK1_50                   ; -3.965 ; -28.727       ;
+; AD7928_cyclic:inst1|clkdiv[11] ; -2.031 ; -95.652       ;
 +--------------------------------+--------+---------------+
 
 
-+--------------------------------------------------------+
-; Slow 1100mV 100C Model Hold Summary                    ;
-+--------------------------------+-------+---------------+
-; Clock                          ; Slack ; End Point TNS ;
-+--------------------------------+-------+---------------+
-; AD7928_cyclic:inst1|clkdiv[11] ; 0.358 ; 0.000         ;
-; FPGA_CLK1_50                   ; 0.429 ; 0.000         ;
-+--------------------------------+-------+---------------+
++---------------------------------------------------------+
+; Slow 1100mV 100C Model Hold Summary                     ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; FPGA_CLK1_50                   ; -3.040 ; -3.040        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; 0.160  ; 0.000         ;
++--------------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -174,8 +174,8 @@ No paths to report.
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; AD7928_cyclic:inst1|clkdiv[11] ; -0.538 ; -44.761       ;
-; FPGA_CLK1_50                   ; -0.538 ; -19.764       ;
+; AD7928_cyclic:inst1|clkdiv[11] ; -0.538 ; -46.231       ;
+; FPGA_CLK1_50                   ; -0.538 ; -19.741       ;
 +--------------------------------+--------+---------------+
 
 
@@ -191,8 +191,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+--------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                     ; Note ;
 +------------+-----------------+--------------------------------+------+
-; 224.16 MHz ; 224.16 MHz      ; FPGA_CLK1_50                   ;      ;
-; 317.76 MHz ; 317.76 MHz      ; AD7928_cyclic:inst1|clkdiv[11] ;      ;
+; 239.35 MHz ; 239.35 MHz      ; FPGA_CLK1_50                   ;      ;
+; 320.51 MHz ; 320.51 MHz      ; AD7928_cyclic:inst1|clkdiv[11] ;      ;
 +------------+-----------------+--------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -202,19 +202,19 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; FPGA_CLK1_50                   ; -3.637 ; -32.906       ;
-; AD7928_cyclic:inst1|clkdiv[11] ; -2.147 ; -89.685       ;
+; FPGA_CLK1_50                   ; -3.773 ; -30.957       ;
+; AD7928_cyclic:inst1|clkdiv[11] ; -2.120 ; -92.958       ;
 +--------------------------------+--------+---------------+
 
 
-+--------------------------------------------------------+
-; Slow 1100mV -40C Model Hold Summary                    ;
-+--------------------------------+-------+---------------+
-; Clock                          ; Slack ; End Point TNS ;
-+--------------------------------+-------+---------------+
-; FPGA_CLK1_50                   ; 0.124 ; 0.000         ;
-; AD7928_cyclic:inst1|clkdiv[11] ; 0.379 ; 0.000         ;
-+--------------------------------+-------+---------------+
++---------------------------------------------------------+
+; Slow 1100mV -40C Model Hold Summary                     ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; FPGA_CLK1_50                   ; -3.330 ; -3.330        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; 0.139  ; 0.000         ;
++--------------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -234,8 +234,8 @@ No paths to report.
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; AD7928_cyclic:inst1|clkdiv[11] ; -0.538 ; -43.935       ;
-; FPGA_CLK1_50                   ; -0.538 ; -21.020       ;
+; AD7928_cyclic:inst1|clkdiv[11] ; -0.538 ; -45.793       ;
+; FPGA_CLK1_50                   ; -0.538 ; -20.944       ;
 +--------------------------------+--------+---------------+
 
 
@@ -251,19 +251,19 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; FPGA_CLK1_50                   ; -2.952 ; -8.172        ;
-; AD7928_cyclic:inst1|clkdiv[11] ; -0.996 ; -31.600       ;
+; FPGA_CLK1_50                   ; -2.949 ; -7.182        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; -0.776 ; -33.875       ;
 +--------------------------------+--------+---------------+
 
 
-+--------------------------------------------------------+
-; Fast 1100mV 100C Model Hold Summary                    ;
-+--------------------------------+-------+---------------+
-; Clock                          ; Slack ; End Point TNS ;
-+--------------------------------+-------+---------------+
-; AD7928_cyclic:inst1|clkdiv[11] ; 0.148 ; 0.000         ;
-; FPGA_CLK1_50                   ; 0.183 ; 0.000         ;
-+--------------------------------+-------+---------------+
++---------------------------------------------------------+
+; Fast 1100mV 100C Model Hold Summary                     ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; FPGA_CLK1_50                   ; -1.756 ; -1.756        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; 0.039  ; 0.000         ;
++--------------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -283,8 +283,8 @@ No paths to report.
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; FPGA_CLK1_50                   ; -0.413 ; -2.564        ;
-; AD7928_cyclic:inst1|clkdiv[11] ; 0.021  ; 0.000         ;
+; FPGA_CLK1_50                   ; -0.393 ; -2.612        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; 0.106  ; 0.000         ;
 +--------------------------------+--------+---------------+
 
 
@@ -300,8 +300,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; FPGA_CLK1_50                   ; -2.193 ; -5.328        ;
-; AD7928_cyclic:inst1|clkdiv[11] ; -0.750 ; -22.681       ;
+; FPGA_CLK1_50                   ; -2.213 ; -4.825        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; -0.560 ; -24.652       ;
 +--------------------------------+--------+---------------+
 
 
@@ -310,8 +310,8 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; FPGA_CLK1_50                   ; -0.102 ; -0.102        ;
-; AD7928_cyclic:inst1|clkdiv[11] ; 0.125  ; 0.000         ;
+; FPGA_CLK1_50                   ; -1.795 ; -1.795        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; 0.020  ; 0.000         ;
 +--------------------------------+--------+---------------+
 
 
@@ -332,8 +332,8 @@ No paths to report.
 +--------------------------------+--------+---------------+
 ; Clock                          ; Slack  ; End Point TNS ;
 +--------------------------------+--------+---------------+
-; FPGA_CLK1_50                   ; -0.379 ; -2.504        ;
-; AD7928_cyclic:inst1|clkdiv[11] ; 0.063  ; 0.000         ;
+; FPGA_CLK1_50                   ; -0.367 ; -2.543        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; 0.120  ; 0.000         ;
 +--------------------------------+--------+---------------+
 
 
@@ -349,12 +349,12 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +---------------------------------+----------+--------+----------+---------+---------------------+
 ; Clock                           ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +---------------------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack                ; -3.861   ; -0.102 ; N/A      ; N/A     ; -0.538              ;
-;  AD7928_cyclic:inst1|clkdiv[11] ; -2.147   ; 0.125  ; N/A      ; N/A     ; -0.538              ;
-;  FPGA_CLK1_50                   ; -3.861   ; -0.102 ; N/A      ; N/A     ; -0.538              ;
-; Design-wide TNS                 ; -124.756 ; -0.102 ; 0.0      ; 0.0     ; -64.955             ;
-;  AD7928_cyclic:inst1|clkdiv[11] ; -93.941  ; 0.000  ; N/A      ; N/A     ; -44.761             ;
-;  FPGA_CLK1_50                   ; -32.906  ; -0.102 ; N/A      ; N/A     ; -21.020             ;
+; Worst-case Slack                ; -3.965   ; -3.330 ; N/A      ; N/A     ; -0.538              ;
+;  AD7928_cyclic:inst1|clkdiv[11] ; -2.120   ; 0.020  ; N/A      ; N/A     ; -0.538              ;
+;  FPGA_CLK1_50                   ; -3.965   ; -3.330 ; N/A      ; N/A     ; -0.538              ;
+; Design-wide TNS                 ; -124.379 ; -3.33  ; 0.0      ; 0.0     ; -66.737             ;
+;  AD7928_cyclic:inst1|clkdiv[11] ; -95.652  ; 0.000  ; N/A      ; N/A     ; -46.231             ;
+;  FPGA_CLK1_50                   ; -30.957  ; -3.330 ; N/A      ; N/A     ; -20.944             ;
 +---------------------------------+----------+--------+----------+---------+---------------------+
 
 
@@ -474,9 +474,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------------+--------------------------------+----------+----------+----------+----------+
 ; From Clock                     ; To Clock                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------+--------------------------------+----------+----------+----------+----------+
-; AD7928_cyclic:inst1|clkdiv[11] ; AD7928_cyclic:inst1|clkdiv[11] ; 206      ; 0        ; 0        ; 0        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; AD7928_cyclic:inst1|clkdiv[11] ; 236      ; 0        ; 0        ; 0        ;
 ; AD7928_cyclic:inst1|clkdiv[11] ; FPGA_CLK1_50                   ; 9        ; 1        ; 0        ; 0        ;
-; FPGA_CLK1_50                   ; FPGA_CLK1_50                   ; 125      ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50                   ; FPGA_CLK1_50                   ; 124      ; 0        ; 0        ; 0        ;
 +--------------------------------+--------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -486,9 +486,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +--------------------------------+--------------------------------+----------+----------+----------+----------+
 ; From Clock                     ; To Clock                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +--------------------------------+--------------------------------+----------+----------+----------+----------+
-; AD7928_cyclic:inst1|clkdiv[11] ; AD7928_cyclic:inst1|clkdiv[11] ; 206      ; 0        ; 0        ; 0        ;
+; AD7928_cyclic:inst1|clkdiv[11] ; AD7928_cyclic:inst1|clkdiv[11] ; 236      ; 0        ; 0        ; 0        ;
 ; AD7928_cyclic:inst1|clkdiv[11] ; FPGA_CLK1_50                   ; 9        ; 1        ; 0        ; 0        ;
-; FPGA_CLK1_50                   ; FPGA_CLK1_50                   ; 125      ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50                   ; FPGA_CLK1_50                   ; 124      ; 0        ; 0        ; 0        ;
 +--------------------------------+--------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -513,7 +513,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 80    ; 80   ;
+; Unconstrained Input Port Paths  ; 85    ; 85   ;
 ; Unconstrained Output Ports      ; 12    ; 12   ;
 ; Unconstrained Output Port Paths ; 14    ; 14   ;
 +---------------------------------+-------+------+
@@ -595,7 +595,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Oct 25 16:10:19 2018
+    Info: Processing started: Mon Oct 29 16:37:11 2018
 Info: Command: quartus_sta pruebaAnalogPWM -c pruebaAnalogPWM
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -613,23 +613,23 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 100C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.861
+Info (332146): Worst-case setup slack is -3.965
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.861             -30.815 FPGA_CLK1_50 
-    Info (332119):    -2.094             -93.941 AD7928_cyclic:inst1|clkdiv[11] 
-Info (332146): Worst-case hold slack is 0.358
+    Info (332119):    -3.965             -28.727 FPGA_CLK1_50 
+    Info (332119):    -2.031             -95.652 AD7928_cyclic:inst1|clkdiv[11] 
+Info (332146): Worst-case hold slack is -3.040
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.358               0.000 AD7928_cyclic:inst1|clkdiv[11] 
-    Info (332119):     0.429               0.000 FPGA_CLK1_50 
+    Info (332119):    -3.040              -3.040 FPGA_CLK1_50 
+    Info (332119):     0.160               0.000 AD7928_cyclic:inst1|clkdiv[11] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538             -44.761 AD7928_cyclic:inst1|clkdiv[11] 
-    Info (332119):    -0.538             -19.764 FPGA_CLK1_50 
+    Info (332119):    -0.538             -46.231 AD7928_cyclic:inst1|clkdiv[11] 
+    Info (332119):    -0.538             -19.741 FPGA_CLK1_50 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV -40C Model
@@ -638,23 +638,23 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.637
+Info (332146): Worst-case setup slack is -3.773
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.637             -32.906 FPGA_CLK1_50 
-    Info (332119):    -2.147             -89.685 AD7928_cyclic:inst1|clkdiv[11] 
-Info (332146): Worst-case hold slack is 0.124
+    Info (332119):    -3.773             -30.957 FPGA_CLK1_50 
+    Info (332119):    -2.120             -92.958 AD7928_cyclic:inst1|clkdiv[11] 
+Info (332146): Worst-case hold slack is -3.330
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.124               0.000 FPGA_CLK1_50 
-    Info (332119):     0.379               0.000 AD7928_cyclic:inst1|clkdiv[11] 
+    Info (332119):    -3.330              -3.330 FPGA_CLK1_50 
+    Info (332119):     0.139               0.000 AD7928_cyclic:inst1|clkdiv[11] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538             -43.935 AD7928_cyclic:inst1|clkdiv[11] 
-    Info (332119):    -0.538             -21.020 FPGA_CLK1_50 
+    Info (332119):    -0.538             -45.793 AD7928_cyclic:inst1|clkdiv[11] 
+    Info (332119):    -0.538             -20.944 FPGA_CLK1_50 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 100C Model
@@ -663,54 +663,54 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.952
+Info (332146): Worst-case setup slack is -2.949
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.952              -8.172 FPGA_CLK1_50 
-    Info (332119):    -0.996             -31.600 AD7928_cyclic:inst1|clkdiv[11] 
-Info (332146): Worst-case hold slack is 0.148
+    Info (332119):    -2.949              -7.182 FPGA_CLK1_50 
+    Info (332119):    -0.776             -33.875 AD7928_cyclic:inst1|clkdiv[11] 
+Info (332146): Worst-case hold slack is -1.756
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.148               0.000 AD7928_cyclic:inst1|clkdiv[11] 
-    Info (332119):     0.183               0.000 FPGA_CLK1_50 
+    Info (332119):    -1.756              -1.756 FPGA_CLK1_50 
+    Info (332119):     0.039               0.000 AD7928_cyclic:inst1|clkdiv[11] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.413
+Info (332146): Worst-case minimum pulse width slack is -0.393
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.413              -2.564 FPGA_CLK1_50 
-    Info (332119):     0.021               0.000 AD7928_cyclic:inst1|clkdiv[11] 
+    Info (332119):    -0.393              -2.612 FPGA_CLK1_50 
+    Info (332119):     0.106               0.000 AD7928_cyclic:inst1|clkdiv[11] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV -40C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.193
+Info (332146): Worst-case setup slack is -2.213
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.193              -5.328 FPGA_CLK1_50 
-    Info (332119):    -0.750             -22.681 AD7928_cyclic:inst1|clkdiv[11] 
-Info (332146): Worst-case hold slack is -0.102
+    Info (332119):    -2.213              -4.825 FPGA_CLK1_50 
+    Info (332119):    -0.560             -24.652 AD7928_cyclic:inst1|clkdiv[11] 
+Info (332146): Worst-case hold slack is -1.795
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.102              -0.102 FPGA_CLK1_50 
-    Info (332119):     0.125               0.000 AD7928_cyclic:inst1|clkdiv[11] 
+    Info (332119):    -1.795              -1.795 FPGA_CLK1_50 
+    Info (332119):     0.020               0.000 AD7928_cyclic:inst1|clkdiv[11] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.379
+Info (332146): Worst-case minimum pulse width slack is -0.367
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.379              -2.504 FPGA_CLK1_50 
-    Info (332119):     0.063               0.000 AD7928_cyclic:inst1|clkdiv[11] 
+    Info (332119):    -0.367              -2.543 FPGA_CLK1_50 
+    Info (332119):     0.120               0.000 AD7928_cyclic:inst1|clkdiv[11] 
 Info (332114): Report Metastability: Found 1 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1053 megabytes
-    Info: Processing ended: Thu Oct 25 16:10:26 2018
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 1054 megabytes
+    Info: Processing ended: Mon Oct 29 16:37:19 2018
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:07
 
 

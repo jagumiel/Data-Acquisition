@@ -185,16 +185,6 @@ begin
 			ch_on <= (others => x"000");
 		elsif (s_clk'event and s_clk='1') then
 			if ld_ch = '1' then
-				--Media Aritmetica
-				--if (avg_counter="1111") then
-					--ch_dat<= std_logic_vector(unsigned(ch_dat)/unsigned(avg_counter));
-					--ch_on(ch_addr) <= ch_dat;
-					--avg_counter<="0000";
-				--else
-					--Hay que usar otro vector mas grande.
-					--ch_dat<=std_logic_vector( unsigned(ch_dat) + unsigned(ch_dat));
-					--avg_counter<=avg_counter+1;
-				--end if;
 				ch_on(ch_addr) <= ch_dat;
 			end if;
 		end if;

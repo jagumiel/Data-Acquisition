@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pruebaAnalogPWM
-Thu Oct 25 16:09:30 2018
+Mon Oct 29 16:36:23 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -48,13 +48,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 25 16:09:30 2018       ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 29 16:36:22 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaAnalogPWM                             ;
 ; Top-level Entity Name           ; pruebaAnalogPWM                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 71                                          ;
+; Total registers                 ; 73                                          ;
 ; Total pins                      ; 15                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -189,25 +189,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 37           ;
+; Estimate of Logic utilization (ALMs needed) ; 39           ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 47           ;
+; Combinational ALUT usage for logic          ; 57           ;
 ;     -- 7 input functions                    ; 0            ;
 ;     -- 6 input functions                    ; 6            ;
-;     -- 5 input functions                    ; 6            ;
-;     -- 4 input functions                    ; 4            ;
-;     -- <=3 input functions                  ; 31           ;
+;     -- 5 input functions                    ; 7            ;
+;     -- 4 input functions                    ; 6            ;
+;     -- <=3 input functions                  ; 38           ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 71           ;
+; Dedicated logic registers                   ; 73           ;
 ;                                             ;              ;
 ; I/O pins                                    ; 15           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 71           ;
-; Total fan-out                               ; 445          ;
-; Average fan-out                             ; 3.01         ;
+; Maximum fan-out                             ; 73           ;
+; Total fan-out                               ; 464          ;
+; Average fan-out                             ; 2.90         ;
 +---------------------------------------------+--------------+
 
 
@@ -216,8 +216,8 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name     ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-----------------+--------------+
-; |pruebaAnalogPWM           ; 47 (0)              ; 71 (0)                    ; 0                 ; 0          ; 15   ; 0            ; |pruebaAnalogPWM                     ; pruebaAnalogPWM ; work         ;
-;    |AD7928_cyclic:inst1|   ; 36 (36)             ; 62 (62)                   ; 0                 ; 0          ; 0    ; 0            ; |pruebaAnalogPWM|AD7928_cyclic:inst1 ; AD7928_cyclic   ; work         ;
+; |pruebaAnalogPWM           ; 57 (0)              ; 73 (0)                    ; 0                 ; 0          ; 15   ; 0            ; |pruebaAnalogPWM                     ; pruebaAnalogPWM ; work         ;
+;    |AD7928_cyclic:inst1|   ; 46 (46)             ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |pruebaAnalogPWM|AD7928_cyclic:inst1 ; AD7928_cyclic   ; work         ;
 ;    |PWM:inst2|             ; 11 (11)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |pruebaAnalogPWM|PWM:inst2           ; PWM             ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -239,15 +239,14 @@ Encoding Type:  One-Hot
 +-----------+-----------+---------+--------+--------+---------+----------+----------+
 
 
-+-----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                ;
-+---------------------------------------+-------------------------------------------+
-; Register name                         ; Reason for Removal                        ;
-+---------------------------------------+-------------------------------------------+
-; AD7928_cyclic:inst1|sclk_cycle        ; Stuck at GND due to stuck port data_in    ;
-; PWM:inst2|cnt[0]                      ; Merged with AD7928_cyclic:inst1|clkdiv[0] ;
-; Total Number of Removed Registers = 2 ;                                           ;
-+---------------------------------------+-------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; AD7928_cyclic:inst1|sclk_cycle        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -255,12 +254,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 71    ;
+; Total registers                              ; 73    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 71    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 73    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Clock Enable       ; 38    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -270,8 +269,8 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pruebaAnalogPWM|AD7928_cyclic:inst1|sr_din[15] ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |pruebaAnalogPWM|AD7928_cyclic:inst1|sr_din[13] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |pruebaAnalogPWM|AD7928_cyclic:inst1|sr_din[15] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |pruebaAnalogPWM|AD7928_cyclic:inst1|sr_din[13] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
@@ -280,7 +279,7 @@ Encoding Type:  One-Hot
 +----------------+-------+-----------------------------------------+
 ; Parameter Name ; Value ; Type                                    ;
 +----------------+-------+-----------------------------------------+
-; ch_number      ; 1     ; Signed Integer                          ;
+; ch_number      ; 8     ; Signed Integer                          ;
 ; clk_divbit     ; 11    ; Signed Integer                          ;
 ; sample_cycles  ; 1     ; Signed Integer                          ;
 +----------------+-------+-----------------------------------------+
@@ -318,26 +317,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 71                          ;
+; arriav_ff             ; 73                          ;
 ;     CLR               ; 34                          ;
 ;     CLR SLD           ; 1                           ;
-;     ENA CLR           ; 27                          ;
-;     ENA CLR SLD       ; 9                           ;
-; arriav_lcell_comb     ; 48                          ;
+;     ENA CLR           ; 38                          ;
+; arriav_lcell_comb     ; 58                          ;
 ;     arith             ; 11                          ;
 ;         1 data inputs ; 10                          ;
 ;         2 data inputs ; 1                           ;
-;     normal            ; 37                          ;
+;     normal            ; 47                          ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 6                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 6                           ;
+;         5 data inputs ; 7                           ;
 ;         6 data inputs ; 6                           ;
 ; boundary_port         ; 15                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.15                        ;
+; Average LUT depth     ; 1.19                        ;
 +-----------------------+-----------------------------+
 
 
@@ -356,7 +354,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Oct 25 16:09:09 2018
+    Info: Processing started: Mon Oct 29 16:36:10 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebaAnalogPWM -c pruebaAnalogPWM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -374,18 +372,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file pruebaa
 Info (12127): Elaborating entity "pruebaAnalogPWM" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at pruebaAnalogPWM.vhd(64): object "ready" assigned a value but never read File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaAnalogPWM/pruebaAnalogPWM.vhd Line: 64
 Info (12128): Elaborating entity "AD7928_cyclic" for hierarchy "AD7928_cyclic:inst1" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaAnalogPWM/pruebaAnalogPWM.vhd Line: 69
+Warning (10445): VHDL Subtype or Type Declaration warning at AD7928_cyclic.vhd(193): subtype or type has null range File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaAnalogPWM/AD7928_cyclic.vhd Line: 193
+Warning (10296): VHDL warning at AD7928_cyclic.vhd(193): ignored assignment of value to null range File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaAnalogPWM/AD7928_cyclic.vhd Line: 193
 Info (12128): Elaborating entity "PWM" for hierarchy "PWM:inst2" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaAnalogPWM/pruebaAnalogPWM.vhd Line: 83
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 78 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 745 megabytes
-    Info: Processing ended: Thu Oct 25 16:09:30 2018
-    Info: Elapsed time: 00:00:21
+    Info (21061): Implemented 80 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 744 megabytes
+    Info: Processing ended: Mon Oct 29 16:36:23 2018
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:23
 
 

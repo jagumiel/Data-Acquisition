@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Oct 25 16:10:08 2018
+Fitter Status : Successful - Mon Oct 29 16:37:01 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pruebaAnalogPWM
 Top-level Entity Name : pruebaAnalogPWM
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 36 / 41,910 ( < 1 % )
-Total registers : 79
+Logic utilization (in ALMs) : 37 / 41,910 ( < 1 % )
+Total registers : 84
 Total pins : 15 / 314 ( 5 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )

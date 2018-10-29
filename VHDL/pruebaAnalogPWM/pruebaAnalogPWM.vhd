@@ -68,13 +68,13 @@ begin
 		
 		inst1 : AD7928_cyclic
 			generic map(
-				CH_NUMBER 	=> 1,
+				CH_NUMBER 	=> 8,
 				CLK_DIVBIT 	=> 11,
 				SAMPLE_CYCLES 	=> 1)
 			port map (	reset 	=> reset,
 				clk 	=> FPGA_CLK1_50,
-				dout  	=> ADC_SDO,
-				cs_n  	=> ADC_CONVST,
+				dout  => ADC_SDO,
+				cs_n  => ADC_CONVST,
 				sclk 	=> ADC_SCK,
 				din 	=> ADC_SDI,
 				ch0  	=> ch0, --Potenciometro
@@ -85,7 +85,7 @@ begin
 				clk 	=> FPGA_CLK1_50,
 				rst 	=> reset,
 				en  	=> '1',		--En este ejemplo quiero sacar un PWM continuo, así que dejo el enable activado.
-				duty	=> ch0(11 downto 6),
+				duty	=> ch0(11 downto 11-DUTY_CYCLE_W),
 				pwm_out => GPIO_0(0));
 				
 				LED<=ch0(11 downto 4);
