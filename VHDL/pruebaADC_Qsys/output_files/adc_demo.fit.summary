@@ -1,0 +1,20 @@
+Fitter Status : Successful - Mon Oct 29 13:49:52 2018
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : adc_demo
+Top-level Entity Name : adc_demo
+Family : Cyclone V
+Device : 5CSEBA6U23I7
+Timing Models : Final
+Logic utilization (in ALMs) : 655 / 41,910 ( 2 % )
+Total registers : 1049
+Total pins : 14 / 314 ( 4 % )
+Total virtual pins : 0
+Total block memory bits : 75,776 / 5,662,720 ( 1 % )
+Total RAM Blocks : 11 / 553 ( 2 % )
+Total DSP Blocks : 0 / 112 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

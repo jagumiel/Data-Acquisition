@@ -1,0 +1,105 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 256 272)
+	(text "nios_system" (rect 91 -1 142 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 256 20 268)(font "Arial" ))
+	(port
+		(pt 0 104)
+		(input)
+		(text "adc_dout" (rect 0 0 36 12)(font "Arial" (font_size 8)))
+		(text "adc_dout" (rect 4 93 52 104)(font "Arial" (font_size 8)))
+		(line (pt 0 104)(pt 96 104)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 149 46 160)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 96 160)(line_width 1))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 229 82 240)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 96 240)(line_width 1))
+	)
+	(port
+		(pt 0 72)
+		(output)
+		(text "adc_sclk" (rect 0 0 35 12)(font "Arial" (font_size 8)))
+		(text "adc_sclk" (rect 4 61 52 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 96 72)(line_width 1))
+	)
+	(port
+		(pt 0 88)
+		(output)
+		(text "adc_cs_n" (rect 0 0 40 12)(font "Arial" (font_size 8)))
+		(text "adc_cs_n" (rect 4 77 52 88)(font "Arial" (font_size 8)))
+		(line (pt 0 88)(pt 96 88)(line_width 1))
+	)
+	(port
+		(pt 0 120)
+		(output)
+		(text "adc_din" (rect 0 0 30 12)(font "Arial" (font_size 8)))
+		(text "adc_din" (rect 4 109 46 120)(font "Arial" (font_size 8)))
+		(line (pt 0 120)(pt 96 120)(line_width 1))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "leds_export[7..0]" (rect 0 0 66 12)(font "Arial" (font_size 8)))
+		(text "leds_export[7..0]" (rect 4 189 106 200)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 96 200)(line_width 3))
+	)
+	(drawing
+		(text "adc" (rect 77 43 172 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "sclk" (rect 101 67 226 144)(font "Arial" (color 0 0 0)))
+		(text "cs_n" (rect 101 83 226 176)(font "Arial" (color 0 0 0)))
+		(text "dout" (rect 101 99 226 208)(font "Arial" (color 0 0 0)))
+		(text "din" (rect 101 115 220 240)(font "Arial" (color 0 0 0)))
+		(text "clk" (rect 81 131 180 275)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 101 155 220 320)(font "Arial" (color 0 0 0)))
+		(text "leds" (rect 73 171 170 355)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 101 195 238 400)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 67 211 164 435)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 101 235 244 480)(font "Arial" (color 0 0 0)))
+		(text " nios_system " (rect 198 256 474 522)(font "Arial" ))
+		(line (pt 96 32)(pt 160 32)(line_width 1))
+		(line (pt 160 32)(pt 160 256)(line_width 1))
+		(line (pt 96 256)(pt 160 256)(line_width 1))
+		(line (pt 96 32)(pt 96 256)(line_width 1))
+		(line (pt 97 52)(pt 97 124)(line_width 1))
+		(line (pt 98 52)(pt 98 124)(line_width 1))
+		(line (pt 97 140)(pt 97 164)(line_width 1))
+		(line (pt 98 140)(pt 98 164)(line_width 1))
+		(line (pt 97 180)(pt 97 204)(line_width 1))
+		(line (pt 98 180)(pt 98 204)(line_width 1))
+		(line (pt 97 220)(pt 97 244)(line_width 1))
+		(line (pt 98 220)(pt 98 244)(line_width 1))
+		(line (pt 0 0)(pt 256 0)(line_width 1))
+		(line (pt 256 0)(pt 256 272)(line_width 1))
+		(line (pt 0 272)(pt 256 272)(line_width 1))
+		(line (pt 0 0)(pt 0 272)(line_width 1))
+	)
+)

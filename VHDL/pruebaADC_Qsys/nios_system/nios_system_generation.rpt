@@ -1,0 +1,100 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\ADC\adc_demo\nios_system.qsys --block-symbol-file --output-directory=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\ADC\adc_demo\nios_system --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading adc_demo/nios_system.qsys
+Progress: Reading input file
+Progress: Adding ADC [altera_up_avalon_adc 18.0]
+Progress: Parameterizing module ADC
+Progress: Adding LEDs [altera_avalon_pio 18.1]
+Progress: Parameterizing module LEDs
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding cpu [altera_nios2_qsys 16.1]
+Progress: Parameterizing module cpu
+Progress: Adding onchip_mem [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_mem
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: nios_system.cpu: Nios II Classic cores are no longer recommended for new projects
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\ADC\adc_demo\nios_system.qsys --synthesis=VHDL --output-directory=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\ADC\adc_demo\nios_system\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading adc_demo/nios_system.qsys
+Progress: Reading input file
+Progress: Adding ADC [altera_up_avalon_adc 18.0]
+Progress: Parameterizing module ADC
+Progress: Adding LEDs [altera_avalon_pio 18.1]
+Progress: Parameterizing module LEDs
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding cpu [altera_nios2_qsys 16.1]
+Progress: Parameterizing module cpu
+Progress: Adding onchip_mem [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_mem
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: nios_system.cpu: Nios II Classic cores are no longer recommended for new projects
+Info: nios_system: Generating nios_system "nios_system" for QUARTUS_SYNTH
+Info: ADC: Starting Generation of ADC Controller for DE-series Board
+Info: ADC: C:/intelfpga_lite/18.1/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/altera_up_avalon_adv_adc.v C:/Users/jagumiel/AppData/Local/Temp/alt7833_418543812425706561.dir/0002_sopcgen/nios_system_ADC.v
+Info: ADC: "nios_system" instantiated altera_up_avalon_adc "ADC"
+Info: LEDs: Starting RTL generation for module 'nios_system_LEDs'
+Info: LEDs:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_system_LEDs --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7833_418543812425706561.dir/0005_LEDs_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/jagumiel/AppData/Local/Temp/alt7833_418543812425706561.dir/0005_LEDs_gen//nios_system_LEDs_component_configuration.pl  --do_build_sim=0  ]
+Info: LEDs: Done RTL generation for module 'nios_system_LEDs'
+Info: LEDs: "nios_system" instantiated altera_avalon_pio "LEDs"
+Info: cpu: Starting RTL generation for module 'nios_system_cpu'
+Info: cpu:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/eperlcmd.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_cpu --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7833_418543812425706561.dir/0006_cpu_gen/ --quartus_bindir=C:/intelfpga_lite/18.1/quartus/bin64 --verilog --config=C:/Users/jagumiel/AppData/Local/Temp/alt7833_418543812425706561.dir/0006_cpu_gen//nios_system_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.10.29 13:38:24 (*) Starting Nios II generation
+Info: cpu: # 2018.10.29 13:38:24 (*)   Checking for plaintext license.
+Info: cpu: # 2018.10.29 13:38:26 (*)   Couldn't query license setup in Quartus directory C:/intelfpga_lite/18.1/quartus/bin64
+Info: cpu: # 2018.10.29 13:38:26 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.10.29 13:38:26 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.10.29 13:38:26 (*)   Plaintext license not found.
+Info: cpu: # 2018.10.29 13:38:26 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.10.29 13:38:26 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.10.29 13:38:26 (*)   Creating all objects for CPU
+Info: cpu: # 2018.10.29 13:38:27 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.10.29 13:38:27 (*)   Creating plain-text RTL
+Info: cpu: # 2018.10.29 13:38:28 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'nios_system_cpu'
+Info: cpu: "nios_system" instantiated altera_nios2_qsys "cpu"
+Info: onchip_mem: Starting RTL generation for module 'nios_system_onchip_mem'
+Info: onchip_mem:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_system_onchip_mem --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7833_418543812425706561.dir/0007_onchip_mem_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/jagumiel/AppData/Local/Temp/alt7833_418543812425706561.dir/0007_onchip_mem_gen//nios_system_onchip_mem_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_mem: Done RTL generation for module 'nios_system_onchip_mem'
+Info: onchip_mem: "nios_system" instantiated altera_avalon_onchip_memory2 "onchip_mem"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "nios_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "nios_system" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "nios_system" instantiated altera_reset_controller "rst_controller"
+Info: cpu_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "cpu_data_master_translator"
+Info: ADC_adc_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "ADC_adc_slave_translator"
+Info: cpu_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "cpu_data_master_agent"
+Info: ADC_adc_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "ADC_adc_slave_agent"
+Info: ADC_adc_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "ADC_adc_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/ADC/adc_demo/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/ADC/adc_demo/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/ADC/adc_demo/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: nios_system: Done "nios_system" with 26 modules, 41 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
