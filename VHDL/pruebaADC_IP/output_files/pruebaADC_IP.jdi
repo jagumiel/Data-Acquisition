@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="ed02f1b0428a6d33d769"/>
+  </project>
+  <file_info>
+    <file device="5CSEBA6U23I7" path="pruebaADC_IP.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="adc_control:ADC" name="ADC">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME adc_control HAS_SOPCINFO 1 GENERATION_ID 1540973756"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
