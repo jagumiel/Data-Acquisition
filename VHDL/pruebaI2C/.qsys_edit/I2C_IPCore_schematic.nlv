@@ -1,0 +1,10 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst unsaved.i2cslave_to_avlmm_bridge_0 -pg 1 -lvl 1 -y 30
+preplace inst unsaved -pg 1 -lvl 1 -y 40 -regy -20
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)i2cslave_to_avlmm_bridge_0.clock,(SLAVE)unsaved.clock) 1 0 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.conduit_end,(SLAVE)i2cslave_to_avlmm_bridge_0.conduit_end) 1 0 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)i2cslave_to_avlmm_bridge_0.avalon_master,(MASTER)unsaved.avalon_master) 1 1 1 N
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)i2cslave_to_avlmm_bridge_0.reset,(SLAVE)unsaved.reset) 1 0 1 NJ
+levelinfo -pg 1 0 80 420
+levelinfo -hier unsaved 90 120 310

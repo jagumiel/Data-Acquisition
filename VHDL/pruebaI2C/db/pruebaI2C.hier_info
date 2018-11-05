@@ -1,0 +1,22 @@
+|pruebaI2C
+FPGA_CLK1_50 => conf_rdy.CLK
+FPGA_CLK1_50 => cBits[0].CLK
+FPGA_CLK1_50 => cBits[1].CLK
+FPGA_CLK1_50 => cBits[2].CLK
+FPGA_CLK1_50 => sda_gen.CLK
+FPGA_CLK1_50 => cont[0].CLK
+FPGA_CLK1_50 => cont[1].CLK
+FPGA_CLK1_50 => cont[2].CLK
+FPGA_CLK1_50 => cont[3].CLK
+FPGA_CLK1_50 => cont[4].CLK
+FPGA_CLK1_50 => cont[5].CLK
+FPGA_CLK1_50 => cont[6].CLK
+FPGA_CLK1_50 => cont[7].CLK
+FPGA_CLK1_50 => clk200k.CLK
+KEY[0] => es~3.DATAIN
+GPIO_0[0] <= clk100k.DB_MAX_OUTPUT_PORT_TYPE
+GPIO_0[1] <= clk200k.DB_MAX_OUTPUT_PORT_TYPE
+SCL <= clk100k.DB_MAX_OUTPUT_PORT_TYPE
+SDA <> SDA
+
+

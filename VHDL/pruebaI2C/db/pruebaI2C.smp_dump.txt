@@ -1,0 +1,12 @@
+
+State Machine - |pruebaI2C|es
+Name es.e8 es.e7 es.e6 es.e5 es.e4 es.e3 es.e2 es.e1 es.e0 
+es.e0 0 0 0 0 0 0 0 0 0 
+es.e1 0 0 0 0 0 0 0 1 1 
+es.e2 0 0 0 0 0 0 1 0 1 
+es.e3 0 0 0 0 0 1 0 0 1 
+es.e4 0 0 0 0 1 0 0 0 1 
+es.e5 0 0 0 1 0 0 0 0 1 
+es.e6 0 0 1 0 0 0 0 0 1 
+es.e7 0 1 0 0 0 0 0 0 1 
+es.e8 1 0 0 0 0 0 0 0 1 
