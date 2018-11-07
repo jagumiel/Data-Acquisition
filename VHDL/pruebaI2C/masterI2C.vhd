@@ -8,9 +8,9 @@ entity masterI2C is
     Port( 
 			CLK_50 			: IN  STD_LOGIC;
 			RST 				: IN  STD_LOGIC;
-			ADD				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Address: DirecciÃ³n del dispositivo.
+			ADD				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Address: Dirección del dispositivo.
 			COM				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Command: Tipo de orden a enviar.
-			DAT				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Data: InformaciÃ³n a enviar.
+			DAT				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Data: Información a enviar.
 			GO					: IN  STD_LOGIC;
 			BUSY				: OUT STD_LOGIC;
 			SCLK				: OUT STD_LOGIC;
@@ -26,34 +26,35 @@ architecture a of masterI2C is
 	SIGNAL ep : estados :=e0; 	--Estado Presente
 	SIGNAL es : estados; 		--Estado Siguiente
 	
-	--SeÃ±ales de control de la mÃ¡quina de estados
+	--Señales de control de la máquina de estados
 	signal idle 	: std_logic := '0';
 	signal start 	: std_logic := '0';
 	signal config	: std_logic := '0';
 	signal cmd		: std_logic := '0';
 	signal data		: std_logic := '0';
+	signal ack : std_logic := '0';
 	signal stop		: std_logic := '0';
 	signal conf_rdy: std_logic := '0';
 	signal cmd_rdy : std_logic := '0';
 	signal data_rdy: std_logic := '0';
-	signal ack		: std_logic := '0';
+	signal ack_st		: std_logic := '0';
 	signal cBits	: integer range -1 to 7 :=7; --Contador de bits.
 	
 
-	--GeneraciÃ³n de relojes
+	--Generación de relojes
 	signal clk200k : std_logic :='0';
 	signal clk100k	: std_logic :='0';
 	signal cont		: std_logic_vector(7 downto 0) :="00000000";
 	
-	--SeÃ±ales de datos para la placa
-	signal data_addr	: std_logic_vector(7 downto 0); --DirecciÃ³n de la placa y bit de escritura.
+	--Señales de datos para la placa
+	signal data_addr	: std_logic_vector(7 downto 0); --Dirección de la placa y bit de escritura.
 	signal data_cmd	: std_logic_vector(7 downto 0); --Comando.
 	signal data_info	: std_logic_vector(7 downto 0); --Datos asociados al comando.
 	
-	--Otras seÃ±ales
+	--Otras señales
 	signal reset 	: std_logic;
 	signal sdat_gen : std_logic:='1'; --Trama generada para SDAT.
-	signal hold 	: std_logic:='0'; --Para ir al ritmo de SCLK y no del CLK. Mantiene el valor en el canal SDAT lo que dure el ciclo de SCLK.
+	signal hold 	: std_logic:='1'; --Para ir al ritmo de SCLK y no del CLK. Mantiene el valor en el canal SDAT lo que dure el ciclo de SCLK.
 
 
 begin
@@ -65,20 +66,21 @@ begin
 	
 
 	--Maquina de estados
-	PROCESS (clk100k, reset)
+	--PROCESS (clk100k, reset)
+	PROCESS(ep, reset, GO, conf_rdy, cmd_rdy, data_rdy)
 	BEGIN
 		IF(reset='1')then
 			es<=e0;
-		ELSIF(rising_edge(clk100k))THEN
+		ELSE
 			CASE ep IS
 				WHEN e0 =>				--Estado de espera
-					--TO-DO: En e0 deberÃ­a de sacarse una seÃ±al diciendo un "estoy libre"
+					--TO-DO: En e0 debería de sacarse una señal diciendo un "estoy libre"
 					IF(GO='1')THEN
-						es<=e0;
-					ELSE
 						es<=e1;
+					ELSE
+						es<=e0;
 					END IF;
-				WHEN e1=>				--Llamada para generar la condiciÃ³n de inicio
+				WHEN e1=>				--Llamada para generar la condición de inicio
 					es<=e2;
 				WHEN e2=>				--Configurar
 					IF(conf_rdy='1')THEN
@@ -87,8 +89,8 @@ begin
 						es<=e2;
 					END IF;
 				WHEN e3 =>				--ACK
-					--Deberia generar una seÃ±al para que la unidad de control la lea y me diga si hay ACK o NACK.
-					--TO-DO: Lo dejo para mÃ¡s tarde.
+					--Deberia generar una señal para que la unidad de control la lea y me diga si hay ACK o NACK.
+					--TO-DO: Lo dejo para más tarde. Esto hay que hacerlo en los demás estados de comprobación.
 					IF(ack='1')THEN
 						es<=e0;
 					ELSE
@@ -119,20 +121,28 @@ begin
 					ELSE
 						es<=e8;
 					END IF;
-				WHEN e8=>				--Llamada para generar la condiciÃ³n de parada.
+				WHEN e8=>				--Llamada para generar la condición de parada.
 					es<=e0;
 			END CASE;
 		END IF;
-		ep<=es;
 	END PROCESS;
 	
-	--SeÃ±ales de control
+	PROCESS(clk100k)
+	BEGIN
+		if(clk100k='1')then
+			ep<=es;
+		end if;
+	END PROCESS;
+	
+	--Señales de control
 	idle		<='1' when ep=e0 else '0';
 	start		<='1' when ep=e1 else '0';
 	config 	<='1' when ep=e2 else '0';
 	cmd		<='1' when ep=e4 else '0';
 	data	 	<='1' when ep=e6 else '0';
+	ack_st		<='1' when ep=e3 or ep=e5 or ep=e7 else '0';
 	stop		<='1' when ep=e8 else '0';
+
 	
 	
 	
@@ -161,13 +171,13 @@ begin
 	end process;
 	
 	--Unidad de Control (UC)
-	process (CLK_50)	--En este proceso voy a manipular exclusivamente la seÃ±al SDAT.
+	process (CLK_50)	--En este proceso voy a manipular exclusivamente la señal SDAT.
 	begin
 		if(rising_edge(CLK_50))then
 			if(start='1')then					--Comienzo de la transmision: SDAT a 0 antes que SCLK
 				if(clk100k='1')then
 					if(clk200k='0')then
-						sdat_gen<='0';			--Hasta aquÃ­ lo he simulado y funciona.
+						sdat_gen<='0';			--Hasta aquí lo he simulado y funciona.
 					end if;
 				end if;
 				--Hay que inicializar las variables de rdy a 0.
@@ -182,7 +192,9 @@ begin
 				if(cBits=-1)then
 					cBits<=7;
 					conf_rdy<='1';
-				end if;				--Hasta aquÃ­ esta simulado y envia la direccion y el bit de escritura.
+--				else
+--					sdat_gen<=data_addr(cBits);
+				end if;				--Hasta aquí esta simulado y envia la direccion y el bit de escritura.
 			elsif(cmd='1')then
 				if(clk100k='1')then
 					sdat_gen<=data_cmd(cBits);
@@ -207,6 +219,9 @@ begin
 					cBits<=7;
 					data_rdy<='1';
 				end if;
+			elsif(ack_st='1')then
+				sdat_gen<='0';
+				--TO-DO: Comprobacion de si el ack es 1.
 			elsif(stop='1')then				--Fin de la transmision: SDAT a 1 despues de SCLK
 				conf_rdy<='0';
 				cmd_rdy<='0';
@@ -221,7 +236,7 @@ begin
 	end process;
 		
 	
-	--Salidas de comprobaciÃ³n
+	--Salidas de comprobación
 	SDAT <= sdat_gen;
 	SCLK <= clk100k;
 	BUSY<=not(idle);
