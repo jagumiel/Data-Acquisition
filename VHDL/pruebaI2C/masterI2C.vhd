@@ -6,16 +6,15 @@ use ieee.numeric_std.all;
 
 entity masterI2C is
     Port( 
-			CLK_50 			: IN  STD_LOGIC;
-			RST 				: IN  STD_LOGIC;
-			ADD				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Address: Dirección del dispositivo.
-			COM				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Command: Tipo de orden a enviar.
-			DAT				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Data: Información a enviar.
-			GO					: IN  STD_LOGIC;
-			BUSY				: OUT STD_LOGIC;
-			SCLK				: OUT STD_LOGIC;
-			SDAT				: INOUT STD_LOGIC
-			);
+		CLK_50 	: IN  STD_LOGIC;					 --Reloj a 50Mhz
+		RST 	: IN  STD_LOGIC;
+		ADD		: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Address: Dirección del dispositivo.
+		COM		: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Command: Tipo de orden a enviar.
+		DAT		: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Data: Información a enviar.
+		GO		: IN  STD_LOGIC;					 --Inicio.
+		BUSY	: OUT STD_LOGIC;					 --Ocupado. No puede atender nuevas peticiones.
+		SCLK	: OUT STD_LOGIC;					 --Señal de reloj para la sincronización del I2C. 100kHz.
+		SDAT	: INOUT STD_LOGIC);					 --Señal de datos generada. Trama a enviar al dispositivo.
 end masterI2C;
 
 
@@ -32,23 +31,23 @@ architecture a of masterI2C is
 	signal config	: std_logic := '0';
 	signal cmd		: std_logic := '0';
 	signal data		: std_logic := '0';
-	signal ack : std_logic := '0';
+	signal ack 		: std_logic := '0';
 	signal stop		: std_logic := '0';
-	signal conf_rdy: std_logic := '0';
-	signal cmd_rdy : std_logic := '0';
-	signal data_rdy: std_logic := '0';
-	signal ack_st		: std_logic := '0';
+	signal conf_rdy : std_logic := '0';
+	signal cmd_rdy	: std_logic := '0';
+	signal data_rdy : std_logic := '0';
+	signal ack_st	: std_logic := '0';			 --Acknowledge status. Indica que está en un estado del tipo ACK.
 	signal cBits	: integer range -1 to 7 :=7; --Contador de bits.
 	
 
 	--Generación de relojes
-	signal clk200k : std_logic :='0';
-	signal clk100k	: std_logic :='0';
+	signal clk200k 	: std_logic :='0'; --Reloj de 200kHz. Se usa para hacer las condiciones de inicio/parada.
+	signal clk100k	: std_logic :='0'; --Reloj de 100kHz. Para la sincronización. Señal SCL.
 	signal cont		: std_logic_vector(7 downto 0) :="00000000";
 	
 	--Señales de datos para la placa
 	signal data_addr	: std_logic_vector(7 downto 0); --Dirección de la placa y bit de escritura.
-	signal data_cmd	: std_logic_vector(7 downto 0); --Comando.
+	signal data_cmd		: std_logic_vector(7 downto 0); --Comando.
 	signal data_info	: std_logic_vector(7 downto 0); --Datos asociados al comando.
 	
 	--Otras señales
@@ -63,10 +62,8 @@ begin
 	data_addr <= ADD;
 	data_cmd  <= COM;
 	data_info <= DAT;
-	
 
 	--Maquina de estados
-	--PROCESS (clk100k, reset)
 	PROCESS(ep, reset, GO, conf_rdy, cmd_rdy, data_rdy)
 	BEGIN
 		IF(reset='1')then
@@ -127,6 +124,7 @@ begin
 		END IF;
 	END PROCESS;
 	
+	--Cambio de estados.
 	PROCESS(clk100k)
 	BEGIN
 		if(clk100k='1')then
@@ -137,17 +135,14 @@ begin
 	--Señales de control
 	idle		<='1' when ep=e0 else '0';
 	start		<='1' when ep=e1 else '0';
-	config 	<='1' when ep=e2 else '0';
-	cmd		<='1' when ep=e4 else '0';
+	config 		<='1' when ep=e2 else '0';
+	cmd			<='1' when ep=e4 else '0';
 	data	 	<='1' when ep=e6 else '0';
 	ack_st		<='1' when ep=e3 or ep=e5 or ep=e7 else '0';
 	stop		<='1' when ep=e8 else '0';
 
-	
-	
-	
-
-	process (CLK_50) --Reloj de 200kHz
+	--Reloj de 200kHz
+	process (CLK_50)
 	begin
 		if (rising_edge(CLK_50)) then
 			if (cont<"1111101")then --Si es menor que 125
@@ -163,7 +158,8 @@ begin
 		end if;
 	end process;
 
-	process(clk200k) 	--Reloj de 100kHz (Va a enviarse a SCLK)
+	--Reloj de 100kHz (Va a enviarse a SCLK)
+	process(clk200k)
 	begin
 		if(rising_edge(clk200k))then
 			clk100k<=not(clk100k);
@@ -177,7 +173,7 @@ begin
 			if(start='1')then					--Comienzo de la transmision: SDAT a 0 antes que SCLK
 				if(clk100k='1')then
 					if(clk200k='0')then
-						sdat_gen<='0';			--Hasta aquí lo he simulado y funciona.
+						sdat_gen<='0';
 					end if;
 				end if;
 				--Hay que inicializar las variables de rdy a 0.
@@ -192,9 +188,7 @@ begin
 				if(cBits=-1)then
 					cBits<=7;
 					conf_rdy<='1';
---				else
---					sdat_gen<=data_addr(cBits);
-				end if;				--Hasta aquí esta simulado y envia la direccion y el bit de escritura.
+				end if;
 			elsif(cmd='1')then
 				if(clk100k='1')then
 					sdat_gen<=data_cmd(cBits);
@@ -235,8 +229,7 @@ begin
 		end if;
 	end process;
 		
-	
-	--Salidas de comprobación
+	--Salidas
 	SDAT <= sdat_gen;
 	SCLK <= clk100k;
 	BUSY<=not(idle);

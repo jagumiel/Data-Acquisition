@@ -3,7 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
 
-
 ENTITY pruebaI2C is
 	PORT(
 			FPGA_CLK1_50 	: IN STD_LOGIC;
@@ -17,15 +16,15 @@ architecture a of pruebaI2C is
 
 	COMPONENT masterI2C is
    	 	Port( 
-			CLK_50 			: IN  STD_LOGIC;
-			RST 				: IN  STD_LOGIC;
-			ADD				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Address: Dirección del dispositivo.
-			COM				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Command: Tipo de orden a enviar.
-			DAT				: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Data: Información a enviar.
-			GO				: IN  STD_LOGIC;
-			BUSY				: OUT STD_LOGIC;
-			SCLK				: OUT STD_LOGIC;
-			SDAT				: INOUT STD_LOGIC
+			CLK_50 	: IN  STD_LOGIC;
+			RST 	: IN  STD_LOGIC;
+			ADD		: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Address: Dirección del dispositivo.
+			COM		: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Command: Tipo de orden a enviar.
+			DAT		: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Data: Información a enviar.
+			GO		: IN  STD_LOGIC;
+			BUSY	: OUT STD_LOGIC;
+			SCLK	: OUT STD_LOGIC;
+			SDAT	: INOUT STD_LOGIC
 			);
 	end COMPONENT;
 
@@ -39,19 +38,19 @@ architecture a of pruebaI2C is
 	signal command, data : std_logic_vector(7 downto 0);
 	
 	--Senales de datos para la placa
-	signal cmd_config : std_logic_vector(7 downto 0) := "00000011"; --Configura los pines de la placa. Cuáles son de entrada y cuales de salida. (03h)
-	signal cmd_write	: std_logic_vector(7 downto 0) := "00000001"; --Dice que el dato siguiente es para escribir en la salida.
-	signal data_addr	: std_logic_vector(7 downto 0) := "11100100"; --Dirección de la placa y bit de escritura.
-	signal data_ports : std_logic_vector(7 downto 0) := "00001111"; --Digo los puertos que son entradas y los que son salidas. (0=out; 1=in;)
-	signal data_out	: std_logic_vector(7 downto 0) := "10101010"; --Digo donde quiero escribir un uno. Sólo lo hará en las que se configuren como salida.
-	signal reset : std_logic:='0';
-	signal wait_count : std_logic_vector(13 downto 0):="00000000000000";
-	signal change : std_logic;
-	SIGNAL go: std_logic;
-	signal ocupado : std_logic;
-	signal espera : std_logic;
-	signal cont : std_logic_vector (6 downto 0);
-	signal clk100k : std_logic;
+	signal cmd_config	: std_logic_vector(7 downto 0) := "00000011"; 	--Configura los pines de la placa. Cuáles son de entrada y cuales de salida. (03h)
+	signal cmd_write	: std_logic_vector(7 downto 0) := "00000001"; 	--Dice que el dato siguiente es para escribir en la salida.
+	signal data_addr	: std_logic_vector(7 downto 0) := "11100100"; 	--Dirección de la placa y bit de escritura.
+	signal data_ports	: std_logic_vector(7 downto 0) := "00001111"; 	--Digo los puertos que son entradas y los que son salidas. (0=out; 1=in;)
+	signal data_out		: std_logic_vector(7 downto 0) := "10101010"; 	--Digo donde quiero escribir un uno. Sólo lo hará en las que se configuren como salida.
+	signal reset		: std_logic:='0';
+	signal wait_count 	: std_logic_vector(13 downto 0):="00000000000000";
+	signal change		: std_logic;
+	SIGNAL go			: std_logic;
+	signal ocupado		: std_logic;
+	signal espera		: std_logic;
+	signal cont			: std_logic_vector (6 downto 0):="0000000";
+	signal clk100k		: std_logic;
 
 BEGIN
 
@@ -64,45 +63,35 @@ BEGIN
 				WHEN e0 =>				--Estado de conf
 					command<=cmd_config;
 					data<=data_ports;
---					if(ocupado='0')then
---						go<='1';
---					end if;
 					es<=e1;
 				WHEN e1 =>
 					if(change='1')then
 						es<=e2;
-					else
-						es<=e1;
 					end if;
-					--go<='0';
 				WHEN e2 =>
-					if(ocupado='0')then
-						--go<='1';
-					end if;
 					command<=cmd_write;
 					data<=data_out;
-					es<=e1;
+					es<=e2;
 			END CASE;
 		END IF;
 	END PROCESS;
 	espera<='1' when ep=e1 else '0';
+	go<='1' when ocupado='0' else '0';
 
 	PROCESS (FPGA_CLK1_50)
 	BEGIN
-		IF (espera='1')THEN
-			IF(wait_count<"11110010001011")THEN
-				wait_count<=wait_count+'1';
-				change<='0';
-			ELSE
-				wait_count<="00000000000000";
-				change<='1';
+		--Aqui le digo lo que tiene que hacer en el estado e1. Esperar.
+		IF(rising_edge(FPGA_CLK1_50))THEN
+			IF (espera='1')THEN
+				IF(wait_count<"11110010001011")THEN
+					wait_count<=wait_count+'1';
+					change<='0';
+				ELSE
+					wait_count<="00000000000000";
+					change<='1';
+				END IF;
 			END IF;
-		END IF;
-	END PROCESS;
-
-	process (FPGA_CLK1_50) --Reloj de 200kHz
-	begin
-		if (rising_edge(FPGA_CLK1_50)) then
+			--Aqui hago el reloj de 100k
 			if (cont<"1001011")then --Si es menor que 75
 				clk100k<='0';
 				cont<=cont+'1';
@@ -113,8 +102,9 @@ BEGIN
 			if(cont="1111100")then 
 				cont<="0000000";
 			end if;
-		end if;
-	end process;
+		END IF;
+	END PROCESS;
+
 
 	PROCESS(clk100k)
 	BEGIN
@@ -126,15 +116,15 @@ BEGIN
 
 	inst1: masterI2C
     	Port Map( 
-			CLK_50 => FPGA_CLK1_50,
-			RST 	 => reset,
-			ADD 	 => data_addr,
-			COM 	 => command,
-			DAT 	 => data,
-			GO 	 => go,
-			BUSY 	 => ocupado,
-			SCLK 	 => SCL,
-			SDAT 	 => SDA
+			CLK_50 	=> FPGA_CLK1_50,
+			RST 	=> reset,
+			ADD 	=> data_addr,
+			COM		=> command,
+			DAT 	=> data,
+			GO		=> go,
+			BUSY	=> ocupado,
+			SCLK	=> SCL,
+			SDAT	=> SDA
 		);
 
 
