@@ -1,5 +1,5 @@
 Assembler report for pruebaI2C
-Mon Nov 05 16:43:59 2018
+Tue Nov 13 09:53:02 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Nov 05 16:43:59 2018 ;
+; Assembler Status      ; Successful - Tue Nov 13 09:53:02 2018 ;
 ; Revision Name         ; pruebaI2C                             ;
 ; Top-level Entity Name ; pruebaI2C                             ;
 ; Family                ; Cyclone V                             ;
@@ -66,8 +66,8 @@ refer to the applicable agreement for further details.
 +----------------+---------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                     ;
 +----------------+---------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00B07AB7                                                                                  ;
-; Checksum       ; 0x00B07AB7                                                                                  ;
+; JTAG usercode  ; 0x00B186F3                                                                                  ;
+; Checksum       ; 0x00B186F3                                                                                  ;
 +----------------+---------------------------------------------------------------------------------------------+
 
 
@@ -77,14 +77,13 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Nov 05 16:43:52 2018
+    Info: Processing started: Tue Nov 13 09:52:55 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off pruebaI2C -c pruebaI2C
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
-Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 718 megabytes
-    Info: Processing ended: Mon Nov 05 16:43:59 2018
+Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 720 megabytes
+    Info: Processing ended: Tue Nov 13 09:53:02 2018
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 

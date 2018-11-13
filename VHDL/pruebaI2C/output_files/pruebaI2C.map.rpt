@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pruebaI2C
-Mon Nov 05 16:43:15 2018
+Tue Nov 13 09:52:14 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,13 +13,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |pruebaI2C|es
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. State Machine - |pruebaI2C|ep
+  9. State Machine - |pruebaI2C|es
+ 10. State Machine - |pruebaI2C|masterI2C:inst1|ep
+ 11. User-Specified and Inferred Latches
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Port Connectivity Checks: "masterI2C:inst1"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -45,14 +49,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Nov 05 16:43:15 2018       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 13 09:52:14 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaI2C                                   ;
 ; Top-level Entity Name           ; pruebaI2C                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 18                                          ;
-; Total pins                      ; 6                                           ;
+; Total registers                 ; 49                                          ;
+; Total pins                      ; 5                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -73,6 +77,7 @@ refer to the applicable agreement for further details.
 ; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
 ; Top-level entity name                                                           ; pruebaI2C          ; pruebaI2C          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; 4                  ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
@@ -175,6 +180,7 @@ refer to the applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
 ; pruebaI2C.vhd                    ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd ;         ;
+; masterI2C.vhd                    ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/masterI2C.vhd ;         ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
 
 
@@ -183,69 +189,94 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 12                 ;
+; Estimate of Logic utilization (ALMs needed) ; 39                 ;
 ;                                             ;                    ;
-; Combinational ALUT usage for logic          ; 21                 ;
+; Combinational ALUT usage for logic          ; 69                 ;
 ;     -- 7 input functions                    ; 0                  ;
-;     -- 6 input functions                    ; 2                  ;
-;     -- 5 input functions                    ; 3                  ;
-;     -- 4 input functions                    ; 2                  ;
-;     -- <=3 input functions                  ; 14                 ;
+;     -- 6 input functions                    ; 8                  ;
+;     -- 5 input functions                    ; 7                  ;
+;     -- 4 input functions                    ; 14                 ;
+;     -- <=3 input functions                  ; 40                 ;
 ;                                             ;                    ;
-; Dedicated logic registers                   ; 18                 ;
+; Dedicated logic registers                   ; 49                 ;
 ;                                             ;                    ;
-; I/O pins                                    ; 6                  ;
+; I/O pins                                    ; 5                  ;
 ;                                             ;                    ;
 ; Total DSP Blocks                            ; 0                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
-; Maximum fan-out                             ; 14                 ;
-; Total fan-out                               ; 119                ;
-; Average fan-out                             ; 2.29               ;
+; Maximum fan-out                             ; 33                 ;
+; Total fan-out                               ; 372                ;
+; Average fan-out                             ; 2.88               ;
 +---------------------------------------------+--------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |pruebaI2C                 ; 21 (21)             ; 18 (18)                   ; 0                 ; 0          ; 6    ; 0            ; |pruebaI2C          ; pruebaI2C   ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
+; |pruebaI2C                 ; 69 (25)             ; 49 (21)                   ; 0                 ; 0          ; 5    ; 0            ; |pruebaI2C                 ; pruebaI2C   ; work         ;
+;    |masterI2C:inst1|       ; 44 (44)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |pruebaI2C|masterI2C:inst1 ; masterI2C   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
++-------------------------------+
+; State Machine - |pruebaI2C|ep ;
++-------+-------+-------+-------+
+; Name  ; ep.e2 ; ep.e1 ; ep.e0 ;
++-------+-------+-------+-------+
+; ep.e0 ; 0     ; 0     ; 0     ;
+; ep.e1 ; 0     ; 1     ; 1     ;
+; ep.e2 ; 1     ; 0     ; 1     ;
++-------+-------+-------+-------+
+
+
+Encoding Type:  One-Hot
++-------------------------------+
+; State Machine - |pruebaI2C|es ;
++-------+-------+-------+-------+
+; Name  ; es.e2 ; es.e1 ; es.e0 ;
++-------+-------+-------+-------+
+; es.e0 ; 0     ; 0     ; 0     ;
+; es.e1 ; 0     ; 1     ; 1     ;
+; es.e2 ; 1     ; 0     ; 1     ;
++-------+-------+-------+-------+
+
+
+Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------+
-; State Machine - |pruebaI2C|es                                                 ;
+; State Machine - |pruebaI2C|masterI2C:inst1|ep                                 ;
 +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-; Name  ; es.e8 ; es.e7 ; es.e6 ; es.e5 ; es.e4 ; es.e3 ; es.e2 ; es.e1 ; es.e0 ;
+; Name  ; ep.e8 ; ep.e7 ; ep.e6 ; ep.e5 ; ep.e4 ; ep.e3 ; ep.e2 ; ep.e1 ; ep.e0 ;
 +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-; es.e0 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
-; es.e1 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
-; es.e2 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
-; es.e3 ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
-; es.e4 ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
-; es.e5 ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; es.e6 ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; es.e7 ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; es.e8 ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e0 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
+; ep.e1 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
+; ep.e2 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
+; ep.e3 ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
+; ep.e4 ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e5 ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e6 ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e7 ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e8 ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
 +-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; es.e7                                 ; Lost fanout                            ;
-; es.e8                                 ; Lost fanout                            ;
-; es.e5                                 ; Stuck at GND due to stuck port data_in ;
-; es.e3                                 ; Lost fanout                            ;
-; es.e4                                 ; Lost fanout                            ;
-; es.e6                                 ; Lost fanout                            ;
-; Total Number of Removed Registers = 6 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; data[0]                                            ; GND                 ; yes                    ;
+; data[2]                                            ; GND                 ; yes                    ;
+; data[5]                                            ; GND                 ; yes                    ;
+; data[7]                                            ; GND                 ; yes                    ;
+; command[1]                                         ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 5  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -253,12 +284,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 18    ;
-; Number of registers using Synchronous Clear  ; 8     ;
+; Total registers                              ; 49    ;
+; Number of registers using Synchronous Clear  ; 22    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 2     ;
+; Number of registers using Clock Enable       ; 15    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -268,12 +299,40 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; sda_gen                                ; 2       ;
-; cBits[0]                               ; 5       ;
-; cBits[1]                               ; 4       ;
-; cBits[2]                               ; 3       ;
-; Total number of inverted registers = 4 ;         ;
+; masterI2C:inst1|sdat_gen               ; 2       ;
+; masterI2C:inst1|cBits[0]               ; 8       ;
+; masterI2C:inst1|cBits[1]               ; 7       ;
+; masterI2C:inst1|cBits[2]               ; 6       ;
+; masterI2C:inst1|hold                   ; 3       ;
+; Total number of inverted registers = 5 ;         ;
 +----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pruebaI2C|masterI2C:inst1|cBits[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "masterI2C:inst1" ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; add[7..5] ; Input ; Info     ; Stuck at VCC ;
+; add[4..3] ; Input ; Info     ; Stuck at GND ;
+; add[1..0] ; Input ; Info     ; Stuck at GND ;
+; add[2]    ; Input ; Info     ; Stuck at VCC ;
+; com[7..2] ; Input ; Info     ; Stuck at GND ;
+; com[0]    ; Input ; Info     ; Stuck at VCC ;
+; dat[6]    ; Input ; Info     ; Stuck at GND ;
+; dat[4]    ; Input ; Info     ; Stuck at GND ;
+; dat[3]    ; Input ; Info     ; Stuck at VCC ;
+; dat[1]    ; Input ; Info     ; Stuck at VCC ;
++-----------+-------+----------+--------------+
 
 
 +-----------------------------------------------------+
@@ -281,26 +340,26 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 18                          ;
-;     CLR               ; 3                           ;
-;     ENA               ; 2                           ;
+; arriav_ff             ; 49                          ;
+;     ENA               ; 1                           ;
+;     ENA SCLR          ; 14                          ;
 ;     SCLR              ; 8                           ;
-;     plain             ; 5                           ;
-; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 21                          ;
-;     arith             ; 8                           ;
-;         1 data inputs ; 8                           ;
-;     normal            ; 13                          ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 3                           ;
-;         6 data inputs ; 2                           ;
-; boundary_port         ; 6                           ;
+;     plain             ; 26                          ;
+; arriav_io_obuf        ; 2                           ;
+; arriav_lcell_comb     ; 69                          ;
+;     arith             ; 22                          ;
+;         1 data inputs ; 22                          ;
+;     normal            ; 47                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 8                           ;
+; boundary_port         ; 5                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.40                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -319,39 +378,48 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Nov 05 16:43:03 2018
+    Info: Processing started: Tue Nov 13 09:52:02 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebaI2C -c pruebaI2C
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 2 design units, including 1 entities, in source file pruebai2c.vhd
-    Info (12022): Found design unit 1: pruebaI2C-a File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 18
-    Info (12023): Found entity 1: pruebaI2C File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 7
+    Info (12022): Found design unit 1: pruebaI2C-a File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 14
+    Info (12023): Found entity 1: pruebaI2C File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file masteri2c.vhd
+    Info (12022): Found design unit 1: masterI2C-a File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/masterI2C.vhd Line: 21
+    Info (12023): Found entity 1: masterI2C File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/masterI2C.vhd Line: 7
 Info (12127): Elaborating entity "pruebaI2C" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at pruebaI2C.vhd(26): used explicit default value for signal "idle" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 26
-Warning (10036): Verilog HDL or VHDL warning at pruebaI2C.vhd(29): object "cmd" assigned a value but never read File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 29
-Warning (10036): Verilog HDL or VHDL warning at pruebaI2C.vhd(30): object "data" assigned a value but never read File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 30
-Warning (10540): VHDL Signal Declaration warning at pruebaI2C.vhd(32): used explicit default value for signal "cmd_rdy" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 32
-Warning (10540): VHDL Signal Declaration warning at pruebaI2C.vhd(33): used explicit default value for signal "data_rdy" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 33
-Warning (10540): VHDL Signal Declaration warning at pruebaI2C.vhd(34): used explicit default value for signal "ack" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 34
-Warning (10540): VHDL Signal Declaration warning at pruebaI2C.vhd(46): used explicit default value for signal "data_addr" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 46
-Warning (10492): VHDL Process Statement warning at pruebaI2C.vhd(116): signal "es" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 116
-Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "SDA" and its non-tri-state driver. File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 13
-Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "SDA~synth" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 13
+Info (10041): Inferred latch for "data[0]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "data[1]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "data[2]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "data[3]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "data[4]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "data[5]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "data[6]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "data[7]" at pruebaI2C.vhd(84) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 84
+Info (10041): Inferred latch for "command[0]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (10041): Inferred latch for "command[1]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (10041): Inferred latch for "command[2]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (10041): Inferred latch for "command[3]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (10041): Inferred latch for "command[4]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (10041): Inferred latch for "command[5]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (10041): Inferred latch for "command[6]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (10041): Inferred latch for "command[7]" at pruebaI2C.vhd(83) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 83
+Info (12128): Elaborating entity "masterI2C" for hierarchy "masterI2C:inst1" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 112
+Warning (10540): VHDL Signal Declaration warning at masterI2C.vhd(34): used explicit default value for signal "ack" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/masterI2C.vhd Line: 34
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 28 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 3 output pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 9
+Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 1 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 22 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 742 megabytes
-    Info: Processing ended: Mon Nov 05 16:43:15 2018
+    Info (21061): Implemented 74 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 744 megabytes
+    Info: Processing ended: Tue Nov 13 09:52:14 2018
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Total CPU time (on all processors): 00:00:23
 
 
