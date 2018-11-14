@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pruebaI2C
-Tue Nov 13 09:52:14 2018
+Wed Nov 14 11:35:18 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -49,13 +49,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 13 09:52:14 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Nov 14 11:35:18 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaI2C                                   ;
 ; Top-level Entity Name           ; pruebaI2C                                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 49                                          ;
+; Total registers                 ; 51                                          ;
 ; Total pins                      ; 5                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -189,25 +189,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 39                 ;
+; Estimate of Logic utilization (ALMs needed) ; 46                 ;
 ;                                             ;                    ;
-; Combinational ALUT usage for logic          ; 69                 ;
+; Combinational ALUT usage for logic          ; 78                 ;
 ;     -- 7 input functions                    ; 0                  ;
-;     -- 6 input functions                    ; 8                  ;
-;     -- 5 input functions                    ; 7                  ;
-;     -- 4 input functions                    ; 14                 ;
-;     -- <=3 input functions                  ; 40                 ;
+;     -- 6 input functions                    ; 12                 ;
+;     -- 5 input functions                    ; 9                  ;
+;     -- 4 input functions                    ; 18                 ;
+;     -- <=3 input functions                  ; 39                 ;
 ;                                             ;                    ;
-; Dedicated logic registers                   ; 49                 ;
+; Dedicated logic registers                   ; 51                 ;
 ;                                             ;                    ;
 ; I/O pins                                    ; 5                  ;
 ;                                             ;                    ;
 ; Total DSP Blocks                            ; 0                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
-; Maximum fan-out                             ; 33                 ;
-; Total fan-out                               ; 372                ;
-; Average fan-out                             ; 2.88               ;
+; Maximum fan-out                             ; 35                 ;
+; Total fan-out                               ; 425                ;
+; Average fan-out                             ; 3.04               ;
 +---------------------------------------------+--------------------+
 
 
@@ -216,8 +216,8 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
-; |pruebaI2C                 ; 69 (25)             ; 49 (21)                   ; 0                 ; 0          ; 5    ; 0            ; |pruebaI2C                 ; pruebaI2C   ; work         ;
-;    |masterI2C:inst1|       ; 44 (44)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |pruebaI2C|masterI2C:inst1 ; masterI2C   ; work         ;
+; |pruebaI2C                 ; 78 (25)             ; 51 (21)                   ; 0                 ; 0          ; 5    ; 0            ; |pruebaI2C                 ; pruebaI2C   ; work         ;
+;    |masterI2C:inst1|       ; 53 (53)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |pruebaI2C|masterI2C:inst1 ; masterI2C   ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -284,7 +284,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 49    ;
+; Total registers                              ; 51    ;
 ; Number of registers using Synchronous Clear  ; 22    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -299,9 +299,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; masterI2C:inst1|sdat_gen               ; 2       ;
-; masterI2C:inst1|cBits[0]               ; 8       ;
-; masterI2C:inst1|cBits[1]               ; 7       ;
+; masterI2C:inst1|sdat_gen               ; 4       ;
+; masterI2C:inst1|cBits[0]               ; 10      ;
+; masterI2C:inst1|cBits[1]               ; 8       ;
 ; masterI2C:inst1|cBits[2]               ; 6       ;
 ; masterI2C:inst1|hold                   ; 3       ;
 ; Total number of inverted registers = 5 ;         ;
@@ -313,7 +313,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pruebaI2C|masterI2C:inst1|cBits[0] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |pruebaI2C|masterI2C:inst1|cBits[2] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
@@ -340,26 +340,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 49                          ;
+; arriav_ff             ; 51                          ;
 ;     ENA               ; 1                           ;
 ;     ENA SCLR          ; 14                          ;
 ;     SCLR              ; 8                           ;
-;     plain             ; 26                          ;
+;     plain             ; 28                          ;
 ; arriav_io_obuf        ; 2                           ;
-; arriav_lcell_comb     ; 69                          ;
+; arriav_lcell_comb     ; 78                          ;
 ;     arith             ; 22                          ;
 ;         1 data inputs ; 22                          ;
-;     normal            ; 47                          ;
+;     normal            ; 56                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 14                          ;
-;         5 data inputs ; 7                           ;
-;         6 data inputs ; 8                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 9                           ;
+;         6 data inputs ; 12                          ;
 ; boundary_port         ; 5                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.87                        ;
+; Average LUT depth     ; 1.92                        ;
 +-----------------------+-----------------------------+
 
 
@@ -378,7 +378,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Nov 13 09:52:02 2018
+    Info: Processing started: Wed Nov 14 11:35:03 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebaI2C -c pruebaI2C
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 2 design units, including 1 entities, in source file pruebai2c.vhd
@@ -411,15 +411,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C/pruebaI2C.vhd Line: 9
-Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 74 logic cells
+    Info (21061): Implemented 83 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 744 megabytes
-    Info: Processing ended: Tue Nov 13 09:52:14 2018
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 748 megabytes
+    Info: Processing ended: Wed Nov 14 11:35:19 2018
+    Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:23
 
 

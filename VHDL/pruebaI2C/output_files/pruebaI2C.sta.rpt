@@ -1,5 +1,5 @@
 Timing Analyzer report for pruebaI2C
-Tue Nov 13 09:53:09 2018
+Wed Nov 14 11:36:27 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -104,8 +104,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.8%      ;
-;     Processor 3            ;   2.7%      ;
+;     Processor 2            ;   3.0%      ;
+;     Processor 3            ;   2.9%      ;
 ;     Processor 4            ;   2.6%      ;
 +----------------------------+-------------+
 
@@ -126,9 +126,9 @@ refer to the applicable agreement for further details.
 +------------+-----------------+-------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name              ; Note ;
 +------------+-----------------+-------------------------+------+
-; 210.84 MHz ; 210.84 MHz      ; FPGA_CLK1_50            ;      ;
-; 330.14 MHz ; 330.14 MHz      ; masterI2C:inst1|clk100k ;      ;
-; 362.45 MHz ; 362.45 MHz      ; masterI2C:inst1|clk200k ;      ;
+; 184.4 MHz  ; 184.4 MHz       ; FPGA_CLK1_50            ;      ;
+; 323.94 MHz ; 323.94 MHz      ; masterI2C:inst1|clk100k ;      ;
+; 355.24 MHz ; 355.24 MHz      ; masterI2C:inst1|clk200k ;      ;
 +------------+-----------------+-------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -144,9 +144,9 @@ HTML report is unavailable in plain text report export.
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; masterI2C:inst1|clk200k ; -4.102 ; -29.293       ;
-; FPGA_CLK1_50            ; -3.743 ; -111.561      ;
-; masterI2C:inst1|clk100k ; -3.127 ; -11.762       ;
+; FPGA_CLK1_50            ; -4.423 ; -105.327      ;
+; masterI2C:inst1|clk200k ; -4.302 ; -34.337       ;
+; masterI2C:inst1|clk100k ; -3.520 ; -12.823       ;
 +-------------------------+--------+---------------+
 
 
@@ -155,9 +155,9 @@ HTML report is unavailable in plain text report export.
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; FPGA_CLK1_50            ; -4.044 ; -8.792        ;
-; masterI2C:inst1|clk200k ; 0.517  ; 0.000         ;
-; masterI2C:inst1|clk100k ; 1.504  ; 0.000         ;
+; FPGA_CLK1_50            ; -4.041 ; -72.651       ;
+; masterI2C:inst1|clk200k ; 0.478  ; 0.000         ;
+; masterI2C:inst1|clk100k ; 1.452  ; 0.000         ;
 +-------------------------+--------+---------------+
 
 
@@ -178,9 +178,9 @@ No paths to report.
 +-------------------------+--------+-----------------+
 ; Clock                   ; Slack  ; End Point TNS   ;
 +-------------------------+--------+-----------------+
-; FPGA_CLK1_50            ; -0.569 ; -27.091         ;
-; masterI2C:inst1|clk200k ; -0.538 ; -8.010          ;
-; masterI2C:inst1|clk100k ; -0.538 ; -5.007          ;
+; FPGA_CLK1_50            ; -0.544 ; -28.659         ;
+; masterI2C:inst1|clk200k ; -0.538 ; -7.930          ;
+; masterI2C:inst1|clk100k ; -0.538 ; -4.793          ;
 +-------------------------+--------+-----------------+
 
 
@@ -196,9 +196,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +------------+-----------------+-------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name              ; Note ;
 +------------+-----------------+-------------------------+------+
-; 213.58 MHz ; 213.58 MHz      ; FPGA_CLK1_50            ;      ;
-; 331.9 MHz  ; 331.9 MHz       ; masterI2C:inst1|clk100k ;      ;
-; 352.86 MHz ; 352.86 MHz      ; masterI2C:inst1|clk200k ;      ;
+; 182.68 MHz ; 182.68 MHz      ; FPGA_CLK1_50            ;      ;
+; 330.25 MHz ; 330.25 MHz      ; masterI2C:inst1|clk100k ;      ;
+; 357.53 MHz ; 357.53 MHz      ; masterI2C:inst1|clk200k ;      ;
 +------------+-----------------+-------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -208,9 +208,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; masterI2C:inst1|clk200k ; -4.429 ; -30.901       ;
-; FPGA_CLK1_50            ; -3.682 ; -98.107       ;
-; masterI2C:inst1|clk100k ; -3.419 ; -12.293       ;
+; masterI2C:inst1|clk200k ; -4.621 ; -36.584       ;
+; FPGA_CLK1_50            ; -4.474 ; -100.978      ;
+; masterI2C:inst1|clk100k ; -3.871 ; -13.326       ;
 +-------------------------+--------+---------------+
 
 
@@ -219,9 +219,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; FPGA_CLK1_50            ; -4.159 ; -10.505       ;
-; masterI2C:inst1|clk200k ; 0.566  ; 0.000         ;
-; masterI2C:inst1|clk100k ; 1.407  ; 0.000         ;
+; FPGA_CLK1_50            ; -4.198 ; -80.693       ;
+; masterI2C:inst1|clk200k ; 0.644  ; 0.000         ;
+; masterI2C:inst1|clk100k ; 1.393  ; 0.000         ;
 +-------------------------+--------+---------------+
 
 
@@ -242,9 +242,9 @@ No paths to report.
 +-------------------------+--------+-----------------+
 ; Clock                   ; Slack  ; End Point TNS   ;
 +-------------------------+--------+-----------------+
-; FPGA_CLK1_50            ; -0.538 ; -28.894         ;
-; masterI2C:inst1|clk200k ; -0.538 ; -7.912          ;
-; masterI2C:inst1|clk100k ; -0.538 ; -4.838          ;
+; FPGA_CLK1_50            ; -0.538 ; -30.375         ;
+; masterI2C:inst1|clk200k ; -0.538 ; -7.816          ;
+; masterI2C:inst1|clk100k ; -0.538 ; -4.737          ;
 +-------------------------+--------+-----------------+
 
 
@@ -260,9 +260,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; FPGA_CLK1_50            ; -2.453 ; -63.415       ;
-; masterI2C:inst1|clk200k ; -1.760 ; -12.517       ;
-; masterI2C:inst1|clk100k ; -1.219 ; -4.724        ;
+; FPGA_CLK1_50            ; -2.532 ; -47.573       ;
+; masterI2C:inst1|clk200k ; -1.871 ; -14.571       ;
+; masterI2C:inst1|clk100k ; -1.485 ; -5.526        ;
 +-------------------------+--------+---------------+
 
 
@@ -271,9 +271,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; FPGA_CLK1_50            ; -2.204 ; -5.725        ;
-; masterI2C:inst1|clk200k ; 0.242  ; 0.000         ;
-; masterI2C:inst1|clk100k ; 0.659  ; 0.000         ;
+; FPGA_CLK1_50            ; -2.164 ; -43.169       ;
+; masterI2C:inst1|clk200k ; 0.157  ; 0.000         ;
+; masterI2C:inst1|clk100k ; 0.633  ; 0.000         ;
 +-------------------------+--------+---------------+
 
 
@@ -294,9 +294,9 @@ No paths to report.
 +-------------------------+--------+-----------------+
 ; Clock                   ; Slack  ; End Point TNS   ;
 +-------------------------+--------+-----------------+
-; FPGA_CLK1_50            ; -0.488 ; -3.417          ;
-; masterI2C:inst1|clk100k ; 0.058  ; 0.000           ;
-; masterI2C:inst1|clk200k ; 0.075  ; 0.000           ;
+; FPGA_CLK1_50            ; -0.498 ; -3.685          ;
+; masterI2C:inst1|clk100k ; 0.089  ; 0.000           ;
+; masterI2C:inst1|clk200k ; 0.126  ; 0.000           ;
 +-------------------------+--------+-----------------+
 
 
@@ -312,9 +312,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; FPGA_CLK1_50            ; -1.725 ; -42.657       ;
-; masterI2C:inst1|clk200k ; -1.689 ; -11.531       ;
-; masterI2C:inst1|clk100k ; -1.217 ; -4.178        ;
+; masterI2C:inst1|clk200k ; -1.769 ; -13.814       ;
+; FPGA_CLK1_50            ; -1.741 ; -35.099       ;
+; masterI2C:inst1|clk100k ; -1.430 ; -4.803        ;
 +-------------------------+--------+---------------+
 
 
@@ -323,9 +323,9 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------+--------+---------------+
 ; Clock                   ; Slack  ; End Point TNS ;
 +-------------------------+--------+---------------+
-; FPGA_CLK1_50            ; -2.132 ; -6.870        ;
-; masterI2C:inst1|clk200k ; 0.164  ; 0.000         ;
-; masterI2C:inst1|clk100k ; 0.556  ; 0.000         ;
+; FPGA_CLK1_50            ; -2.105 ; -44.401       ;
+; masterI2C:inst1|clk200k ; 0.080  ; 0.000         ;
+; masterI2C:inst1|clk100k ; 0.535  ; 0.000         ;
 +-------------------------+--------+---------------+
 
 
@@ -346,9 +346,9 @@ No paths to report.
 +-------------------------+--------+-----------------+
 ; Clock                   ; Slack  ; End Point TNS   ;
 +-------------------------+--------+-----------------+
-; FPGA_CLK1_50            ; -0.437 ; -3.323          ;
-; masterI2C:inst1|clk200k ; 0.096  ; 0.000           ;
-; masterI2C:inst1|clk100k ; 0.107  ; 0.000           ;
+; FPGA_CLK1_50            ; -0.455 ; -3.620          ;
+; masterI2C:inst1|clk100k ; 0.119  ; 0.000           ;
+; masterI2C:inst1|clk200k ; 0.147  ; 0.000           ;
 +-------------------------+--------+-----------------+
 
 
@@ -364,14 +364,14 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +--------------------------+----------+---------+----------+---------+---------------------+
 ; Clock                    ; Setup    ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------+----------+---------+----------+---------+---------------------+
-; Worst-case Slack         ; -4.429   ; -4.159  ; N/A      ; N/A     ; -0.569              ;
-;  FPGA_CLK1_50            ; -3.743   ; -4.159  ; N/A      ; N/A     ; -0.569              ;
-;  masterI2C:inst1|clk100k ; -3.419   ; 0.556   ; N/A      ; N/A     ; -0.538              ;
-;  masterI2C:inst1|clk200k ; -4.429   ; 0.164   ; N/A      ; N/A     ; -0.538              ;
-; Design-wide TNS          ; -152.616 ; -10.505 ; 0.0      ; 0.0     ; -41.644             ;
-;  FPGA_CLK1_50            ; -111.561 ; -10.505 ; N/A      ; N/A     ; -28.894             ;
-;  masterI2C:inst1|clk100k ; -12.293  ; 0.000   ; N/A      ; N/A     ; -5.007              ;
-;  masterI2C:inst1|clk200k ; -30.901  ; 0.000   ; N/A      ; N/A     ; -8.010              ;
+; Worst-case Slack         ; -4.621   ; -4.198  ; N/A      ; N/A     ; -0.544              ;
+;  FPGA_CLK1_50            ; -4.474   ; -4.198  ; N/A      ; N/A     ; -0.544              ;
+;  masterI2C:inst1|clk100k ; -3.871   ; 0.535   ; N/A      ; N/A     ; -0.538              ;
+;  masterI2C:inst1|clk200k ; -4.621   ; 0.080   ; N/A      ; N/A     ; -0.538              ;
+; Design-wide TNS          ; -152.487 ; -80.693 ; 0.0      ; 0.0     ; -42.928             ;
+;  FPGA_CLK1_50            ; -105.327 ; -80.693 ; N/A      ; N/A     ; -30.375             ;
+;  masterI2C:inst1|clk100k ; -13.326  ; 0.000   ; N/A      ; N/A     ; -4.793              ;
+;  masterI2C:inst1|clk200k ; -36.584  ; 0.000   ; N/A      ; N/A     ; -7.930              ;
 +--------------------------+----------+---------+----------+---------+---------------------+
 
 
@@ -442,14 +442,14 @@ Design MTBF is not calculated because the design doesn't meet its timing require
 +-------------------------+-------------------------+----------+----------+----------+----------+
 ; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------+-------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50            ; FPGA_CLK1_50            ; 484      ; 0        ; 0        ; 0        ;
-; masterI2C:inst1|clk100k ; FPGA_CLK1_50            ; 22       ; 7        ; 0        ; 0        ;
-; masterI2C:inst1|clk200k ; FPGA_CLK1_50            ; 58       ; 3        ; 0        ; 0        ;
+; FPGA_CLK1_50            ; FPGA_CLK1_50            ; 494      ; 0        ; 0        ; 0        ;
+; masterI2C:inst1|clk100k ; FPGA_CLK1_50            ; 30       ; 15       ; 0        ; 0        ;
+; masterI2C:inst1|clk200k ; FPGA_CLK1_50            ; 81       ; 7        ; 0        ; 0        ;
 ; FPGA_CLK1_50            ; masterI2C:inst1|clk100k ; 2        ; 0        ; 0        ; 0        ;
 ; masterI2C:inst1|clk100k ; masterI2C:inst1|clk100k ; 7        ; 0        ; 0        ; 0        ;
-; FPGA_CLK1_50            ; masterI2C:inst1|clk200k ; 6        ; 0        ; 0        ; 0        ;
-; masterI2C:inst1|clk100k ; masterI2C:inst1|clk200k ; 1        ; 1        ; 0        ; 0        ;
-; masterI2C:inst1|clk200k ; masterI2C:inst1|clk200k ; 12       ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50            ; masterI2C:inst1|clk200k ; 8        ; 0        ; 0        ; 0        ;
+; masterI2C:inst1|clk100k ; masterI2C:inst1|clk200k ; 3        ; 1        ; 0        ; 0        ;
+; masterI2C:inst1|clk200k ; masterI2C:inst1|clk200k ; 14       ; 0        ; 0        ; 0        ;
 +-------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -459,14 +459,14 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------+-------------------------+----------+----------+----------+----------+
 ; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------+-------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50            ; FPGA_CLK1_50            ; 484      ; 0        ; 0        ; 0        ;
-; masterI2C:inst1|clk100k ; FPGA_CLK1_50            ; 22       ; 7        ; 0        ; 0        ;
-; masterI2C:inst1|clk200k ; FPGA_CLK1_50            ; 58       ; 3        ; 0        ; 0        ;
+; FPGA_CLK1_50            ; FPGA_CLK1_50            ; 494      ; 0        ; 0        ; 0        ;
+; masterI2C:inst1|clk100k ; FPGA_CLK1_50            ; 30       ; 15       ; 0        ; 0        ;
+; masterI2C:inst1|clk200k ; FPGA_CLK1_50            ; 81       ; 7        ; 0        ; 0        ;
 ; FPGA_CLK1_50            ; masterI2C:inst1|clk100k ; 2        ; 0        ; 0        ; 0        ;
 ; masterI2C:inst1|clk100k ; masterI2C:inst1|clk100k ; 7        ; 0        ; 0        ; 0        ;
-; FPGA_CLK1_50            ; masterI2C:inst1|clk200k ; 6        ; 0        ; 0        ; 0        ;
-; masterI2C:inst1|clk100k ; masterI2C:inst1|clk200k ; 1        ; 1        ; 0        ; 0        ;
-; masterI2C:inst1|clk200k ; masterI2C:inst1|clk200k ; 12       ; 0        ; 0        ; 0        ;
+; FPGA_CLK1_50            ; masterI2C:inst1|clk200k ; 8        ; 0        ; 0        ; 0        ;
+; masterI2C:inst1|clk100k ; masterI2C:inst1|clk200k ; 3        ; 1        ; 0        ; 0        ;
+; masterI2C:inst1|clk200k ; masterI2C:inst1|clk200k ; 14       ; 0        ; 0        ; 0        ;
 +-------------------------+-------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -552,7 +552,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Nov 13 09:53:03 2018
+    Info: Processing started: Wed Nov 14 11:36:19 2018
 Info: Command: quartus_sta pruebaI2C -c pruebaI2C
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
@@ -571,26 +571,26 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 100C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.102
+Info (332146): Worst-case setup slack is -4.423
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.102             -29.293 masterI2C:inst1|clk200k 
-    Info (332119):    -3.743            -111.561 FPGA_CLK1_50 
-    Info (332119):    -3.127             -11.762 masterI2C:inst1|clk100k 
-Info (332146): Worst-case hold slack is -4.044
+    Info (332119):    -4.423            -105.327 FPGA_CLK1_50 
+    Info (332119):    -4.302             -34.337 masterI2C:inst1|clk200k 
+    Info (332119):    -3.520             -12.823 masterI2C:inst1|clk100k 
+Info (332146): Worst-case hold slack is -4.041
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.044              -8.792 FPGA_CLK1_50 
-    Info (332119):     0.517               0.000 masterI2C:inst1|clk200k 
-    Info (332119):     1.504               0.000 masterI2C:inst1|clk100k 
+    Info (332119):    -4.041             -72.651 FPGA_CLK1_50 
+    Info (332119):     0.478               0.000 masterI2C:inst1|clk200k 
+    Info (332119):     1.452               0.000 masterI2C:inst1|clk100k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.569
+Info (332146): Worst-case minimum pulse width slack is -0.544
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.569             -27.091 FPGA_CLK1_50 
-    Info (332119):    -0.538              -8.010 masterI2C:inst1|clk200k 
-    Info (332119):    -0.538              -5.007 masterI2C:inst1|clk100k 
+    Info (332119):    -0.544             -28.659 FPGA_CLK1_50 
+    Info (332119):    -0.538              -7.930 masterI2C:inst1|clk200k 
+    Info (332119):    -0.538              -4.793 masterI2C:inst1|clk100k 
 Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV -40C Model
@@ -599,26 +599,26 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.429
+Info (332146): Worst-case setup slack is -4.621
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.429             -30.901 masterI2C:inst1|clk200k 
-    Info (332119):    -3.682             -98.107 FPGA_CLK1_50 
-    Info (332119):    -3.419             -12.293 masterI2C:inst1|clk100k 
-Info (332146): Worst-case hold slack is -4.159
+    Info (332119):    -4.621             -36.584 masterI2C:inst1|clk200k 
+    Info (332119):    -4.474            -100.978 FPGA_CLK1_50 
+    Info (332119):    -3.871             -13.326 masterI2C:inst1|clk100k 
+Info (332146): Worst-case hold slack is -4.198
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.159             -10.505 FPGA_CLK1_50 
-    Info (332119):     0.566               0.000 masterI2C:inst1|clk200k 
-    Info (332119):     1.407               0.000 masterI2C:inst1|clk100k 
+    Info (332119):    -4.198             -80.693 FPGA_CLK1_50 
+    Info (332119):     0.644               0.000 masterI2C:inst1|clk200k 
+    Info (332119):     1.393               0.000 masterI2C:inst1|clk100k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538             -28.894 FPGA_CLK1_50 
-    Info (332119):    -0.538              -7.912 masterI2C:inst1|clk200k 
-    Info (332119):    -0.538              -4.838 masterI2C:inst1|clk100k 
+    Info (332119):    -0.538             -30.375 FPGA_CLK1_50 
+    Info (332119):    -0.538              -7.816 masterI2C:inst1|clk200k 
+    Info (332119):    -0.538              -4.737 masterI2C:inst1|clk100k 
 Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 100C Model
@@ -627,60 +627,60 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.453
+Info (332146): Worst-case setup slack is -2.532
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.453             -63.415 FPGA_CLK1_50 
-    Info (332119):    -1.760             -12.517 masterI2C:inst1|clk200k 
-    Info (332119):    -1.219              -4.724 masterI2C:inst1|clk100k 
-Info (332146): Worst-case hold slack is -2.204
+    Info (332119):    -2.532             -47.573 FPGA_CLK1_50 
+    Info (332119):    -1.871             -14.571 masterI2C:inst1|clk200k 
+    Info (332119):    -1.485              -5.526 masterI2C:inst1|clk100k 
+Info (332146): Worst-case hold slack is -2.164
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.204              -5.725 FPGA_CLK1_50 
-    Info (332119):     0.242               0.000 masterI2C:inst1|clk200k 
-    Info (332119):     0.659               0.000 masterI2C:inst1|clk100k 
+    Info (332119):    -2.164             -43.169 FPGA_CLK1_50 
+    Info (332119):     0.157               0.000 masterI2C:inst1|clk200k 
+    Info (332119):     0.633               0.000 masterI2C:inst1|clk100k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.488
+Info (332146): Worst-case minimum pulse width slack is -0.498
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.488              -3.417 FPGA_CLK1_50 
-    Info (332119):     0.058               0.000 masterI2C:inst1|clk100k 
-    Info (332119):     0.075               0.000 masterI2C:inst1|clk200k 
+    Info (332119):    -0.498              -3.685 FPGA_CLK1_50 
+    Info (332119):     0.089               0.000 masterI2C:inst1|clk100k 
+    Info (332119):     0.126               0.000 masterI2C:inst1|clk200k 
 Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV -40C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.725
+Info (332146): Worst-case setup slack is -1.769
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.725             -42.657 FPGA_CLK1_50 
-    Info (332119):    -1.689             -11.531 masterI2C:inst1|clk200k 
-    Info (332119):    -1.217              -4.178 masterI2C:inst1|clk100k 
-Info (332146): Worst-case hold slack is -2.132
+    Info (332119):    -1.769             -13.814 masterI2C:inst1|clk200k 
+    Info (332119):    -1.741             -35.099 FPGA_CLK1_50 
+    Info (332119):    -1.430              -4.803 masterI2C:inst1|clk100k 
+Info (332146): Worst-case hold slack is -2.105
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.132              -6.870 FPGA_CLK1_50 
-    Info (332119):     0.164               0.000 masterI2C:inst1|clk200k 
-    Info (332119):     0.556               0.000 masterI2C:inst1|clk100k 
+    Info (332119):    -2.105             -44.401 FPGA_CLK1_50 
+    Info (332119):     0.080               0.000 masterI2C:inst1|clk200k 
+    Info (332119):     0.535               0.000 masterI2C:inst1|clk100k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.437
+Info (332146): Worst-case minimum pulse width slack is -0.455
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.437              -3.323 FPGA_CLK1_50 
-    Info (332119):     0.096               0.000 masterI2C:inst1|clk200k 
-    Info (332119):     0.107               0.000 masterI2C:inst1|clk100k 
+    Info (332119):    -0.455              -3.620 FPGA_CLK1_50 
+    Info (332119):     0.119               0.000 masterI2C:inst1|clk100k 
+    Info (332119):     0.147               0.000 masterI2C:inst1|clk200k 
 Info (332114): Report Metastability: Found 3 synchronizer chains.
     Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 1054 megabytes
-    Info: Processing ended: Tue Nov 13 09:53:09 2018
-    Info: Elapsed time: 00:00:06
+    Info: Processing ended: Wed Nov 14 11:36:27 2018
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:06
 
 
