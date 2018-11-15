@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -6.115
+TNS   : -73.108
+
+Type  : Slow 1100mV 100C Model Setup 'masterI2C_Read:inst1|clk200k'
+Slack : -5.110
+TNS   : -31.094
+
+Type  : Slow 1100mV 100C Model Setup 'masterI2C_Read:inst1|ep.e0'
+Slack : -3.794
+TNS   : -8.788
+
+Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'masterI2C_Read:inst1|clk200k'
+Slack : 0.524
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'masterI2C_Read:inst1|ep.e0'
+Slack : 1.087
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.538
+TNS   : -18.190
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'masterI2C_Read:inst1|clk200k'
+Slack : -0.538
+TNS   : -6.348
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'masterI2C_Read:inst1|ep.e0'
+Slack : -0.538
+TNS   : -1.548
+
+Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -5.508
+TNS   : -67.191
+
+Type  : Slow 1100mV -40C Model Setup 'masterI2C_Read:inst1|clk200k'
+Slack : -5.405
+TNS   : -33.107
+
+Type  : Slow 1100mV -40C Model Setup 'masterI2C_Read:inst1|ep.e0'
+Slack : -3.693
+TNS   : -8.488
+
+Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : -0.009
+TNS   : -0.009
+
+Type  : Slow 1100mV -40C Model Hold 'masterI2C_Read:inst1|clk200k'
+Slack : 0.496
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'masterI2C_Read:inst1|ep.e0'
+Slack : 0.835
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.538
+TNS   : -19.404
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'masterI2C_Read:inst1|clk200k'
+Slack : -0.538
+TNS   : -6.259
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'masterI2C_Read:inst1|ep.e0'
+Slack : -0.538
+TNS   : -1.537
+
+Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -3.848
+TNS   : -40.263
+
+Type  : Fast 1100mV 100C Model Setup 'masterI2C_Read:inst1|ep.e0'
+Slack : -2.411
+TNS   : -4.575
+
+Type  : Fast 1100mV 100C Model Setup 'masterI2C_Read:inst1|clk200k'
+Slack : -2.165
+TNS   : -13.403
+
+Type  : Fast 1100mV 100C Model Hold 'masterI2C_Read:inst1|clk200k'
+Slack : 0.094
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.165
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'masterI2C_Read:inst1|ep.e0'
+Slack : 0.556
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.420
+TNS   : -2.368
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'masterI2C_Read:inst1|clk200k'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'masterI2C_Read:inst1|ep.e0'
+Slack : 0.136
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -2.776
+TNS   : -28.275
+
+Type  : Fast 1100mV -40C Model Setup 'masterI2C_Read:inst1|clk200k'
+Slack : -2.045
+TNS   : -12.532
+
+Type  : Fast 1100mV -40C Model Setup 'masterI2C_Read:inst1|ep.e0'
+Slack : -1.978
+TNS   : -3.807
+
+Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : -0.163
+TNS   : -0.900
+
+Type  : Fast 1100mV -40C Model Hold 'masterI2C_Read:inst1|clk200k'
+Slack : 0.063
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'masterI2C_Read:inst1|ep.e0'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.414
+TNS   : -2.372
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'masterI2C_Read:inst1|clk200k'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'masterI2C_Read:inst1|ep.e0'
+Slack : 0.141
+TNS   : 0.000
+
+------------------------------------------------------------
