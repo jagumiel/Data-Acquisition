@@ -94,7 +94,7 @@ BEGIN
 		END IF;
 	END PROCESS;
 	espera	<='1' 			when ep=e1 else '0';
-	go			<='1' 	when (ocupado='0' and (ep=e0 or ep=e1)) else '0'; --OJO! Esto es una PRUEBA. Solo queria transmitir una trama!!!
+	go			<='1' 	when (ocupado='0' and (ep=e0)) else '0'; --OJO! Esto es una PRUEBA. Solo queria transmitir una trama!!!
 	--command	<=cmd_config 	when ep=e1 else cmd_write when ep=e2 else command;
 	--data		<=data_ports 	when ep=e1 else data_out when ep=e2 else data;
 	--go<=NOT(KEY(1)) when ocupado='0' else '0';

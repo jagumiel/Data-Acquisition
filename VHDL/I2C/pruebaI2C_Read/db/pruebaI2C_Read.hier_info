@@ -27,6 +27,15 @@ SDA <> masterI2C_Read:inst1.SDAT
 
 
 |pruebaI2C_Read|masterI2C_Read:inst1
+CLK_50 => count100[0].CLK
+CLK_50 => count100[1].CLK
+CLK_50 => count100[2].CLK
+CLK_50 => count100[3].CLK
+CLK_50 => count100[4].CLK
+CLK_50 => count100[5].CLK
+CLK_50 => count100[6].CLK
+CLK_50 => count100[7].CLK
+CLK_50 => count100[8].CLK
 CLK_50 => data_rdy.CLK
 CLK_50 => cmd_rdy.CLK
 CLK_50 => sec.CLK
@@ -45,6 +54,7 @@ CLK_50 => data_addr[4].CLK
 CLK_50 => data_addr[5].CLK
 CLK_50 => data_addr[6].CLK
 CLK_50 => data_addr[7].CLK
+CLK_50 => ack_rdy.CLK
 CLK_50 => terminate.CLK
 CLK_50 => stopped.CLK
 CLK_50 => sdat_gen.CLK
@@ -90,7 +100,7 @@ DAT[4] => ~NO_FANOUT~
 DAT[5] => ~NO_FANOUT~
 DAT[6] => ~NO_FANOUT~
 DAT[7] => ~NO_FANOUT~
-GO => Selector1.IN4
+GO => Selector1.IN3
 GO => Selector0.IN1
 BUSY <= idle.DB_MAX_OUTPUT_PORT_TYPE
 SCLK <= SCLK.DB_MAX_OUTPUT_PORT_TYPE

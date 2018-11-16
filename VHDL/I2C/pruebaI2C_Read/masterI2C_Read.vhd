@@ -36,7 +36,8 @@ architecture a of masterI2C_Read is
 	signal conf_rdy: std_logic := '0';
 	signal cmd_rdy	: std_logic := '0';
 	signal data_rdy: std_logic := '0';
-	signal ack_st	: std_logic := '0';							--Acknowledge status. Indica que está en un estado del tipo ACK.
+	signal ack_tx	: std_logic := '0';							--Acknowledge transmission. Estado de ACK en el que el MAESTRO tiene que responder.
+	signal ack_rx	: std_logic := '0';							--Acknowledge reception. Estado de ACK en el que el ESCLAVO tiene que responder.
 	signal cBits	: integer range -1 to 7 :=7; 				--Contador de bits.
 	signal sec		: std_logic := '0';--Senal para saber si es la segunda vez que pasa(RS-Repeated Start)
 	
@@ -58,6 +59,8 @@ architecture a of masterI2C_Read is
 	signal stopped  : std_logic:='0';
 	signal started  : std_logic:='0';
 	signal terminate: std_logic:='0';
+	signal ack_rdy  : std_logic:='0'; --Para detener el ack durante un ciclo.
+	signal count100 : std_logic_vector(8 downto 0):="000000000";
 
 begin
 
@@ -67,7 +70,7 @@ begin
 	data_info <= DAT;
 
 	--Maquina de estados
-	PROCESS(ep, reset, GO, conf_rdy, cmd_rdy, data_rdy, ack, stopped, sec, started)--He añadido ACK a la lista de sensibilidad, pero no la trato.
+	PROCESS(ep, reset, GO, conf_rdy, cmd_rdy, data_rdy, ack, stopped, sec, started, ack_rdy)--He añadido ACK a la lista de sensibilidad, pero no la trato.
 	BEGIN
 		IF(reset='1')then
 			es<=e0;
@@ -92,15 +95,14 @@ begin
 						es<=e2;
 					END IF;
 				WHEN e3 =>				--ACK
---					IF(ack='1')THEN
---						es<=e4;
---					ELSE
---						es<=e4;
---					END IF;
-					IF(sec='0')THEN
-						es<=e4;
+					IF(ack_rdy='1')THEN
+						IF(sec='0')THEN
+							es<=e4;
+						ELSE
+							es<=e6;
+						END IF;
 					ELSE
-						es<=e6;
+						es<=e3;
 					END IF;
 				WHEN e4=>				--CMD
 					IF(cmd_rdy='1')THEN
@@ -109,15 +111,10 @@ begin
 						es<=e4;
 					END IF;
 				WHEN e5=>				--ACK
---					IF(ack='1')THEN
---						es<=e6;
---					ELSE
---						es<=e6;
---					END IF;
-					IF(sec='1')then
+					IF(ack_rdy='1')THEN
 						es<=e1;
 					ELSE
-						es<=e1;
+						es<=e5;
 					END IF;
 				WHEN e6=>				--DATA
 					IF(data_rdy='1')THEN
@@ -126,9 +123,12 @@ begin
 						es<=e6;
 					END IF;
 				WHEN e7=>				--ACK
-					--Aqui soy yo, el master, el que manda el ACK. 0 vuelve a e6, 1 pasa a e7
-					--Tal vez estaria interesante meterle un numero de datos a obtener. En principio, solo 1.
-					es<=e7;
+					--OJO. Hay que comprobar si quiero mas datos o si solo quiero recibir un Byte.
+					IF(ack_rdy='1')THEN
+						es<=e8;
+					ELSE
+						es<=e7;
+					END IF;
 				WHEN e8=>				--Llamada para generar la condición de parada.
 					if (stopped='1')then
 						es<=e0;
@@ -153,7 +153,8 @@ begin
 	config 	<='1' when ep=e2 else '0';
 	cmd		<='1' when ep=e4 else '0';
 	data	 	<='1' when ep=e6 else '0';
-	ack_st	<='1' when ep=e3 or ep=e5 or ep=e7 else '0';
+	ack_tx	<='1' when ep=e7 else '0';
+	ack_rx	<='1' when ep=e3 or ep=e5 else '0';
 	stop		<='1' when ep=e8 else '0';
 
 	--Reloj de 200kHz
@@ -190,6 +191,7 @@ begin
 				stopped<='0';
 				terminate<='0';
 			elsif(start='1')then					--Comienzo de la transmision: SDAT a 0 antes que SCLK
+				ack_rdy<='0';
 				if(sec='0')then 					--Si es la segunda vez que pasa, le pongo el bit de escritura.
 					data_addr<=ADD;
 				else
@@ -202,6 +204,8 @@ begin
 					if(clk200k='0')then
 						sdat_gen<='0';
 						started<='1';
+					else
+						sdat_gen<='1';
 					end if;
 				else
 					sdat_gen<='1';
@@ -217,11 +221,12 @@ begin
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(cBits=-1)then
+				if(clk100k='0' and cBits=-1)then--aqui he metido el clk
 					cBits<=7;
 					conf_rdy<='1';
 				end if;
 			elsif(cmd='1')then
+			ack_rdy<='0';
 				if(clk100k='0')then
 					if(clk200k='0')then
 						sdat_gen<=data_cmd(cBits);
@@ -231,7 +236,7 @@ begin
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(cBits=-1)then
+				if(clk100k='0'and cBits=-1)then--aqui he metido el clk
 					cBits<=7;
 					sec<='1';	--Activo sec para decir que ya ha pasado. En el siguiente estado e5 le toca ir al e0.
 					started<='0';
@@ -250,23 +255,46 @@ begin
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(cBits=-1)then
+				if(clk100k='0' and cBits=-1)then--aqui he metido el clk
 					cBits<=7;
 					sec<='1';	--Activo sec para decir que ya ha pasado. En el siguiente estado e5 le toca ir al e0.
-					cmd_rdy<='1';
+					data_rdy<='1';
 				end if;
-			elsif(ack_st='1')then--CUIDADO!!!
-				--if(clk200k='0')then
-					--Si es correcto, el esclavo lo tiene que poner a 0, es decir, yo como maestro deberia leer un 0.
+			elsif(ack_rx='1')then
+				--Cuestion de tiempos, tienes que quedarte un ciclo.
+--				if(clk100k='0')then
+--					if(clk200k='0')then
 				sdat_gen<='1';
-					--ack<=sdat_gen; El ack igual lo tengo que avisar desde el modulo prueba, que es el que puede leer el canal SDA de inout.
+--				if(count100<"111110011")then
+--					count100<=count100+'1';
+--				else
+--					count100<="000000000";
+					ack_rdy<='1';
 				--end if;
-				--TO-DO: Comprobacion de si el ack es 1.
+			elsif(ack_tx='1')then
+				--Cuestion de tiempos, tienes que quedarte un ciclo.
+--				if(clk100k='0')then
+--					if(clk200k='0')then
+--						sdat_gen<='1';
+--						hold<='0';
+--					end if;
+--				elsif(clk100k='1' and hold='0')then
+--					hold<='1';
+--					ack_rdy<='1';
+--				end if;
+				sdat_gen<='1';
+				if(count100<"111110011")then
+					count100<=count100+'1';
+				else
+					count100<="000000000";
+					ack_rdy<='1';
+				end if;
 			elsif(stop='1')then				--Fin de la transmision: SDAT a 1 despues de SCLK
 				--Pongo las variables de control a 0 para la proxima trama.
 				conf_rdy<='0';
 				cmd_rdy<='0';
 				data_rdy<='0';
+				ack_rdy<='0';
 				--He cambiado de estado, pero estoy a la espera de que el ACK del dispositivo termine, espero al siguiente ciclo para poner SDA a 0.
 				if(clk100k='0')then
 					terminate<='1';

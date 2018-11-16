@@ -1,5 +1,5 @@
 Fitter report for pruebaI2C_Read
-Thu Nov 15 13:38:34 2018
+Fri Nov 16 11:56:19 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,15 +63,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Thu Nov 15 13:38:34 2018       ;
+; Fitter Status                   ; Successful - Fri Nov 16 11:56:19 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaI2C_Read                              ;
 ; Top-level Entity Name           ; pruebaI2C_Read                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 27 / 41,910 ( < 1 % )                       ;
-; Total registers                 ; 33                                          ;
+; Logic utilization (in ALMs)     ; 40 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 44                                          ;
 ; Total pins                      ; 5 / 314 ( 2 % )                             ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
@@ -158,37 +158,34 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
-;     Processor 3            ;   0.3%      ;
+;     Processor 2            ;   0.4%      ;
+;     Processor 3            ;   0.4%      ;
 ;     Processor 4            ;   0.3%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                ;
-+------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------+------------------+-----------------------+
-; Node                         ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                       ; Destination Port ; Destination Port Name ;
-+------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------+------------------+-----------------------+
-; FPGA_CLK1_50~inputCLKENA0    ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                        ;                  ;                       ;
-; masterI2C_Read:inst1|cont[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterI2C_Read:inst1|cont[0]~DUPLICATE ;                  ;                       ;
-; masterI2C_Read:inst1|cont[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterI2C_Read:inst1|cont[2]~DUPLICATE ;                  ;                       ;
-; masterI2C_Read:inst1|cont[7] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterI2C_Read:inst1|cont[7]~DUPLICATE ;                  ;                       ;
-+------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------+------------------+-----------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                            ;
++---------------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
+; Node                      ; Action  ; Operation ; Reason                     ; Node Port ; Node Port Name ; Destination Node ; Destination Port ; Destination Port Name ;
++---------------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
+; FPGA_CLK1_50~inputCLKENA0 ; Created ; Placement ; Fitter Periphery Placement ;           ;                ;                  ;                  ;                       ;
++---------------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
 
 
-+-------------------------------------------------------------------------------------------------+
-; Incremental Compilation Preservation Summary                                                    ;
-+---------------------+-------------------+----------------------------+--------------------------+
-; Type                ; Total [A + B]     ; From Design Partitions [A] ; From Rapid Recompile [B] ;
-+---------------------+-------------------+----------------------------+--------------------------+
-; Placement (by node) ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 91 ) ; 0.00 % ( 0 / 91 )          ; 0.00 % ( 0 / 91 )        ;
-;     -- Achieved     ; 0.00 % ( 0 / 91 ) ; 0.00 % ( 0 / 91 )          ; 0.00 % ( 0 / 91 )        ;
-;                     ;                   ;                            ;                          ;
-; Routing (by net)    ;                   ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-;     -- Achieved     ; 0.00 % ( 0 / 0 )  ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-+---------------------+-------------------+----------------------------+--------------------------+
++--------------------------------------------------------------------------------------------------+
+; Incremental Compilation Preservation Summary                                                     ;
++---------------------+--------------------+----------------------------+--------------------------+
+; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
++---------------------+--------------------+----------------------------+--------------------------+
+; Placement (by node) ;                    ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 125 ) ; 0.00 % ( 0 / 125 )         ; 0.00 % ( 0 / 125 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 125 ) ; 0.00 % ( 0 / 125 )         ; 0.00 % ( 0 / 125 )       ;
+;                     ;                    ;                            ;                          ;
+; Routing (by net)    ;                    ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
+;     -- Achieved     ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
++---------------------+--------------------+----------------------------+--------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,7 +203,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 91 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 125 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -222,14 +219,14 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 27 / 41,910        ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 27                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 31 / 41,910        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 13                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 15                 ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 40 / 41,910        ; < 1 % ;
+; ALMs needed [=A-B+C]                                        ; 40                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 46 / 41,910        ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 20                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 23                 ;       ;
 ;         [c] ALMs used for registers                         ; 3                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 4 / 41,910         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 6 / 41,910         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41,910         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -238,25 +235,25 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 4 / 4,191          ; < 1 % ;
-;     -- Logic LABs                                           ; 4                  ;       ;
+; Total LABs:  partially or completely used                   ; 7 / 4,191          ; < 1 % ;
+;     -- Logic LABs                                           ; 7                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 49                 ;       ;
-;     -- 7 input functions                                    ; 0                  ;       ;
-;     -- 6 input functions                                    ; 4                  ;       ;
-;     -- 5 input functions                                    ; 14                 ;       ;
-;     -- 4 input functions                                    ; 8                  ;       ;
-;     -- <=3 input functions                                  ; 23                 ;       ;
+; Combinational ALUT usage for logic                          ; 69                 ;       ;
+;     -- 7 input functions                                    ; 1                  ;       ;
+;     -- 6 input functions                                    ; 9                  ;       ;
+;     -- 5 input functions                                    ; 22                 ;       ;
+;     -- 4 input functions                                    ; 10                 ;       ;
+;     -- <=3 input functions                                  ; 27                 ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 33                 ;       ;
+; Dedicated logic registers                                   ; 44                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 30 / 83,820        ; < 1 % ;
-;         -- Secondary logic registers                        ; 3 / 83,820         ; < 1 % ;
+;         -- Primary logic registers                          ; 44 / 83,820        ; < 1 % ;
+;         -- Secondary logic registers                        ; 0 / 83,820         ; 0 %   ;
 ;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 30                 ;       ;
-;         -- Routing optimization registers                   ; 3                  ;       ;
+;         -- Design implementation registers                  ; 44                 ;       ;
+;         -- Routing optimization registers                   ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 5 / 314            ; 2 %   ;
@@ -311,12 +308,12 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 1              ; 0 %   ;
-; Average interconnect usage (total/H/V)                      ; 0.1% / 0.1% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 3.1% / 3.5% / 1.8% ;       ;
-; Maximum fan-out                                             ; 22                 ;       ;
-; Highest non-global fan-out                                  ; 12                 ;       ;
-; Total fan-out                                               ; 262                ;       ;
-; Average fan-out                                             ; 2.79               ;       ;
+; Average interconnect usage (total/H/V)                      ; 0.2% / 0.2% / 0.1% ;       ;
+; Peak interconnect usage (total/H/V)                         ; 3.2% / 3.6% / 1.8% ;       ;
+; Maximum fan-out                                             ; 32                 ;       ;
+; Highest non-global fan-out                                  ; 17                 ;       ;
+; Total fan-out                                               ; 390                ;       ;
+; Average fan-out                                             ; 3.12               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -325,14 +322,14 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Statistic                                                   ; Top                  ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 27 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 27                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 31 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 13                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 15                   ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 40 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 40                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 46 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 20                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 23                   ; 0                              ;
 ;         [c] ALMs used for registers                         ; 3                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 4 / 41910 ( < 1 % )  ; 0 / 41910 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 6 / 41910 ( < 1 % )  ; 0 / 41910 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41910 ( 0 % )    ; 0 / 41910 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -341,16 +338,16 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ;                                                             ;                      ;                                ;
 ; Difficulty packing design                                   ; Low                  ; Low                            ;
 ;                                                             ;                      ;                                ;
-; Total LABs:  partially or completely used                   ; 4 / 4191 ( < 1 % )   ; 0 / 4191 ( 0 % )               ;
-;     -- Logic LABs                                           ; 4                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 7 / 4191 ( < 1 % )   ; 0 / 4191 ( 0 % )               ;
+;     -- Logic LABs                                           ; 7                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 49                   ; 0                              ;
-;     -- 7 input functions                                    ; 0                    ; 0                              ;
-;     -- 6 input functions                                    ; 4                    ; 0                              ;
-;     -- 5 input functions                                    ; 14                   ; 0                              ;
-;     -- 4 input functions                                    ; 8                    ; 0                              ;
-;     -- <=3 input functions                                  ; 23                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 69                   ; 0                              ;
+;     -- 7 input functions                                    ; 1                    ; 0                              ;
+;     -- 6 input functions                                    ; 9                    ; 0                              ;
+;     -- 5 input functions                                    ; 22                   ; 0                              ;
+;     -- 4 input functions                                    ; 10                   ; 0                              ;
+;     -- <=3 input functions                                  ; 27                   ; 0                              ;
 ; Combinational ALUT usage for route-throughs                 ; 0                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
@@ -358,11 +355,11 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ;                                                             ;                      ;                                ;
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
-;         -- Primary logic registers                          ; 30 / 83820 ( < 1 % ) ; 0 / 83820 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 3 / 83820 ( < 1 % )  ; 0 / 83820 ( 0 % )              ;
+;         -- Primary logic registers                          ; 44 / 83820 ( < 1 % ) ; 0 / 83820 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 0 / 83820 ( 0 % )    ; 0 / 83820 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
-;         -- Design implementation registers                  ; 30                   ; 0                              ;
-;         -- Routing optimization registers                   ; 3                    ; 0                              ;
+;         -- Design implementation registers                  ; 44                   ; 0                              ;
+;         -- Routing optimization registers                   ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
@@ -379,8 +376,8 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 262                  ; 0                              ;
-;     -- Registered Connections                               ; 137                  ; 0                              ;
+;     -- Total Connections                                    ; 390                  ; 0                              ;
+;     -- Registered Connections                               ; 220                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 2                    ; 0                              ;
@@ -412,8 +409,8 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/p
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; FPGA_CLK1_50 ; V11   ; 3B       ; 32           ; 0            ; 0            ; 23                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; KEY[0]       ; AH17  ; 4A       ; 64           ; 0            ; 34           ; 9                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; FPGA_CLK1_50 ; V11   ; 3B       ; 32           ; 0            ; 0            ; 33                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; KEY[0]       ; AH17  ; 4A       ; 64           ; 0            ; 34           ; 10                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; KEY[1]       ; AH16  ; 4A       ; 64           ; 0            ; 51           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
@@ -1157,8 +1154,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name    ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+----------------+--------------+
-; |pruebaI2C_Read            ; 27.0 (2.0)           ; 30.0 (2.0)                       ; 3.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (4)              ; 33 (2)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 5    ; 0            ; |pruebaI2C_Read                      ; pruebaI2C_Read ; work         ;
-;    |masterI2C_Read:inst1|  ; 25.0 (25.0)          ; 28.0 (28.0)                      ; 3.0 (3.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 45 (45)             ; 31 (31)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaI2C_Read|masterI2C_Read:inst1 ; masterI2C_Read ; work         ;
+; |pruebaI2C_Read            ; 40.0 (0.3)           ; 44.5 (1.2)                       ; 4.5 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 69 (2)              ; 44 (1)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 5    ; 0            ; |pruebaI2C_Read                      ; pruebaI2C_Read ; work         ;
+;    |masterI2C_Read:inst1|  ; 39.7 (39.7)          ; 43.3 (43.3)                      ; 3.7 (3.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (67)             ; 43 (43)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaI2C_Read|masterI2C_Read:inst1 ; masterI2C_Read ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+--------------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1171,7 +1168,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KEY[1]       ; Input    ; -- ; --   ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SCL          ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; SDA          ; Bidir    ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; KEY[0]       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[0]       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; FPGA_CLK1_50 ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +--------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
@@ -1184,32 +1181,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KEY[1]                              ;                   ;         ;
 ; SDA                                 ;                   ;         ;
 ; KEY[0]                              ;                   ;         ;
-;      - masterI2C_Read:inst1|es.e0~0 ; 1                 ; 0       ;
-;      - es.e0                        ; 1                 ; 0       ;
-;      - masterI2C_Read:inst1|es.e2~0 ; 1                 ; 0       ;
-;      - masterI2C_Read:inst1|es.e4~0 ; 1                 ; 0       ;
-;      - masterI2C_Read:inst1|es.e3~0 ; 1                 ; 0       ;
-;      - masterI2C_Read:inst1|es.e5~0 ; 1                 ; 0       ;
-;      - masterI2C_Read:inst1|es.e6~0 ; 1                 ; 0       ;
-;      - masterI2C_Read:inst1|es.e1~0 ; 1                 ; 0       ;
-;      - es~6                         ; 1                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e0~0 ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e8~0 ; 0                 ; 0       ;
+;      - es.e0                        ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e1~1 ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e2~0 ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e4~0 ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e6~0 ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e7~0 ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e3~0 ; 0                 ; 0       ;
+;      - masterI2C_Read:inst1|es.e5~0 ; 0                 ; 0       ;
 ; FPGA_CLK1_50                        ;                   ;         ;
 ;      - masterI2C_Read:inst1|clk200k ; 0                 ; 0       ;
 +-------------------------------------+-------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                            ;
-+-------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                          ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; FPGA_CLK1_50                  ; PIN_V11            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; FPGA_CLK1_50                  ; PIN_V11            ; 22      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; masterI2C_Read:inst1|Equal0~1 ; LABCELL_X60_Y2_N30 ; 11      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; masterI2C_Read:inst1|SCLK     ; LABCELL_X61_Y2_N57 ; 3       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; masterI2C_Read:inst1|clk200k  ; FF_X60_Y2_N29      ; 12      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; masterI2C_Read:inst1|ep.e0    ; FF_X61_Y2_N50      ; 10      ; Latch enable ; no     ; --                   ; --               ; --                        ;
-+-------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                            ;
++----------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name                             ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; FPGA_CLK1_50                     ; PIN_V11            ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; FPGA_CLK1_50                     ; PIN_V11            ; 32      ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; masterI2C_Read:inst1|Equal0~1    ; LABCELL_X56_Y2_N6  ; 8       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; masterI2C_Read:inst1|LessThan2~2 ; LABCELL_X55_Y3_N9  ; 9       ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; masterI2C_Read:inst1|SCLK        ; LABCELL_X56_Y3_N36 ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; masterI2C_Read:inst1|clk200k     ; FF_X56_Y2_N11      ; 17      ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; masterI2C_Read:inst1|ep.e0       ; FF_X56_Y3_N25      ; 13      ; Latch enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; masterI2C_Read:inst1|ep.e7       ; FF_X56_Y3_N17      ; 13      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
++----------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -1217,7 +1217,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+----------+---------+----------------------+------------------+---------------------------+
 ; Name         ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------+----------+---------+----------------------+------------------+---------------------------+
-; FPGA_CLK1_50 ; PIN_V11  ; 22      ; Global Clock         ; GCLK6            ; --                        ;
+; FPGA_CLK1_50 ; PIN_V11  ; 32      ; Global Clock         ; GCLK6            ; --                        ;
 +--------------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1226,14 +1226,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 102 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 12 / 13,420 ( < 1 % )   ;
-; C2 interconnects                            ; 57 / 119,108 ( < 1 % )  ;
-; C4 interconnects                            ; 45 / 56,300 ( < 1 % )   ;
+; Block interconnects                         ; 139 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 15 / 13,420 ( < 1 % )   ;
+; C2 interconnects                            ; 66 / 119,108 ( < 1 % )  ;
+; C4 interconnects                            ; 58 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 9 / 289,320 ( < 1 % )   ;
+; Direct links                                ; 13 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -1289,12 +1289,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 27 / 84,580 ( < 1 % )   ;
+; Local interconnects                         ; 36 / 84,580 ( < 1 % )   ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 93 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 103 / 20,720 ( < 1 % )  ;
-; R3 interconnects                            ; 114 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 139 / 266,960 ( < 1 % ) ;
+; R14 interconnects                           ; 109 / 12,676 ( < 1 % )  ;
+; R14/C12 interconnect drivers                ; 118 / 20,720 ( < 1 % )  ;
+; R3 interconnects                            ; 133 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 160 / 266,960 ( < 1 % ) ;
 ; Spine clocks                                ; 1 / 360 ( < 1 % )       ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
@@ -1414,56 +1414,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------+------------------------------+-------------------+
 ; Source Clock(s)                           ; Destination Clock(s)         ; Delay Added in ns ;
 +-------------------------------------------+------------------------------+-------------------+
-; masterI2C_Read:inst1|clk200k              ; FPGA_CLK1_50                 ; 140.3             ;
-; FPGA_CLK1_50                              ; FPGA_CLK1_50                 ; 29.5              ;
-; FPGA_CLK1_50,masterI2C_Read:inst1|clk200k ; FPGA_CLK1_50                 ; 27.8              ;
-; masterI2C_Read:inst1|clk200k              ; masterI2C_Read:inst1|clk200k ; 9.9               ;
-; masterI2C_Read:inst1|ep.e0                ; masterI2C_Read:inst1|clk200k ; 5.9               ;
+; masterI2C_Read:inst1|clk200k              ; FPGA_CLK1_50                 ; 239.2             ;
+; FPGA_CLK1_50                              ; FPGA_CLK1_50                 ; 45.4              ;
+; FPGA_CLK1_50,masterI2C_Read:inst1|clk200k ; FPGA_CLK1_50                 ; 36.3              ;
+; masterI2C_Read:inst1|clk200k              ; masterI2C_Read:inst1|clk200k ; 13.5              ;
 +-------------------------------------------+------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                             ;
-+-----------------------------------+-----------------------------------+-------------------+
-; Source Register                   ; Destination Register              ; Delay Added in ns ;
-+-----------------------------------+-----------------------------------+-------------------+
-; masterI2C_Read:inst1|clk100k      ; masterI2C_Read:inst1|cBits[3]     ; 6.057             ;
-; masterI2C_Read:inst1|ep.e0        ; masterI2C_Read:inst1|cBits[0]     ; 5.944             ;
-; masterI2C_Read:inst1|clk200k      ; masterI2C_Read:inst1|sdat_gen     ; 5.746             ;
-; masterI2C_Read:inst1|ep.e2        ; masterI2C_Read:inst1|conf_rdy     ; 4.854             ;
-; masterI2C_Read:inst1|ep.e6        ; masterI2C_Read:inst1|sec          ; 4.840             ;
-; masterI2C_Read:inst1|ep.e4        ; masterI2C_Read:inst1|started      ; 4.718             ;
-; masterI2C_Read:inst1|ep.e1        ; masterI2C_Read:inst1|data_addr[0] ; 4.638             ;
-; masterI2C_Read:inst1|ep.e5        ; masterI2C_Read:inst1|sdat_gen     ; 4.473             ;
-; masterI2C_Read:inst1|ep.e3        ; masterI2C_Read:inst1|sdat_gen     ; 4.223             ;
-; ep.e0_209                         ; es.e1                             ; 3.235             ;
-; masterI2C_Read:inst1|hold         ; masterI2C_Read:inst1|cBits[2]     ; 2.422             ;
-; masterI2C_Read:inst1|cBits[3]     ; masterI2C_Read:inst1|cBits[2]     ; 2.422             ;
-; masterI2C_Read:inst1|sdat_gen     ; masterI2C_Read:inst1|sdat_gen     ; 2.239             ;
-; ep.e1_203                         ; masterI2C_Read:inst1|ep.e1        ; 2.226             ;
-; masterI2C_Read:inst1|cBits[2]     ; masterI2C_Read:inst1|cmd_rdy      ; 2.207             ;
-; masterI2C_Read:inst1|cBits[0]     ; masterI2C_Read:inst1|cmd_rdy      ; 2.207             ;
-; masterI2C_Read:inst1|cBits[1]     ; masterI2C_Read:inst1|cmd_rdy      ; 2.207             ;
-; masterI2C_Read:inst1|cont[2]      ; masterI2C_Read:inst1|clk200k      ; 2.093             ;
-; masterI2C_Read:inst1|cont[3]      ; masterI2C_Read:inst1|clk200k      ; 2.033             ;
-; masterI2C_Read:inst1|cont[4]      ; masterI2C_Read:inst1|clk200k      ; 2.006             ;
-; masterI2C_Read:inst1|cont[6]      ; masterI2C_Read:inst1|clk200k      ; 1.991             ;
-; masterI2C_Read:inst1|cont[5]      ; masterI2C_Read:inst1|clk200k      ; 1.977             ;
-; masterI2C_Read:inst1|cont[7]      ; masterI2C_Read:inst1|clk200k      ; 1.917             ;
-; masterI2C_Read:inst1|cont[0]      ; masterI2C_Read:inst1|clk200k      ; 1.817             ;
-; masterI2C_Read:inst1|cont[1]      ; masterI2C_Read:inst1|clk200k      ; 1.739             ;
-; KEY[0]                            ; masterI2C_Read:inst1|ep.e0        ; 0.946             ;
-; es.e0                             ; ep.e0_209                         ; 0.692             ;
-; es.e1                             ; ep.e1_203                         ; 0.692             ;
-; masterI2C_Read:inst1|data_addr[0] ; masterI2C_Read:inst1|sdat_gen     ; 0.392             ;
-; masterI2C_Read:inst1|started      ; masterI2C_Read:inst1|ep.e1        ; 0.309             ;
-; masterI2C_Read:inst1|sec          ; masterI2C_Read:inst1|conf_rdy     ; 0.276             ;
-; masterI2C_Read:inst1|cmd_rdy      ; masterI2C_Read:inst1|ep.e4        ; 0.167             ;
-; masterI2C_Read:inst1|conf_rdy     ; masterI2C_Read:inst1|ep.e2        ; 0.109             ;
-+-----------------------------------+-----------------------------------+-------------------+
-Note: This table only shows the top 33 path(s) that have the largest delay added for hold.
++---------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                         ;
++-----------------------------------+-------------------------------+-------------------+
+; Source Register                   ; Destination Register          ; Delay Added in ns ;
++-----------------------------------+-------------------------------+-------------------+
+; masterI2C_Read:inst1|ep.e0        ; masterI2C_Read:inst1|sec      ; 5.892             ;
+; masterI2C_Read:inst1|clk200k      ; masterI2C_Read:inst1|sdat_gen ; 5.831             ;
+; masterI2C_Read:inst1|clk100k      ; masterI2C_Read:inst1|stopped  ; 5.780             ;
+; masterI2C_Read:inst1|ep.e2        ; masterI2C_Read:inst1|ack_rdy  ; 4.475             ;
+; masterI2C_Read:inst1|ep.e4        ; masterI2C_Read:inst1|ack_rdy  ; 4.445             ;
+; masterI2C_Read:inst1|ep.e6        ; masterI2C_Read:inst1|ack_rdy  ; 4.420             ;
+; masterI2C_Read:inst1|ep.e1        ; masterI2C_Read:inst1|ack_rdy  ; 4.404             ;
+; masterI2C_Read:inst1|ep.e8        ; masterI2C_Read:inst1|ack_rdy  ; 4.375             ;
+; masterI2C_Read:inst1|ep.e5        ; masterI2C_Read:inst1|ack_rdy  ; 4.372             ;
+; masterI2C_Read:inst1|ep.e7        ; masterI2C_Read:inst1|ack_rdy  ; 4.281             ;
+; masterI2C_Read:inst1|ep.e3        ; masterI2C_Read:inst1|ack_rdy  ; 4.266             ;
+; masterI2C_Read:inst1|cBits[2]     ; masterI2C_Read:inst1|started  ; 2.740             ;
+; masterI2C_Read:inst1|cBits[0]     ; masterI2C_Read:inst1|started  ; 2.740             ;
+; masterI2C_Read:inst1|cBits[1]     ; masterI2C_Read:inst1|started  ; 2.740             ;
+; masterI2C_Read:inst1|cBits[3]     ; masterI2C_Read:inst1|started  ; 2.740             ;
+; masterI2C_Read:inst1|hold         ; masterI2C_Read:inst1|cBits[1] ; 2.509             ;
+; masterI2C_Read:inst1|cont[7]      ; masterI2C_Read:inst1|clk200k  ; 2.164             ;
+; masterI2C_Read:inst1|cont[1]      ; masterI2C_Read:inst1|clk200k  ; 2.145             ;
+; masterI2C_Read:inst1|cont[0]      ; masterI2C_Read:inst1|clk200k  ; 2.121             ;
+; ep.e0_207                         ; masterI2C_Read:inst1|ep.e1    ; 2.087             ;
+; masterI2C_Read:inst1|count100[7]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[6]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[5]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[8]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[2]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[3]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[0]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[1]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|count100[4]  ; masterI2C_Read:inst1|ack_rdy  ; 2.058             ;
+; masterI2C_Read:inst1|cont[3]      ; masterI2C_Read:inst1|clk200k  ; 2.021             ;
+; masterI2C_Read:inst1|sdat_gen     ; masterI2C_Read:inst1|sdat_gen ; 2.020             ;
+; masterI2C_Read:inst1|terminate    ; masterI2C_Read:inst1|sdat_gen ; 2.020             ;
+; masterI2C_Read:inst1|cont[4]      ; masterI2C_Read:inst1|clk200k  ; 2.010             ;
+; masterI2C_Read:inst1|cont[6]      ; masterI2C_Read:inst1|clk200k  ; 2.008             ;
+; masterI2C_Read:inst1|cont[2]      ; masterI2C_Read:inst1|clk200k  ; 1.921             ;
+; masterI2C_Read:inst1|cont[5]      ; masterI2C_Read:inst1|clk200k  ; 1.601             ;
+; masterI2C_Read:inst1|data_addr[0] ; masterI2C_Read:inst1|sdat_gen ; 1.448             ;
+; KEY[0]                            ; masterI2C_Read:inst1|ep.e0    ; 0.904             ;
+; masterI2C_Read:inst1|stopped      ; masterI2C_Read:inst1|ep.e0    ; 0.904             ;
+; masterI2C_Read:inst1|started      ; masterI2C_Read:inst1|ep.e1    ; 0.705             ;
+; masterI2C_Read:inst1|ack_rdy      ; masterI2C_Read:inst1|ep.e1    ; 0.705             ;
+; es.e0                             ; ep.e0_207                     ; 0.423             ;
+; masterI2C_Read:inst1|data_rdy     ; masterI2C_Read:inst1|ep.e7    ; 0.225             ;
+; masterI2C_Read:inst1|sec          ; masterI2C_Read:inst1|ep.e6    ; 0.191             ;
+; masterI2C_Read:inst1|conf_rdy     ; masterI2C_Read:inst1|conf_rdy ; 0.178             ;
+; masterI2C_Read:inst1|cmd_rdy      ; masterI2C_Read:inst1|ep.e4    ; 0.174             ;
++-----------------------------------+-------------------------------+-------------------+
+Note: This table only shows the top 46 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1479,10 +1491,10 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
-    Info (11162): FPGA_CLK1_50~inputCLKENA0 with 19 fanout uses global clock CLKCTRL_G6
+    Info (11162): FPGA_CLK1_50~inputCLKENA0 with 32 fanout uses global clock CLKCTRL_G6
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Info (176233): Starting register packing
-Warning (335093): The Timing Analyzer is analyzing 2 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'pruebaI2C_Read.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -1490,7 +1502,7 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:12
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:11
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
@@ -1499,22 +1511,23 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X56_Y0 to location X66_Y10
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X45_Y0 to location X55_Y10
+Info (188005): Design requires adding a large amount of routing delay for some signals to meet hold time requirements, and there is an excessive demand for the available routing resources. The Fitter is reducing the routing delays of some signals to help the routing algorithm converge, but doing so may cause hold time failures. For more information, refer to the "Estimated Delay Added for Hold Timing" section in the Fitter report.
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:06
-Info (11888): Total time spent on timing analysis during the Fitter is 0.37 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:10
+Info (11888): Total time spent on timing analysis during the Fitter is 0.42 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
 Info (144001): Generated suppressed messages file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_Read/output_files/pruebaI2C_Read.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2403 megabytes
-    Info: Processing ended: Thu Nov 15 13:38:35 2018
-    Info: Elapsed time: 00:00:38
-    Info: Total CPU time (on all processors): 00:01:04
+    Info: Peak virtual memory: 2461 megabytes
+    Info: Processing ended: Fri Nov 16 11:56:20 2018
+    Info: Elapsed time: 00:00:44
+    Info: Total CPU time (on all processors): 00:01:09
 
 
 +----------------------------+

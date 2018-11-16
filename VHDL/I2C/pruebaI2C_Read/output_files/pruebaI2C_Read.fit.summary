@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Nov 15 13:38:34 2018
+Fitter Status : Successful - Fri Nov 16 11:56:19 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pruebaI2C_Read
 Top-level Entity Name : pruebaI2C_Read
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 27 / 41,910 ( < 1 % )
-Total registers : 33
+Logic utilization (in ALMs) : 40 / 41,910 ( < 1 % )
+Total registers : 44
 Total pins : 5 / 314 ( 2 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )

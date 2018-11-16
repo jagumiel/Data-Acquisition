@@ -1,5 +1,5 @@
 Timing Analyzer report for pruebaI2C_Read
-Thu Nov 15 13:38:50 2018
+Fri Nov 16 11:56:36 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -99,14 +99,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.7%      ;
-;     Processor 3            ;   2.7%      ;
-;     Processor 4            ;   2.6%      ;
+;     Processor 2            ;   3.2%      ;
+;     Processor 3            ;   3.1%      ;
+;     Processor 4            ;   3.0%      ;
 +----------------------------+-------------+
 
 
@@ -116,6 +116,7 @@ refer to the applicable agreement for further details.
 ; Clock Name                   ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                          ;
 +------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
 ; FPGA_CLK1_50                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { FPGA_CLK1_50 }                 ;
+; masterI2C_Read:inst1|clk100k ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { masterI2C_Read:inst1|clk100k } ;
 ; masterI2C_Read:inst1|clk200k ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { masterI2C_Read:inst1|clk200k } ;
 ; masterI2C_Read:inst1|ep.e0   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { masterI2C_Read:inst1|ep.e0 }   ;
 +------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
@@ -126,9 +127,9 @@ refer to the applicable agreement for further details.
 +------------+-----------------+------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
 +------------+-----------------+------------------------------+------+
-; 116.44 MHz ; 116.44 MHz      ; masterI2C_Read:inst1|ep.e0   ;      ;
-; 226.86 MHz ; 226.86 MHz      ; FPGA_CLK1_50                 ;      ;
-; 270.05 MHz ; 270.05 MHz      ; masterI2C_Read:inst1|clk200k ;      ;
+; 161.86 MHz ; 161.86 MHz      ; masterI2C_Read:inst1|ep.e0   ;      ;
+; 203.05 MHz ; 203.05 MHz      ; FPGA_CLK1_50                 ;      ;
+; 251.51 MHz ; 251.51 MHz      ; masterI2C_Read:inst1|clk200k ;      ;
 +------------+-----------------+------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -144,21 +145,21 @@ HTML report is unavailable in plain text report export.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -6.115 ; -73.108       ;
-; masterI2C_Read:inst1|clk200k ; -5.110 ; -31.094       ;
-; masterI2C_Read:inst1|ep.e0   ; -3.794 ; -8.788        ;
+; masterI2C_Read:inst1|clk200k ; -5.304 ; -41.753       ;
+; FPGA_CLK1_50                 ; -4.412 ; -111.516      ;
+; masterI2C_Read:inst1|ep.e0   ; -2.589 ; -2.589        ;
 +------------------------------+--------+---------------+
 
 
-+------------------------------------------------------+
-; Slow 1100mV 100C Model Hold Summary                  ;
-+------------------------------+-------+---------------+
-; Clock                        ; Slack ; End Point TNS ;
-+------------------------------+-------+---------------+
-; FPGA_CLK1_50                 ; 0.453 ; 0.000         ;
-; masterI2C_Read:inst1|clk200k ; 0.524 ; 0.000         ;
-; masterI2C_Read:inst1|ep.e0   ; 1.087 ; 0.000         ;
-+------------------------------+-------+---------------+
++-------------------------------------------------------+
+; Slow 1100mV 100C Model Hold Summary                   ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; FPGA_CLK1_50                 ; -0.895 ; -5.209        ;
+; masterI2C_Read:inst1|clk200k ; 0.256  ; 0.000         ;
+; masterI2C_Read:inst1|ep.e0   ; 0.613  ; 0.000         ;
++------------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -178,9 +179,10 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -0.538 ; -18.190       ;
-; masterI2C_Read:inst1|clk200k ; -0.538 ; -6.348        ;
-; masterI2C_Read:inst1|ep.e0   ; -0.538 ; -1.548        ;
+; FPGA_CLK1_50                 ; -0.645 ; -26.272       ;
+; masterI2C_Read:inst1|clk200k ; -0.538 ; -8.355        ;
+; masterI2C_Read:inst1|clk100k ; -0.538 ; -0.776        ;
+; masterI2C_Read:inst1|ep.e0   ; -0.538 ; -0.776        ;
 +------------------------------+--------+---------------+
 
 
@@ -195,9 +197,9 @@ No synchronizer chains to report.
 +------------+-----------------+------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
 +------------+-----------------+------------------------------+------+
-; 119.25 MHz ; 119.25 MHz      ; masterI2C_Read:inst1|ep.e0   ;      ;
-; 227.38 MHz ; 227.38 MHz      ; FPGA_CLK1_50                 ;      ;
-; 281.61 MHz ; 281.61 MHz      ; masterI2C_Read:inst1|clk200k ;      ;
+; 164.42 MHz ; 164.42 MHz      ; masterI2C_Read:inst1|ep.e0   ;      ;
+; 204.5 MHz  ; 204.5 MHz       ; FPGA_CLK1_50                 ;      ;
+; 260.08 MHz ; 260.08 MHz      ; masterI2C_Read:inst1|clk200k ;      ;
 +------------+-----------------+------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -207,9 +209,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -5.508 ; -67.191       ;
-; masterI2C_Read:inst1|clk200k ; -5.405 ; -33.107       ;
-; masterI2C_Read:inst1|ep.e0   ; -3.693 ; -8.488        ;
+; masterI2C_Read:inst1|clk200k ; -5.569 ; -44.060       ;
+; FPGA_CLK1_50                 ; -3.908 ; -98.267       ;
+; masterI2C_Read:inst1|ep.e0   ; -2.541 ; -2.541        ;
 +------------------------------+--------+---------------+
 
 
@@ -218,9 +220,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -0.009 ; -0.009        ;
-; masterI2C_Read:inst1|clk200k ; 0.496  ; 0.000         ;
-; masterI2C_Read:inst1|ep.e0   ; 0.835  ; 0.000         ;
+; FPGA_CLK1_50                 ; -1.324 ; -7.668        ;
+; masterI2C_Read:inst1|clk200k ; 0.251  ; 0.000         ;
+; masterI2C_Read:inst1|ep.e0   ; 0.524  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -241,9 +243,10 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -0.538 ; -19.404       ;
-; masterI2C_Read:inst1|clk200k ; -0.538 ; -6.259        ;
-; masterI2C_Read:inst1|ep.e0   ; -0.538 ; -1.537        ;
+; FPGA_CLK1_50                 ; -0.583 ; -28.015       ;
+; masterI2C_Read:inst1|clk200k ; -0.538 ; -8.201        ;
+; masterI2C_Read:inst1|ep.e0   ; -0.538 ; -0.772        ;
+; masterI2C_Read:inst1|clk100k ; -0.538 ; -0.770        ;
 +------------------------------+--------+---------------+
 
 
@@ -258,21 +261,21 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -3.848 ; -40.263       ;
-; masterI2C_Read:inst1|ep.e0   ; -2.411 ; -4.575        ;
-; masterI2C_Read:inst1|clk200k ; -2.165 ; -13.403       ;
+; FPGA_CLK1_50                 ; -3.407 ; -73.006       ;
+; masterI2C_Read:inst1|clk200k ; -2.474 ; -18.608       ;
+; masterI2C_Read:inst1|ep.e0   ; -1.174 ; -1.174        ;
 +------------------------------+--------+---------------+
 
 
-+------------------------------------------------------+
-; Fast 1100mV 100C Model Hold Summary                  ;
-+------------------------------+-------+---------------+
-; Clock                        ; Slack ; End Point TNS ;
-+------------------------------+-------+---------------+
-; masterI2C_Read:inst1|clk200k ; 0.094 ; 0.000         ;
-; FPGA_CLK1_50                 ; 0.165 ; 0.000         ;
-; masterI2C_Read:inst1|ep.e0   ; 0.556 ; 0.000         ;
-+------------------------------+-------+---------------+
++-------------------------------------------------------+
+; Fast 1100mV 100C Model Hold Summary                   ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; FPGA_CLK1_50                 ; -0.619 ; -3.840        ;
+; masterI2C_Read:inst1|ep.e0   ; 0.028  ; 0.000         ;
+; masterI2C_Read:inst1|clk200k ; 0.088  ; 0.000         ;
++------------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -292,9 +295,10 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -0.420 ; -2.368        ;
-; masterI2C_Read:inst1|clk200k ; 0.114  ; 0.000         ;
-; masterI2C_Read:inst1|ep.e0   ; 0.136  ; 0.000         ;
+; FPGA_CLK1_50                 ; -0.546 ; -3.520        ;
+; masterI2C_Read:inst1|clk200k ; 0.018  ; 0.000         ;
+; masterI2C_Read:inst1|ep.e0   ; 0.123  ; 0.000         ;
+; masterI2C_Read:inst1|clk100k ; 0.130  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -309,9 +313,9 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -2.776 ; -28.275       ;
-; masterI2C_Read:inst1|clk200k ; -2.045 ; -12.532       ;
-; masterI2C_Read:inst1|ep.e0   ; -1.978 ; -3.807        ;
+; FPGA_CLK1_50                 ; -2.426 ; -49.820       ;
+; masterI2C_Read:inst1|clk200k ; -2.260 ; -17.255       ;
+; masterI2C_Read:inst1|ep.e0   ; -1.004 ; -1.004        ;
 +------------------------------+--------+---------------+
 
 
@@ -320,9 +324,9 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -0.163 ; -0.900        ;
-; masterI2C_Read:inst1|clk200k ; 0.063  ; 0.000         ;
-; masterI2C_Read:inst1|ep.e0   ; 0.434  ; 0.000         ;
+; FPGA_CLK1_50                 ; -0.800 ; -5.490        ;
+; masterI2C_Read:inst1|ep.e0   ; -0.067 ; -0.067        ;
+; masterI2C_Read:inst1|clk200k ; 0.007  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -343,9 +347,10 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; FPGA_CLK1_50                 ; -0.414 ; -2.372        ;
-; masterI2C_Read:inst1|clk200k ; 0.132  ; 0.000         ;
-; masterI2C_Read:inst1|ep.e0   ; 0.141  ; 0.000         ;
+; FPGA_CLK1_50                 ; -0.486 ; -3.382        ;
+; masterI2C_Read:inst1|clk200k ; 0.065  ; 0.000         ;
+; masterI2C_Read:inst1|clk100k ; 0.117  ; 0.000         ;
+; masterI2C_Read:inst1|ep.e0   ; 0.124  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
@@ -355,20 +360,22 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                         ;
-+-------------------------------+---------+--------+----------+---------+---------------------+
-; Clock                         ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------------+---------+--------+----------+---------+---------------------+
-; Worst-case Slack              ; -6.115  ; -0.163 ; N/A      ; N/A     ; -0.538              ;
-;  FPGA_CLK1_50                 ; -6.115  ; -0.163 ; N/A      ; N/A     ; -0.538              ;
-;  masterI2C_Read:inst1|clk200k ; -5.405  ; 0.063  ; N/A      ; N/A     ; -0.538              ;
-;  masterI2C_Read:inst1|ep.e0   ; -3.794  ; 0.434  ; N/A      ; N/A     ; -0.538              ;
-; Design-wide TNS               ; -112.99 ; -0.9   ; 0.0      ; 0.0     ; -27.2               ;
-;  FPGA_CLK1_50                 ; -73.108 ; -0.900 ; N/A      ; N/A     ; -19.404             ;
-;  masterI2C_Read:inst1|clk200k ; -33.107 ; 0.000  ; N/A      ; N/A     ; -6.348              ;
-;  masterI2C_Read:inst1|ep.e0   ; -8.788  ; 0.000  ; N/A      ; N/A     ; -1.548              ;
-+-------------------------------+---------+--------+----------+---------+---------------------+
++----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                          ;
++-------------------------------+----------+--------+----------+---------+---------------------+
+; Clock                         ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------------+----------+--------+----------+---------+---------------------+
+; Worst-case Slack              ; -5.569   ; -1.324 ; N/A      ; N/A     ; -0.645              ;
+;  FPGA_CLK1_50                 ; -4.412   ; -1.324 ; N/A      ; N/A     ; -0.645              ;
+;  masterI2C_Read:inst1|clk100k ; N/A      ; N/A    ; N/A      ; N/A     ; -0.538              ;
+;  masterI2C_Read:inst1|clk200k ; -5.569   ; 0.007  ; N/A      ; N/A     ; -0.538              ;
+;  masterI2C_Read:inst1|ep.e0   ; -2.589   ; -0.067 ; N/A      ; N/A     ; -0.538              ;
+; Design-wide TNS               ; -155.858 ; -7.668 ; 0.0      ; 0.0     ; -37.758             ;
+;  FPGA_CLK1_50                 ; -111.516 ; -7.668 ; N/A      ; N/A     ; -28.015             ;
+;  masterI2C_Read:inst1|clk100k ; N/A      ; N/A    ; N/A      ; N/A     ; -0.776              ;
+;  masterI2C_Read:inst1|clk200k ; -44.060  ; 0.000  ; N/A      ; N/A     ; -8.355              ;
+;  masterI2C_Read:inst1|ep.e0   ; -2.589   ; -0.067 ; N/A      ; N/A     ; -0.776              ;
++-------------------------------+----------+--------+----------+---------+---------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -438,13 +445,16 @@ No synchronizer chains to report.
 +------------------------------+------------------------------+----------+----------+----------+----------+
 ; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50                 ; FPGA_CLK1_50                 ; 203      ; 0        ; 0        ; 0        ;
-; masterI2C_Read:inst1|clk200k ; FPGA_CLK1_50                 ; 57       ; 4        ; 0        ; 0        ;
-; masterI2C_Read:inst1|ep.e0   ; FPGA_CLK1_50                 ; 11       ; 11       ; 0        ; 0        ;
-; FPGA_CLK1_50                 ; masterI2C_Read:inst1|clk200k ; 8        ; 0        ; 0        ; 0        ;
-; masterI2C_Read:inst1|clk200k ; masterI2C_Read:inst1|clk200k ; 11       ; 0        ; 0        ; 0        ;
-; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|clk200k ; 6        ; 2        ; 0        ; 0        ;
-; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|ep.e0   ; 0        ; 2        ; 1        ; 0        ;
+; FPGA_CLK1_50                 ; FPGA_CLK1_50                 ; 321      ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk100k ; FPGA_CLK1_50                 ; 19       ; 19       ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk200k ; FPGA_CLK1_50                 ; 88       ; 7        ; 0        ; 0        ;
+; masterI2C_Read:inst1|ep.e0   ; FPGA_CLK1_50                 ; 16       ; 16       ; 0        ; 0        ;
+; FPGA_CLK1_50                 ; masterI2C_Read:inst1|clk200k ; 19       ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk100k ; masterI2C_Read:inst1|clk200k ; 1        ; 1        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk200k ; masterI2C_Read:inst1|clk200k ; 17       ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|clk200k ; 4        ; 2        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk100k ; masterI2C_Read:inst1|ep.e0   ; 1        ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|ep.e0   ; 0        ; 1        ; 0        ; 0        ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -454,13 +464,16 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------+------------------------------+----------+----------+----------+----------+
 ; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
-; FPGA_CLK1_50                 ; FPGA_CLK1_50                 ; 203      ; 0        ; 0        ; 0        ;
-; masterI2C_Read:inst1|clk200k ; FPGA_CLK1_50                 ; 57       ; 4        ; 0        ; 0        ;
-; masterI2C_Read:inst1|ep.e0   ; FPGA_CLK1_50                 ; 11       ; 11       ; 0        ; 0        ;
-; FPGA_CLK1_50                 ; masterI2C_Read:inst1|clk200k ; 8        ; 0        ; 0        ; 0        ;
-; masterI2C_Read:inst1|clk200k ; masterI2C_Read:inst1|clk200k ; 11       ; 0        ; 0        ; 0        ;
-; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|clk200k ; 6        ; 2        ; 0        ; 0        ;
-; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|ep.e0   ; 0        ; 2        ; 1        ; 0        ;
+; FPGA_CLK1_50                 ; FPGA_CLK1_50                 ; 321      ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk100k ; FPGA_CLK1_50                 ; 19       ; 19       ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk200k ; FPGA_CLK1_50                 ; 88       ; 7        ; 0        ; 0        ;
+; masterI2C_Read:inst1|ep.e0   ; FPGA_CLK1_50                 ; 16       ; 16       ; 0        ; 0        ;
+; FPGA_CLK1_50                 ; masterI2C_Read:inst1|clk200k ; 19       ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk100k ; masterI2C_Read:inst1|clk200k ; 1        ; 1        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk200k ; masterI2C_Read:inst1|clk200k ; 17       ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|clk200k ; 4        ; 2        ; 0        ; 0        ;
+; masterI2C_Read:inst1|clk100k ; masterI2C_Read:inst1|ep.e0   ; 1        ; 0        ; 0        ; 0        ;
+; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|ep.e0   ; 0        ; 1        ; 0        ; 0        ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -485,7 +498,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
 ; Unconstrained Output Ports      ; 2     ; 2    ;
 ; Unconstrained Output Port Paths ; 3     ; 3    ;
 +---------------------------------+-------+------+
@@ -497,6 +510,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Target                       ; Clock                        ; Type ; Status      ;
 +------------------------------+------------------------------+------+-------------+
 ; FPGA_CLK1_50                 ; FPGA_CLK1_50                 ; Base ; Constrained ;
+; masterI2C_Read:inst1|clk100k ; masterI2C_Read:inst1|clk100k ; Base ; Constrained ;
 ; masterI2C_Read:inst1|clk200k ; masterI2C_Read:inst1|clk200k ; Base ; Constrained ;
 ; masterI2C_Read:inst1|ep.e0   ; masterI2C_Read:inst1|ep.e0   ; Base ; Constrained ;
 +------------------------------+------------------------------+------+-------------+
@@ -546,19 +560,20 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Nov 15 13:38:44 2018
+    Info: Processing started: Fri Nov 16 11:56:30 2018
 Info: Command: quartus_sta pruebaI2C_Read -c pruebaI2C_Read
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is -40 degrees C
 Info (21077): High junction temperature is 100 degrees C
-Warning (335093): The Timing Analyzer is analyzing 2 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'pruebaI2C_Read.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name FPGA_CLK1_50 FPGA_CLK1_50
     Info (332105): create_clock -period 1.000 -name masterI2C_Read:inst1|clk200k masterI2C_Read:inst1|clk200k
+    Info (332105): create_clock -period 1.000 -name masterI2C_Read:inst1|clk100k masterI2C_Read:inst1|clk100k
     Info (332105): create_clock -period 1.000 -name masterI2C_Read:inst1|ep.e0 masterI2C_Read:inst1|ep.e0
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
@@ -566,107 +581,111 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 100C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.115
+Info (332146): Worst-case setup slack is -5.304
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.115             -73.108 FPGA_CLK1_50 
-    Info (332119):    -5.110             -31.094 masterI2C_Read:inst1|clk200k 
-    Info (332119):    -3.794              -8.788 masterI2C_Read:inst1|ep.e0 
-Info (332146): Worst-case hold slack is 0.453
+    Info (332119):    -5.304             -41.753 masterI2C_Read:inst1|clk200k 
+    Info (332119):    -4.412            -111.516 FPGA_CLK1_50 
+    Info (332119):    -2.589              -2.589 masterI2C_Read:inst1|ep.e0 
+Info (332146): Worst-case hold slack is -0.895
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.453               0.000 FPGA_CLK1_50 
-    Info (332119):     0.524               0.000 masterI2C_Read:inst1|clk200k 
-    Info (332119):     1.087               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.895              -5.209 FPGA_CLK1_50 
+    Info (332119):     0.256               0.000 masterI2C_Read:inst1|clk200k 
+    Info (332119):     0.613               0.000 masterI2C_Read:inst1|ep.e0 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.538
+Info (332146): Worst-case minimum pulse width slack is -0.645
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538             -18.190 FPGA_CLK1_50 
-    Info (332119):    -0.538              -6.348 masterI2C_Read:inst1|clk200k 
-    Info (332119):    -0.538              -1.548 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.645             -26.272 FPGA_CLK1_50 
+    Info (332119):    -0.538              -8.355 masterI2C_Read:inst1|clk200k 
+    Info (332119):    -0.538              -0.776 masterI2C_Read:inst1|clk100k 
+    Info (332119):    -0.538              -0.776 masterI2C_Read:inst1|ep.e0 
 Info: Analyzing Slow 1100mV -40C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -5.508
+Info (332146): Worst-case setup slack is -5.569
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -5.508             -67.191 FPGA_CLK1_50 
-    Info (332119):    -5.405             -33.107 masterI2C_Read:inst1|clk200k 
-    Info (332119):    -3.693              -8.488 masterI2C_Read:inst1|ep.e0 
-Info (332146): Worst-case hold slack is -0.009
+    Info (332119):    -5.569             -44.060 masterI2C_Read:inst1|clk200k 
+    Info (332119):    -3.908             -98.267 FPGA_CLK1_50 
+    Info (332119):    -2.541              -2.541 masterI2C_Read:inst1|ep.e0 
+Info (332146): Worst-case hold slack is -1.324
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.009              -0.009 FPGA_CLK1_50 
-    Info (332119):     0.496               0.000 masterI2C_Read:inst1|clk200k 
-    Info (332119):     0.835               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -1.324              -7.668 FPGA_CLK1_50 
+    Info (332119):     0.251               0.000 masterI2C_Read:inst1|clk200k 
+    Info (332119):     0.524               0.000 masterI2C_Read:inst1|ep.e0 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.538
+Info (332146): Worst-case minimum pulse width slack is -0.583
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538             -19.404 FPGA_CLK1_50 
-    Info (332119):    -0.538              -6.259 masterI2C_Read:inst1|clk200k 
-    Info (332119):    -0.538              -1.537 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.583             -28.015 FPGA_CLK1_50 
+    Info (332119):    -0.538              -8.201 masterI2C_Read:inst1|clk200k 
+    Info (332119):    -0.538              -0.772 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.538              -0.770 masterI2C_Read:inst1|clk100k 
 Info: Analyzing Fast 1100mV 100C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.848
+Info (332146): Worst-case setup slack is -3.407
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.848             -40.263 FPGA_CLK1_50 
-    Info (332119):    -2.411              -4.575 masterI2C_Read:inst1|ep.e0 
-    Info (332119):    -2.165             -13.403 masterI2C_Read:inst1|clk200k 
-Info (332146): Worst-case hold slack is 0.094
+    Info (332119):    -3.407             -73.006 FPGA_CLK1_50 
+    Info (332119):    -2.474             -18.608 masterI2C_Read:inst1|clk200k 
+    Info (332119):    -1.174              -1.174 masterI2C_Read:inst1|ep.e0 
+Info (332146): Worst-case hold slack is -0.619
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.094               0.000 masterI2C_Read:inst1|clk200k 
-    Info (332119):     0.165               0.000 FPGA_CLK1_50 
-    Info (332119):     0.556               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.619              -3.840 FPGA_CLK1_50 
+    Info (332119):     0.028               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):     0.088               0.000 masterI2C_Read:inst1|clk200k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.420
+Info (332146): Worst-case minimum pulse width slack is -0.546
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.420              -2.368 FPGA_CLK1_50 
-    Info (332119):     0.114               0.000 masterI2C_Read:inst1|clk200k 
-    Info (332119):     0.136               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.546              -3.520 FPGA_CLK1_50 
+    Info (332119):     0.018               0.000 masterI2C_Read:inst1|clk200k 
+    Info (332119):     0.123               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):     0.130               0.000 masterI2C_Read:inst1|clk100k 
 Info: Analyzing Fast 1100mV -40C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.776
+Info (332146): Worst-case setup slack is -2.426
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.776             -28.275 FPGA_CLK1_50 
-    Info (332119):    -2.045             -12.532 masterI2C_Read:inst1|clk200k 
-    Info (332119):    -1.978              -3.807 masterI2C_Read:inst1|ep.e0 
-Info (332146): Worst-case hold slack is -0.163
+    Info (332119):    -2.426             -49.820 FPGA_CLK1_50 
+    Info (332119):    -2.260             -17.255 masterI2C_Read:inst1|clk200k 
+    Info (332119):    -1.004              -1.004 masterI2C_Read:inst1|ep.e0 
+Info (332146): Worst-case hold slack is -0.800
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.163              -0.900 FPGA_CLK1_50 
-    Info (332119):     0.063               0.000 masterI2C_Read:inst1|clk200k 
-    Info (332119):     0.434               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.800              -5.490 FPGA_CLK1_50 
+    Info (332119):    -0.067              -0.067 masterI2C_Read:inst1|ep.e0 
+    Info (332119):     0.007               0.000 masterI2C_Read:inst1|clk200k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.414
+Info (332146): Worst-case minimum pulse width slack is -0.486
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.414              -2.372 FPGA_CLK1_50 
-    Info (332119):     0.132               0.000 masterI2C_Read:inst1|clk200k 
-    Info (332119):     0.141               0.000 masterI2C_Read:inst1|ep.e0 
+    Info (332119):    -0.486              -3.382 FPGA_CLK1_50 
+    Info (332119):     0.065               0.000 masterI2C_Read:inst1|clk200k 
+    Info (332119):     0.117               0.000 masterI2C_Read:inst1|clk100k 
+    Info (332119):     0.124               0.000 masterI2C_Read:inst1|ep.e0 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1014 megabytes
-    Info: Processing ended: Thu Nov 15 13:38:50 2018
+    Info: Peak virtual memory: 1010 megabytes
+    Info: Processing ended: Fri Nov 16 11:56:36 2018
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
