@@ -1,0 +1,417 @@
+Analysis & Synthesis report for pruebaI2C_RW
+Mon Nov 19 14:17:21 2018
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |pruebaI2C_RW|es
+  9. State Machine - |pruebaI2C_RW|masterI2C_RW:inst1|ep
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Port Connectivity Checks: "masterI2C_RW:inst1"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Nov 19 14:17:21 2018       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; pruebaI2C_RW                                ;
+; Top-level Entity Name           ; pruebaI2C_RW                                ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 52                                          ;
+; Total pins                      ; 5                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
+; Top-level entity name                                                           ; pruebaI2C_RW       ; pruebaI2C_RW       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; masterI2C_RW.vhd                 ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/masterI2C_RW.vhd ;         ;
+; pruebaI2C_RW.vhd                 ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 54                 ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 89                 ;
+;     -- 7 input functions                    ; 0                  ;
+;     -- 6 input functions                    ; 18                 ;
+;     -- 5 input functions                    ; 15                 ;
+;     -- 4 input functions                    ; 18                 ;
+;     -- <=3 input functions                  ; 38                 ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 52                 ;
+;                                             ;                    ;
+; I/O pins                                    ; 5                  ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
+; Maximum fan-out                             ; 34                 ;
+; Total fan-out                               ; 495                ;
+; Average fan-out                             ; 3.26               ;
++---------------------------------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+--------------+--------------+
+; |pruebaI2C_RW              ; 89 (12)             ; 52 (8)                    ; 0                 ; 0          ; 5    ; 0            ; |pruebaI2C_RW                    ; pruebaI2C_RW ; work         ;
+;    |masterI2C_RW:inst1|    ; 77 (77)             ; 44 (44)                   ; 0                 ; 0          ; 0    ; 0            ; |pruebaI2C_RW|masterI2C_RW:inst1 ; masterI2C_RW ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------+
+; State Machine - |pruebaI2C_RW|es      ;
++-------+-------+-------+-------+-------+
+; Name  ; es.e3 ; es.e2 ; es.e1 ; es.e0 ;
++-------+-------+-------+-------+-------+
+; es.e0 ; 0     ; 0     ; 0     ; 0     ;
+; es.e1 ; 0     ; 0     ; 1     ; 1     ;
+; es.e2 ; 0     ; 1     ; 0     ; 1     ;
+; es.e3 ; 1     ; 0     ; 0     ; 1     ;
++-------+-------+-------+-------+-------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------+
+; State Machine - |pruebaI2C_RW|masterI2C_RW:inst1|ep                           ;
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; Name  ; ep.e8 ; ep.e7 ; ep.e6 ; ep.e5 ; ep.e4 ; ep.e3 ; ep.e2 ; ep.e1 ; ep.e0 ;
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+; ep.e0 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
+; ep.e1 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
+; ep.e2 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
+; ep.e3 ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
+; ep.e4 ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e5 ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e6 ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e7 ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
+; ep.e8 ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
++-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                    ;
++----------------------------------------------------+--------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal      ; Free of Timing Hazards ;
++----------------------------------------------------+--------------------------+------------------------+
+; ep.e1_203                                          ; masterI2C_RW:inst1|ep.e0 ; yes                    ;
+; ep.e2_197                                          ; masterI2C_RW:inst1|ep.e0 ; yes                    ;
+; ep.e0_209                                          ; masterI2C_RW:inst1|ep.e0 ; yes                    ;
+; ep.e3_191                                          ; masterI2C_RW:inst1|ep.e0 ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                          ;                        ;
++----------------------------------------------------+--------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; data[1,3]                              ; Stuck at VCC due to stuck port data_in ;
+; data[4,6]                              ; Stuck at GND due to stuck port data_in ;
+; command[0]                             ; Stuck at VCC due to stuck port data_in ;
+; command[2..7]                          ; Stuck at GND due to stuck port data_in ;
+; masterI2C_RW:inst1|data_addr[1]        ; Stuck at GND due to stuck port data_in ;
+; masterI2C_RW:inst1|data_addr[2]        ; Stuck at VCC due to stuck port data_in ;
+; masterI2C_RW:inst1|data_addr[3,4]      ; Stuck at GND due to stuck port data_in ;
+; masterI2C_RW:inst1|data_addr[5..7]     ; Stuck at VCC due to stuck port data_in ;
+; data[7]                                ; Merged with data[5]                    ;
+; data[2]                                ; Merged with data[0]                    ;
+; Total Number of Removed Registers = 20 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 52    ;
+; Number of registers using Synchronous Clear  ; 27    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; masterI2C_RW:inst1|sdat_gen            ; 3       ;
+; masterI2C_RW:inst1|cBits[0]            ; 11      ;
+; masterI2C_RW:inst1|cBits[2]            ; 9       ;
+; masterI2C_RW:inst1|cBits[1]            ; 9       ;
+; masterI2C_RW:inst1|hold                ; 3       ;
+; Total number of inverted registers = 5 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |pruebaI2C_RW|masterI2C_RW:inst1|cBits[2] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pruebaI2C_RW|masterI2C_RW:inst1|es       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "masterI2C_RW:inst1" ;
++-----------+-------+----------+-----------------+
+; Port      ; Type  ; Severity ; Details         ;
++-----------+-------+----------+-----------------+
+; add[6..4] ; Input ; Info     ; Stuck at VCC    ;
+; add[3..2] ; Input ; Info     ; Stuck at GND    ;
+; add[1]    ; Input ; Info     ; Stuck at VCC    ;
+; add[0]    ; Input ; Info     ; Stuck at GND    ;
++-----------+-------+----------+-----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 52                          ;
+;     ENA               ; 6                           ;
+;     ENA SCLR          ; 9                           ;
+;     SCLR              ; 18                          ;
+;     plain             ; 19                          ;
+; arriav_io_obuf        ; 2                           ;
+; arriav_lcell_comb     ; 89                          ;
+;     arith             ; 17                          ;
+;         1 data inputs ; 17                          ;
+;     normal            ; 72                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 15                          ;
+;         6 data inputs ; 18                          ;
+; boundary_port         ; 5                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.93                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Nov 19 14:17:07 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebaI2C_RW -c pruebaI2C_RW
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file masteri2c_rw.vhd
+    Info (12022): Found design unit 1: masterI2C_RW-a File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/masterI2C_RW.vhd Line: 22
+    Info (12023): Found entity 1: masterI2C_RW File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/masterI2C_RW.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file pruebai2c_rw.vhd
+    Info (12022): Found design unit 1: pruebaI2C_RW-a File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 14
+    Info (12023): Found entity 1: pruebaI2C_RW File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 6
+Info (12127): Elaborating entity "pruebaI2C_RW" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at pruebaI2C_RW.vhd(51): object "espera" assigned a value but never read File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 51
+Warning (10631): VHDL Process Statement warning at pruebaI2C_RW.vhd(91): inferring latch(es) for signal or variable "ep", which holds its previous value in one or more paths through the process File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 91
+Info (10041): Inferred latch for "ep.e3" at pruebaI2C_RW.vhd(91) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 91
+Info (10041): Inferred latch for "ep.e2" at pruebaI2C_RW.vhd(91) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 91
+Info (10041): Inferred latch for "ep.e1" at pruebaI2C_RW.vhd(91) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 91
+Info (10041): Inferred latch for "ep.e0" at pruebaI2C_RW.vhd(91) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 91
+Info (12128): Elaborating entity "masterI2C_RW" for hierarchy "masterI2C_RW:inst1" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 99
+Warning (10036): Verilog HDL or VHDL warning at masterI2C_RW.vhd(55): object "data_reg" assigned a value but never read File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/masterI2C_RW.vhd Line: 55
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaI2C_RW/pruebaI2C_RW.vhd Line: 9
+Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 91 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 745 megabytes
+    Info: Processing ended: Mon Nov 19 14:17:21 2018
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:22
+
+
