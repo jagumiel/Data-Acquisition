@@ -7,6 +7,7 @@ ENTITY pruebaI2C_RW is
 	PORT(
 			FPGA_CLK1_50: IN STD_LOGIC;
 			KEY			: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+			LED			: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 			SCL			: OUT STD_LOGIC;
 			SDA			: INOUT STD_LOGIC);	
 END pruebaI2C_RW;
@@ -17,12 +18,15 @@ architecture a of pruebaI2C_RW is
    	 	Port( 
 			CLK_50: IN  STD_LOGIC;
 			RST 	: IN  STD_LOGIC;
-			ADD	: IN  STD_LOGIC_VECTOR (6 DOWNTO 0); --Address: Direccion del dispositivo.
-			COM	: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Command: Tipo de orden a enviar.
-			DAT	: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); --Data: Informacion a enviar.
+			ADD	: IN  STD_LOGIC_VECTOR (6 DOWNTO 0);	--Address: Direccion del dispositivo.
+			COM	: IN  STD_LOGIC_VECTOR (7 DOWNTO 0);	--Command: Tipo de orden a enviar.
+			DAT	: IN  STD_LOGIC_VECTOR (7 DOWNTO 0);	--Data: Informacion a enviar.
 			GO		: IN  STD_LOGIC;
-			RW		: IN  STD_LOGIC;								--Bit de L/E. 0=Write; 1=Read;
+			RW		: IN  STD_LOGIC;							 	--Bit de L/E. 0=Write; 1=Read;
+			SPEED : IN  STD_LOGIC;							 	--Velocidad de reloj. 0=100kHz; 1=400kHz.
+			RDNUM : IN  INTEGER;									--Numero de registros a leer.
 			BUSY	: OUT STD_LOGIC;
+			DOUT	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);	--Salida de datos. Cuando hay operación de lectura saca ese resultado.
 			SCLK	: OUT STD_LOGIC;
 			SDAT	: INOUT STD_LOGIC
 			);
@@ -48,11 +52,12 @@ architecture a of pruebaI2C_RW is
 	signal 	change		: std_logic;
 	signal 	go				: std_logic;
 	signal 	ocupado		: std_logic;
-	signal 	espera		: std_logic;
 	signal 	cont			: std_logic_vector (6 downto 0):="0000000";
 	signal 	clk100k		: std_logic;
 	signal 	clk100k_z	: std_logic;
 	signal	le				: std_logic:='0';
+	signal	speed			: std_logic:='0';
+	signal	rdnum			:integer:=2; 		--OJO! Que he puesto 2 en la definicion solo para la prueba.
 
 BEGIN
 
@@ -79,15 +84,16 @@ BEGIN
 						command<=cmd_write;
 						le<='1';
 						es<=e3;
+						--speed<='0';
 					WHEN e3 =>
 						es<=e3;
 				END CASE;
 			END IF;
 		END IF;
 	END PROCESS;
-	espera	<='1' 			when ep=e1 else '0';
 	go			<='1' 	when (ocupado='0' and (ep=e0 or ep=e1 or ep=e2)) else '0'; --OJO! Esto es una PRUEBA. Solo queria transmitir una trama!!!
-
+	speed		<='1'		when ep=e1 or ep=e2 else '0';
+	
 	PROCESS(clk100k, ocupado, es)
 	BEGIN
 		if(ocupado='0')then
@@ -105,7 +111,10 @@ BEGIN
 		DAT 	=> data,
 		GO	=> go,
 		RW => le,
+		SPEED => speed,
+		RDNUM => rdnum,
 		BUSY	=> ocupado,
+		DOUT => LED,
 		SCLK	=> clk100k,
 		SDAT	=> SDA
 	);

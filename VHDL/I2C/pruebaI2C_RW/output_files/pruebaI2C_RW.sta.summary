@@ -2,196 +2,148 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 100C Model Setup 'masterI2C_RW:inst1|clk200k'
-Slack : -5.150
-TNS   : -42.542
+Type  : Slow 1100mV 100C Model Setup 'masterI2C_RW:inst1|scl2x'
+Slack : -5.048
+TNS   : -43.162
 
 Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
-Slack : -3.774
-TNS   : -95.255
+Slack : -4.907
+TNS   : -252.741
 
 Type  : Slow 1100mV 100C Model Setup 'masterI2C_RW:inst1|ep.e0'
-Slack : -3.005
-TNS   : -25.998
-
-Type  : Slow 1100mV 100C Model Setup 'masterI2C_RW:inst1|clk100k'
-Slack : -2.902
-TNS   : -15.688
+Slack : -3.975
+TNS   : -31.255
 
 Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
-Slack : -4.011
-TNS   : -44.696
+Slack : -4.034
+TNS   : -94.483
 
-Type  : Slow 1100mV 100C Model Hold 'masterI2C_RW:inst1|clk200k'
-Slack : -1.264
-TNS   : -2.549
+Type  : Slow 1100mV 100C Model Hold 'masterI2C_RW:inst1|scl2x'
+Slack : -1.172
+TNS   : -1.172
 
 Type  : Slow 1100mV 100C Model Hold 'masterI2C_RW:inst1|ep.e0'
-Slack : 0.113
-TNS   : 0.000
-
-Type  : Slow 1100mV 100C Model Hold 'masterI2C_RW:inst1|clk100k'
-Slack : 0.527
+Slack : 0.623
 TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
 Slack : -0.538
-TNS   : -27.763
+TNS   : -60.261
 
-Type  : Slow 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk200k'
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|scl2x'
 Slack : -0.538
-TNS   : -8.223
+TNS   : -8.035
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|ep.e0'
 Slack : -0.538
-TNS   : -6.614
+TNS   : -6.775
 
-Type  : Slow 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk100k'
-Slack : -0.538
-TNS   : -6.208
-
-Type  : Slow 1100mV -40C Model Setup 'masterI2C_RW:inst1|clk200k'
-Slack : -5.568
-TNS   : -45.731
+Type  : Slow 1100mV -40C Model Setup 'masterI2C_RW:inst1|scl2x'
+Slack : -5.337
+TNS   : -45.679
 
 Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
-Slack : -3.674
-TNS   : -84.536
+Slack : -4.849
+TNS   : -247.125
 
 Type  : Slow 1100mV -40C Model Setup 'masterI2C_RW:inst1|ep.e0'
-Slack : -2.883
-TNS   : -26.603
-
-Type  : Slow 1100mV -40C Model Setup 'masterI2C_RW:inst1|clk100k'
-Slack : -2.777
-TNS   : -15.792
+Slack : -3.779
+TNS   : -31.124
 
 Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
-Slack : -4.240
-TNS   : -48.803
+Slack : -4.137
+TNS   : -120.281
 
-Type  : Slow 1100mV -40C Model Hold 'masterI2C_RW:inst1|clk200k'
-Slack : -1.078
-TNS   : -2.054
+Type  : Slow 1100mV -40C Model Hold 'masterI2C_RW:inst1|scl2x'
+Slack : -1.031
+TNS   : -1.031
 
 Type  : Slow 1100mV -40C Model Hold 'masterI2C_RW:inst1|ep.e0'
-Slack : -0.043
-TNS   : -0.043
-
-Type  : Slow 1100mV -40C Model Hold 'masterI2C_RW:inst1|clk100k'
-Slack : 0.637
+Slack : 0.723
 TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
 Slack : -0.538
-TNS   : -29.599
+TNS   : -63.995
 
-Type  : Slow 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk200k'
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|scl2x'
 Slack : -0.538
-TNS   : -7.998
+TNS   : -7.917
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|ep.e0'
 Slack : -0.538
-TNS   : -6.501
-
-Type  : Slow 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk100k'
-Slack : -0.538
-TNS   : -6.285
+TNS   : -6.580
 
 Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
-Slack : -2.936
-TNS   : -52.857
+Slack : -2.525
+TNS   : -109.866
 
-Type  : Fast 1100mV 100C Model Setup 'masterI2C_RW:inst1|clk200k'
-Slack : -2.149
-TNS   : -17.924
-
-Type  : Fast 1100mV 100C Model Setup 'masterI2C_RW:inst1|clk100k'
-Slack : -1.434
-TNS   : -7.103
+Type  : Fast 1100mV 100C Model Setup 'masterI2C_RW:inst1|scl2x'
+Slack : -2.226
+TNS   : -18.666
 
 Type  : Fast 1100mV 100C Model Setup 'masterI2C_RW:inst1|ep.e0'
-Slack : -1.307
-TNS   : -12.446
+Slack : -2.033
+TNS   : -16.706
 
 Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
-Slack : -2.116
-TNS   : -24.868
+Slack : -2.196
+TNS   : -61.129
 
-Type  : Fast 1100mV 100C Model Hold 'masterI2C_RW:inst1|clk200k'
-Slack : -0.845
-TNS   : -2.080
+Type  : Fast 1100mV 100C Model Hold 'masterI2C_RW:inst1|scl2x'
+Slack : -0.756
+TNS   : -0.756
 
 Type  : Fast 1100mV 100C Model Hold 'masterI2C_RW:inst1|ep.e0'
-Slack : -0.200
-TNS   : -0.487
-
-Type  : Fast 1100mV 100C Model Hold 'masterI2C_RW:inst1|clk100k'
-Slack : 0.070
+Slack : 0.289
 TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : -0.460
-TNS   : -3.598
-
-Type  : Fast 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk200k'
-Slack : 0.072
-TNS   : 0.000
+Slack : -0.475
+TNS   : -7.192
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|ep.e0'
-Slack : 0.144
+Slack : -0.068
+TNS   : -0.406
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|scl2x'
+Slack : 0.071
 TNS   : 0.000
 
-Type  : Fast 1100mV 100C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk100k'
-Slack : 0.156
-TNS   : 0.000
+Type  : Fast 1100mV -40C Model Setup 'masterI2C_RW:inst1|scl2x'
+Slack : -2.058
+TNS   : -17.472
 
 Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
-Slack : -2.073
-TNS   : -34.990
-
-Type  : Fast 1100mV -40C Model Setup 'masterI2C_RW:inst1|clk200k'
-Slack : -2.066
-TNS   : -17.135
-
-Type  : Fast 1100mV -40C Model Setup 'masterI2C_RW:inst1|clk100k'
-Slack : -1.220
-TNS   : -5.957
+Slack : -1.940
+TNS   : -82.919
 
 Type  : Fast 1100mV -40C Model Setup 'masterI2C_RW:inst1|ep.e0'
-Slack : -1.121
-TNS   : -10.916
+Slack : -1.655
+TNS   : -14.126
 
 Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
-Slack : -2.079
-TNS   : -25.664
+Slack : -2.124
+TNS   : -70.885
 
-Type  : Fast 1100mV -40C Model Hold 'masterI2C_RW:inst1|clk200k'
-Slack : -0.743
-TNS   : -1.944
+Type  : Fast 1100mV -40C Model Hold 'masterI2C_RW:inst1|scl2x'
+Slack : -0.686
+TNS   : -0.686
 
 Type  : Fast 1100mV -40C Model Hold 'masterI2C_RW:inst1|ep.e0'
-Slack : -0.260
-TNS   : -0.816
-
-Type  : Fast 1100mV -40C Model Hold 'masterI2C_RW:inst1|clk100k'
-Slack : 0.039
+Slack : 0.324
 TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : -0.436
-TNS   : -3.501
-
-Type  : Fast 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk200k'
-Slack : 0.109
-TNS   : 0.000
+Slack : -0.457
+TNS   : -7.073
 
 Type  : Fast 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|ep.e0'
-Slack : 0.136
+Slack : 0.015
 TNS   : 0.000
 
-Type  : Fast 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|clk100k'
-Slack : 0.142
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'masterI2C_RW:inst1|scl2x'
+Slack : 0.103
 TNS   : 0.000
 
 ------------------------------------------------------------

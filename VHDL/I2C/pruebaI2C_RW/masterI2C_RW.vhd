@@ -6,14 +6,17 @@ use ieee.numeric_std.all;
 
 entity masterI2C_RW is
     Port( 
-		CLK_50 	: IN  STD_LOGIC;			--Reloj a 50Mhz
+		CLK_50: IN  STD_LOGIC;								--Reloj a 50Mhz
 		RST 	: IN  STD_LOGIC;
 		ADD	: IN  STD_LOGIC_VECTOR (6 DOWNTO 0); 	--Address: Dirección del dispositivo.
 		COM	: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); 	--Command: Tipo de orden a enviar.
 		DAT	: IN  STD_LOGIC_VECTOR (7 DOWNTO 0); 	--Data: Información a enviar.
 		GO		: IN  STD_LOGIC;								--Inicio.
 		RW		: IN  STD_LOGIC;								--Bit de L/E. 0=Write; 1=Read;
+		SPEED : IN  STD_LOGIC;								--Velocidad de reloj. 0=100kHz; 1=400kHz.
+		RDNUM : IN  INTEGER;									--Numero de registros a leer.
 		BUSY	: OUT STD_LOGIC;								--Ocupado. No puede atender nuevas peticiones.
+		DOUT	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);	--Salida de datos. Cuando hay operación de lectura saca ese resultado.
 		SCLK	: OUT STD_LOGIC;								--Señal de reloj para la sincronización del I2C. 100kHz.
 		SDAT	: INOUT STD_LOGIC);							--Señal de datos generada. Trama a enviar al dispositivo.
 end masterI2C_RW;
@@ -44,9 +47,11 @@ architecture a of masterI2C_RW is
 	
 
 	--Generación de relojes
-	signal clk200k : std_logic :='0'; 									--Reloj de 200kHz. Se usa para hacer las condiciones de inicio/parada y trama.
-	signal clk100k	: std_logic :='0'; 									--Reloj de 100kHz. Para la sincronización. Señal SCL.
-	signal cont		: std_logic_vector(7 downto 0) :="00000000";	--Lo uso para contar ciclos a la hora de hacer el reloj de 200kHz.
+	signal scl2x 	: std_logic :='0'; 									--Reloj al doble de la frecuencia de scl1x. Se usa para hacer las condiciones de inicio/parada y trama.
+	signal scl1x	: std_logic :='0'; 									--Reloj de 100 o 400 kHz. Para la sincronización. Señal SCL.
+	signal cont		: std_logic_vector(7 downto 0) :="00000000";	--Lo uso para contar ciclos a la hora de hacer el reloj de 2x.
+	signal halfCont: std_logic_vector(7 downto 0) :="01111101"; --Mitad del contador. Ciclo a '1'. Inicializado a 125.
+	signal maxCont : std_logic_vector(7 downto 0) :="11111001"; --Máximo del contador. Indica cuando reiniciar. Inicializado a 249.
 	
 	--Señales de datos para la placa
 	signal data_addr	: std_logic_vector(7 downto 0); --Dirección de la placa y bit de escritura.
@@ -64,6 +69,8 @@ architecture a of masterI2C_RW is
 	signal terminate: std_logic:='0';
 	signal ack_rdy  : std_logic:='0'; --Para detener el ack durante un ciclo.
 	signal count100 : std_logic_vector(8 downto 0):="000000000";
+	signal fullCont : std_logic_vector(8 downto 0):="111110011"; --499. El ciclo completo de 100kHz
+	signal rdnReg	 : integer:=0;		--"Readen Registers". Numero de registros leidos.
 
 begin
 
@@ -169,9 +176,9 @@ begin
 	END PROCESS;
 	
 	--Cambio de estados.
-	PROCESS(clk200k)
+	PROCESS(scl2x)
 	BEGIN
-		if(rising_edge(clk200k))then
+		if(rising_edge(scl2x))then
 			ep<=es;
 		end if;
 	END PROCESS;
@@ -190,24 +197,24 @@ begin
 	process (CLK_50)
 	begin
 		if (rising_edge(CLK_50)) then
-			if (cont<"1111101")then --Si es menor que 125
-				clk200k<='0';
+			if (cont<halfCont)then --Si es menor que la mitad.
+				scl2x<='0';
 				cont<=cont+'1';
 			else
-				clk200k<='1';
+				scl2x<='1';
 				cont<=cont+'1';
 			end if;
-			if(cont="11111001")then 
+			if(cont=maxCont)then 
 				cont<="00000000";
 			end if;
 		end if;
 	end process;
 
 	--Reloj de 100kHz (Va a enviarse a SCLK)
-	process(clk200k)
+	process(scl2x)
 	begin
-		if(rising_edge(clk200k))then
-			clk100k<=not(clk100k);
+		if(rising_edge(scl2x))then
+			scl1x<=not(scl1x);
 		end if;
 	end process;
 	
@@ -220,6 +227,15 @@ begin
 				stopped<='0';
 				terminate<='0';
 			elsif(start='1')then					--Comienzo de la transmision: SDAT a 0 antes que SCLK
+				if(SPEED='0')then
+					halfCont<="01111101";	--125.
+					maxCont<="11111001";		--249.
+					fullCont<="111110011";	--499. Ciclo completo de 100kHz
+				else
+					halfCont<="00100000";	--32.
+					maxCont<="00111111";		--63.
+					fullCont<="001111110";	--126. Ciclo completo de "400kHz". 390kHz reales.
+				end if;
 				ack_rdy<='0';
 				--Preparo el siguiente dato a enviar.
 				if(le='0')then
@@ -232,9 +248,9 @@ begin
 						data_addr<=ADD & le;
 					end if;
 				end if;
-				--Hago la condicion de parada.
-				if(clk100k='1')then
-					if(clk200k='0')then
+				--Hago la condicion de inicio.
+				if(scl1x='1')then
+					if(scl2x='0')then
 						sdat_gen<='0';
 						started<='1';
 					else
@@ -245,31 +261,31 @@ begin
 				end if;
 				--Hay que inicializar las variables de rdy a 0.
 			elsif(config='1')then
-				if(clk100k='0')then
-					if(clk200k='0')then
+				if(scl1x='0')then
+					if(scl2x='0')then
 						sdat_gen<=data_addr(cBits);
 						hold<='0';
 					end if;
-				elsif(clk100k='1' and cBits>-1 and hold='0')then
+				elsif(scl1x='1' and cBits>-1 and hold='0')then
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(clk100k='0' and cBits=-1)then--aqui he metido el clk,  de lo contrario el ultimo bit dura menos y cambia los tiempos de la trama
+				if(scl1x='0' and cBits=-1)then--aqui he metido el clk,  de lo contrario el ultimo bit dura menos y cambia los tiempos de la trama
 					cBits<=7;
 					conf_rdy<='1';
 				end if;
 			elsif(cmd='1')then
 			ack_rdy<='0';
-				if(clk100k='0')then
-					if(clk200k='0')then
+				if(scl1x='0')then
+					if(scl2x='0')then
 						sdat_gen<=data_cmd(cBits);
 						hold<='0';
 					end if;
-				elsif(clk100k='1' and cBits>-1 and hold='0')then
+				elsif(scl1x='1' and cBits>-1 and hold='0')then
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(clk100k='0'and cBits=-1)then--aqui he metido el clk, de lo contrario el ultimo bit dura menos y cambia los tiempos de la trama
+				if(scl1x='0'and cBits=-1)then--aqui he metido el clk, de lo contrario el ultimo bit dura menos y cambia los tiempos de la trama
 					cBits<=7;
 					--Solo es necesario que cambie sec para las lecturas.
 					if(le='1')then
@@ -285,8 +301,8 @@ begin
 				if(le='1')then
 					sdat_gen<='1'; --Para leer lo pongo en alta impedancia.
 				end if;
-				if(clk100k='0')then
-					if(clk200k='0')then
+				if(scl1x='0')then
+					if(scl2x='0')then
 						if (le='0')then	--Si escribo, lo mando hacia sdat
 							sdat_gen<=data_info(cBits);
 						else			--Si leo, "pincho" la linea SDAT y lo almaceno en mi vector.
@@ -294,7 +310,7 @@ begin
 						end if;
 							hold<='0';
 					end if;
-				elsif(clk100k='1' and cBits>-1 and hold='0')then
+				elsif(scl1x='1' and cBits>-1 and hold='0')then
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
@@ -308,12 +324,17 @@ begin
 					ack_rdy<='1';
 			elsif(ack_tx='1')then
 				--Me estoy quedando un ciclo de 100kHz a '1'. El tx es solo para leer, y estoy considerando un unico caso, hacer solo una lectura.
-				sdat_gen<='1';
-				if(count100<"111110011")then --499 (50M/500=100k; Espero un ciclo de 100kHz).
+				if(rdnReg<RDNUM)then
+						ack<='0';
+				else
+						ack<='1';
+				end if;
+				sdat_gen<=ack;
+				if(count100<fullCont)then --Espero un ciclo completo de reloj SCL.
 					count100<=count100+'1';
 				else
 					count100<="000000000";
-					ack<='1';
+					rdnReg<=rdnReg+1;
 					ack_rdy<='1';
 				end if;
 			elsif(stop='1')then				--Fin de la transmision: SDAT a 1 despues de SCLK
@@ -325,17 +346,17 @@ begin
 				sec<='0';
 				sdat_gen<='0';--Lo pongo aqui para que despues del ack se quede a 0.
 				--He cambiado de estado, pero estoy a la espera de que el ACK del dispositivo termine, espero al siguiente ciclo para poner SDA a 0.
-				if(clk100k='0')then
+				if(scl1x='0')then
 					terminate<='1';
 					sdat_gen<='0';
 				end if;
 				--Si todavía sigue en el ciclo anterior, el del ACK, lo mantengo a 1 para que haya alta impedancia y pueda escribir 0 el dispositivo.
-				if(clk100k='1' and terminate='0')then
+				if(scl1x='1' and terminate='0')then
 					--sdat_gen<='1';
 					sdat_gen<='0';
 				end if;
 				--Si ya estoy en el siguiente ciclo, durante la bajada estaba 0, por lo que ahora hago la condición de parada subiendo SDA en el momento adecuado.
-				if(clk100k='1' and clk200k='0' and terminate='1')then --Si estoy en el siguiente ciclo y en medio del bit de SCL que esta a 1, ya puedo subir SDA
+				if(scl1x='1' and scl2x='0' and terminate='1')then --Si estoy en el siguiente ciclo y en medio del bit de SCL que esta a 1, ya puedo subir SDA
 					sdat_gen<='1';
 					stopped<='1';
 					started<='0';
@@ -346,7 +367,8 @@ begin
 		
 	--Salidas
 	SDAT <= 'Z' when sdat_gen = '1' else '0'; --En el bus I2C los '1' se representa con alta impedancia.
-	SCLK 	<= '1' when ep=e0 else clk100k;
+	SCLK 	<= '1' when ep=e0 else scl1x;
 	BUSY	<= not(idle);
+	DOUT <= data_reg;
 
 end a;
