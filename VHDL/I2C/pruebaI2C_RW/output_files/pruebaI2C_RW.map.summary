@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Nov 20 11:49:07 2018
+Analysis & Synthesis Status : Successful - Fri Nov 23 11:37:40 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pruebaI2C_RW
 Top-level Entity Name : pruebaI2C_RW
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 93
+Total registers : 63
 Total pins : 13
 Total virtual pins : 0
 Total block memory bits : 0

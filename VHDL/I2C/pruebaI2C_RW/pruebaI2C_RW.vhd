@@ -34,7 +34,7 @@ architecture a of pruebaI2C_RW is
 
 
 	--Estados
-	TYPE estados is (e0, e1, e2, e3);
+	TYPE estados is (e0, e1, e2, e3, e4, e5, e6);
 	SIGNAL ep : estados :=e0; 	--Estado Presente
 	SIGNAL es : estados; 		--Estado Siguiente
 	
@@ -57,7 +57,7 @@ architecture a of pruebaI2C_RW is
 	signal 	clk100k_z	: std_logic;
 	signal	le				: std_logic:='0';
 	signal	speed			: std_logic:='0';
-	signal	rdnum			:integer:=2; 		--OJO! Que he puesto 2 en la definicion solo para la prueba.
+	signal	rdnum			:integer range 0 to 9:=6; 		--OJO! Que he puesto 2 en la definicion solo para la prueba.
 
 BEGIN
 
@@ -77,22 +77,41 @@ BEGIN
 						es<=e1;
 					WHEN e1 =>
 						command<=cmd_write;
-						data<=data_out;
+						data<="01101010";
 						le<='0';
 						es<=e2;
 					WHEN e2 =>
 						command<=cmd_write;
 						le<='1';
 						es<=e3;
+						rdnum<=0;
 						--speed<='0';
 					WHEN e3 =>
-						es<=e3;
+						command<="00000010";
+						le<='1';
+						rdnum<=0;
+						--speed<='0';
+						es<=e4;
+					WHEN e4 =>
+						command<="00000011";
+						le<='1';
+						es<=e5;
+						rdnum<=0;
+						--speed<='0';
+					WHEN e5 =>
+						command<="00000001";
+						le<='1';
+						es<=e6;
+						rdnum<=3;
+						--speed<='0';
+					WHEN e6 =>
+						es<=e6;
 				END CASE;
 			END IF;
 		END IF;
 	END PROCESS;
-	go			<='1' 	when (ocupado='0' and (ep=e0 or ep=e1 or ep=e2)) else '0'; --OJO! Esto es una PRUEBA. Solo queria transmitir una trama!!!
-	speed		<='1'		when ep=e1 or ep=e2 else '0';
+	go			<='1' 	when (ocupado='0' and (ep=e0 or ep=e1 or ep=e2 or ep=e3 or ep=e4 or ep=e5)) else '0'; --OJO! Esto es una PRUEBA. Solo queria transmitir una trama!!!
+	speed		<='1'		when ep=e1 or ep=e2 or ep=e3 else '0';
 	
 	PROCESS(clk100k, ocupado, es)
 	BEGIN
@@ -111,7 +130,7 @@ BEGIN
 		DAT 	=> data,
 		GO	=> go,
 		RW => le,
-		SPEED => speed,
+		SPEED => '0',
 		RDNUM => rdnum,
 		BUSY	=> ocupado,
 		DOUT => LED,
@@ -121,9 +140,4 @@ BEGIN
 	clk100k_Z <= 'Z' when clk100k = '1' else '0';
 	SCL <= clk100k_Z;
 	
-	--Me interesa tirar la trama por otra salida
-	--Para eso puedo añadir una señal más en el master, algo así como rd_ack.
-	--Cuando esa señal esté activa, en este lado tendría que hacer un caso en el que una variable coja el valor que hay en ese momento en SDA.
-	--miVar<=SDA when rd_ack='1', else 'X';
-	--Después con eso le puedo contestar al master y que se encargue de hacer la lógica para ack en la UC.
 END a;

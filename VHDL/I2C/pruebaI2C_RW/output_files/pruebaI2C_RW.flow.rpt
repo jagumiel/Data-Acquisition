@@ -1,5 +1,5 @@
 Flow report for pruebaI2C_RW
-Tue Nov 20 11:50:08 2018
+Fri Nov 23 11:38:39 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Nov 20 11:50:01 2018       ;
+; Flow Status                     ; Successful - Fri Nov 23 11:38:31 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaI2C_RW                                ;
 ; Top-level Entity Name           ; pruebaI2C_RW                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 87 / 41,910 ( < 1 % )                       ;
-; Total registers                 ; 94                                          ;
+; Logic utilization (in ALMs)     ; 78 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 64                                          ;
 ; Total pins                      ; 13 / 314 ( 4 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/20/2018 11:48:56 ;
+; Start date & time ; 11/23/2018 11:37:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pruebaI2C_RW        ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 963354629659.154271093510928           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 963354629659.154296944811728           ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -93,11 +93,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 743 MB              ; 00:00:22                           ;
-; Fitter               ; 00:00:44     ; 1.0                     ; 2477 MB             ; 00:01:10                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 717 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 1013 MB             ; 00:00:06                           ;
-; Total                ; 00:01:09     ; --                      ; --                  ; 00:01:44                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 745 MB              ; 00:00:24                           ;
+; Fitter               ; 00:00:42     ; 1.0                     ; 2511 MB             ; 00:01:08                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 719 MB              ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 1057 MB             ; 00:00:07                           ;
+; Total                ; 00:01:09     ; --                      ; --                  ; 00:01:45                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

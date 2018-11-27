@@ -42,6 +42,7 @@ architecture a of masterI2C_RW is
 	signal data_rdy: std_logic := '0';
 	signal ack_tx	: std_logic := '0';				--Acknowledge transmission. Estado de ACK en el que el MAESTRO tiene que responder.
 	signal ack_rx	: std_logic := '0';				--Acknowledge reception. Estado de ACK en el que el ESCLAVO tiene que responder.
+	signal ack_txrx	: std_logic := '0';
 	signal cBits	: integer range -1 to 7 :=7; 	--Contador de bits.
 	signal sec		: std_logic := '0';				--Senal para saber si es la segunda vez que pasa(RS-Repeated Start)
 	
@@ -67,16 +68,16 @@ architecture a of masterI2C_RW is
 	signal stopped  : std_logic:='0';
 	signal started  : std_logic:='0';
 	signal terminate: std_logic:='0';
+	signal terminated: std_logic:='0';
 	signal ack_rdy  : std_logic:='0'; --Para detener el ack durante un ciclo.
 	signal count100 : std_logic_vector(8 downto 0):="000000000";
 	signal fullCont : std_logic_vector(8 downto 0):="111110011"; --499. El ciclo completo de 100kHz
-	signal rdnReg	 : integer:=0;		--"Readen Registers". Numero de registros leidos.
+	signal rdnReg	 : integer range 0 to 9:=0;		--"Readen Registers". Numero de registros leidos.
 
 begin
 
 	--IDEA: Igual estas senales tienen que cambiar solo cuando la maquina este disponible, para que no se modifiquen en mitad de una operacion.
 	reset	  	 <= RST;
-	--data_addr <= ADD; Esto va mas abajo, tengo que cambiar el ultimo bit.
 	data_cmd  <= COM;
 	data_info <= DAT;
 	le <= RW;
@@ -176,9 +177,9 @@ begin
 	END PROCESS;
 	
 	--Cambio de estados.
-	PROCESS(scl2x)
+	PROCESS(CLK_50)
 	BEGIN
-		if(rising_edge(scl2x))then
+		if(rising_edge(CLK_50))then
 			ep<=es;
 		end if;
 	END PROCESS;
@@ -189,8 +190,7 @@ begin
 	config 	<='1' when ep=e2 else '0';
 	cmd		<='1' when ep=e4 else '0';
 	data	 	<='1' when ep=e6 else '0';
-	ack_tx	<='1' when ep=e7 else '0';
-	ack_rx	<='1' when ep=e3 or ep=e5 else '0';
+	ack_txrx	<='1' when ep=e3 or ep=e5 or ep=e7 else '0';
 	stop		<='1' when ep=e8 else '0';
 
 	--Reloj de 200kHz
@@ -226,6 +226,8 @@ begin
 				sdat_gen<='1';
 				stopped<='0';
 				terminate<='0';
+				ack<='0';
+				rdnReg<=0;
 			elsif(start='1')then					--Comienzo de la transmision: SDAT a 0 antes que SCLK
 				if(SPEED='0')then
 					halfCont<="01111101";	--125.
@@ -252,17 +254,32 @@ begin
 				if(scl1x='1')then
 					if(scl2x='0')then
 						sdat_gen<='0';
-						started<='1';
+						terminated<='1';
 					else
 						sdat_gen<='1';
 					end if;
 				else
-					sdat_gen<='1';
+					if(terminated='1')then
+						if(scl2x='0')then
+							started<='1';
+							terminated<='0';
+						end if;
+					else
+						sdat_gen<='1';
+					end if;
 				end if;
 				--Hay que inicializar las variables de rdy a 0.
 			elsif(config='1')then
+				terminated<='0';
+				ack_rdy<='0';
+				ack<='0';
 				if(scl1x='0')then
-					if(scl2x='0')then
+					if(scl2x='1')then
+						if(cBits=-1)then--aqui he metido el clk,  de lo contrario el ultimo bit dura menos y cambia los tiempos de la trama
+							cBits<=7;
+							conf_rdy<='1';
+						end if;
+					else
 						sdat_gen<=data_addr(cBits);
 						hold<='0';
 					end if;
@@ -270,14 +287,21 @@ begin
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(scl1x='0' and cBits=-1)then--aqui he metido el clk,  de lo contrario el ultimo bit dura menos y cambia los tiempos de la trama
-					cBits<=7;
-					conf_rdy<='1';
-				end if;
 			elsif(cmd='1')then
 			ack_rdy<='0';
+			ack<='0';
 				if(scl1x='0')then
-					if(scl2x='0')then
+					if(scl2x='1')then
+						if(cBits=-1)then
+							cBits<=7;
+							if(le='1')then
+								sec<='1';	--Activo sec para decir que ya ha pasado. En el siguiente estado e5 le toca ir al e0.
+							else
+								sec<='0';
+							end if;
+							cmd_rdy<='1';
+						end if;
+					else
 						sdat_gen<=data_cmd(cBits);
 						hold<='0';
 					end if;
@@ -285,89 +309,101 @@ begin
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(scl1x='0'and cBits=-1)then--aqui he metido el clk, de lo contrario el ultimo bit dura menos y cambia los tiempos de la trama
-					cBits<=7;
-					--Solo es necesario que cambie sec para las lecturas.
-					if(le='1')then
-						sec<='1';	--Activo sec para decir que ya ha pasado. En el siguiente estado e5 le toca ir al e0.
-					else
-						sec<='0';
-					end if;
-					started<='0';
-					cmd_rdy<='1';
-				end if;
 			elsif(data='1')then
-				--Si voy a leer, tengo que poner mi parte en alta impedancia.
-				if(le='1')then
-					sdat_gen<='1'; --Para leer lo pongo en alta impedancia.
-				end if;
+				ack_rdy<='0';
+				ack<='0';
 				if(scl1x='0')then
-					if(scl2x='0')then
+					if(scl2x='1')then
+						if(cBits=-1)then
+							cBits<=7;
+							data_rdy<='1';
+						end if;
+					else
 						if (le='0')then	--Si escribo, lo mando hacia sdat
 							sdat_gen<=data_info(cBits);
 						else			--Si leo, "pincho" la linea SDAT y lo almaceno en mi vector.
+							sdat_gen<='1';
 							data_reg(cBits)<=SDAT;
 						end if;
-							hold<='0';
+						hold<='0';
 					end if;
 				elsif(scl1x='1' and cBits>-1 and hold='0')then
 					cBits<=cBits-1;
 					hold<='1';
 				end if;
-				if(cBits=-1)then
-					cBits<=7;
-					data_rdy<='1';
+			elsif(ack_txrx='1')then
+				started<='0';
+				if(scl1x='0')then
+					if(scl2x='1')then
+						if(cBits=6)then
+							cBits<=7;
+							ack_rdy<='1';
+							if(ep=e7 and le='1')then
+								rdnReg<=rdnReg+1;
+							end if;
+						end if;
+					else
+						if(ep=e7)then
+							data_rdy<='0';
+							if (le='0')then	--Si escribo, lo mando hacia sdat
+								ack<='1';
+							else			--Si estoy en opcion de lectura, mientras tenga elementos que leer, sigo.
+								if(rdnReg<RDNUM-1)then
+									ack<='0';
+								else
+									ack<='1';
+								end if;
+							end if;
+						else
+							ack<='1';
+						end if;
+						hold<='0';
+					end if;
+				elsif(scl1x='1' and cBits>-1 and hold='0')then
+					cBits<=cBits-1;
+					hold<='1';
 				end if;
-			elsif(ack_rx='1')then
-				--Cuestion de tiempos, tienes que quedarte un ciclo. (Funciona, pero revisalo bien)
-				sdat_gen<='1';
-					ack_rdy<='1';
-			elsif(ack_tx='1')then
-				--Me estoy quedando un ciclo de 100kHz a '1'. El tx es solo para leer, y estoy considerando un unico caso, hacer solo una lectura.
-				if(rdnReg<RDNUM)then
-						ack<='0';
+				if(config='0' and ack='0' and ep=e3)then
+					sdat_gen<=data_addr(0);
+				elsif(cmd='0' and ack='0' and ep=e5)then
+					sdat_gen<=data_cmd(0);
+				elsif(le='0' and data='0' and ack='0' and ep=e7)then
+					sdat_gen<=data_info(0);
+				elsif(le='1' and data_rdy='1' and ep=e7)then
+					sdat_gen<='1';
 				else
-						ack<='1';
-				end if;
-				sdat_gen<=ack;
-				if(count100<fullCont)then --Espero un ciclo completo de reloj SCL.
-					count100<=count100+'1';
-				else
-					count100<="000000000";
-					rdnReg<=rdnReg+1;
-					ack_rdy<='1';
-				end if;
+					sdat_gen<=ack;	--Antes solo esto sin condiciones.
+				end if;		
 			elsif(stop='1')then				--Fin de la transmision: SDAT a 1 despues de SCLK
 				--Pongo las variables de control a 0 para la proxima trama.
 				conf_rdy<='0';
 				cmd_rdy<='0';
 				data_rdy<='0';
 				ack_rdy<='0';
+				ack<='0';
 				sec<='0';
-				sdat_gen<='0';--Lo pongo aqui para que despues del ack se quede a 0.
-				--He cambiado de estado, pero estoy a la espera de que el ACK del dispositivo termine, espero al siguiente ciclo para poner SDA a 0.
 				if(scl1x='0')then
-					terminate<='1';
-					sdat_gen<='0';
-				end if;
-				--Si todavía sigue en el ciclo anterior, el del ACK, lo mantengo a 1 para que haya alta impedancia y pueda escribir 0 el dispositivo.
-				if(scl1x='1' and terminate='0')then
-					--sdat_gen<='1';
-					sdat_gen<='0';
-				end if;
-				--Si ya estoy en el siguiente ciclo, durante la bajada estaba 0, por lo que ahora hago la condición de parada subiendo SDA en el momento adecuado.
-				if(scl1x='1' and scl2x='0' and terminate='1')then --Si estoy en el siguiente ciclo y en medio del bit de SCL que esta a 1, ya puedo subir SDA
-					sdat_gen<='1';
-					stopped<='1';
-					started<='0';
+					if(terminate='1')then
+						stopped<='1';
+						sdat_gen<='1';
+					elsif(scl2x='1')then
+						sdat_gen<='1';
+					elsif(scl2x='0')then
+						sdat_gen<='0';--Lo pongo aqui para que despues del ack se quede a 0.
+					end if;
+				else
+					if(scl2x='0')then
+						sdat_gen<='1';
+						terminate<='1';
+					end if;
 				end if;
 			end if;
 		end if;
 	end process;
 		
 	--Salidas
-	SDAT <= 'Z' when sdat_gen = '1' else '0'; --En el bus I2C los '1' se representa con alta impedancia.
-	SCLK 	<= '1' when ep=e0 else scl1x;
+	SDAT <= 'Z' when sdat_gen = '1' or terminate='1' else '0'; --En el bus I2C los '1' se representa con alta impedancia.
+	SCLK 	<= '1' when ep=e0 or terminate='1' else scl1x;
 	BUSY	<= not(idle);
 	DOUT <= data_reg;
 
