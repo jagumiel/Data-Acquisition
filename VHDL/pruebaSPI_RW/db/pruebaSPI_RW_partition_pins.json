@@ -1,0 +1,81 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "BUSY",
+					"strict" : false
+				},
+				{
+					"name" : "SS1",
+					"strict" : false
+				},
+				{
+					"name" : "SS2",
+					"strict" : false
+				},
+				{
+					"name" : "MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "CS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CLK_50",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "START",
+					"strict" : false
+				},
+				{
+					"name" : "SPEED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SPEED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "I_DATA[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

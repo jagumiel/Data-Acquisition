@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+ENTITY masterSPI_RW is
+	PORT(
+			FPGA_CLK1_50: IN STD_LOGIC;
+			KEY			: IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+			LED			: OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+			SCL			: OUT STD_LOGIC;
+			SDA			: INOUT STD_LOGIC);	
+END masterSPI_RW;
+
+architecture a of masterSPI_RW is
+
+end a;

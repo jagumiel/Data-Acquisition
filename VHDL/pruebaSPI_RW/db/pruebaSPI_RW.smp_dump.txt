@@ -1,0 +1,6 @@
+
+State Machine - |masterSPI_RW|ep
+Name ep.e2 ep.e1 ep.e0 
+ep.e0 0 0 0 
+ep.e1 0 1 1 
+ep.e2 1 0 1 
