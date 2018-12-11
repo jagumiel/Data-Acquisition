@@ -1,6 +1,27 @@
 
-State Machine - |masterSPI_RW|ep
-Name ep.e2 ep.e1 ep.e0 
-ep.e0 0 0 0 
-ep.e1 0 1 1 
-ep.e2 1 0 1 
+State Machine - |pruebaSPI_RW|ep
+Name ep.e6 ep.e5 ep.e4 ep.e3 ep.e2 ep.e1 ep.e0 
+ep.e0 0 0 0 0 0 0 0 
+ep.e1 0 0 0 0 0 1 1 
+ep.e2 0 0 0 0 1 0 1 
+ep.e3 0 0 0 1 0 0 1 
+ep.e4 0 0 1 0 0 0 1 
+ep.e5 0 1 0 0 0 0 1 
+ep.e6 1 0 0 0 0 0 1 
+
+State Machine - |pruebaSPI_RW|es
+Name es.e6 es.e5 es.e4 es.e3 es.e2 es.e1 es.e0 
+es.e0 0 0 0 0 0 0 0 
+es.e1 0 0 0 0 0 1 1 
+es.e2 0 0 0 0 1 0 1 
+es.e3 0 0 0 1 0 0 1 
+es.e4 0 0 1 0 0 0 1 
+es.e5 0 1 0 0 0 0 1 
+es.e6 1 0 0 0 0 0 1 
+
+State Machine - |pruebaSPI_RW|masterSPI_RW:inst1|ep
+Name ep.e3 ep.e2 ep.e1 ep.e0 
+ep.e0 0 0 0 0 
+ep.e1 0 0 1 1 
+ep.e2 0 1 0 1 
+ep.e3 1 0 0 1 

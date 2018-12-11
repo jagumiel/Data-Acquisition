@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEBA6U23I7
-set_global_assignment -name TOP_LEVEL_ENTITY masterSPI_RW
+set_global_assignment -name TOP_LEVEL_ENTITY pruebaSPI_RW
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:02:54  NOVEMBER 27, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -47,7 +47,35 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name VHDL_FILE masterSPI_RW.vhd
+set_global_assignment -name VHDL_FILE pruebaSPI_RW.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_V11 -to FPGA_CLK1_50
+set_location_assignment PIN_AH17 -to KEY[0]
+set_location_assignment PIN_AA23 -to LED[7]
+set_location_assignment PIN_Y16 -to LED[6]
+set_location_assignment PIN_AE26 -to LED[5]
+set_location_assignment PIN_AF26 -to LED[4]
+set_location_assignment PIN_V15 -to LED[3]
+set_location_assignment PIN_V16 -to LED[2]
+set_location_assignment PIN_AA24 -to LED[1]
+set_location_assignment PIN_W15 -to LED[0]
+set_location_assignment PIN_AH11 -to MISO
+set_location_assignment PIN_AG16 -to MOSI
+set_location_assignment PIN_AH12 -to SCK
+set_location_assignment PIN_AF15 -to SS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MISO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MOSI
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SCK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SS
+set_location_assignment PIN_AE15 -to CONVST
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CONVST
+set_location_assignment PIN_AF17 -to Voltios
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Voltios
+set_location_assignment PIN_E8 -to GPIO_0[1]
+set_location_assignment PIN_V12 -to GPIO_0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
