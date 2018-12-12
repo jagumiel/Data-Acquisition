@@ -32,36 +32,36 @@ architecture a of masterSPI_RW is
 	SIGNAL es : estados; 		--Estado Siguiente
 	
 	--Señales de los relojes:
-	signal cnt	: unsigned (5 downto 0) := (others => '0');
+	signal cnt		: unsigned (5 downto 0) := (others => '0');
 	signal CLK_25	: std_logic :='0';
 	signal CLK_5	: std_logic :='0';
 	signal CLK_1	: std_logic :='0';
 	
 	--Señales de control:
-	signal idle 	: std_logic :='0';
-	signal EOC : std_logic :='0'; --End Of Conversion
+	signal idle 		: std_logic :='0';
+	signal EOC 			: std_logic :='0'; --End Of Conversion
 	signal conversion : std_logic :='0';
-	signal transfer: std_logic :='0'; --¿Hay transferencia en curso?
-	signal finish	: std_logic :='0';
-	signal comm_end: std_logic :='0';
-	signal stopped	: std_logic :='0';
-	signal SPI_Ena	: std_logic :='0'; --No se si deberia ir en la lista de señales de control.
+	signal transfer	: std_logic :='0'; --¿Hay transferencia en curso?
+	signal finish		: std_logic :='0';
+	signal comm_end	: std_logic :='0';
+	signal stopped		: std_logic :='0';
+	signal SPI_Ena		: std_logic :='0'; --Senal para la generacion del reloj.
 	
 	--Señales......
-	signal n : integer range 0 to 24:=0;	--Probablemente se le pueda poner un nombre mas significativo.
-	signal i : integer range 0 to 24:=0;--Probablemente se le pueda poner un nombre mas significativo.
-	signal SCLK_gen : std_logic :='0';
-	signal datIn	: std_logic_vector(nBits-1 downto 0);--Dato que quiero enviar
-	signal datOut	: std_logic_vector(nBits-1 downto 0);
-	signal bitCnt	: integer range -1 to nBits-1 :=nBits-1;
-	signal hold	:std_logic :='0';
-	signal conv_time:integer range 0 to 50;
-	signal quiet_time:integer range 0 to 3;
+	signal SCLK_gen	: std_logic :='0';
+	signal hold			: std_logic :='0';
+	signal datIn		: std_logic_vector(nBits-1 downto 0);--Dato que quiero enviar
+	signal datOut		: std_logic_vector(nBits-1 downto 0);
+	signal n 			: integer range 0 to 24:=0;	--Probablemente se le pueda poner un nombre mas significativo.
+	signal i 			: integer range 0 to 24:=0;--Probablemente se le pueda poner un nombre mas significativo.
+	signal conv_time	: integer range 0 to 50:=0;
+	signal quiet_time	: integer range 0 to  3:=0;
+	signal bitCnt		: integer range -1 to nBits-1 :=nBits-1;
+
 	
 begin	
 	--Asignaciones
 	datIn<=I_DATA;
-	--SCLK_gen<=CLK_50;
 
 	--Proceso de la maquina de estados
 	FSM_CLK: process(CLK_50)
@@ -72,10 +72,10 @@ begin
 	end process;
 	
 	--Señales de control
-	idle 		<= '1' when ep=e0 else '0';
+	idle 			<= '1' when ep=e0 else '0';
 	conversion	<= '1' when ep=e1 else '0';
-	transfer	<= '1' when ep=e2 else '0';
-	finish	<= '1' when ep=e3 else '0';
+	transfer		<= '1' when ep=e2 else '0';
+	finish		<= '1' when ep=e3 else '0';
 	
 	--Maquina de estados
 	FSM: process(ep, RST, START, EOC, comm_end, stopped)
@@ -113,12 +113,12 @@ begin
 	end process;
 	
 	with SPEED select
-		n <= 	0 when "01",
-			4 when "10",
-			24 when "11",
-			0 when others;
+		n <= 	0  when "01",	--25Mhz
+				4  when "10",	-- 5MHZ
+				24 when "11",	-- 1Mhz
+				0  when others;
 				
-				
+	--Senal de enable. Sirve para generar relojes.
 	process(CLK_50)
 	begin
 		if rising_edge(CLK_50) then   
@@ -149,7 +149,7 @@ begin
 					else
 						CONVST<='1';
 					end if;
-					if(conv_time=32)then --Igual a 33. Probablemente valga 32.
+					if(conv_time=32)then --Igual a 32. Desde 0 a 32 son 33 iteraciones. 33*20ns=660ns
 						CONVST<='1';
 						EOC<='1';
 					end if;
@@ -158,7 +158,7 @@ begin
 			if (SPI_Ena='1') then          --Esta es la señal de ENABLE para procesar los pasos del SPI.
 				SCLK_gen	<= NOT(SCLK_gen);	--Genero el CLK a partir del enable.
 
-			--...here do the other SPI processes... (FSM to write MOSI, read MISO, count the bits, maybe control !CS...)
+			--A partir de aqui vienen los procesos del protocolo SPI (Escribir MOSI, leer MISO, contar los bits, controlar las senales...)
 				if(idle='1')then
 					--poner todo a CERO.
 					comm_end<='0';

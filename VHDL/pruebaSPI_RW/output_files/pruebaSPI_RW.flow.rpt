@@ -1,5 +1,5 @@
 Flow report for pruebaSPI_RW
-Tue Dec 11 13:44:44 2018
+Wed Dec 12 10:12:15 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Dec 11 13:44:36 2018       ;
+; Flow Status                     ; Successful - Wed Dec 12 10:12:07 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaSPI_RW                                ;
 ; Top-level Entity Name           ; pruebaSPI_RW                                ;
@@ -49,7 +49,7 @@ refer to the applicable agreement for further details.
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 34 / 41,910 ( < 1 % )                       ;
 ; Total registers                 ; 67                                          ;
-; Total pins                      ; 18 / 314 ( 6 % )                            ;
+; Total pins                      ; 15 / 314 ( 5 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/11/2018 13:43:36 ;
+; Start date & time ; 12/12/2018 10:11:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pruebaSPI_RW        ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 963354629659.154453221510812           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 963354629659.154460586603228           ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -93,11 +93,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 744 MB              ; 00:00:22                           ;
-; Fitter               ; 00:00:37     ; 1.0                     ; 2449 MB             ; 00:00:59                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 725 MB              ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 1055 MB             ; 00:00:06                           ;
-; Total                ; 00:01:05     ; --                      ; --                  ; 00:01:34                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 745 MB              ; 00:00:22                           ;
+; Fitter               ; 00:00:35     ; 1.0                     ; 2445 MB             ; 00:00:56                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 720 MB              ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 1052 MB             ; 00:00:06                           ;
+; Total                ; 00:01:04     ; --                      ; --                  ; 00:01:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

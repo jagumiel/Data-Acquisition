@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pruebaSPI_RW
-Tue Dec 11 13:43:48 2018
+Wed Dec 12 10:11:20 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -17,15 +17,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   9. State Machine - |pruebaSPI_RW|es
  10. State Machine - |pruebaSPI_RW|masterSPI_RW:inst1|ep
  11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: masterSPI_RW:inst1
- 17. Port Connectivity Checks: "masterSPI_RW:inst1"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: masterSPI_RW:inst1
+ 16. Port Connectivity Checks: "masterSPI_RW:inst1"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -51,14 +50,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Dec 11 13:43:48 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Dec 12 10:11:20 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaSPI_RW                                ;
 ; Top-level Entity Name           ; pruebaSPI_RW                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 59                                          ;
-; Total pins                      ; 18                                          ;
+; Total registers                 ; 58                                          ;
+; Total pins                      ; 15                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -175,14 +174,14 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                          ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; masterSPI_RW.vhd                 ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/masterSPI_RW.vhd ;         ;
-; pruebaSPI_RW.vhd                 ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
+; masterSPI_RW.vhd                 ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/masterSPI_RW.vhd ;         ;
+; pruebaSPI_RW.vhd                 ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/pruebaSPI_RW.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------+
@@ -190,25 +189,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 39                 ;
+; Estimate of Logic utilization (ALMs needed) ; 38                 ;
 ;                                             ;                    ;
 ; Combinational ALUT usage for logic          ; 60                 ;
 ;     -- 7 input functions                    ; 0                  ;
-;     -- 6 input functions                    ; 16                 ;
-;     -- 5 input functions                    ; 15                 ;
-;     -- 4 input functions                    ; 8                  ;
+;     -- 6 input functions                    ; 13                 ;
+;     -- 5 input functions                    ; 16                 ;
+;     -- 4 input functions                    ; 10                 ;
 ;     -- <=3 input functions                  ; 21                 ;
 ;                                             ;                    ;
-; Dedicated logic registers                   ; 59                 ;
+; Dedicated logic registers                   ; 58                 ;
 ;                                             ;                    ;
-; I/O pins                                    ; 18                 ;
+; I/O pins                                    ; 15                 ;
 ;                                             ;                    ;
 ; Total DSP Blocks                            ; 0                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; FPGA_CLK1_50~input ;
-; Maximum fan-out                             ; 53                 ;
-; Total fan-out                               ; 417                ;
-; Average fan-out                             ; 2.69               ;
+; Maximum fan-out                             ; 51                 ;
+; Total fan-out                               ; 413                ;
+; Average fan-out                             ; 2.79               ;
 +---------------------------------------------+--------------------+
 
 
@@ -217,42 +216,36 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+--------------+--------------+
-; |pruebaSPI_RW              ; 60 (8)              ; 59 (14)                   ; 0                 ; 0          ; 18   ; 0            ; |pruebaSPI_RW                    ; pruebaSPI_RW ; work         ;
+; |pruebaSPI_RW              ; 60 (8)              ; 58 (13)                   ; 0                 ; 0          ; 15   ; 0            ; |pruebaSPI_RW                    ; pruebaSPI_RW ; work         ;
 ;    |masterSPI_RW:inst1|    ; 52 (52)             ; 45 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |pruebaSPI_RW|masterSPI_RW:inst1 ; masterSPI_RW ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------+
-; State Machine - |pruebaSPI_RW|ep                              ;
-+-------+-------+-------+-------+-------+-------+-------+-------+
-; Name  ; ep.e6 ; ep.e5 ; ep.e4 ; ep.e3 ; ep.e2 ; ep.e1 ; ep.e0 ;
-+-------+-------+-------+-------+-------+-------+-------+-------+
-; ep.e0 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
-; ep.e1 ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
-; ep.e2 ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
-; ep.e3 ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
-; ep.e4 ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
-; ep.e5 ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; ep.e6 ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-+-------+-------+-------+-------+-------+-------+-------+-------+
++---------------------------------------+
+; State Machine - |pruebaSPI_RW|ep      ;
++-------+-------+-------+-------+-------+
+; Name  ; ep.e3 ; ep.e2 ; ep.e1 ; ep.e0 ;
++-------+-------+-------+-------+-------+
+; ep.e0 ; 0     ; 0     ; 0     ; 0     ;
+; ep.e1 ; 0     ; 0     ; 1     ; 1     ;
+; ep.e2 ; 0     ; 1     ; 0     ; 1     ;
+; ep.e3 ; 1     ; 0     ; 0     ; 1     ;
++-------+-------+-------+-------+-------+
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------+
-; State Machine - |pruebaSPI_RW|es                              ;
-+-------+-------+-------+-------+-------+-------+-------+-------+
-; Name  ; es.e6 ; es.e5 ; es.e4 ; es.e3 ; es.e2 ; es.e1 ; es.e0 ;
-+-------+-------+-------+-------+-------+-------+-------+-------+
-; es.e0 ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ; 0     ;
-; es.e1 ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ; 1     ;
-; es.e2 ; 0     ; 0     ; 0     ; 0     ; 1     ; 0     ; 1     ;
-; es.e3 ; 0     ; 0     ; 0     ; 1     ; 0     ; 0     ; 1     ;
-; es.e4 ; 0     ; 0     ; 1     ; 0     ; 0     ; 0     ; 1     ;
-; es.e5 ; 0     ; 1     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-; es.e6 ; 1     ; 0     ; 0     ; 0     ; 0     ; 0     ; 1     ;
-+-------+-------+-------+-------+-------+-------+-------+-------+
++---------------------------------------+
+; State Machine - |pruebaSPI_RW|es      ;
++-------+-------+-------+-------+-------+
+; Name  ; es.e3 ; es.e2 ; es.e1 ; es.e0 ;
++-------+-------+-------+-------+-------+
+; es.e0 ; 0     ; 0     ; 0     ; 0     ;
+; es.e1 ; 0     ; 0     ; 1     ; 1     ;
+; es.e2 ; 0     ; 1     ; 0     ; 1     ;
+; es.e3 ; 1     ; 0     ; 0     ; 1     ;
++-------+-------+-------+-------+-------+
 
 
 Encoding Type:  One-Hot
@@ -274,20 +267,8 @@ Encoding Type:  One-Hot
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
 ; masterSPI_RW:inst1|MOSI               ; Stuck at GND due to stuck port data_in ;
-; es.e5                                 ; Stuck at GND due to stuck port data_in ;
-; ep.e5                                 ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3 ;                                        ;
+; Total Number of Removed Registers = 1 ;                                        ;
 +---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; es.e5         ; Stuck at GND              ; ep.e5                                  ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -295,12 +276,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 59    ;
+; Total registers                              ; 58    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Clock Enable       ; 24    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -360,19 +341,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 59                          ;
-;     ENA               ; 20                          ;
-;     plain             ; 39                          ;
-; arriav_lcell_comb     ; 63                          ;
-;     normal            ; 63                          ;
-;         0 data inputs ; 2                           ;
+; arriav_ff             ; 58                          ;
+;     ENA               ; 24                          ;
+;     plain             ; 34                          ;
+; arriav_lcell_comb     ; 62                          ;
+;     normal            ; 62                          ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 14                          ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 15                          ;
-;         6 data inputs ; 16                          ;
-; boundary_port         ; 18                          ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 16                          ;
+;         6 data inputs ; 13                          ;
+; boundary_port         ; 15                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
 ; Average LUT depth     ; 1.36                        ;
@@ -394,36 +375,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 11 13:43:34 2018
+    Info: Processing started: Wed Dec 12 10:11:05 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebaSPI_RW -c pruebaSPI_RW
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file masterspi_rw.vhd
-    Info (12022): Found design unit 1: masterSPI_RW-a File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/masterSPI_RW.vhd Line: 27
-    Info (12023): Found entity 1: masterSPI_RW File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/masterSPI_RW.vhd Line: 6
+    Info (12022): Found design unit 1: masterSPI_RW-a File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/masterSPI_RW.vhd Line: 27
+    Info (12023): Found entity 1: masterSPI_RW File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/masterSPI_RW.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file pruebaspi_rw.vhd
-    Info (12022): Found design unit 1: pruebaSPI_RW-a File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 21
-    Info (12023): Found entity 1: pruebaSPI_RW File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 6
+    Info (12022): Found design unit 1: pruebaSPI_RW-a File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 28
+    Info (12023): Found entity 1: pruebaSPI_RW File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 16
 Info (12127): Elaborating entity "pruebaSPI_RW" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at pruebaSPI_RW.vhd(16): used implicit default value for signal "GPIO_0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 16
-Warning (10540): VHDL Signal Declaration warning at pruebaSPI_RW.vhd(57): used explicit default value for signal "enviado" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 57
-Info (12128): Elaborating entity "masterSPI_RW" for hierarchy "masterSPI_RW:inst1" File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 104
+Warning (10540): VHDL Signal Declaration warning at pruebaSPI_RW.vhd(62): used explicit default value for signal "enviado" because signal was never assigned a value File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 62
+Info (12128): Elaborating entity "masterSPI_RW" for hierarchy "masterSPI_RW:inst1" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 111
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "MOSI" is stuck at GND File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 14
-    Warning (13410): Pin "GPIO_0[0]" is stuck at GND File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 16
-    Warning (13410): Pin "GPIO_0[1]" is stuck at GND File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 16
-    Warning (13410): Pin "Voltios" is stuck at VCC File: D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 17
+    Warning (13410): Pin "MOSI" is stuck at GND File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/pruebaSPI_RW.vhd Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 90 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 77 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 744 megabytes
-    Info: Processing ended: Tue Dec 11 13:43:48 2018
-    Info: Elapsed time: 00:00:14
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 75 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 745 megabytes
+    Info: Processing ended: Wed Dec 12 10:11:20 2018
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:22
 
 

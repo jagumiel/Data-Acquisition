@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEBA6U23) Path("D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/output_files/") File("pruebaSPI_RW.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEBA6U23) Path("D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/output_files/") File("pruebaSPI_RW.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

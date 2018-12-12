@@ -3,99 +3,99 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
-Slack : -4.687
-TNS   : -133.497
+Slack : -4.422
+TNS   : -126.271
 
 Type  : Slow 1100mV 100C Model Setup 'masterSPI_RW:inst1|ep.e0'
-Slack : -4.135
-TNS   : -24.450
+Slack : -4.320
+TNS   : -25.060
 
 Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
 Slack : 0.434
 TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Hold 'masterSPI_RW:inst1|ep.e0'
-Slack : 2.749
+Slack : 0.783
 TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : -0.538
-TNS   : -48.245
+Slack : -0.579
+TNS   : -46.601
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width 'masterSPI_RW:inst1|ep.e0'
 Slack : -0.538
-TNS   : -4.720
+TNS   : -6.666
 
 Type  : Slow 1100mV -40C Model Setup 'masterSPI_RW:inst1|ep.e0'
-Slack : -4.411
-TNS   : -25.814
+Slack : -4.555
+TNS   : -26.164
 
 Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
-Slack : -4.294
-TNS   : -122.113
+Slack : -4.095
+TNS   : -113.563
 
 Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
-Slack : 0.180
+Slack : 0.117
 TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Hold 'masterSPI_RW:inst1|ep.e0'
-Slack : 3.085
+Slack : 0.902
 TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : -0.538
-TNS   : -51.238
+Slack : -0.546
+TNS   : -48.985
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width 'masterSPI_RW:inst1|ep.e0'
 Slack : -0.538
-TNS   : -4.676
+TNS   : -6.151
 
 Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
-Slack : -3.703
-TNS   : -66.508
+Slack : -3.402
+TNS   : -66.044
 
 Type  : Fast 1100mV 100C Model Setup 'masterSPI_RW:inst1|ep.e0'
-Slack : -1.998
-TNS   : -11.609
+Slack : -1.970
+TNS   : -10.109
 
 Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
-Slack : 0.180
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Hold 'masterSPI_RW:inst1|ep.e0'
-Slack : 1.459
+Slack : 0.348
 TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : -0.505
-TNS   : -6.044
+Slack : -0.516
+TNS   : -6.022
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width 'masterSPI_RW:inst1|ep.e0'
-Slack : 0.105
+Slack : 0.130
 TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
-Slack : -2.809
-TNS   : -46.026
+Slack : -2.581
+TNS   : -44.552
 
 Type  : Fast 1100mV -40C Model Setup 'masterSPI_RW:inst1|ep.e0'
-Slack : -1.924
-TNS   : -11.283
+Slack : -1.930
+TNS   : -9.481
 
 Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
-Slack : 0.096
+Slack : 0.166
 TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Hold 'masterSPI_RW:inst1|ep.e0'
-Slack : 1.476
+Slack : 0.327
 TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
-Slack : -0.498
-TNS   : -5.928
+Slack : -0.484
+TNS   : -5.714
 
 Type  : Fast 1100mV -40C Model Minimum Pulse Width 'masterSPI_RW:inst1|ep.e0'
-Slack : 0.130
+Slack : 0.148
 TNS   : 0.000
 
 ------------------------------------------------------------

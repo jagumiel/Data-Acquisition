@@ -1,4 +1,4 @@
-Fitter Status : Successful - Tue Dec 11 13:44:26 2018
+Fitter Status : Successful - Wed Dec 12 10:11:56 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pruebaSPI_RW
 Top-level Entity Name : pruebaSPI_RW
@@ -7,7 +7,7 @@ Device : 5CSEBA6U23I7
 Timing Models : Final
 Logic utilization (in ALMs) : 34 / 41,910 ( < 1 % )
 Total registers : 67
-Total pins : 18 / 314 ( 6 % )
+Total pins : 15 / 314 ( 5 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
 Total RAM Blocks : 0 / 553 ( 0 % )

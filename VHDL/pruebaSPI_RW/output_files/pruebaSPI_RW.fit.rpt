@@ -1,5 +1,5 @@
 Fitter report for pruebaSPI_RW
-Tue Dec 11 13:44:26 2018
+Wed Dec 12 10:11:57 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Tue Dec 11 13:44:26 2018       ;
+; Fitter Status                   ; Successful - Wed Dec 12 10:11:56 2018       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaSPI_RW                                ;
 ; Top-level Entity Name           ; pruebaSPI_RW                                ;
@@ -72,7 +72,7 @@ refer to the applicable agreement for further details.
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 34 / 41,910 ( < 1 % )                       ;
 ; Total registers                 ; 67                                          ;
-; Total pins                      ; 18 / 314 ( 6 % )                            ;
+; Total pins                      ; 15 / 314 ( 5 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total RAM Blocks                ; 0 / 553 ( 0 % )                             ;
@@ -159,8 +159,8 @@ refer to the applicable agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.4%      ;
-;     Processor 3            ;   0.4%      ;
-;     Processor 4            ;   0.4%      ;
+;     Processor 3            ;   0.3%      ;
+;     Processor 4            ;   0.3%      ;
 +----------------------------+-------------+
 
 
@@ -170,11 +170,12 @@ refer to the applicable agreement for further details.
 ; Node                         ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                       ; Destination Port ; Destination Port Name ;
 +------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------+------------------+-----------------------+
 ; FPGA_CLK1_50~inputCLKENA0    ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                        ;                  ;                       ;
-; masterSPI_RW:inst1|SCLK_gen  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|SCLK_gen~DUPLICATE  ;                  ;                       ;
+; cnt[0]                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; cnt[0]~DUPLICATE                       ;                  ;                       ;
 ; masterSPI_RW:inst1|bitCnt[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|bitCnt[0]~DUPLICATE ;                  ;                       ;
 ; masterSPI_RW:inst1|bitCnt[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|bitCnt[1]~DUPLICATE ;                  ;                       ;
-; masterSPI_RW:inst1|bitCnt[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|bitCnt[2]~DUPLICATE ;                  ;                       ;
+; masterSPI_RW:inst1|bitCnt[3] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|bitCnt[3]~DUPLICATE ;                  ;                       ;
 ; masterSPI_RW:inst1|i[0]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|i[0]~DUPLICATE      ;                  ;                       ;
+; masterSPI_RW:inst1|i[1]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|i[1]~DUPLICATE      ;                  ;                       ;
 ; masterSPI_RW:inst1|i[2]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|i[2]~DUPLICATE      ;                  ;                       ;
 ; masterSPI_RW:inst1|i[3]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|i[3]~DUPLICATE      ;                  ;                       ;
 ; masterSPI_RW:inst1|i[4]      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; masterSPI_RW:inst1|i[4]~DUPLICATE      ;                  ;                       ;
@@ -186,7 +187,8 @@ refer to the applicable agreement for further details.
 +--------------+----------------+--------------+------------+---------------+----------------+
 ; Name         ; Ignored Entity ; Ignored From ; Ignored To ; Ignored Value ; Ignored Source ;
 +--------------+----------------+--------------+------------+---------------+----------------+
-; I/O Standard ; pruebaSPI_RW   ;              ; GPIO_0     ; 3.3-V LVTTL   ; QSF Assignment ;
+; Location     ;                ;              ; Voltios    ; PIN_AF17      ; QSF Assignment ;
+; I/O Standard ; pruebaSPI_RW   ;              ; Voltios    ; 3.3-V LVTTL   ; QSF Assignment ;
 +--------------+----------------+--------------+------------+---------------+----------------+
 
 
@@ -196,8 +198,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 157 ) ; 0.00 % ( 0 / 157 )         ; 0.00 % ( 0 / 157 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 157 ) ; 0.00 % ( 0 / 157 )         ; 0.00 % ( 0 / 157 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 150 ) ; 0.00 % ( 0 / 150 )         ; 0.00 % ( 0 / 150 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 150 ) ; 0.00 % ( 0 / 150 )         ; 0.00 % ( 0 / 150 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -220,7 +222,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 157 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 150 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -228,7 +230,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/output_files/pruebaSPI_RW.pin.
+The pin-out file can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/output_files/pruebaSPI_RW.pin.
 
 
 +------------------------------------------------------------------------------------------+
@@ -238,12 +240,12 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 34 / 41,910        ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 34                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 46 / 41,910        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 22                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 16                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 44 / 41,910        ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 21                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 15                 ;       ;
 ;         [c] ALMs used for registers                         ; 8                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 12 / 41,910        ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 10 / 41,910        ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41,910         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -252,29 +254,29 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 9 / 4,191          ; < 1 % ;
-;     -- Logic LABs                                           ; 9                  ;       ;
+; Total LABs:  partially or completely used                   ; 6 / 4,191          ; < 1 % ;
+;     -- Logic LABs                                           ; 6                  ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Combinational ALUT usage for logic                          ; 61                 ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
-;     -- 6 input functions                                    ; 16                 ;       ;
-;     -- 5 input functions                                    ; 15                 ;       ;
-;     -- 4 input functions                                    ; 8                  ;       ;
+;     -- 6 input functions                                    ; 13                 ;       ;
+;     -- 5 input functions                                    ; 16                 ;       ;
+;     -- 4 input functions                                    ; 10                 ;       ;
 ;     -- <=3 input functions                                  ; 22                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 9                  ;       ;
+; Combinational ALUT usage for route-throughs                 ; 5                  ;       ;
 ;                                                             ;                    ;       ;
 ; Dedicated logic registers                                   ; 67                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
 ;         -- Primary logic registers                          ; 58 / 83,820        ; < 1 % ;
 ;         -- Secondary logic registers                        ; 9 / 83,820         ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 59                 ;       ;
-;         -- Routing optimization registers                   ; 8                  ;       ;
+;         -- Design implementation registers                  ; 58                 ;       ;
+;         -- Routing optimization registers                   ; 9                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
-; I/O pins                                                    ; 18 / 314           ; 6 %   ;
-;     -- Clock pins                                           ; 2 / 8              ; 25 %  ;
+; I/O pins                                                    ; 15 / 314           ; 5 %   ;
+;     -- Clock pins                                           ; 1 / 8              ; 13 %  ;
 ;     -- Dedicated input pins                                 ; 0 / 21             ; 0 %   ;
 ;                                                             ;                    ;       ;
 ; Hard processor system peripheral utilization                ;                    ;       ;
@@ -325,12 +327,12 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 1              ; 0 %   ;
-; Average interconnect usage (total/H/V)                      ; 0.1% / 0.1% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 2.1% / 2.3% / 1.5% ;       ;
-; Maximum fan-out                                             ; 60                 ;       ;
+; Average interconnect usage (total/H/V)                      ; 0.1% / 0.1% / 0.0% ;       ;
+; Peak interconnect usage (total/H/V)                         ; 1.7% / 1.9% / 1.1% ;       ;
+; Maximum fan-out                                             ; 58                 ;       ;
 ; Highest non-global fan-out                                  ; 22                 ;       ;
-; Total fan-out                                               ; 444                ;       ;
-; Average fan-out                                             ; 2.55               ;       ;
+; Total fan-out                                               ; 437                ;       ;
+; Average fan-out                                             ; 2.66               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -341,12 +343,12 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 34 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 34                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 46 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 22                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 16                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 44 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 21                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 15                   ; 0                              ;
 ;         [c] ALMs used for registers                         ; 8                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 12 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 10 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41910 ( 0 % )    ; 0 / 41910 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -355,17 +357,17 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ;                                                             ;                      ;                                ;
 ; Difficulty packing design                                   ; Low                  ; Low                            ;
 ;                                                             ;                      ;                                ;
-; Total LABs:  partially or completely used                   ; 9 / 4191 ( < 1 % )   ; 0 / 4191 ( 0 % )               ;
-;     -- Logic LABs                                           ; 9                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 6 / 4191 ( < 1 % )   ; 0 / 4191 ( 0 % )               ;
+;     -- Logic LABs                                           ; 6                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Combinational ALUT usage for logic                          ; 61                   ; 0                              ;
 ;     -- 7 input functions                                    ; 0                    ; 0                              ;
-;     -- 6 input functions                                    ; 16                   ; 0                              ;
-;     -- 5 input functions                                    ; 15                   ; 0                              ;
-;     -- 4 input functions                                    ; 8                    ; 0                              ;
+;     -- 6 input functions                                    ; 13                   ; 0                              ;
+;     -- 5 input functions                                    ; 16                   ; 0                              ;
+;     -- 4 input functions                                    ; 10                   ; 0                              ;
 ;     -- <=3 input functions                                  ; 22                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 9                    ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 5                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
 ;     -- 32-address deep                                      ; 0                    ; 0                              ;
@@ -375,12 +377,12 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ;         -- Primary logic registers                          ; 58 / 83820 ( < 1 % ) ; 0 / 83820 ( 0 % )              ;
 ;         -- Secondary logic registers                        ; 9 / 83820 ( < 1 % )  ; 0 / 83820 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
-;         -- Design implementation registers                  ; 59                   ; 0                              ;
-;         -- Routing optimization registers                   ; 8                    ; 0                              ;
+;         -- Design implementation registers                  ; 58                   ; 0                              ;
+;         -- Routing optimization registers                   ; 9                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
-; I/O pins                                                    ; 18                   ; 0                              ;
+; I/O pins                                                    ; 15                   ; 0                              ;
 ; I/O registers                                               ; 0                    ; 0                              ;
 ; Total block memory bits                                     ; 0                    ; 0                              ;
 ; Total block memory implementation bits                      ; 0                    ; 0                              ;
@@ -393,8 +395,8 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 444                  ; 0                              ;
-;     -- Registered Connections                               ; 203                  ; 0                              ;
+;     -- Total Connections                                    ; 437                  ; 0                              ;
+;     -- Registered Connections                               ; 206                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -402,7 +404,7 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ;                                                             ;                      ;                                ;
 ; Partition Interface                                         ;                      ;                                ;
 ;     -- Input Ports                                          ; 3                    ; 0                              ;
-;     -- Output Ports                                         ; 15                   ; 0                              ;
+;     -- Output Ports                                         ; 12                   ; 0                              ;
 ;     -- Bidir Ports                                          ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Registered Ports                                            ;                      ;                                ;
@@ -426,33 +428,30 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; FPGA_CLK1_50 ; V11   ; 3B       ; 32           ; 0            ; 0            ; 61                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; KEY[0]       ; AH17  ; 4A       ; 64           ; 0            ; 34           ; 12                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; FPGA_CLK1_50 ; V11   ; 3B       ; 32           ; 0            ; 0            ; 59                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; KEY[0]       ; AH17  ; 4A       ; 64           ; 0            ; 34           ; 10                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; MISO         ; AH11  ; 4A       ; 56           ; 0            ; 51           ; 8                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
-+-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
-+-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; CONVST    ; AE15  ; 4A       ; 54           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; GPIO_0[0] ; V12   ; 3B       ; 40           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; GPIO_0[1] ; E8    ; 8A       ; 38           ; 81           ; 34           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[0]    ; W15   ; 5A       ; 89           ; 8            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[1]    ; AA24  ; 5A       ; 89           ; 9            ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[2]    ; V16   ; 5A       ; 89           ; 9            ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[3]    ; V15   ; 5A       ; 89           ; 9            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[4]    ; AF26  ; 5A       ; 89           ; 4            ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[5]    ; AE26  ; 5A       ; 89           ; 4            ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[6]    ; Y16   ; 5A       ; 89           ; 8            ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; LED[7]    ; AA23  ; 5A       ; 89           ; 9            ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; MOSI      ; AG16  ; 4A       ; 58           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; SCK       ; AH12  ; 4A       ; 58           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; SS        ; AF15  ; 4A       ; 54           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-; Voltios   ; AF17  ; 4A       ; 58           ; 0            ; 40           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
-+-----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ;
++--------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
+; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
++--------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
+; CONVST ; AE15  ; 4A       ; 54           ; 0            ; 17           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[0] ; W15   ; 5A       ; 89           ; 8            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[1] ; AA24  ; 5A       ; 89           ; 9            ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[2] ; V16   ; 5A       ; 89           ; 9            ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[3] ; V15   ; 5A       ; 89           ; 9            ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[4] ; AF26  ; 5A       ; 89           ; 4            ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[5] ; AE26  ; 5A       ; 89           ; 4            ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[6] ; Y16   ; 5A       ; 89           ; 8            ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LED[7] ; AA23  ; 5A       ; 89           ; 9            ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; MOSI   ; AG16  ; 4A       ; 58           ; 0            ; 57           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; SCK    ; AH12  ; 4A       ; 58           ; 0            ; 74           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; SS     ; AF15  ; 4A       ; 54           ; 0            ; 0            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off                               ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
++--------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
 +---------------------------------------------------------------------------+
@@ -463,8 +462,8 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ; B2L      ; 0 / 0 ( -- )    ; --            ; --           ; --            ;
 ; B1L      ; 0 / 0 ( -- )    ; --            ; --           ; --            ;
 ; 3A       ; 0 / 16 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 3B       ; 2 / 32 ( 6 % )  ; 3.3V          ; --           ; 3.3V          ;
-; 4A       ; 7 / 68 ( 10 % ) ; 3.3V          ; --           ; 3.3V          ;
+; 3B       ; 1 / 32 ( 3 % )  ; 3.3V          ; --           ; 3.3V          ;
+; 4A       ; 6 / 68 ( 9 % )  ; 3.3V          ; --           ; 3.3V          ;
 ; 5A       ; 8 / 16 ( 50 % ) ; 2.5V          ; --           ; 2.5V          ;
 ; 5B       ; 0 / 7 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 ; 6B       ; 0 / 44 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
@@ -473,7 +472,7 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ; 7B       ; 0 / 22 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
 ; 7C       ; 0 / 12 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
 ; 7D       ; 0 / 14 ( 0 % )  ; 2.5V          ; --           ; 2.5V          ;
-; 8A       ; 1 / 6 ( 17 % )  ; 3.3V          ; --           ; 3.3V          ;
+; 8A       ; 0 / 6 ( 0 % )   ; 2.5V          ; --           ; 2.5V          ;
 +----------+-----------------+---------------+--------------+---------------+
 
 
@@ -634,7 +633,7 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ; AF14     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; AF15     ; 143        ; 4A             ; SS                              ; output ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; AF16     ;            ; 4A             ; VREFB4AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; AF17     ; 151        ; 4A             ; Voltios                         ; output ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
+; AF17     ; 151        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF18     ; 166        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; AF19     ;            ; 4A             ; VCCIO4A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; AF20     ; 179        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -790,10 +789,10 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ; E4       ; 442        ; 7D             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E5       ; 454        ; 7D             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E6       ; 542        ; 9A             ; ^nCE                            ;        ;              ;                     ; --           ;                 ; --       ; --           ;
-; E7       ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
-; E8       ; 463        ; 8A             ; GPIO_0[1]                       ; output ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
+; E7       ;            ; 8A             ; VCCIO8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
+; E8       ; 463        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E9       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; E10      ;            ; 8A             ; VCCPD8A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
+; E10      ;            ; 8A             ; VCCPD8A                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; E11      ; 474        ; 8A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; E12      ;            ;                ; DNU                             ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; E13      ;            ; 7D             ; VCCPD7D_HPS                     ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
@@ -1091,7 +1090,7 @@ The pin-out file can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/o
 ; V9       ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V10      ; 60         ; 3A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; V11      ; 114        ; 3B             ; FPGA_CLK1_50                    ; input  ; 2.5 V        ;                     ; Column I/O   ; Y               ; no       ; Off          ;
-; V12      ; 130        ; 3B             ; GPIO_0[0]                       ; output ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
+; V12      ; 130        ; 3B             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; V13      ; 152        ; 4A             ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; V14      ;            ;                ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; V15      ; 227        ; 5A             ; LED[3]                          ; output ; 2.5 V        ;                     ; Row I/O      ; Y               ; no       ; Off          ;
@@ -1175,9 +1174,6 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; SCK          ; Missing drive strength and slew rate ;
 ; MOSI         ; Missing drive strength and slew rate ;
 ; SS           ; Missing drive strength and slew rate ;
-; GPIO_0[0]    ; Missing drive strength and slew rate ;
-; GPIO_0[1]    ; Missing drive strength and slew rate ;
-; Voltios      ; Missing drive strength and slew rate ;
 ; FPGA_CLK1_50 ; Incomplete set of assignments        ;
 ; KEY[0]       ; Incomplete set of assignments        ;
 +--------------+--------------------------------------+
@@ -1188,8 +1184,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name  ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------+--------------+--------------+
-; |pruebaSPI_RW              ; 33.5 (4.8)           ; 44.5 (9.8)                       ; 11.0 (4.9)                                        ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 61 (9)              ; 67 (14)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 18   ; 0            ; |pruebaSPI_RW                    ; pruebaSPI_RW ; work         ;
-;    |masterSPI_RW:inst1|    ; 28.7 (28.7)          ; 34.8 (34.8)                      ; 6.1 (6.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 52 (52)             ; 53 (53)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaSPI_RW|masterSPI_RW:inst1 ; masterSPI_RW ; work         ;
+; |pruebaSPI_RW              ; 34.0 (4.3)           ; 44.0 (6.5)                       ; 10.0 (2.2)                                        ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 61 (9)              ; 67 (14)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 15   ; 0            ; |pruebaSPI_RW                    ; pruebaSPI_RW ; work         ;
+;    |masterSPI_RW:inst1|    ; 29.7 (29.7)          ; 37.5 (37.5)                      ; 7.8 (7.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 52 (52)             ; 53 (53)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |pruebaSPI_RW|masterSPI_RW:inst1 ; masterSPI_RW ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+----------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1211,12 +1207,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCK          ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; MOSI         ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; SS           ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; GPIO_0[0]    ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; GPIO_0[1]    ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; Voltios      ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; FPGA_CLK1_50 ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; FPGA_CLK1_50 ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[0]       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; MISO         ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; MISO         ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +--------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
@@ -1226,7 +1219,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                    ; Pad To Core Index ; Setting ;
 +----------------------------------------+-------------------+---------+
 ; FPGA_CLK1_50                           ;                   ;         ;
-;      - masterSPI_RW:inst1|ep.e0        ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|ep.e0        ; 1                 ; 0       ;
 ; KEY[0]                                 ;                   ;         ;
 ;      - masterSPI_RW:inst1|es.e2~0      ; 0                 ; 0       ;
 ;      - speed[1]                        ; 0                 ; 0       ;
@@ -1234,21 +1227,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - masterSPI_RW:inst1|es.e0~0      ; 0                 ; 0       ;
 ;      - masterSPI_RW:inst1|es.e1~0      ; 0                 ; 0       ;
 ;      - masterSPI_RW:inst1|es.e3~0      ; 0                 ; 0       ;
-;      - es~9                            ; 0                 ; 0       ;
-;      - es~10                           ; 0                 ; 0       ;
-;      - es~11                           ; 0                 ; 0       ;
-;      - es~12                           ; 0                 ; 0       ;
-;      - es~13                           ; 0                 ; 0       ;
-;      - es.e0~feeder                    ; 0                 ; 0       ;
+;      - es.e0                           ; 0                 ; 0       ;
+;      - es~6                            ; 0                 ; 0       ;
+;      - es~7                            ; 0                 ; 0       ;
+;      - es~8                            ; 0                 ; 0       ;
 ; MISO                                   ;                   ;         ;
-;      - masterSPI_RW:inst1|datOut[4]~0  ; 1                 ; 0       ;
-;      - masterSPI_RW:inst1|datOut[5]~1  ; 1                 ; 0       ;
-;      - masterSPI_RW:inst1|datOut[6]~2  ; 1                 ; 0       ;
-;      - masterSPI_RW:inst1|datOut[7]~3  ; 1                 ; 0       ;
-;      - masterSPI_RW:inst1|datOut[8]~4  ; 1                 ; 0       ;
-;      - masterSPI_RW:inst1|datOut[9]~5  ; 1                 ; 0       ;
-;      - masterSPI_RW:inst1|datOut[10]~6 ; 1                 ; 0       ;
-;      - masterSPI_RW:inst1|datOut[11]~7 ; 1                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[4]~0  ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[5]~1  ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[6]~2  ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[7]~3  ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[8]~4  ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[9]~5  ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[10]~6 ; 0                 ; 0       ;
+;      - masterSPI_RW:inst1|datOut[11]~7 ; 0                 ; 0       ;
 +----------------------------------------+-------------------+---------+
 
 
@@ -1258,12 +1249,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                              ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; FPGA_CLK1_50                      ; PIN_V11            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; FPGA_CLK1_50                      ; PIN_V11            ; 60      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; KEY[0]                            ; PIN_AH17           ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; masterSPI_RW:inst1|O_DATA[4]~0    ; MLABCELL_X84_Y4_N9 ; 22      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; masterSPI_RW:inst1|SPI_Ena        ; FF_X84_Y4_N35      ; 13      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; masterSPI_RW:inst1|conv_time[3]~1 ; LABCELL_X80_Y4_N15 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; masterSPI_RW:inst1|ep.e0          ; FF_X82_Y4_N56      ; 18      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; FPGA_CLK1_50                      ; PIN_V11            ; 58      ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; KEY[0]                            ; PIN_AH17           ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; cnt[2]                            ; FF_X63_Y4_N41      ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; masterSPI_RW:inst1|O_DATA[4]~0    ; LABCELL_X64_Y4_N9  ; 22      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; masterSPI_RW:inst1|SPI_Ena        ; FF_X64_Y4_N29      ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; masterSPI_RW:inst1|conv_time[3]~1 ; LABCELL_X64_Y4_N54 ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; masterSPI_RW:inst1|ep.e0          ; FF_X62_Y4_N29      ; 20      ; Clock        ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1272,7 +1264,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+----------+---------+----------------------+------------------+---------------------------+
 ; Name         ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------+----------+---------+----------------------+------------------+---------------------------+
-; FPGA_CLK1_50 ; PIN_V11  ; 60      ; Global Clock         ; GCLK6            ; --                        ;
+; FPGA_CLK1_50 ; PIN_V11  ; 58      ; Global Clock         ; GCLK6            ; --                        ;
 +--------------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1281,14 +1273,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 127 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 14 / 13,420 ( < 1 % )   ;
-; C2 interconnects                            ; 43 / 119,108 ( < 1 % )  ;
-; C4 interconnects                            ; 45 / 56,300 ( < 1 % )   ;
+; Block interconnects                         ; 116 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 6 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 33 / 119,108 ( < 1 % )  ;
+; C4 interconnects                            ; 35 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 23 / 289,320 ( < 1 % )  ;
+; Direct links                                ; 26 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -1344,12 +1336,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 37 / 84,580 ( < 1 % )   ;
+; Local interconnects                         ; 43 / 84,580 ( < 1 % )   ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 74 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 84 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 85 / 130,992 ( < 1 % )  ;
-; R6 interconnects                            ; 102 / 266,960 ( < 1 % ) ;
+; R14 interconnects                           ; 46 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 51 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 65 / 130,992 ( < 1 % )  ;
+; R6 interconnects                            ; 115 / 266,960 ( < 1 % ) ;
 ; Spine clocks                                ; 1 / 360 ( < 1 % )       ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
@@ -1410,9 +1402,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000034    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
-; Total Pass         ; 18        ; 0            ; 18        ; 0            ; 0            ; 18        ; 18        ; 0            ; 18        ; 18        ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; Total Pass         ; 15        ; 0            ; 15        ; 0            ; 0            ; 15        ; 15        ; 0            ; 15        ; 15        ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 8            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 18           ; 0         ; 18           ; 18           ; 0         ; 0         ; 18           ; 0         ; 0         ; 18           ; 10           ; 18           ; 18           ; 18           ; 18           ; 10           ; 18           ; 18           ; 18           ; 18           ; 10           ; 18           ; 18           ; 18           ; 18           ; 18           ; 18           ;
+; Total Inapplicable ; 0         ; 15           ; 0         ; 15           ; 15           ; 0         ; 0         ; 15           ; 0         ; 0         ; 15           ; 7            ; 15           ; 15           ; 15           ; 15           ; 7            ; 15           ; 15           ; 15           ; 15           ; 7            ; 15           ; 15           ; 15           ; 15           ; 15           ; 15           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; LED[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; LED[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1426,9 +1418,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SCK                ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; MOSI               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; SS                 ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; GPIO_0[0]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; GPIO_0[1]          ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
-; Voltios            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; FPGA_CLK1_50       ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; MISO               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1478,15 +1467,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+-------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                           ;
-+------------------------------+----------------------+-------------------+
-; Source Clock(s)              ; Destination Clock(s) ; Delay Added in ns ;
-+------------------------------+----------------------+-------------------+
-; FPGA_CLK1_50                 ; FPGA_CLK1_50         ; 111.9             ;
-; masterSPI_RW:inst1|ep.e0     ; FPGA_CLK1_50         ; 75.6              ;
-; masterSPI_RW:inst1|ep.e0,I/O ; FPGA_CLK1_50         ; 3.9               ;
-+------------------------------+----------------------+-------------------+
++------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                            ;
++-------------------------------------------+--------------------------+-------------------+
+; Source Clock(s)                           ; Destination Clock(s)     ; Delay Added in ns ;
++-------------------------------------------+--------------------------+-------------------+
+; FPGA_CLK1_50                              ; FPGA_CLK1_50             ; 103.9             ;
+; masterSPI_RW:inst1|ep.e0                  ; FPGA_CLK1_50             ; 48.2              ;
+; masterSPI_RW:inst1|ep.e0                  ; masterSPI_RW:inst1|ep.e0 ; 5.2               ;
+; FPGA_CLK1_50,masterSPI_RW:inst1|ep.e0,I/O ; FPGA_CLK1_50             ; 4.4               ;
++-------------------------------------------+--------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
@@ -1496,53 +1486,50 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------------------+----------------------------------+-------------------+
 ; Source Register                  ; Destination Register             ; Delay Added in ns ;
 +----------------------------------+----------------------------------+-------------------+
-; masterSPI_RW:inst1|ep.e0         ; masterSPI_RW:inst1|ep.e0         ; 7.804             ;
-; ep.e4                            ; masterSPI_RW:inst1|ep.e0         ; 6.362             ;
-; ep.e6                            ; masterSPI_RW:inst1|ep.e0         ; 5.892             ;
-; ep.e1                            ; speed[0]                         ; 4.710             ;
-; ep.e3                            ; speed[0]                         ; 4.582             ;
-; ep.e2                            ; speed[1]                         ; 4.365             ;
-; ep.e0                            ; speed[0]                         ; 4.335             ;
-; masterSPI_RW:inst1|stopped       ; masterSPI_RW:inst1|ep.e0         ; 2.971             ;
-; masterSPI_RW:inst1|ep.e3         ; masterSPI_RW:inst1|ep.e0         ; 2.971             ;
-; KEY[0]                           ; masterSPI_RW:inst1|ep.e0         ; 2.971             ;
-; masterSPI_RW:inst1|SPI_Ena       ; masterSPI_RW:inst1|conv_time[5]  ; 2.269             ;
-; masterSPI_RW:inst1|ep.e1         ; masterSPI_RW:inst1|conv_time[0]  ; 1.766             ;
-; masterSPI_RW:inst1|quiet_time[0] ; masterSPI_RW:inst1|quiet_time[1] ; 0.618             ;
-; masterSPI_RW:inst1|conv_time[2]  ; masterSPI_RW:inst1|conv_time[3]  ; 0.615             ;
-; speed[1]                         ; masterSPI_RW:inst1|i[0]          ; 0.611             ;
-; masterSPI_RW:inst1|conv_time[1]  ; masterSPI_RW:inst1|conv_time[2]  ; 0.611             ;
-; masterSPI_RW:inst1|i[2]          ; masterSPI_RW:inst1|i[4]          ; 0.604             ;
-; masterSPI_RW:inst1|EOC           ; masterSPI_RW:inst1|ep.e1         ; 0.580             ;
-; masterSPI_RW:inst1|i[3]          ; masterSPI_RW:inst1|i[4]          ; 0.577             ;
-; masterSPI_RW:inst1|i[1]          ; masterSPI_RW:inst1|i[2]          ; 0.573             ;
-; masterSPI_RW:inst1|conv_time[0]  ; masterSPI_RW:inst1|conv_time[1]  ; 0.566             ;
-; masterSPI_RW:inst1|conv_time[4]  ; masterSPI_RW:inst1|conv_time[5]  ; 0.565             ;
-; masterSPI_RW:inst1|conv_time[5]  ; masterSPI_RW:inst1|CONVST        ; 0.564             ;
-; masterSPI_RW:inst1|ep.e2         ; masterSPI_RW:inst1|bitCnt[1]     ; 0.563             ;
-; masterSPI_RW:inst1|SCLK_gen      ; masterSPI_RW:inst1|datOut[7]     ; 0.542             ;
-; speed[0]                         ; masterSPI_RW:inst1|i[0]          ; 0.536             ;
-; masterSPI_RW:inst1|i[4]          ; masterSPI_RW:inst1|i[4]          ; 0.523             ;
-; masterSPI_RW:inst1|quiet_time[1] ; masterSPI_RW:inst1|quiet_time[0] ; 0.519             ;
-; masterSPI_RW:inst1|comm_end      ; masterSPI_RW:inst1|datOut[7]     ; 0.515             ;
-; masterSPI_RW:inst1|hold          ; masterSPI_RW:inst1|datOut[7]     ; 0.503             ;
-; masterSPI_RW:inst1|bitCnt[2]     ; masterSPI_RW:inst1|bitCnt[0]     ; 0.495             ;
-; masterSPI_RW:inst1|bitCnt[0]     ; masterSPI_RW:inst1|bitCnt[2]     ; 0.484             ;
-; masterSPI_RW:inst1|conv_time[3]  ; masterSPI_RW:inst1|CONVST        ; 0.476             ;
-; masterSPI_RW:inst1|i[0]          ; masterSPI_RW:inst1|i[3]          ; 0.446             ;
-; masterSPI_RW:inst1|bitCnt[4]     ; masterSPI_RW:inst1|bitCnt[0]     ; 0.427             ;
-; masterSPI_RW:inst1|bitCnt[3]     ; masterSPI_RW:inst1|datOut[7]     ; 0.308             ;
-; masterSPI_RW:inst1|bitCnt[1]     ; masterSPI_RW:inst1|bitCnt[2]     ; 0.302             ;
-; masterSPI_RW:inst1|datOut[9]     ; masterSPI_RW:inst1|O_DATA[9]     ; 0.271             ;
-; masterSPI_RW:inst1|datOut[6]     ; masterSPI_RW:inst1|O_DATA[6]     ; 0.270             ;
-; masterSPI_RW:inst1|datOut[4]     ; masterSPI_RW:inst1|O_DATA[4]     ; 0.169             ;
-; masterSPI_RW:inst1|datOut[10]    ; masterSPI_RW:inst1|O_DATA[10]    ; 0.168             ;
-; masterSPI_RW:inst1|datOut[11]    ; masterSPI_RW:inst1|O_DATA[11]    ; 0.082             ;
-; masterSPI_RW:inst1|datOut[5]     ; masterSPI_RW:inst1|O_DATA[5]     ; 0.082             ;
-; masterSPI_RW:inst1|datOut[7]     ; masterSPI_RW:inst1|O_DATA[7]     ; 0.081             ;
-; masterSPI_RW:inst1|datOut[8]     ; masterSPI_RW:inst1|O_DATA[8]     ; 0.079             ;
+; masterSPI_RW:inst1|ep.e0         ; masterSPI_RW:inst1|ep.e0         ; 6.476             ;
+; ep.e3                            ; masterSPI_RW:inst1|ep.e0         ; 5.136             ;
+; ep.e1                            ; es.e3                            ; 4.588             ;
+; ep.e0                            ; es.e1                            ; 4.551             ;
+; ep.e2                            ; speed[0]                         ; 4.475             ;
+; masterSPI_RW:inst1|stopped       ; masterSPI_RW:inst1|ep.e0         ; 2.412             ;
+; masterSPI_RW:inst1|ep.e3         ; masterSPI_RW:inst1|ep.e0         ; 2.412             ;
+; KEY[0]                           ; masterSPI_RW:inst1|ep.e0         ; 2.412             ;
+; masterSPI_RW:inst1|SPI_Ena       ; masterSPI_RW:inst1|conv_time[5]  ; 2.125             ;
+; masterSPI_RW:inst1|ep.e1         ; masterSPI_RW:inst1|ep.e1         ; 2.017             ;
+; masterSPI_RW:inst1|EOC           ; masterSPI_RW:inst1|ep.e1         ; 2.017             ;
+; cnt[0]                           ; cnt[1]                           ; 1.106             ;
+; cnt[2]                           ; cnt[1]                           ; 1.104             ;
+; cnt[1]                           ; cnt[2]                           ; 1.005             ;
+; masterSPI_RW:inst1|conv_time[2]  ; masterSPI_RW:inst1|conv_time[3]  ; 0.539             ;
+; masterSPI_RW:inst1|quiet_time[0] ; masterSPI_RW:inst1|stopped       ; 0.538             ;
+; masterSPI_RW:inst1|conv_time[1]  ; masterSPI_RW:inst1|conv_time[3]  ; 0.535             ;
+; masterSPI_RW:inst1|i[4]          ; masterSPI_RW:inst1|i[0]          ; 0.518             ;
+; masterSPI_RW:inst1|i[2]          ; masterSPI_RW:inst1|i[3]          ; 0.513             ;
+; masterSPI_RW:inst1|bitCnt[2]     ; masterSPI_RW:inst1|bitCnt[3]     ; 0.494             ;
+; masterSPI_RW:inst1|i[1]          ; masterSPI_RW:inst1|i[2]          ; 0.491             ;
+; masterSPI_RW:inst1|conv_time[0]  ; masterSPI_RW:inst1|conv_time[1]  ; 0.491             ;
+; masterSPI_RW:inst1|conv_time[5]  ; masterSPI_RW:inst1|CONVST        ; 0.486             ;
+; masterSPI_RW:inst1|conv_time[4]  ; masterSPI_RW:inst1|conv_time[5]  ; 0.484             ;
+; masterSPI_RW:inst1|i[3]          ; masterSPI_RW:inst1|i[1]          ; 0.473             ;
+; masterSPI_RW:inst1|quiet_time[1] ; masterSPI_RW:inst1|quiet_time[0] ; 0.456             ;
+; masterSPI_RW:inst1|i[0]          ; masterSPI_RW:inst1|i[4]          ; 0.455             ;
+; masterSPI_RW:inst1|SCLK_gen      ; masterSPI_RW:inst1|bitCnt[3]     ; 0.449             ;
+; speed[1]                         ; masterSPI_RW:inst1|i[1]          ; 0.443             ;
+; masterSPI_RW:inst1|conv_time[3]  ; masterSPI_RW:inst1|conv_time[5]  ; 0.417             ;
+; masterSPI_RW:inst1|bitCnt[0]     ; masterSPI_RW:inst1|bitCnt[1]     ; 0.406             ;
+; masterSPI_RW:inst1|ep.e2         ; masterSPI_RW:inst1|ep.e3         ; 0.398             ;
+; masterSPI_RW:inst1|hold          ; masterSPI_RW:inst1|bitCnt[3]     ; 0.397             ;
+; masterSPI_RW:inst1|comm_end      ; masterSPI_RW:inst1|bitCnt[3]     ; 0.393             ;
+; masterSPI_RW:inst1|bitCnt[3]     ; masterSPI_RW:inst1|bitCnt[4]     ; 0.370             ;
+; speed[0]                         ; masterSPI_RW:inst1|i[1]          ; 0.353             ;
+; masterSPI_RW:inst1|bitCnt[4]     ; masterSPI_RW:inst1|bitCnt[4]     ; 0.349             ;
+; masterSPI_RW:inst1|bitCnt[1]     ; masterSPI_RW:inst1|datOut[8]     ; 0.348             ;
+; masterSPI_RW:inst1|datOut[4]     ; masterSPI_RW:inst1|O_DATA[4]     ; 0.032             ;
+; masterSPI_RW:inst1|datOut[6]     ; masterSPI_RW:inst1|O_DATA[6]     ; 0.021             ;
+; masterSPI_RW:inst1|datOut[8]     ; masterSPI_RW:inst1|O_DATA[8]     ; 0.010             ;
+; masterSPI_RW:inst1|datOut[7]     ; masterSPI_RW:inst1|O_DATA[7]     ; 0.010             ;
 +----------------------------------+----------------------------------+-------------------+
-Note: This table only shows the top 45 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 42 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1558,7 +1545,7 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
-    Info (11162): FPGA_CLK1_50~inputCLKENA0 with 52 fanout uses global clock CLKCTRL_G6
+    Info (11162): FPGA_CLK1_50~inputCLKENA0 with 50 fanout uses global clock CLKCTRL_G6
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Info (176233): Starting register packing
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'pruebaSPI_RW.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1568,6 +1555,8 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
+Warning (15705): Ignored locations or region assignments to the following nodes
+    Warning (15706): Node "Voltios" is assigned to location or region, but does not exist in design
 Info (11798): Fitter preparation operations ending: elapsed time is 00:00:12
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
@@ -1577,28 +1566,28 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X78_Y0 to location X89_Y10
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X56_Y0 to location X66_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.30 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.32 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
-Info (144001): Generated suppressed messages file D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/output_files/pruebaSPI_RW.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2449 megabytes
-    Info: Processing ended: Tue Dec 11 13:44:26 2018
-    Info: Elapsed time: 00:00:37
-    Info: Total CPU time (on all processors): 00:00:59
+Info (144001): Generated suppressed messages file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/output_files/pruebaSPI_RW.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 2445 megabytes
+    Info: Processing ended: Wed Dec 12 10:11:57 2018
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:57
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/Users/jagumiel/Desktop/borrar/pruebaSPI_RW/output_files/pruebaSPI_RW.fit.smsg.
+The suppressed messages can be found in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/pruebaSPI_RW/output_files/pruebaSPI_RW.fit.smsg.
 
 

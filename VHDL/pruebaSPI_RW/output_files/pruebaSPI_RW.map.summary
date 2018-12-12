@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Dec 11 13:43:48 2018
+Analysis & Synthesis Status : Successful - Wed Dec 12 10:11:20 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pruebaSPI_RW
 Top-level Entity Name : pruebaSPI_RW
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 59
-Total pins : 18
+Total registers : 58
+Total pins : 15
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

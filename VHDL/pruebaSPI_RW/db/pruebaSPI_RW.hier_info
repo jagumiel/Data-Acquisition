@@ -6,28 +6,23 @@ FPGA_CLK1_50 => es~1.DATAIN
 KEY[0] => es.OUTPUTSELECT
 KEY[0] => es.OUTPUTSELECT
 KEY[0] => es.OUTPUTSELECT
-KEY[0] => es.OUTPUTSELECT
-KEY[0] => es.OUTPUTSELECT
 KEY[0] => masterSPI_RW:inst1.RST
 KEY[0] => es.e0.DATAIN
-KEY[0] => speed[1].ENA
 KEY[0] => speed[0].ENA
-LED[0] << masterSPI_RW:inst1.O_DATA[4]
-LED[1] << masterSPI_RW:inst1.O_DATA[5]
-LED[2] << masterSPI_RW:inst1.O_DATA[6]
-LED[3] << masterSPI_RW:inst1.O_DATA[7]
-LED[4] << masterSPI_RW:inst1.O_DATA[8]
-LED[5] << masterSPI_RW:inst1.O_DATA[9]
-LED[6] << masterSPI_RW:inst1.O_DATA[10]
-LED[7] << masterSPI_RW:inst1.O_DATA[11]
-CONVST << masterSPI_RW:inst1.CONVST
-SCK << masterSPI_RW:inst1.SCLK
+KEY[0] => speed[1].ENA
+LED[0] <= masterSPI_RW:inst1.O_DATA[4]
+LED[1] <= masterSPI_RW:inst1.O_DATA[5]
+LED[2] <= masterSPI_RW:inst1.O_DATA[6]
+LED[3] <= masterSPI_RW:inst1.O_DATA[7]
+LED[4] <= masterSPI_RW:inst1.O_DATA[8]
+LED[5] <= masterSPI_RW:inst1.O_DATA[9]
+LED[6] <= masterSPI_RW:inst1.O_DATA[10]
+LED[7] <= masterSPI_RW:inst1.O_DATA[11]
+CONVST <= masterSPI_RW:inst1.CONVST
+SCK <= masterSPI_RW:inst1.SCLK
 MISO => masterSPI_RW:inst1.MISO
-MOSI << masterSPI_RW:inst1.MOSI
-SS << masterSPI_RW:inst1.SS1
-GPIO_0[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
-GPIO_0[1] << GPIO_0[1].DB_MAX_OUTPUT_PORT_TYPE
-Voltios << <VCC>
+MOSI <= masterSPI_RW:inst1.MOSI
+SS <= masterSPI_RW:inst1.SS1
 
 
 |pruebaSPI_RW|masterSPI_RW:inst1

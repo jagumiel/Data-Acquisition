@@ -1,3 +1,13 @@
+--**********************************************************************************************************
+--		Este modulo esta disenado para comunicarse con la placa de evaluacion AD7091RS.
+--		Se trata de un ADC que se conecta por SPI. Tiene el integrado AD7091R.
+--  	Hay que tener en cuenta que en estado de idle el reloj se queda a nivel bajo (0 lógico) y
+--		que ademas tiene una entrada de CONVST, que baja a 0 para volver a subir antes de transferir datos.
+--		Se han anadido diferentes frecuencias de trabajo (1Mhz, 5Mhz y 25Mhz).
+--		En este caso, la placa no recibe datos por MOSI, solo envia datos a traves de la linea MISO.
+--**********************************************************************************************************
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
@@ -12,10 +22,7 @@ ENTITY pruebaSPI_RW is
 			SCK			: OUT STD_LOGIC;
 			MISO			: IN STD_LOGIC;	
 			MOSI			: OUT STD_LOGIC;
-			SS			: OUT STD_LOGIC;
-			GPIO_0	: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-			Voltios		: OUT STD_LOGIC);--Del GPIO quiero obtener los 2,5V nada más. Es para probar y no coger otra fuente extra.
-			--Ojo. Del GPIO ahora tienen que salir 3.3V, por lo que hay que colocarle una resistencia.
+			SS				: OUT STD_LOGIC);
 END pruebaSPI_RW;
 
 architecture a of pruebaSPI_RW is
@@ -43,24 +50,26 @@ architecture a of pruebaSPI_RW is
 
 
 	--Estados
-	TYPE estados is (e0, e1, e2, e3, e4, e5, e6);
+	TYPE estados is (e0, e1, e2, e3);
 	SIGNAL ep : estados :=e0; 	--Estado Presente
 	SIGNAL es : estados; 		--Estado Siguiente
 		
 	--Senales de datos para la placa
+	constant	numBits 		: integer range 0 to 12 :=12;	--Numero de bits de la trama.
 	signal 	reset			: std_logic:='0';
-	signal 	change		: std_logic;
 	signal	go				: std_logic;
-	signal 	ocupado		: std_logic;
 	signal	speed			: std_logic_vector(1 downto 0):="11";
-	constant	numBits 		: integer range 0 to 12 :=12;
 	signal	enviado		: std_logic_vector(numBits-1 downto 0):=(others=>'0');
 	signal	recibido		: std_logic_vector(numBits-1 downto 0):=(others=>'0');
+	
+	--Señales para el testbench
+	signal 	ocupado		: std_logic;
+	signal	cnt			: integer range 0 to 4 :=0;
+
 
 BEGIN
 
 	reset<=NOT(KEY(0));
-	Voltios<='1';
 
 	PROCESS(FPGA_CLK1_50, ep, reset)
 	BEGIN
@@ -70,34 +79,31 @@ BEGIN
 			ELSE
 				CASE ep IS
 					WHEN e0 =>
-						speed<="11";
-						--Metele un counter para que repita varias veces a esa velocidad.
+						speed<="11"; 	--1MHz
 						es<=e1;
 					WHEN e1 =>
-						speed<="11";
+						speed<="10";	--5MHz
 						es<=e2;
 					WHEN e2 =>
-						speed<="10";
+						speed<="01";	--25MHz
 						es<=e3;
 					WHEN e3 =>
-						speed<="01";
-						es<=e4;
-					WHEN e4 =>
-						es<=e4;
-					WHEN e5 =>
-						es<=e6;
-					WHEN e6 =>
-						es<=e6;
+						es<=e3;			--Idle
 				END CASE;
 			END IF;
 		END IF;
 	END PROCESS;
-	go			<='1' 	when (ocupado='0' and (ep=e0 or ep=e1 or ep=e2 or ep=e3)) else '0'; --OJO! Esto es una PRUEBA. Solo queria transmitir una trama!!!
+	go	<='1' when (ocupado='0' and (ep=e0 or ep=e1 or ep=e2)) else '0'; --OJO! Esto es una PRUEBA. Solo queria recibir una trama!!!
 	
 	PROCESS(FPGA_CLK1_50, ocupado, es)
 	BEGIN
 		if(falling_edge(ocupado))then
-			ep<=es;
+			if(cnt<4)then	--Hago 5 repeticiones en cada estado.
+				cnt<=cnt+1;
+			else
+				ep<=es;
+				cnt<=0;
+			end if;
 		end if;
 	END PROCESS;
 
@@ -106,22 +112,22 @@ BEGIN
 		Generic Map( nBits => numBits)
     	Port Map( 
 		CLK_50 	=> FPGA_CLK1_50,
-		RST 	=> reset,
+		RST 		=> reset,
 		START 	=> go,
-		SPEED	=> speed,
-		CPOL 	=> '1',
-		CPHA	=> '1',
-		CS => "0",
-		I_DATA => enviado, --Datos que envio.
-		O_DATA => recibido, --Datos que recibo
-		BUSY => ocupado,
-		CONVST => CONVST,
-		SCLK	=> SCK,
-		SS1 => SS,
-		SS2	=> open,
-		MOSI	=> MOSI,
-		MISO => MISO
+		SPEED		=> speed,
+		CPOL 		=> '1',
+		CPHA		=> '1',
+		CS 		=> "0",
+		I_DATA 	=> enviado,  --Datos que envio.
+		O_DATA 	=> recibido, --Datos que recibo
+		BUSY 		=> ocupado,
+		CONVST 	=> CONVST,
+		SCLK		=> SCK,
+		SS1 		=> SS,
+		SS2		=> open,
+		MOSI		=> MOSI,
+		MISO 		=> MISO
 	);
-	
+	--Muestro el valor en los leds. Tengo solo 8 leds, asi que cojo los valores mas significativos.
 	LED<=recibido(numBits-1 downto numBits-8);
 END a;
