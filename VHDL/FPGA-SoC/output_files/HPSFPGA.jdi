@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="da4466dadaf4c8aea59b"/>
+  </project>
+  <file_info>
+    <file device="5CSEBA6U23I7" path="HPSFPGA.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="hps_fpga:u0" name="u0">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME hps_fpga HAS_SOPCINFO 1 GENERATION_ID 1547119689"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>
