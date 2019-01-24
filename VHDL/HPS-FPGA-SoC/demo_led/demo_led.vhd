@@ -106,7 +106,8 @@ ARCHITECTURE MAIN of demo_led IS
             memory_oct_rzqin                : in    std_logic                     := 'X'              -- oct_rzqin
         );
     end component hps;
-
+	
+	begin
     u0 : component hps
         port map (
             clk_clk                         => CLOCK_50,                         --                     clk.clk
