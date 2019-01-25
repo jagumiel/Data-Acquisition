@@ -1,0 +1,71 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_adc\hps.qsys --block-symbol-file --output-directory=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_adc\hps --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading hps_adc/hps.qsys
+Progress: Reading input file
+Progress: Adding adc_val [altera_avalon_pio 18.1]
+Progress: Parameterizing module adc_val
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: hps.adc_val: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_adc\hps.qsys --synthesis=VHDL --output-directory=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_adc\hps\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading hps_adc/hps.qsys
+Progress: Reading input file
+Progress: Adding adc_val [altera_avalon_pio 18.1]
+Progress: Parameterizing module adc_val
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: hps.adc_val: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps: Generating hps "hps" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master hps_0.h2f_lw_axi_master and slave adc_val.s1 because the master is of type axi and the slave is of type avalon.
+Info: adc_val: Starting RTL generation for module 'hps_adc_val'
+Info: adc_val:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hps_adc_val --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7921_4837158999953684023.dir/0002_adc_val_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/jagumiel/AppData/Local/Temp/alt7921_4837158999953684023.dir/0002_adc_val_gen//hps_adc_val_component_configuration.pl  --do_build_sim=0  ]
+Info: adc_val: Done RTL generation for module 'hps_adc_val'
+Info: adc_val: "hps" instantiated altera_avalon_pio "adc_val"
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps_0: "hps" instantiated altera_hps "hps_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "hps" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "hps" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: adc_val_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "adc_val_s1_translator"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: adc_val_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "adc_val_s1_agent"
+Info: adc_val_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "adc_val_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: adc_val_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "adc_val_s1_burst_adapter"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_adc/hps/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_adc/hps/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: hps: Done "hps" with 21 modules, 77 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
