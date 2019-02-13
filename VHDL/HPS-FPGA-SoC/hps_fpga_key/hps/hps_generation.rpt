@@ -1,0 +1,168 @@
+Info: Starting: Create simulation model
+Info: qsys-generate D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps.qsys --simulation=VHDL --allow-mixed-language-simulation --output-directory=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps\simulation --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading hps_fpga_key/hps.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding gpio_hps [altera_avalon_pio 18.1]
+Progress: Parameterizing module gpio_hps
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Adding key [altera_avalon_pio 18.1]
+Progress: Parameterizing module key
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: hps.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps.key: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps: Generating hps "hps" for SIM_VHDL
+Info: gpio_hps: Starting RTL generation for module 'hps_gpio_hps'
+Info: gpio_hps:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hps_gpio_hps --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0002_gpio_hps_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --vhdl --config=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0002_gpio_hps_gen//hps_gpio_hps_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0002_gpio_hps_gen/  ]
+Info: gpio_hps: Done RTL generation for module 'hps_gpio_hps'
+Info: gpio_hps: "hps" instantiated altera_avalon_pio "gpio_hps"
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps_0: "hps" instantiated altera_hps "hps_0"
+Info: key: Starting RTL generation for module 'hps_key'
+Info: key:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hps_key --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0003_key_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --vhdl --config=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0003_key_gen//hps_key_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0003_key_gen/  ]
+Info: key: Done RTL generation for module 'hps_key'
+Info: key: "hps" instantiated altera_avalon_pio "key"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "hps" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "hps" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: key_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "key_s1_translator"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: key_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "key_s1_agent"
+Info: key_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "key_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_avalon_sc_fifo.v
+Info: key_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "key_s1_burst_adapter"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/verbosity_pkg.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/avalon_utilities_pkg.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/avalon_mm_pkg.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_avalon_mm_slave_bfm.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_avalon_interrupt_sink.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_avalon_clock_source.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/submodules/altera_avalon_reset_source.sv
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: hps: Done "hps" with 23 modules, 50 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps\hps.spd --output-directory=D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps\hps.spd --output-directory=D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	23 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps.qsys --block-symbol-file --output-directory=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading hps_fpga_key/hps.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding gpio_hps [altera_avalon_pio 18.1]
+Progress: Parameterizing module gpio_hps
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Adding key [altera_avalon_pio 18.1]
+Progress: Parameterizing module key
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: hps.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps.key: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps.qsys --synthesis=VHDL --output-directory=D:\Users\jagumiel\Desktop\DE1-Nano\misPruebas\HPS-FPGA-SoC\hps_fpga_key\hps\synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading hps_fpga_key/hps.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 18.1]
+Progress: Parameterizing module clk_0
+Progress: Adding gpio_hps [altera_avalon_pio 18.1]
+Progress: Parameterizing module gpio_hps
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Adding key [altera_avalon_pio 18.1]
+Progress: Parameterizing module key
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: hps.hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps.key: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps: Generating hps "hps" for QUARTUS_SYNTH
+Info: gpio_hps: Starting RTL generation for module 'hps_gpio_hps'
+Info: gpio_hps:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hps_gpio_hps --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0021_gpio_hps_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0021_gpio_hps_gen//hps_gpio_hps_component_configuration.pl  --do_build_sim=0  ]
+Info: gpio_hps: Done RTL generation for module 'hps_gpio_hps'
+Info: gpio_hps: "hps" instantiated altera_avalon_pio "gpio_hps"
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 63
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Info: hps_0: "hps" instantiated altera_hps "hps_0"
+Info: key: Starting RTL generation for module 'hps_key'
+Info: key:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hps_key --dir=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0022_key_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/jagumiel/AppData/Local/Temp/alt7940_1525764287499250957.dir/0022_key_gen//hps_key_component_configuration.pl  --do_build_sim=0  ]
+Info: key: Done RTL generation for module 'hps_key'
+Info: key: "hps" instantiated altera_avalon_pio "key"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "hps" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: rst_controller: "hps" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: key_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "key_s1_translator"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: key_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "key_s1_agent"
+Info: key_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "key_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: key_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "key_s1_burst_adapter"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/hps_fpga_key/hps/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: hps: Done "hps" with 23 modules, 80 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
