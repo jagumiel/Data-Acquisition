@@ -1,0 +1,1 @@
+Esta basado en el adc por IPCore. Ten en cuenta que tienes que pasarle el rbf adecuado.
