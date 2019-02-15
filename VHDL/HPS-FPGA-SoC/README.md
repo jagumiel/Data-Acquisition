@@ -12,6 +12,7 @@ Just a development board with a Cyclone V/Arria V SoC and a Linux running a Linu
 * **hps_adc** - The FPGA configures and runs and ADC and the HPS can get the data and print it on screen.
 * **hps_adc_IPCore** - The same of "hps_adc", but using Altera's IP Core.
 * **hps_fpga_key** - When Key0 is pressed the FPGA changes a GPIO value from '1' to '0' and the HPS changes another GPIO from '1' to '0' aswell. I want to measure the latencies between the FPGA and the HPS.
+* **pingPong** - A signal is sent from FPGA to HPS and comes back to FPGA. It's used to measure latencies between the signal generation and the traveling path.
 
 
 # FPGA-HPS-SoC
@@ -28,3 +29,4 @@ Solamente una placa de desarrollo con un SoC Cyclone V/Arria V y una distribuci�
 * **hps_adc** - La FPGA configura y pone en marcha un ADC y el HPS puede acceder a leer los datos e imprimirlos por pantalla.
 * **hps_adc_IPCore** - Lo mismo que "hps_adc", pero usando el IP Core de Altera.
 * **hps_fpga_key** - Cuando se presiona el botón "Key0" la FPGA cambia un GPIO de '1' a '0', y el HPS hace lo mismo con otro GPIO distinto. Quiero medir las latencias entre la FPGA y el HPS.
+* **pingPong** - Se genera una señal en la FPGA y se envía hacia el HPS con la intención de que regrese de nuevo a la FPGA. Se usa para medir las latencias entre la primera señal generada y la ruta que recorre.
