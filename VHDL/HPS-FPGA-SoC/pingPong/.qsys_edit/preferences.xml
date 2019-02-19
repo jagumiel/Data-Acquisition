@@ -3,12 +3,14 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="95" />
-   <irq preferredWidth="34" />
+   <connections preferredWidth="127" />
+   <irq preferredWidth="47" />
+   <endaddress preferredWidth="142" />
   </columns>
  </systemtable>
- <library expandedCategories="Project,Library" />
- <window width="1936" height="1056" x="-8" y="-8" />
+ <library
+   expandedCategories="Library/Basic Functions,Library/Basic Functions/Bridges and Adaptors,Library,Library/Qsys Interconnect,Library/Basic Functions/Bridges and Adaptors/Interrupt,Library/Qsys Interconnect/Interrupt,Project" />
+ <window width="1920" height="1040" x="0" y="0" />
  <generation synthesis="VHDL" />
  <hdlexample language="VHDL" />
 </preferences>

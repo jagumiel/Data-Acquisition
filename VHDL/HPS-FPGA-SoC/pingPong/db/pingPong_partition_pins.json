@@ -4,7 +4,11 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "GPIO_FPGA",
+					"name" : "CLEAN_OUT",
+					"strict" : false
+				},
+				{
+					"name" : "BRIDGE_OUT",
 					"strict" : false
 				},
 				{
@@ -12,11 +16,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY",
+					"name" : "FPGA_CLK1_50",
 					"strict" : false
 				},
 				{
-					"name" : "FPGA_CLK1_50",
+					"name" : "BRIDGE_IN",
 					"strict" : false
 				}
 			]

@@ -1,5 +1,5 @@
 Flow report for pingPong
-Fri Feb 15 11:10:07 2019
+Mon Feb 18 09:21:30 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Feb 15 11:09:36 2019       ;
+; Flow Status                     ; Successful - Mon Feb 18 09:20:59 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pingPong                                    ;
 ; Top-level Entity Name           ; pingPong                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 261 / 41,910 ( < 1 % )                      ;
-; Total registers                 ; 509                                         ;
-; Total pins                      ; 111 / 314 ( 35 % )                          ;
+; Logic utilization (in ALMs)     ; 279 / 41,910 ( < 1 % )                      ;
+; Total registers                 ; 539                                         ;
+; Total pins                      ; 113 / 314 ( 36 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/15/2019 11:06:59 ;
+; Start date & time ; 02/18/2019 09:18:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pingPong            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                       ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +---------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                 ; 963354629659.155022521710352           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                 ; 963354629659.155047789612056           ; --            ; --          ; --         ;
 ; ECO_REGENERATE_REPORT                 ; On                                     ; Off           ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP                ; 100                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP                ; -40                                    ; --            ; --          ; --         ;
@@ -95,11 +95,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:18     ; 1.0                     ; 969 MB              ; 00:02:26                           ;
-; Fitter               ; 00:01:05     ; 1.1                     ; 3218 MB             ; 00:01:38                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 749 MB              ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:29     ; 1.1                     ; 1711 MB             ; 00:00:29                           ;
-; Total                ; 00:03:01     ; --                      ; --                  ; 00:04:41                           ;
+; Analysis & Synthesis ; 00:01:16     ; 1.0                     ; 965 MB              ; 00:02:29                           ;
+; Fitter               ; 00:01:09     ; 1.1                     ; 3232 MB             ; 00:01:41                           ;
+; Assembler            ; 00:00:11     ; 1.0                     ; 753 MB              ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:30     ; 1.1                     ; 1713 MB             ; 00:00:29                           ;
+; Total                ; 00:03:06     ; --                      ; --                  ; 00:04:47                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

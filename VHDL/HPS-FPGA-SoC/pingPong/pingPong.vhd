@@ -1,7 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-
+--use ieee.std_logic_unsigned.all; 
+use IEEE.numeric_std.all;
+	 
 ENTITY pingPong IS
 	PORT(
 		------------ CLOCK ----------
@@ -44,8 +45,10 @@ ENTITY pingPong IS
 		HPS_USB_STP: OUT STD_LOGIC;
 		------------ Peripherals ----------
 		KEY: IN STD_LOGIC;
-		GPIO_FPGA : OUT STD_LOGIC;
-		GPIO_HPS : OUT STD_LOGIC
+		CLEAN_OUT : OUT STD_LOGIC; --(GPIO_0[0])
+		BRIDGE_OUT : OUT STD_LOGIC; --(GPIO_0[4])
+		BRIDGE_IN : IN STD_LOGIC; --(GPIO_0[5])
+		GPIO_HPS : OUT STD_LOGIC --(GPIO_0[1])
 	);
 
 END pingPong;
@@ -109,22 +112,52 @@ ARCHITECTURE MAIN of pingPong IS
             memory_oct_rzqin                : in    std_logic                     := 'X'              -- oct_rzqin
         );
     end component hps;
+	 
 	signal dataFromHPS : std_logic:='0';
 	signal pulso	: std_logic:='0';
+	signal cont		: unsigned(23 downto 0) := (others => '0');
+
 	 begin
 	 
-	 --Podria poner "GPIO_FPGA<=KEY", pero no quiero que me haga un cable, quiero que mire cuando cambia.
-	 PROCESS(KEY)
-	 BEGIN
-		IF(KEY='1')THEN
-			GPIO_FPGA<='1';
+--	 --Podria poner "CLEAN_OUT<=KEY", pero no quiero que me haga un cable, quiero que mire cuando cambia.
+--	 PROCESS(KEY)
+--	 BEGIN
+--		IF(KEY='1')THEN
+--			CLEAN_OUT<='1';
+--			pulso<='1';
+--		ELSE
+--			CLEAN_OUT<='0';
+--			pulso<='0';
+--		END IF;
+--	 END PROCESS;
+
+	 
+	process(FPGA_CLK1_50)
+	begin
+		if (FPGA_CLK1_50'event and FPGA_CLK1_50='1') then --Quiero hacer un ciclo cada 200ms
+			if (cont<"010011000100101100111111")then --Menor que 4.999.999
+				CLEAN_OUT<='0';
+				BRIDGE_OUT<='0';
+			else
+				CLEAN_OUT<='1';
+				BRIDGE_OUT<='1';
+				if(cont="100110001001011001111111")then --Si llega a 9.999.999 lo pongo a 0.
+					cont<="000000000000000000000000";
+				end if;
+			end if;
+			cont<=cont+1;
+		end if;
+	end process;
+	
+	process(FPGA_CLK1_50)--LECTURA DEL DATO
+	begin
+		IF(BRIDGE_IN='1')THEN
 			pulso<='1';
 		ELSE
-			GPIO_FPGA<='0';
 			pulso<='0';
 		END IF;
-	 END PROCESS;
-	 
+	end process;
+		 
     u0 : component hps
         port map (
             clk_clk                         => FPGA_CLK1_50,              --                     clk.clk

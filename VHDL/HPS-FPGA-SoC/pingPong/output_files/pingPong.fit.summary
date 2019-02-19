@@ -1,13 +1,13 @@
-Fitter Status : Successful - Fri Feb 15 11:09:23 2019
+Fitter Status : Successful - Mon Feb 18 09:20:44 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pingPong
 Top-level Entity Name : pingPong
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 261 / 41,910 ( < 1 % )
-Total registers : 509
-Total pins : 111 / 314 ( 35 % )
+Logic utilization (in ALMs) : 279 / 41,910 ( < 1 % )
+Total registers : 539
+Total pins : 113 / 314 ( 36 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
 Total RAM Blocks : 0 / 553 ( 0 % )

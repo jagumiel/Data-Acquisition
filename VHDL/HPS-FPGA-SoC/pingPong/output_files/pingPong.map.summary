@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri Feb 15 11:08:16 2019
+Analysis & Synthesis Status : Successful - Mon Feb 18 09:19:34 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : pingPong
 Top-level Entity Name : pingPong
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 495
-Total pins : 111
+Total registers : 521
+Total pins : 113
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
