@@ -7,14 +7,35 @@
 #include <linux/io.h>
 #include <linux/of.h>
 
+#define REG_BASE 0xff200000
+#define REG_SPAN 0x00200000
+#define ENTRADA_0_BASE 0x0
+
+#define dato (volatile short *) 0x00200000
+
 #define DEVNAME "test_int"
+void *base;
+int fd;
 
 static irq_handler_t __test_isr(int irq, void *dev_id, struct pt_regs *regs){
+	//dato=(uint32_t*)(base+FPGA_TO_HPS_BASE);
+	printk("dato: %d\n", *dato);
 	printk (KERN_INFO DEVNAME ": ISR\n");
 	return (irq_handler_t) IRQ_HANDLED;
 }
 
 static int __test_int_driver_probe(struct platform_device* pdev){
+	fd=open("/dev/mem",(O_RDWR|O_SYNC)); //Abro la memoria del sistema.
+	if(fd<0){
+		printk("Can't open memory. \n");
+		return -1;
+	}
+	base=mmap(NULL,REG_SPAN,(PROT_READ|PROT_WRITE),MAP_SHARED,fd,REG_BASE);
+	if(base==MAP_FAILED){
+		printk("Can't MAP memory. \n");
+		close(fd);
+		return -1;
+	}
 	int irq_num;
 	irq_num = platform_get_irq(pdev, 0);
 	printk(KERN_INFO DEVNAME ": La IRQ %d va a ser registrada!\n", irq_num);
