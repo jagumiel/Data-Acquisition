@@ -52,12 +52,16 @@ preplace inst hps.hps_0.timer -pg 1
 preplace inst hps.hps_0.usb0 -pg 1
 preplace inst hps.hps_0.sdmmc -pg 1
 preplace inst hps.hps_0.i2c0 -pg 1
-preplace inst hps.entrada_0 -pg 1 -lvl 2 -y 110
+preplace inst hps.entrada_0 -pg 1 -lvl 2 -y 120
 preplace inst hps.clk_0 -pg 1 -lvl 2 -y 40
-preplace netloc EXPORT<net_container>hps</net_container>(SLAVE)hps_0.hps_io,(SLAVE)hps.hps_io) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>hps</net_container>(MASTER)clk_0.clk_reset,(SLAVE)entrada_0.reset) 1 1 2 500 110 700
+preplace netloc POINT_TO_POINT<net_container>hps</net_container>(MASTER)hps_0.h2f_lw_axi_master,(SLAVE)entrada_0.avl) 1 1 1 420
+preplace netloc EXPORT<net_container>hps</net_container>(SLAVE)hps.hps_io,(SLAVE)hps_0.hps_io) 1 0 1 NJ
 preplace netloc EXPORT<net_container>hps</net_container>(SLAVE)hps_0.memory,(SLAVE)hps.memory) 1 0 1 NJ
+preplace netloc EXPORT<net_container>hps</net_container>(SLAVE)entrada_0.conduit_end,(SLAVE)hps.entrada) 1 0 2 NJ 210 NJ
+preplace netloc POINT_TO_POINT<net_container>hps</net_container>(MASTER)hps_0.f2h_irq0,(SLAVE)entrada_0.interrupt_sender) 1 1 1 440
 preplace netloc EXPORT<net_container>hps</net_container>(SLAVE)hps.clk,(SLAVE)clk_0.clk_in) 1 0 2 NJ 50 NJ
-preplace netloc POINT_TO_POINT<net_container>hps</net_container>(MASTER)clk_0.clk,(SLAVE)hps_0.h2f_lw_axi_clock) 1 0 3 80 30 NJ 30 590
-preplace netloc POINT_TO_POINT<net_container>hps</net_container>(MASTER)hps_0.h2f_reset,(SLAVE)clk_0.clk_in_reset) 1 1 1 390
-levelinfo -pg 1 0 50 630
-levelinfo -hier hps 60 200 420 610
+preplace netloc FAN_OUT<net_container>hps</net_container>(SLAVE)entrada_0.clock_sink,(MASTER)clk_0.clk,(SLAVE)hps_0.h2f_lw_axi_clock) 1 0 3 90 230 460 30 700
+preplace netloc POINT_TO_POINT<net_container>hps</net_container>(MASTER)hps_0.h2f_reset,(SLAVE)clk_0.clk_in_reset) 1 1 1 400
+levelinfo -pg 1 0 60 740
+levelinfo -hier hps 70 210 530 720

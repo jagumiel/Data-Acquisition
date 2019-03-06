@@ -18,13 +18,15 @@ END entrada;
 ARCHITECTURE MAIN of entrada IS
 
 	signal cur_inputs : std_logic_vector(3 downto 0):="0000";
-	signal last_inputs : std_logic_vector(3 downto 0):="0000";	
+	signal last_inputs: std_logic_vector(3 downto 0):="0000";
+	signal changed_inputs : std_logic_vector(3 downto 0):="0000";
 	signal irq : std_logic:='0';
 	
 begin
 	
 	avl_irq<=irq;
 	avl_readdata<=last_inputs;
+	changed_inputs<=cur_inputs xor last_inputs;
 
 	process(FPGA_CLK1_50)
 	begin
@@ -32,13 +34,13 @@ begin
 			cur_inputs <= "0000";
 			last_inputs <= "0000";
 			irq <= '0';
-		end if;
-		cur_inputs<=switches;
-		if(cur_inputs/=last_inputs)then
-			irq<='1';
-			if(avl_read='1')then
+		else
+			cur_inputs<=switches;
+			last_inputs<=cur_inputs;
+			if(changed_inputs/="00000000")then
+				irq<='1';
+			elsif(avl_read='1')then
 				irq<='0';
-				last_inputs<=cur_inputs;
 			end if;
 		end if;
 	end process;

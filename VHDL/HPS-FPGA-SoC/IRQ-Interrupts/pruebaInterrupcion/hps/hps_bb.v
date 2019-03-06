@@ -1,6 +1,7 @@
 
 module hps (
 	clk_clk,
+	entrada_writebyteenable_n,
 	hps_io_hps_io_emac1_inst_TX_CLK,
 	hps_io_hps_io_emac1_inst_TXD0,
 	hps_io_hps_io_emac1_inst_TXD1,
@@ -51,10 +52,10 @@ module hps (
 	memory_mem_dqs_n,
 	memory_mem_odt,
 	memory_mem_dm,
-	memory_oct_rzqin,
-	entrada_writebyteenable_n);	
+	memory_oct_rzqin);	
 
 	input		clk_clk;
+	input	[3:0]	entrada_writebyteenable_n;
 	output		hps_io_hps_io_emac1_inst_TX_CLK;
 	output		hps_io_hps_io_emac1_inst_TXD0;
 	output		hps_io_hps_io_emac1_inst_TXD1;
@@ -106,5 +107,4 @@ module hps (
 	output		memory_mem_odt;
 	output	[3:0]	memory_mem_dm;
 	input		memory_oct_rzqin;
-	input	[3:0]	entrada_writebyteenable_n;
 endmodule

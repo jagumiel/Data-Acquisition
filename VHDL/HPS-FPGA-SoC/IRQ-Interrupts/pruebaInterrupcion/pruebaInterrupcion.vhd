@@ -50,9 +50,7 @@ END pruebaInterrupcion;
 
 ARCHITECTURE MAIN of pruebaInterrupcion IS 
 	
-	
-	
-	component hps is
+		component hps is
         port (
             clk_clk                         : in    std_logic                     := 'X';             -- clk
             entrada_writebyteenable_n       : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- writebyteenable_n

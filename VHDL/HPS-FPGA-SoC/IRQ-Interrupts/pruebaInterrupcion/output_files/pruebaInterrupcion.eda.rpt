@@ -1,5 +1,5 @@
 EDA Netlist Writer report for pruebaInterrupcion
-Fri Feb 22 11:34:53 2019
+Wed Mar 06 09:45:27 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -34,7 +34,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Fri Feb 22 11:34:53 2019 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Wed Mar 06 09:45:27 2019 ;
 ; Revision Name             ; pruebaInterrupcion                                   ;
 ; Top-level Entity Name     ; pruebaInterrupcion                                   ;
 ; Family                    ; Cyclone V                                            ;
@@ -47,14 +47,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Feb 22 11:34:48 2019
+    Info: Processing started: Wed Mar 06 09:45:24 2019
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off pruebaInterrupcion -c pruebaInterrupcion
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 626 megabytes
-    Info: Processing ended: Fri Feb 22 11:34:53 2019
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 624 megabytes
+    Info: Processing ended: Wed Mar 06 09:45:27 2019
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

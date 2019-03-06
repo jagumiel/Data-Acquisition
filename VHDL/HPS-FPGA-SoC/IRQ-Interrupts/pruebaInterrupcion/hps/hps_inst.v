@@ -1,5 +1,6 @@
 	hps u0 (
 		.clk_clk                         (<connected-to-clk_clk>),                         //     clk.clk
+		.entrada_writebyteenable_n       (<connected-to-entrada_writebyteenable_n>),       // entrada.writebyteenable_n
 		.hps_io_hps_io_emac1_inst_TX_CLK (<connected-to-hps_io_hps_io_emac1_inst_TX_CLK>), //  hps_io.hps_io_emac1_inst_TX_CLK
 		.hps_io_hps_io_emac1_inst_TXD0   (<connected-to-hps_io_hps_io_emac1_inst_TXD0>),   //        .hps_io_emac1_inst_TXD0
 		.hps_io_hps_io_emac1_inst_TXD1   (<connected-to-hps_io_hps_io_emac1_inst_TXD1>),   //        .hps_io_emac1_inst_TXD1
@@ -50,7 +51,6 @@
 		.memory_mem_dqs_n                (<connected-to-memory_mem_dqs_n>),                //        .mem_dqs_n
 		.memory_mem_odt                  (<connected-to-memory_mem_odt>),                  //        .mem_odt
 		.memory_mem_dm                   (<connected-to-memory_mem_dm>),                   //        .mem_dm
-		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>),                //        .oct_rzqin
-		.entrada_writebyteenable_n       (<connected-to-entrada_writebyteenable_n>)        // entrada.writebyteenable_n
+		.memory_oct_rzqin                (<connected-to-memory_oct_rzqin>)                 //        .oct_rzqin
 	);
 

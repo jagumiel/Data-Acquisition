@@ -1,6 +1,7 @@
 	component hps is
 		port (
 			clk_clk                         : in    std_logic                     := 'X';             -- clk
+			entrada_writebyteenable_n       : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- writebyteenable_n
 			hps_io_hps_io_emac1_inst_TX_CLK : out   std_logic;                                        -- hps_io_emac1_inst_TX_CLK
 			hps_io_hps_io_emac1_inst_TXD0   : out   std_logic;                                        -- hps_io_emac1_inst_TXD0
 			hps_io_hps_io_emac1_inst_TXD1   : out   std_logic;                                        -- hps_io_emac1_inst_TXD1
@@ -51,14 +52,14 @@
 			memory_mem_dqs_n                : inout std_logic_vector(3 downto 0)  := (others => 'X'); -- mem_dqs_n
 			memory_mem_odt                  : out   std_logic;                                        -- mem_odt
 			memory_mem_dm                   : out   std_logic_vector(3 downto 0);                     -- mem_dm
-			memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
-			entrada_writebyteenable_n       : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- writebyteenable_n
+			memory_oct_rzqin                : in    std_logic                     := 'X'              -- oct_rzqin
 		);
 	end component hps;
 
 	u0 : component hps
 		port map (
 			clk_clk                         => CONNECTED_TO_clk_clk,                         --     clk.clk
+			entrada_writebyteenable_n       => CONNECTED_TO_entrada_writebyteenable_n,       -- entrada.writebyteenable_n
 			hps_io_hps_io_emac1_inst_TX_CLK => CONNECTED_TO_hps_io_hps_io_emac1_inst_TX_CLK, --  hps_io.hps_io_emac1_inst_TX_CLK
 			hps_io_hps_io_emac1_inst_TXD0   => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD0,   --        .hps_io_emac1_inst_TXD0
 			hps_io_hps_io_emac1_inst_TXD1   => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD1,   --        .hps_io_emac1_inst_TXD1
@@ -109,7 +110,6 @@
 			memory_mem_dqs_n                => CONNECTED_TO_memory_mem_dqs_n,                --        .mem_dqs_n
 			memory_mem_odt                  => CONNECTED_TO_memory_mem_odt,                  --        .mem_odt
 			memory_mem_dm                   => CONNECTED_TO_memory_mem_dm,                   --        .mem_dm
-			memory_oct_rzqin                => CONNECTED_TO_memory_oct_rzqin,                --        .oct_rzqin
-			entrada_writebyteenable_n       => CONNECTED_TO_entrada_writebyteenable_n        -- entrada.writebyteenable_n
+			memory_oct_rzqin                => CONNECTED_TO_memory_oct_rzqin                 --        .oct_rzqin
 		);
 
