@@ -10,35 +10,40 @@
 #define REG_BASE 0xff200000
 #define REG_SPAN 0x00200000
 #define ENTRADA_0_BASE 0x0
-
-#define dato (volatile short *) 0x00200000
-
 #define DEVNAME "test_int"
+
 void *base;
+static uint8_t input_state;
 int fd;
+uint32_t *dato=0;
 
 static irq_handler_t __test_isr(int irq, void *dev_id, struct pt_regs *regs){
-	//dato=(uint32_t*)(base+FPGA_TO_HPS_BASE);
-	printk("dato: %d\n", *dato);
+	dato=(uint32_t*)(base+REG_BASE);
 	printk (KERN_INFO DEVNAME ": ISR\n");
+	if(irq==41){
+		printk("IRQ=%d\n", irq);
+		input_state=ioread8(base);
+		printk("input_state=%d\n", input_state);
+	}
 	return (irq_handler_t) IRQ_HANDLED;
 }
 
 static int __test_int_driver_probe(struct platform_device* pdev){
-	fd=open("/dev/mem",(O_RDWR|O_SYNC)); //Abro la memoria del sistema.
-	if(fd<0){
-		printk("Can't open memory. \n");
-		return -1;
+	if (request_mem_region(REG_BASE, REG_SPAN, "test_int") == NULL) {
+		printk("Fallo al pedir memoria.");
+		return -EBUSY;
 	}
-	base=mmap(NULL,REG_SPAN,(PROT_READ|PROT_WRITE),MAP_SHARED,fd,REG_BASE);
-	if(base==MAP_FAILED){
-		printk("Can't MAP memory. \n");
-		close(fd);
-		return -1;
+
+	base = ioremap(REG_BASE, REG_SPAN);
+	if (base == NULL) {
+		printk("Fallo al mapear memoria.");
+		return -EFAULT;
 	}
+
 	int irq_num;
 	irq_num = platform_get_irq(pdev, 0);
 	printk(KERN_INFO DEVNAME ": La IRQ %d va a ser registrada!\n", irq_num);
+	dato=(uint32_t*)(base+REG_BASE);
 	return request_irq(irq_num, (irq_handler_t) __test_isr, 0, DEVNAME, NULL);
 }
 
@@ -47,6 +52,8 @@ static int __test_int_driver_remove (struct platform_device *pdev){
 	irq_num = platform_get_irq (pdev, 0);
 	printk(KERN_INFO "test_int: Abandonando la captura de la IRQ %d !\n", irq_num);
 	free_irq(irq_num, NULL);
+	iounmap(base);
+	release_mem_region(REG_BASE, REG_SPAN);
 	return 0;
 }
 
