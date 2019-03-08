@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pruebaInterrupcion
-Wed Mar 06 10:42:49 2019
+Thu Mar 07 08:38:44 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -223,7 +223,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar 06 10:42:49 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Mar 07 08:38:44 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaInterrupcion                          ;
 ; Top-level Entity Name           ; pruebaInterrupcion                          ;
@@ -352,7 +352,6 @@ refer to the applicable agreement for further details.
 ; File Name with User-Entered Path                                                                                                                                    ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                                                        ; Library ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; pruebaInterrupcion.vhd                                                                                                                                              ; yes             ; User VHDL File                     ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/pruebaInterrupcion.vhd                                                          ;         ;
-; entrada.v                                                                                                                                                           ; yes             ; User Verilog HDL File              ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/entrada.v                                                                       ;         ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/hps.v                                                                 ; yes             ; Auto-Found Verilog HDL File        ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/hps.v                                                                 ; hps     ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv             ; yes             ; Auto-Found SystemVerilog HDL File  ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv             ; hps     ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_avalon_sc_fifo.v                                    ; yes             ; Auto-Found Verilog HDL File        ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_avalon_sc_fifo.v                                    ; hps     ;
@@ -371,7 +370,7 @@ refer to the applicable agreement for further details.
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_merlin_width_adapter.sv                             ; yes             ; Auto-Found SystemVerilog HDL File  ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_merlin_width_adapter.sv                             ; hps     ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_reset_controller.v                                  ; yes             ; Auto-Found Verilog HDL File        ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_reset_controller.v                                  ; hps     ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_reset_synchronizer.v                                ; yes             ; Auto-Found Verilog HDL File        ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/altera_reset_synchronizer.v                                ; hps     ;
-; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/entrada.v                                                  ; yes             ; Auto-Found Verilog HDL File        ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/entrada.v                                                  ; hps     ;
+; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/entrada.vhd                                                ; yes             ; Auto-Found VHDL File               ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/entrada.vhd                                                ; hps     ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/hps_hps_0.v                                                ; yes             ; Auto-Found Verilog HDL File        ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/hps_hps_0.v                                                ; hps     ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/hps_hps_0_fpga_interfaces.sv                               ; yes             ; Auto-Found SystemVerilog HDL File  ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/hps_hps_0_fpga_interfaces.sv                               ; hps     ;
 ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/hps_hps_0_hps_io.v                                         ; yes             ; Auto-Found Verilog HDL File        ; d:/users/jagumiel/desktop/de1-nano/mispruebas/hps-fpga-soc/pruebainterrupcion-copia/db/ip/hps/submodules/hps_hps_0_hps_io.v                                         ; hps     ;
@@ -4340,13 +4339,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hps:u0|entrada:entrada_0"                                                                                                                                                     ;
-+--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                                                                                                               ;
-+--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; avl_readdata ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
-+--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hps:u0|entrada:entrada_0"                                                                                              ;
++--------------+--------+------------------+--------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity         ; Details                                                                                                ;
++--------------+--------+------------------+--------------------------------------------------------------------------------------------------------+
+; avl_readdata ; Output ; Critical Warning ; Can't connect array with 8 elements in array dimension 1 to port with 4 elements in the same dimension ;
++--------------+--------+------------------+--------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -4450,7 +4449,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Partition Name                 ; Elapsed Time ;
 +--------------------------------+--------------+
 ; Top                            ; 00:00:01     ;
-; hps_hps_0_hps_io_border:border ; 00:00:00     ;
+; hps_hps_0_hps_io_border:border ; 00:00:01     ;
 +--------------------------------+--------------+
 
 
@@ -4460,23 +4459,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Mar 06 10:41:30 2019
+    Info: Processing started: Thu Mar 07 08:37:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pruebaInterrupcion -c pruebaInterrupcion
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12248): Elaborating Platform Designer system entity "hps.qsys"
-Info (12250): 2019.03.06.10:41:46 Progress: Loading pruebaInterrupcion-copia/hps.qsys
-Info (12250): 2019.03.06.10:41:47 Progress: Reading input file
-Info (12250): 2019.03.06.10:41:47 Progress: Adding clk_0 [clock_source 18.1]
-Info (12250): 2019.03.06.10:41:48 Progress: Parameterizing module clk_0
-Info (12250): 2019.03.06.10:41:48 Progress: Adding entrada_0 [entrada 1.0]
-Info (12250): 2019.03.06.10:41:48 Progress: Parameterizing module entrada_0
-Info (12250): 2019.03.06.10:41:48 Progress: Adding hps_0 [altera_hps 18.1]
-Info (12250): 2019.03.06.10:41:49 Progress: Parameterizing module hps_0
-Info (12250): 2019.03.06.10:41:49 Progress: Building connections
-Info (12250): 2019.03.06.10:41:49 Progress: Parameterizing connections
-Info (12250): 2019.03.06.10:41:49 Progress: Validating
-Info (12250): 2019.03.06.10:41:58 Progress: Done reading input file
+Info (12250): 2019.03.07.08:37:31 Progress: Loading pruebaInterrupcion-copia/hps.qsys
+Info (12250): 2019.03.07.08:37:32 Progress: Reading input file
+Info (12250): 2019.03.07.08:37:32 Progress: Adding clk_0 [clock_source 18.1]
+Info (12250): 2019.03.07.08:37:33 Progress: Parameterizing module clk_0
+Info (12250): 2019.03.07.08:37:33 Progress: Adding entrada_0 [entrada 1.0]
+Info (12250): 2019.03.07.08:37:33 Progress: Parameterizing module entrada_0
+Info (12250): 2019.03.07.08:37:33 Progress: Adding hps_0 [altera_hps 18.1]
+Info (12250): 2019.03.07.08:37:35 Progress: Parameterizing module hps_0
+Info (12250): 2019.03.07.08:37:35 Progress: Building connections
+Info (12250): 2019.03.07.08:37:35 Progress: Parameterizing connections
+Info (12250): 2019.03.07.08:37:35 Progress: Validating
+Info (12250): 2019.03.07.08:37:47 Progress: Done reading input file
 Info (12250): Hps.hps_0: HPS Main PLL counter settings: n = 0  m = 63
 Info (12250): Hps.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Info (12250): Hps: Generating hps "hps" for QUARTUS_SYNTH
@@ -4518,11 +4517,12 @@ Info (12250): Border: "hps_io" instantiated altera_interface_generator "border"
 Info (12250): Error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info (12250): Hps: Done "hps" with 24 modules, 80 files
 Info (12249): Finished elaborating Platform Designer system entity "hps.qsys"
+Info (12021): Found 2 design units, including 1 entities, in source file entrada.vhd
+    Info (12022): Found design unit 1: entrada-MAIN File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/entrada.vhd Line: 18
+    Info (12023): Found entity 1: entrada File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/entrada.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file pruebainterrupcion.vhd
     Info (12022): Found design unit 1: pruebaInterrupcion-MAIN File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/pruebaInterrupcion.vhd Line: 51
     Info (12023): Found entity 1: pruebaInterrupcion File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/pruebaInterrupcion.vhd Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file entrada.v
-    Info (12023): Found entity 1: entrada File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/entrada.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/hps/hps.v
     Info (12023): Found entity 1: hps File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/hps.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/hps/submodules/altdq_dqs2_acv_connect_to_hard_phy_cyclonev.sv
@@ -4578,8 +4578,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/h
     Info (12023): Found entity 1: altera_reset_synchronizer File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/altera_reset_synchronizer.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/hps/submodules/altera_wrap_burst_converter.sv
     Info (12023): Found entity 1: altera_wrap_burst_converter File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/altera_wrap_burst_converter.sv Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/hps/submodules/entrada.v
-    Info (12023): Found entity 1: entrada File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/entrada.v Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/hps/submodules/entrada.vhd
+    Info (12022): Found design unit 1: entrada-MAIN File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/entrada.vhd Line: 18
+    Info (12023): Found entity 1: entrada File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/entrada.vhd Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/hps/submodules/hps_hps_0.v
     Info (12023): Found entity 1: hps_hps_0 File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/hps_hps_0.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/hps/submodules/hps_hps_0_fpga_interfaces.sv
@@ -4690,7 +4691,6 @@ Info (12128): Elaborating entity "hps_sdram_p0_clock_pair_generator" for hierarc
 Info (12128): Elaborating entity "hps_sdram_p0_altdqdqs" for hierarchy "hps:u0|hps_hps_0:hps_0|hps_hps_0_hps_io:hps_io|hps_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/hps_sdram_p0_acv_hard_io_pads.v Line: 317
 Info (12128): Elaborating entity "altdq_dqs2_acv_connect_to_hard_phy_cyclonev" for hierarchy "hps:u0|hps_hps_0:hps_0|hps_hps_0_hps_io:hps_io|hps_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/hps_sdram_p0_altdqdqs.v Line: 146
 Info (12128): Elaborating entity "altera_mem_if_hhp_qseq_synth_top" for hierarchy "hps:u0|hps_hps_0:hps_0|hps_hps_0_hps_io:hps_io|hps_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|altera_mem_if_hhp_qseq_synth_top:seq" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/hps_sdram.v Line: 238
-Warning (12158): Entity "altera_mem_if_hhp_qseq_synth_top" contains only dangling pins File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/hps_sdram.v Line: 238
 Info (12128): Elaborating entity "altera_mem_if_hard_memory_controller_top_cyclonev" for hierarchy "hps:u0|hps_hps_0:hps_0|hps_hps_0_hps_io:hps_io|hps_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|altera_mem_if_hard_memory_controller_top_cyclonev:c0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/hps_sdram.v Line: 794
 Warning (10230): Verilog HDL assignment warning at altera_mem_if_hard_memory_controller_top_cyclonev.sv(1166): truncated value with size 320 to match size of target (1) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/altera_mem_if_hard_memory_controller_top_cyclonev.sv Line: 1166
 Warning (10230): Verilog HDL assignment warning at altera_mem_if_hard_memory_controller_top_cyclonev.sv(1167): truncated value with size 320 to match size of target (1) File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/db/ip/hps/submodules/altera_mem_if_hard_memory_controller_top_cyclonev.sv Line: 1167
@@ -4816,11 +4816,11 @@ Info (21057): Implemented 1256 device resources after synthesis - the final reso
     Info (21060): Implemented 55 bidirectional pins
     Info (21061): Implemented 497 logic cells
     Info (21066): Implemented 1 delay-locked loops
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 958 megabytes
-    Info: Processing ended: Wed Mar 06 10:42:49 2019
-    Info: Elapsed time: 00:01:19
-    Info: Total CPU time (on all processors): 00:02:20
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 93 warnings
+    Info: Peak virtual memory: 948 megabytes
+    Info: Processing ended: Thu Mar 07 08:38:44 2019
+    Info: Elapsed time: 00:01:40
+    Info: Total CPU time (on all processors): 00:02:19
 
 
 +------------------------------------------+

@@ -1,5 +1,5 @@
 Fitter report for pruebaInterrupcion
-Wed Mar 06 10:43:58 2019
+Thu Mar 07 08:40:00 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -63,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed Mar 06 10:43:58 2019       ;
+; Fitter Status                   ; Successful - Thu Mar 07 08:40:00 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaInterrupcion                          ;
 ; Top-level Entity Name           ; pruebaInterrupcion                          ;
@@ -158,9 +158,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.8%      ;
-;     Processor 3            ;   1.8%      ;
-;     Processor 4            ;   1.8%      ;
+;     Processor 2            ;   1.7%      ;
+;     Processor 3            ;   1.6%      ;
+;     Processor 4            ;   1.6%      ;
 +----------------------------+-------------+
 
 
@@ -2577,7 +2577,7 @@ Info (332111): Found 17 clocks
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:22
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:24
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
@@ -2591,12 +2591,12 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 1.50 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.47 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:16
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:15
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (169186): Following groups of pins have the same dynamic on-chip termination control
     Info (169185): Following pins have the same dynamic on-chip termination control: hps:u0|hps_hps_0:hps_0|hps_hps_0_hps_io:hps_io|hps_hps_0_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
@@ -2681,9 +2681,9 @@ Info (169186): Following groups of pins have the same dynamic on-chip terminatio
         Info (169066): Type bi-directional pin HPS_DDR3_DQS_P[3] uses the Differential 1.5-V SSTL Class I I/O standard File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/pruebaInterrupcion.vhd Line: 20
 Info (144001): Generated suppressed messages file D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/HPS-FPGA-SoC/pruebaInterrupcion-copia/output_files/pruebaInterrupcion.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 98 warnings
-    Info: Peak virtual memory: 3213 megabytes
-    Info: Processing ended: Wed Mar 06 10:44:00 2019
-    Info: Elapsed time: 00:01:10
+    Info: Peak virtual memory: 3211 megabytes
+    Info: Processing ended: Thu Mar 07 08:40:02 2019
+    Info: Elapsed time: 00:01:16
     Info: Total CPU time (on all processors): 00:01:41
 
 

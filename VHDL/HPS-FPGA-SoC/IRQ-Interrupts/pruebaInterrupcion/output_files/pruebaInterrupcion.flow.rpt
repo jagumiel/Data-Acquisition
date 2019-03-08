@@ -1,5 +1,5 @@
 Flow report for pruebaInterrupcion
-Wed Mar 06 10:44:43 2019
+Thu Mar 07 08:40:48 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Mar 06 10:44:12 2019       ;
+; Flow Status                     ; Successful - Thu Mar 07 08:40:16 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; pruebaInterrupcion                          ;
 ; Top-level Entity Name           ; pruebaInterrupcion                          ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/06/2019 10:41:33 ;
+; Start date & time ; 03/07/2019 08:37:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; pruebaInterrupcion  ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                       ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +---------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                 ; 963354629659.155186529004460           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                 ; 963354629659.155194422511796           ; --            ; --          ; --         ;
 ; ECO_REGENERATE_REPORT                 ; On                                     ; Off           ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP                ; 100                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP                ; -40                                    ; --            ; --          ; --         ;
@@ -97,11 +97,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:17     ; 1.0                     ; 958 MB              ; 00:02:18                           ;
-; Fitter               ; 00:01:08     ; 1.1                     ; 3213 MB             ; 00:01:39                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 747 MB              ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:30     ; 1.1                     ; 1714 MB             ; 00:00:29                           ;
-; Total                ; 00:03:05     ; --                      ; --                  ; 00:04:35                           ;
+; Analysis & Synthesis ; 00:01:37     ; 1.0                     ; 948 MB              ; 00:02:17                           ;
+; Fitter               ; 00:01:14     ; 1.0                     ; 3211 MB             ; 00:01:39                           ;
+; Assembler            ; 00:00:10     ; 1.0                     ; 751 MB              ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:30     ; 1.1                     ; 1710 MB             ; 00:00:29                           ;
+; Total                ; 00:03:31     ; --                      ; --                  ; 00:04:33                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

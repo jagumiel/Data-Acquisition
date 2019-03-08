@@ -30,17 +30,19 @@ begin
 
 	process(FPGA_CLK1_50)
 	begin
-		if(reset='0')then
-			cur_inputs <= "0000";
-			last_inputs <= "0000";
-			irq <= '0';
-		else
-			cur_inputs<=switches;
-			last_inputs<=cur_inputs;
-			if(changed_inputs/="00000000")then
-				irq<='1';
-			elsif(avl_read='1')then
-				irq<='0';
+		if (rising_edge(FPGA_CLK1_50)) then
+			if(reset='1')then
+				cur_inputs <= "0000";
+				last_inputs <= "0000";
+				irq <= '0';
+			else
+				cur_inputs<=switches;
+				last_inputs<=cur_inputs;
+				if(changed_inputs/="0000")then
+					irq<='1';
+				elsif(avl_read='1')then
+					irq<='0';
+				end if;
 			end if;
 		end if;
 	end process;
