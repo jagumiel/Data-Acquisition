@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "phase1",
+					"strict" : false
+				},
+				{
+					"name" : "phase2",
+					"strict" : false
+				},
+				{
+					"name" : "phase3",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
