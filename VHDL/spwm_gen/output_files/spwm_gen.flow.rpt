@@ -1,5 +1,5 @@
 Flow report for spwm_gen
-Wed Mar 20 09:59:41 2019
+Thu Mar 21 12:24:32 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Mar 20 09:59:33 2019       ;
+; Flow Status                     ; Successful - Thu Mar 21 12:24:12 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; spwm_gen                                    ;
 ; Top-level Entity Name           ; spwm_gen                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 344 / 41,910 ( < 1 % )                      ;
-; Total registers                 ; 208                                         ;
-; Total pins                      ; 68 / 314 ( 22 % )                           ;
+; Logic utilization (in ALMs)     ; 6,885 / 41,910 ( 16 % )                     ;
+; Total registers                 ; 195                                         ;
+; Total pins                      ; 4 / 314 ( 1 % )                             ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/20/2019 09:58:26 ;
+; Start date & time ; 03/21/2019 12:21:04 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; spwm_gen            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 963354629659.155307230606028           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 963354629659.155316726411184           ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -95,11 +95,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 747 MB              ; 00:00:24                           ;
-; Fitter               ; 00:00:43     ; 1.0                     ; 2517 MB             ; 00:01:28                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 722 MB              ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.3                     ; 1069 MB             ; 00:00:08                           ;
-; Total                ; 00:01:10     ; --                      ; --                  ; 00:02:07                           ;
+; Analysis & Synthesis ; 00:00:45     ; 1.4                     ; 1108 MB             ; 00:01:00                           ;
+; Fitter               ; 00:02:04     ; 1.2                     ; 2511 MB             ; 00:04:40                           ;
+; Assembler            ; 00:00:11     ; 1.0                     ; 785 MB              ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:18     ; 2.6                     ; 1182 MB             ; 00:00:37                           ;
+; Total                ; 00:03:18     ; --                      ; --                  ; 00:06:26                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

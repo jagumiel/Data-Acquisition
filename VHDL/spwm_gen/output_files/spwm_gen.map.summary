@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Wed Mar 20 09:58:38 2019
+Analysis & Synthesis Status : Successful - Thu Mar 21 12:21:49 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : spwm_gen
 Top-level Entity Name : spwm_gen
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 184
-Total pins : 68
+Total registers : 170
+Total pins : 4
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

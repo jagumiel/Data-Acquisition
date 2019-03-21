@@ -1,5 +1,5 @@
 Analysis & Synthesis report for spwm_gen
-Wed Mar 20 09:58:38 2019
+Thu Mar 21 12:21:49 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -16,13 +16,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Inverted Register Statistics
- 11. Port Connectivity Checks: "sin_240:inst4"
- 12. Port Connectivity Checks: "sin_120:inst3"
- 13. Port Connectivity Checks: "sin:inst2"
- 14. Port Connectivity Checks: "triangle:inst1"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 11. Parameter Settings for Inferred Entity Instance: sin_240:inst4|lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: triangle:inst1|lpm_divide:Div0
+ 13. Parameter Settings for Inferred Entity Instance: triangle:inst1|lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: sin:inst2|lpm_divide:Mod0
+ 15. Port Connectivity Checks: "sin_240:inst4"
+ 16. Port Connectivity Checks: "sin_120:inst3"
+ 17. Port Connectivity Checks: "sin:inst2"
+ 18. Port Connectivity Checks: "triangle:inst1"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -48,14 +52,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar 20 09:58:38 2019       ;
+; Analysis & Synthesis Status     ; Successful - Thu Mar 21 12:21:49 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; spwm_gen                                    ;
 ; Top-level Entity Name           ; spwm_gen                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 184                                         ;
-; Total pins                      ; 68                                          ;
+; Total registers                 ; 170                                         ;
+; Total pins                      ; 4                                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -163,66 +167,92 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.43        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;  43.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                               ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
-; triangle.vhd                     ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd ;         ;
-; spwm_gen.vhd                     ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd ;         ;
-; sin_240.vhd                      ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin_240.vhd  ;         ;
-; sin_120.vhd                      ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin_120.vhd  ;         ;
-; sin.vhd                          ; yes             ; User VHDL File  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; triangle.vhd                     ; yes             ; User VHDL File               ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd               ;         ;
+; spwm_gen.vhd                     ; yes             ; User VHDL File               ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd               ;         ;
+; sin_240.vhd                      ; yes             ; User VHDL File               ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin_240.vhd                ;         ;
+; sin_120.vhd                      ; yes             ; User VHDL File               ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin_120.vhd                ;         ;
+; sin.vhd                          ; yes             ; User VHDL File               ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin.vhd                    ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf             ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc            ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc        ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc             ;         ;
+; db/lpm_divide_1dm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/lpm_divide_1dm.tdf      ;         ;
+; db/sign_div_unsign_7nh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/sign_div_unsign_7nh.tdf ;         ;
+; db/alt_u_div_k2f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/alt_u_div_k2f.tdf       ;         ;
+; db/lpm_divide_45m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/lpm_divide_45m.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 404       ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 540       ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 267       ;
-;     -- 5 input functions                    ; 16        ;
-;     -- 4 input functions                    ; 16        ;
-;     -- <=3 input functions                  ; 241       ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 184       ;
-;                                             ;           ;
-; I/O pins                                    ; 68        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 184       ;
-; Total fan-out                               ; 2859      ;
-; Average fan-out                             ; 3.32      ;
-+---------------------------------------------+-----------+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 6881               ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 9454               ;
+;     -- 7 input functions                    ; 979                ;
+;     -- 6 input functions                    ; 3329               ;
+;     -- 5 input functions                    ; 481                ;
+;     -- 4 input functions                    ; 1521               ;
+;     -- <=3 input functions                  ; 3144               ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 170                ;
+;                                             ;                    ;
+; I/O pins                                    ; 4                  ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; sin:inst2|index[0] ;
+; Maximum fan-out                             ; 824                ;
+; Total fan-out                               ; 44733              ;
+; Average fan-out                             ; 4.64               ;
++---------------------------------------------+--------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
-; |spwm_gen                  ; 540 (15)            ; 184 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |spwm_gen                ; spwm_gen    ; work         ;
-;    |sin:inst2|             ; 143 (143)           ; 61 (61)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin:inst2      ; sin         ; work         ;
-;    |sin_120:inst3|         ; 144 (144)           ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_120:inst3  ; sin_120     ; work         ;
-;    |sin_240:inst4|         ; 99 (99)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_240:inst4  ; sin_240     ; work         ;
-;    |triangle:inst1|        ; 139 (139)           ; 61 (61)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1 ; triangle    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                      ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |spwm_gen                                 ; 9454 (65)           ; 170 (0)                   ; 0                 ; 0          ; 4    ; 0            ; |spwm_gen                                                                                                                ; spwm_gen            ; work         ;
+;    |sin:inst2|                            ; 2702 (1781)         ; 62 (62)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin:inst2                                                                                                      ; sin                 ; work         ;
+;       |lpm_divide:Mod0|                   ; 921 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin:inst2|lpm_divide:Mod0                                                                                      ; lpm_divide          ; work         ;
+;          |lpm_divide_45m:auto_generated|  ; 921 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin:inst2|lpm_divide:Mod0|lpm_divide_45m:auto_generated                                                        ; lpm_divide_45m      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 921 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin:inst2|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                            ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_k2f:divider|    ; 921 (921)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin:inst2|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider      ; alt_u_div_k2f       ; work         ;
+;    |sin_120:inst3|                        ; 1769 (1769)         ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_120:inst3                                                                                                  ; sin_120             ; work         ;
+;    |sin_240:inst4|                        ; 2702 (1812)         ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_240:inst4                                                                                                  ; sin_240             ; work         ;
+;       |lpm_divide:Div0|                   ; 890 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_240:inst4|lpm_divide:Div0                                                                                  ; lpm_divide          ; work         ;
+;          |lpm_divide_1dm:auto_generated|  ; 890 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_240:inst4|lpm_divide:Div0|lpm_divide_1dm:auto_generated                                                    ; lpm_divide_1dm      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 890 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_240:inst4|lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_7nh:divider                        ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_k2f:divider|    ; 890 (890)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|sin_240:inst4|lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider  ; alt_u_div_k2f       ; work         ;
+;    |triangle:inst1|                       ; 2216 (144)          ; 46 (46)                   ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1                                                                                                 ; triangle            ; work         ;
+;       |lpm_divide:Div0|                   ; 1028 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_1dm:auto_generated|  ; 1028 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Div0|lpm_divide_1dm:auto_generated                                                   ; lpm_divide_1dm      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 1028 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_k2f:divider|    ; 1028 (1028)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; alt_u_div_k2f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 1044 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_45m:auto_generated|  ; 1044 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Mod0|lpm_divide_45m:auto_generated                                                   ; lpm_divide_45m      ; work         ;
+;             |sign_div_unsign_7nh:divider| ; 1044 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider                       ; sign_div_unsign_7nh ; work         ;
+;                |alt_u_div_k2f:divider|    ; 1044 (1044)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |spwm_gen|triangle:inst1|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_7nh:divider|alt_u_div_k2f:divider ; alt_u_div_k2f       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -231,10 +261,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+----------------------------------------+
 ; Register name                          ; Reason for Removal                     ;
 +----------------------------------------+----------------------------------------+
-; sin_240:inst4|counter[0,1]             ; Stuck at GND due to stuck port data_in ;
-; sin_120:inst3|counter[0,1]             ; Stuck at GND due to stuck port data_in ;
-; sin:inst2|counter[0,1]                 ; Stuck at GND due to stuck port data_in ;
-; triangle:inst1|counter[0,1]            ; Stuck at GND due to stuck port data_in ;
 ; sin_120:inst3|counter[31]              ; Merged with sin:inst2|counter[31]      ;
 ; sin_240:inst4|counter[31]              ; Merged with sin:inst2|counter[31]      ;
 ; sin_120:inst3|counter[30]              ; Merged with sin:inst2|counter[30]      ;
@@ -295,7 +321,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; sin_240:inst4|counter[3]               ; Merged with sin:inst2|counter[3]       ;
 ; sin_120:inst3|counter[2]               ; Merged with sin:inst2|counter[2]       ;
 ; sin_240:inst4|counter[2]               ; Merged with sin:inst2|counter[2]       ;
-; Total Number of Removed Registers = 68 ;                                        ;
+; sin_120:inst3|counter[1]               ; Merged with sin:inst2|counter[1]       ;
+; sin_240:inst4|counter[1]               ; Merged with sin:inst2|counter[1]       ;
+; sin_120:inst3|counter[0]               ; Merged with sin:inst2|counter[0]       ;
+; sin_240:inst4|counter[0]               ; Merged with sin:inst2|counter[0]       ;
+; sin:inst2|counter[31]                  ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 65 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
@@ -304,30 +335,130 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 184   ;
-; Number of registers using Synchronous Clear  ; 176   ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 170   ;
+; Number of registers using Synchronous Clear  ; 108   ;
+; Number of registers using Synchronous Load   ; 39    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; sin:inst2|index[0]                     ; 16      ;
-; triangle:inst1|index[0]                ; 13      ;
-; sin_120:inst3|index[1]                 ; 16      ;
-; sin_120:inst3|index[5]                 ; 14      ;
-; sin_240:inst4|index[6]                 ; 14      ;
-; sin_240:inst4|index[1]                 ; 16      ;
-; sin_240:inst4|index[0]                 ; 16      ;
-; Total number of inverted registers = 7 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; sin:inst2|index[0]                      ; 824     ;
+; triangle:inst1|index[0]                 ; 22      ;
+; sin_120:inst3|index[0]                  ; 815     ;
+; sin_120:inst3|index[2]                  ; 704     ;
+; sin_120:inst3|index[3]                  ; 668     ;
+; sin_120:inst3|index[5]                  ; 543     ;
+; sin_120:inst3|index[6]                  ; 698     ;
+; sin_120:inst3|index[10]                 ; 590     ;
+; sin_120:inst3|index[9]                  ; 625     ;
+; sin_120:inst3|index[11]                 ; 237     ;
+; sin_240:inst4|index[0]                  ; 822     ;
+; sin_240:inst4|index[5]                  ; 548     ;
+; sin_240:inst4|index[7]                  ; 694     ;
+; sin_240:inst4|index[11]                 ; 232     ;
+; sin_240:inst4|index[12]                 ; 467     ;
+; Total number of inverted registers = 15 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sin_240:inst4|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 31             ; Untyped                              ;
+; LPM_WIDTHD             ; 31             ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_1dm ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: triangle:inst1|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 31             ; Untyped                               ;
+; LPM_WIDTHD             ; 31             ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_1dm ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: triangle:inst1|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------+
+; Parameter Name         ; Value          ; Type                                  ;
++------------------------+----------------+---------------------------------------+
+; LPM_WIDTHN             ; 31             ; Untyped                               ;
+; LPM_WIDTHD             ; 31             ; Untyped                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                               ;
+; CBXI_PARAMETER         ; lpm_divide_45m ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                        ;
++------------------------+----------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sin:inst2|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 31             ; Untyped                          ;
+; LPM_WIDTHD             ; 31             ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_45m ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------+
@@ -336,13 +467,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Port        ; Type  ; Severity ; Details      ;
 +-------------+-------+----------+--------------+
 ; amp         ; Input ; Info     ; Stuck at VCC ;
-; frq[9..7]   ; Input ; Info     ; Stuck at VCC ;
-; frq[31..13] ; Input ; Info     ; Stuck at GND ;
-; frq[11..10] ; Input ; Info     ; Stuck at GND ;
-; frq[6..4]   ; Input ; Info     ; Stuck at GND ;
-; frq[2..0]   ; Input ; Info     ; Stuck at GND ;
-; frq[12]     ; Input ; Info     ; Stuck at VCC ;
-; frq[3]      ; Input ; Info     ; Stuck at VCC ;
+; frq[15..14] ; Input ; Info     ; Stuck at VCC ;
+; frq[9..8]   ; Input ; Info     ; Stuck at VCC ;
+; frq[31..16] ; Input ; Info     ; Stuck at GND ;
+; frq[13..10] ; Input ; Info     ; Stuck at GND ;
+; frq[3..0]   ; Input ; Info     ; Stuck at GND ;
+; frq[7]      ; Input ; Info     ; Stuck at GND ;
+; frq[6]      ; Input ; Info     ; Stuck at VCC ;
+; frq[5]      ; Input ; Info     ; Stuck at GND ;
+; frq[4]      ; Input ; Info     ; Stuck at VCC ;
 +-------------+-------+----------+--------------+
 
 
@@ -352,13 +485,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Port        ; Type  ; Severity ; Details      ;
 +-------------+-------+----------+--------------+
 ; amp         ; Input ; Info     ; Stuck at VCC ;
-; frq[9..7]   ; Input ; Info     ; Stuck at VCC ;
-; frq[31..13] ; Input ; Info     ; Stuck at GND ;
-; frq[11..10] ; Input ; Info     ; Stuck at GND ;
-; frq[6..4]   ; Input ; Info     ; Stuck at GND ;
-; frq[2..0]   ; Input ; Info     ; Stuck at GND ;
-; frq[12]     ; Input ; Info     ; Stuck at VCC ;
-; frq[3]      ; Input ; Info     ; Stuck at VCC ;
+; frq[15..14] ; Input ; Info     ; Stuck at VCC ;
+; frq[9..8]   ; Input ; Info     ; Stuck at VCC ;
+; frq[31..16] ; Input ; Info     ; Stuck at GND ;
+; frq[13..10] ; Input ; Info     ; Stuck at GND ;
+; frq[3..0]   ; Input ; Info     ; Stuck at GND ;
+; frq[7]      ; Input ; Info     ; Stuck at GND ;
+; frq[6]      ; Input ; Info     ; Stuck at VCC ;
+; frq[5]      ; Input ; Info     ; Stuck at GND ;
+; frq[4]      ; Input ; Info     ; Stuck at VCC ;
 +-------------+-------+----------+--------------+
 
 
@@ -368,13 +503,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Port        ; Type  ; Severity ; Details      ;
 +-------------+-------+----------+--------------+
 ; amp         ; Input ; Info     ; Stuck at VCC ;
-; frq[9..7]   ; Input ; Info     ; Stuck at VCC ;
-; frq[31..13] ; Input ; Info     ; Stuck at GND ;
-; frq[11..10] ; Input ; Info     ; Stuck at GND ;
-; frq[6..4]   ; Input ; Info     ; Stuck at GND ;
-; frq[2..0]   ; Input ; Info     ; Stuck at GND ;
-; frq[12]     ; Input ; Info     ; Stuck at VCC ;
-; frq[3]      ; Input ; Info     ; Stuck at VCC ;
+; frq[15..14] ; Input ; Info     ; Stuck at VCC ;
+; frq[9..8]   ; Input ; Info     ; Stuck at VCC ;
+; frq[31..16] ; Input ; Info     ; Stuck at GND ;
+; frq[13..10] ; Input ; Info     ; Stuck at GND ;
+; frq[3..0]   ; Input ; Info     ; Stuck at GND ;
+; frq[7]      ; Input ; Info     ; Stuck at GND ;
+; frq[6]      ; Input ; Info     ; Stuck at VCC ;
+; frq[5]      ; Input ; Info     ; Stuck at GND ;
+; frq[4]      ; Input ; Info     ; Stuck at VCC ;
 +-------------+-------+----------+--------------+
 
 
@@ -384,11 +521,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Port        ; Type  ; Severity ; Details      ;
 +-------------+-------+----------+--------------+
 ; amp         ; Input ; Info     ; Stuck at VCC ;
-; frq[9..5]   ; Input ; Info     ; Stuck at VCC ;
-; frq[31..10] ; Input ; Info     ; Stuck at GND ;
-; frq[2..0]   ; Input ; Info     ; Stuck at GND ;
-; frq[4]      ; Input ; Info     ; Stuck at GND ;
-; frq[3]      ; Input ; Info     ; Stuck at VCC ;
+; frq[8..6]   ; Input ; Info     ; Stuck at VCC ;
+; frq[31..12] ; Input ; Info     ; Stuck at GND ;
+; frq[10..9]  ; Input ; Info     ; Stuck at GND ;
+; frq[5..3]   ; Input ; Info     ; Stuck at GND ;
+; frq[1..0]   ; Input ; Info     ; Stuck at GND ;
+; frq[11]     ; Input ; Info     ; Stuck at VCC ;
+; frq[2]      ; Input ; Info     ; Stuck at VCC ;
 +-------------+-------+----------+--------------+
 
 
@@ -397,24 +536,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 184                         ;
-;     SCLR              ; 176                         ;
-;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 543                         ;
-;     arith             ; 213                         ;
-;         1 data inputs ; 212                         ;
-;         2 data inputs ; 1                           ;
-;     normal            ; 330                         ;
+; arriav_ff             ; 170                         ;
+;     ENA               ; 8                           ;
+;     SCLR              ; 108                         ;
+;     SLD               ; 39                          ;
+;     plain             ; 15                          ;
+; arriav_lcell_comb     ; 9457                        ;
+;     arith             ; 1855                        ;
+;         0 data inputs ; 137                         ;
+;         1 data inputs ; 168                         ;
+;         2 data inputs ; 90                          ;
+;         3 data inputs ; 792                         ;
+;         4 data inputs ; 668                         ;
+;     extend            ; 979                         ;
+;         7 data inputs ; 979                         ;
+;     normal            ; 6563                        ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 22                          ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 16                          ;
-;         6 data inputs ; 267                         ;
-; boundary_port         ; 68                          ;
+;         2 data inputs ; 1432                        ;
+;         3 data inputs ; 465                         ;
+;         4 data inputs ; 853                         ;
+;         5 data inputs ; 481                         ;
+;         6 data inputs ; 3329                        ;
+;     shared            ; 60                          ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 56                          ;
+; boundary_port         ; 4                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.20                        ;
-; Average LUT depth     ; 6.47                        ;
+; Max LUT depth         ; 69.20                       ;
+; Average LUT depth     ; 36.10                       ;
 +-----------------------+-----------------------------+
 
 
@@ -423,7 +572,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:29     ;
 +----------------+--------------+
 
 
@@ -433,7 +582,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Mar 20 09:58:26 2019
+    Info: Processing started: Thu Mar 21 12:21:03 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off spwm_gen -c spwm_gen
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -453,92 +602,64 @@ Info (12021): Found 2 design units, including 1 entities, in source file sin.vhd
     Info (12022): Found design unit 1: sin-Behavioral File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin.vhd Line: 18
     Info (12023): Found entity 1: sin File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin.vhd Line: 9
 Info (12127): Elaborating entity "spwm_gen" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(101): signal "triangular" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(101): signal "seno" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(107): signal "triangular" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 107
-Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(107): signal "seno120" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 107
-Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(113): signal "triangular" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 113
-Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(113): signal "seno240" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 113
+Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(105): signal "triangular" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(105): signal "seno" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(111): signal "triangular" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(111): signal "seno120" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(117): signal "triangular" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 117
+Warning (10492): VHDL Process Statement warning at spwm_gen.vhd(117): signal "seno240" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 117
 Info (12128): Elaborating entity "triangle" for hierarchy "triangle:inst1" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 67
-Info (12128): Elaborating entity "sin" for hierarchy "sin:inst2" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 75
-Info (12128): Elaborating entity "sin_120" for hierarchy "sin_120:inst3" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 83
-Info (12128): Elaborating entity "sin_240" for hierarchy "sin_240:inst4" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 91
+Info (12128): Elaborating entity "sin" for hierarchy "sin:inst2" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 78
+Info (12128): Elaborating entity "sin_120" for hierarchy "sin_120:inst3" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 87
+Info (12128): Elaborating entity "sin_240" for hierarchy "sin_240:inst4" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 95
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sin_240:inst4|Div0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin_240.vhd Line: 1292
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "triangle:inst1|Div0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd Line: 1297
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "triangle:inst1|Mod0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd Line: 1299
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sin:inst2|Mod0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin.vhd Line: 1294
+Info (12130): Elaborated megafunction instantiation "sin_240:inst4|lpm_divide:Div0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin_240.vhd Line: 1292
+Info (12133): Instantiated megafunction "sin_240:inst4|lpm_divide:Div0" with the following parameter: File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin_240.vhd Line: 1292
+    Info (12134): Parameter "LPM_WIDTHN" = "31"
+    Info (12134): Parameter "LPM_WIDTHD" = "31"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_1dm.tdf
+    Info (12023): Found entity 1: lpm_divide_1dm File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/lpm_divide_1dm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7nh File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/sign_div_unsign_7nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k2f.tdf
+    Info (12023): Found entity 1: alt_u_div_k2f File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/alt_u_div_k2f.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "triangle:inst1|lpm_divide:Div0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd Line: 1297
+Info (12133): Instantiated megafunction "triangle:inst1|lpm_divide:Div0" with the following parameter: File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd Line: 1297
+    Info (12134): Parameter "LPM_WIDTHN" = "31"
+    Info (12134): Parameter "LPM_WIDTHD" = "31"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "triangle:inst1|lpm_divide:Mod0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd Line: 1299
+Info (12133): Instantiated megafunction "triangle:inst1|lpm_divide:Mod0" with the following parameter: File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/triangle.vhd Line: 1299
+    Info (12134): Parameter "LPM_WIDTHN" = "31"
+    Info (12134): Parameter "LPM_WIDTHD" = "31"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_45m.tdf
+    Info (12023): Found entity 1: lpm_divide_45m File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/db/lpm_divide_45m.tdf Line: 24
+Info (12130): Elaborated megafunction instantiation "sin:inst2|lpm_divide:Mod0" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin.vhd Line: 1294
+Info (12133): Instantiated megafunction "sin:inst2|lpm_divide:Mod0" with the following parameter: File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/sin.vhd Line: 1294
+    Info (12134): Parameter "LPM_WIDTHN" = "31"
+    Info (12134): Parameter "LPM_WIDTHD" = "31"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 64 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "freq_sin[0]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[1]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[2]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[3]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[4]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[5]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[6]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[7]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[8]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[9]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[10]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[11]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[12]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[13]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[14]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[15]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[16]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[17]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[18]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[19]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[20]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[21]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[22]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[23]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[24]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[25]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[26]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[27]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[28]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[29]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[30]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_sin[31]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 8
-    Warning (15610): No output dependent on input pin "freq_tri[0]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[1]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[2]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[3]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[4]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[5]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[6]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[7]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[8]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[9]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[10]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[11]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[12]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[13]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[14]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[15]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[16]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[17]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[18]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[19]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[20]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[21]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[22]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[23]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[24]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[25]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[26]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[27]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[28]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[29]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[30]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-    Warning (15610): No output dependent on input pin "freq_tri[31]" File: D:/Users/jagumiel/Desktop/DE1-Nano/misPruebas/spwm_gen/spwm_gen.vhd Line: 9
-Info (21057): Implemented 721 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 65 input pins
+Info (21057): Implemented 9495 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
     Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 653 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 72 warnings
-    Info: Peak virtual memory: 747 megabytes
-    Info: Processing ended: Wed Mar 20 09:58:38 2019
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:24
+    Info (21061): Implemented 9491 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 1108 megabytes
+    Info: Processing ended: Thu Mar 21 12:21:49 2019
+    Info: Elapsed time: 00:00:46
+    Info: Total CPU time (on all processors): 00:01:01
 
 

@@ -5,8 +5,8 @@ use ieee.std_logic_signed.all;
 entity spwm_gen is
 	port(
 		clk	: in  std_logic;
-		freq_sin: std_logic_vector(31 downto 0);
-		freq_tri: std_logic_vector(31 downto 0);
+--		freq_sin: std_logic_vector(31 downto 0);
+--		freq_tri: std_logic_vector(31 downto 0);
 		phase1 	: out std_logic;
 		phase2 	: out std_logic;
 		phase3 	: out std_logic
@@ -68,7 +68,10 @@ begin
 	port map(
 		clk         => clk,
 		amp	    => x"FFFFFFFF",
-		frq         => x"000003E8",--50kHz
+		--frq         => x"000003E8",--50kHz
+		--frq	    => x"000001F4", --100kHz
+		--frq	    => x"00001388", --10kHz
+		frq	    => x"000009C4", --20kHz
 		pwm_ctrl    => triangular
 	);
 
@@ -76,7 +79,8 @@ begin
 	port map(
 		clk         => clk,
 		amp	    => x"FFFFFFFF",
-		frq         => x"00001388", --Supuestamente, 5000 ciclos de 20ns, 10kHz
+		--frq         => x"00001388", --Supuestamente, 5000 ciclos de 20ns, 10kHz
+		frq         => x"0000C350", --Supuestamente, 50000 ciclos de 20ns, 1kHz
 		pwm_ctrl    => seno
 	);
 
@@ -84,7 +88,7 @@ begin
 	port map(
 		clk         => clk,
 		amp	    => x"FFFFFFFF",
-		frq         => x"00001388", --Supuestamente, 5000 ciclos de 20ns, 10kHz
+		frq         => x"0000C350", --Supuestamente, 5000 ciclos de 20ns, 10kHz
 		pwm_ctrl    => seno120
 	);
 
@@ -92,7 +96,7 @@ begin
 	port map(
 		clk         => clk,
 		amp	    => x"FFFFFFFF",
-		frq         => x"00001388", --Supuestamente, 5000 ciclos de 20ns, 10kHz
+		frq         => x"0000C350", --Supuestamente, 5000 ciclos de 20ns, 10kHz
 		pwm_ctrl    => seno240
 	);
 
