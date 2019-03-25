@@ -1,13 +1,13 @@
-Fitter Status : Successful - Thu Mar 21 12:23:55 2019
+Fitter Status : Successful - Fri Mar 22 12:40:18 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : spwm_gen
-Top-level Entity Name : spwm_gen
+Top-level Entity Name : spwm_gen_delay
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 6,885 / 41,910 ( 16 % )
-Total registers : 195
-Total pins : 4 / 314 ( 1 % )
+Logic utilization (in ALMs) : 6,990 / 41,910 ( 17 % )
+Total registers : 175
+Total pins : 7 / 314 ( 2 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
 Total RAM Blocks : 0 / 553 ( 0 % )

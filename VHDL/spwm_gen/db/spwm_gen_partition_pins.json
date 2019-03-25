@@ -4,15 +4,27 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "phase1",
+					"name" : "phase1a",
 					"strict" : false
 				},
 				{
-					"name" : "phase2",
+					"name" : "phase2a",
 					"strict" : false
 				},
 				{
-					"name" : "phase3",
+					"name" : "phase3a",
+					"strict" : false
+				},
+				{
+					"name" : "phase1b",
+					"strict" : false
+				},
+				{
+					"name" : "phase2b",
+					"strict" : false
+				},
+				{
+					"name" : "phase3b",
 					"strict" : false
 				},
 				{

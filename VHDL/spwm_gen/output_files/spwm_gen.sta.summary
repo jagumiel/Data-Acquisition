@@ -3,51 +3,579 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 100C Model Setup 'clk'
-Slack : -61.291
-TNS   : -9836.778
+Slack : -62.332
+TNS   : -8852.609
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|cont_3a[0]'
+Slack : -14.770
+TNS   : -14.770
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|cont_3b[0]'
+Slack : -13.896
+TNS   : -13.896
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|cont_1b[0]'
+Slack : -12.780
+TNS   : -12.780
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|cont_2a[0]'
+Slack : -12.084
+TNS   : -12.084
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|cont_2b[0]'
+Slack : -11.926
+TNS   : -11.926
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|status_phase3a'
+Slack : -5.194
+TNS   : -44.360
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|status_phase3b'
+Slack : -5.107
+TNS   : -47.037
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|status_phase2b'
+Slack : -5.035
+TNS   : -48.267
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|status_phase1b'
+Slack : -4.811
+TNS   : -43.396
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|status_phase2a'
+Slack : -4.452
+TNS   : -40.770
+
+Type  : Slow 1100mV 100C Model Setup 'delay:inst5|status_phase1a'
+Slack : -3.378
+TNS   : -30.760
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|status_phase2a'
+Slack : -0.225
+TNS   : -0.289
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|status_phase2b'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|status_phase1a'
+Slack : 0.311
+TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Hold 'clk'
-Slack : 0.440
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|status_phase1b'
+Slack : 0.522
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|status_phase3b'
+Slack : 0.772
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|status_phase3a'
+Slack : 1.026
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|cont_2b[0]'
+Slack : 2.637
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|cont_2a[0]'
+Slack : 2.933
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|cont_3b[0]'
+Slack : 3.914
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|cont_1b[0]'
+Slack : 4.243
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'delay:inst5|cont_3a[0]'
+Slack : 4.767
 TNS   : 0.000
 
 Type  : Slow 1100mV 100C Model Minimum Pulse Width 'clk'
 Slack : -0.538
-TNS   : -152.708
+TNS   : -137.090
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase2b'
+Slack : -0.046
+TNS   : -0.046
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase2a'
+Slack : 0.089
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_2a[0]'
+Slack : 0.110
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_3b[0]'
+Slack : 0.121
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase3b'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_2b[0]'
+Slack : 0.189
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase1b'
+Slack : 0.287
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_3a[0]'
+Slack : 0.301
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_1b[0]'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase1a'
+Slack : 0.326
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase3a'
+Slack : 0.375
+TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Setup 'clk'
-Slack : -64.699
-TNS   : -10308.101
+Slack : -65.791
+TNS   : -9282.845
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|cont_3a[0]'
+Slack : -15.053
+TNS   : -15.053
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|cont_3b[0]'
+Slack : -14.241
+TNS   : -14.241
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|cont_1b[0]'
+Slack : -13.255
+TNS   : -13.255
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|cont_2a[0]'
+Slack : -12.712
+TNS   : -12.712
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|cont_2b[0]'
+Slack : -12.302
+TNS   : -12.302
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|status_phase2b'
+Slack : -5.300
+TNS   : -48.828
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|status_phase3a'
+Slack : -5.209
+TNS   : -44.272
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|status_phase3b'
+Slack : -5.004
+TNS   : -47.039
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|status_phase1b'
+Slack : -4.882
+TNS   : -43.960
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|status_phase2a'
+Slack : -4.707
+TNS   : -42.448
+
+Type  : Slow 1100mV -40C Model Setup 'delay:inst5|status_phase1a'
+Slack : -3.590
+TNS   : -32.042
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|status_phase2a'
+Slack : -0.156
+TNS   : -0.330
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|status_phase2b'
+Slack : 0.216
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|status_phase1a'
+Slack : 0.306
+TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Hold 'clk'
-Slack : 0.458
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|status_phase1b'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|status_phase3b'
+Slack : 0.594
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|status_phase3a'
+Slack : 0.918
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|cont_2b[0]'
+Slack : 2.810
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|cont_2a[0]'
+Slack : 3.305
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|cont_3b[0]'
+Slack : 4.032
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|cont_1b[0]'
+Slack : 4.358
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'delay:inst5|cont_3a[0]'
+Slack : 4.952
 TNS   : 0.000
 
 Type  : Slow 1100mV -40C Model Minimum Pulse Width 'clk'
 Slack : -0.538
-TNS   : -164.069
+TNS   : -148.503
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase2b'
+Slack : -0.079
+TNS   : -0.079
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase2a'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase3b'
+Slack : 0.128
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_3b[0]'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_2a[0]'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_2b[0]'
+Slack : 0.255
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase3a'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_1b[0]'
+Slack : 0.332
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase1b'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase1a'
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_3a[0]'
+Slack : 0.350
+TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Setup 'clk'
-Slack : -29.551
-TNS   : -4768.612
+Slack : -30.171
+TNS   : -4302.029
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|cont_3a[0]'
+Slack : -7.503
+TNS   : -7.503
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|cont_3b[0]'
+Slack : -7.051
+TNS   : -7.051
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|cont_1b[0]'
+Slack : -6.389
+TNS   : -6.389
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|cont_2b[0]'
+Slack : -5.791
+TNS   : -5.791
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|cont_2a[0]'
+Slack : -5.790
+TNS   : -5.790
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|status_phase3a'
+Slack : -2.196
+TNS   : -17.365
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|status_phase2b'
+Slack : -2.144
+TNS   : -19.598
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|status_phase3b'
+Slack : -2.058
+TNS   : -18.495
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|status_phase1b'
+Slack : -1.979
+TNS   : -16.836
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|status_phase2a'
+Slack : -1.633
+TNS   : -14.452
+
+Type  : Fast 1100mV 100C Model Setup 'delay:inst5|status_phase1a'
+Slack : -1.149
+TNS   : -8.666
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|status_phase2a'
+Slack : -0.146
+TNS   : -0.189
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|status_phase1a'
+Slack : 0.160
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|status_phase2b'
+Slack : 0.178
+TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Hold 'clk'
-Slack : 0.180
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|status_phase3b'
+Slack : 0.261
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|status_phase1b'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|status_phase3a'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|cont_2b[0]'
+Slack : 1.395
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|cont_2a[0]'
+Slack : 1.436
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|cont_3b[0]'
+Slack : 2.133
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|cont_1b[0]'
+Slack : 2.363
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'delay:inst5|cont_3a[0]'
+Slack : 2.516
 TNS   : 0.000
 
 Type  : Fast 1100mV 100C Model Minimum Pulse Width 'clk'
-Slack : -0.094
-TNS   : -16.758
+Slack : -0.092
+TNS   : -15.126
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase2b'
+Slack : -0.026
+TNS   : -0.026
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase2a'
+Slack : 0.014
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase3b'
+Slack : 0.088
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_2a[0]'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_3b[0]'
+Slack : 0.203
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_2b[0]'
+Slack : 0.209
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase1a'
+Slack : 0.254
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_3a[0]'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|cont_1b[0]'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase3a'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'delay:inst5|status_phase1b'
+Slack : 0.427
+TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Setup 'clk'
-Slack : -26.881
-TNS   : -4318.214
+Slack : -27.482
+TNS   : -3903.742
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|cont_3a[0]'
+Slack : -6.533
+TNS   : -6.533
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|cont_3b[0]'
+Slack : -6.180
+TNS   : -6.180
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|cont_1b[0]'
+Slack : -5.583
+TNS   : -5.583
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|cont_2a[0]'
+Slack : -5.109
+TNS   : -5.109
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|cont_2b[0]'
+Slack : -5.051
+TNS   : -5.051
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|status_phase3a'
+Slack : -1.767
+TNS   : -13.806
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|status_phase2b'
+Slack : -1.677
+TNS   : -15.541
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|status_phase3b'
+Slack : -1.608
+TNS   : -14.778
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|status_phase1b'
+Slack : -1.526
+TNS   : -13.064
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|status_phase2a'
+Slack : -1.330
+TNS   : -11.799
+
+Type  : Fast 1100mV -40C Model Setup 'delay:inst5|status_phase1a'
+Slack : -0.859
+TNS   : -6.557
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|status_phase2a'
+Slack : -0.107
+TNS   : -0.153
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|status_phase2b'
+Slack : 0.142
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|status_phase1a'
+Slack : 0.150
+TNS   : 0.000
 
 Type  : Fast 1100mV -40C Model Hold 'clk'
 Slack : 0.169
 TNS   : 0.000
 
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|status_phase1b'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|status_phase3b'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|status_phase3a'
+Slack : 0.476
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|cont_2b[0]'
+Slack : 1.474
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|cont_2a[0]'
+Slack : 1.555
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|cont_3b[0]'
+Slack : 2.084
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|cont_1b[0]'
+Slack : 2.250
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'delay:inst5|cont_3a[0]'
+Slack : 2.402
+TNS   : 0.000
+
 Type  : Fast 1100mV -40C Model Minimum Pulse Width 'clk'
 Slack : -0.091
-TNS   : -16.775
+TNS   : -15.001
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase2b'
+Slack : 0.116
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase2a'
+Slack : 0.167
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase3b'
+Slack : 0.186
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_3b[0]'
+Slack : 0.279
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_2a[0]'
+Slack : 0.289
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_2b[0]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase1a'
+Slack : 0.315
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_1b[0]'
+Slack : 0.371
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|cont_3a[0]'
+Slack : 0.372
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase3a'
+Slack : 0.428
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'delay:inst5|status_phase1b'
+Slack : 0.446
+TNS   : 0.000
 
 ------------------------------------------------------------

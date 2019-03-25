@@ -1,5 +1,5 @@
 Timing Analyzer report for spwm_gen
-Thu Mar 21 12:24:32 2019
+Fri Mar 22 12:42:07 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -97,33 +97,50 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.59        ;
+; Average used               ; 2.46        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  53.7%      ;
-;     Processor 3            ;  53.6%      ;
-;     Processor 4            ;  51.9%      ;
+;     Processor 2            ;  48.9%      ;
+;     Processor 3            ;  48.8%      ;
+;     Processor 4            ;  48.7%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                          ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
-; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
-; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
-+------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                 ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; Clock Name                 ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                        ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; clk                        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                        ;
+; delay:inst5|cont_1b[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|cont_1b[0] }     ;
+; delay:inst5|cont_2a[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|cont_2a[0] }     ;
+; delay:inst5|cont_2b[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|cont_2b[0] }     ;
+; delay:inst5|cont_3a[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|cont_3a[0] }     ;
+; delay:inst5|cont_3b[0]     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|cont_3b[0] }     ;
+; delay:inst5|status_phase1a ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|status_phase1a } ;
+; delay:inst5|status_phase1b ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|status_phase1b } ;
+; delay:inst5|status_phase2a ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|status_phase2a } ;
+; delay:inst5|status_phase2b ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|status_phase2b } ;
+; delay:inst5|status_phase3a ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|status_phase3a } ;
+; delay:inst5|status_phase3b ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { delay:inst5|status_phase3b } ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
 
 
-+-------------------------------------------------+
-; Slow 1100mV 100C Model Fmax Summary             ;
-+-----------+-----------------+------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
-+-----------+-----------------+------------+------+
-; 16.05 MHz ; 16.05 MHz       ; clk        ;      ;
-+-----------+-----------------+------------+------+
++------------------------------------------------------------------+
+; Slow 1100mV 100C Model Fmax Summary                              ;
++------------+-----------------+----------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                 ; Note ;
++------------+-----------------+----------------------------+------+
+; 15.79 MHz  ; 15.79 MHz       ; clk                        ;      ;
+; 161.45 MHz ; 161.45 MHz      ; delay:inst5|status_phase3a ;      ;
+; 163.75 MHz ; 163.75 MHz      ; delay:inst5|status_phase3b ;      ;
+; 165.7 MHz  ; 165.7 MHz       ; delay:inst5|status_phase2b ;      ;
+; 172.09 MHz ; 172.09 MHz      ; delay:inst5|status_phase1b ;      ;
+; 183.42 MHz ; 183.42 MHz      ; delay:inst5|status_phase2a ;      ;
+; 228.41 MHz ; 228.41 MHz      ; delay:inst5|status_phase1a ;      ;
++------------+-----------------+----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -133,22 +150,44 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+--------------------------------------+
-; Slow 1100mV 100C Model Setup Summary ;
-+-------+---------+--------------------+
-; Clock ; Slack   ; End Point TNS      ;
-+-------+---------+--------------------+
-; clk   ; -61.291 ; -9836.778          ;
-+-------+---------+--------------------+
++------------------------------------------------------+
+; Slow 1100mV 100C Model Setup Summary                 ;
++----------------------------+---------+---------------+
+; Clock                      ; Slack   ; End Point TNS ;
++----------------------------+---------+---------------+
+; clk                        ; -62.332 ; -8852.609     ;
+; delay:inst5|cont_3a[0]     ; -14.770 ; -14.770       ;
+; delay:inst5|cont_3b[0]     ; -13.896 ; -13.896       ;
+; delay:inst5|cont_1b[0]     ; -12.780 ; -12.780       ;
+; delay:inst5|cont_2a[0]     ; -12.084 ; -12.084       ;
+; delay:inst5|cont_2b[0]     ; -11.926 ; -11.926       ;
+; delay:inst5|status_phase3a ; -5.194  ; -44.360       ;
+; delay:inst5|status_phase3b ; -5.107  ; -47.037       ;
+; delay:inst5|status_phase2b ; -5.035  ; -48.267       ;
+; delay:inst5|status_phase1b ; -4.811  ; -43.396       ;
+; delay:inst5|status_phase2a ; -4.452  ; -40.770       ;
+; delay:inst5|status_phase1a ; -3.378  ; -30.760       ;
++----------------------------+---------+---------------+
 
 
-+-------------------------------------+
-; Slow 1100mV 100C Model Hold Summary ;
-+-------+-------+---------------------+
-; Clock ; Slack ; End Point TNS       ;
-+-------+-------+---------------------+
-; clk   ; 0.440 ; 0.000               ;
-+-------+-------+---------------------+
++-----------------------------------------------------+
+; Slow 1100mV 100C Model Hold Summary                 ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; delay:inst5|status_phase2a ; -0.225 ; -0.289        ;
+; delay:inst5|status_phase2b ; 0.184  ; 0.000         ;
+; delay:inst5|status_phase1a ; 0.311  ; 0.000         ;
+; clk                        ; 0.433  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.522  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.772  ; 0.000         ;
+; delay:inst5|status_phase3a ; 1.026  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 2.637  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 2.933  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 3.914  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 4.243  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 4.767  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -163,13 +202,24 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------------------+
-; Slow 1100mV 100C Model Minimum Pulse Width Summary ;
-+-------+--------+-----------------------------------+
-; Clock ; Slack  ; End Point TNS                     ;
-+-------+--------+-----------------------------------+
-; clk   ; -0.538 ; -152.708                          ;
-+-------+--------+-----------------------------------+
++-----------------------------------------------------+
+; Slow 1100mV 100C Model Minimum Pulse Width Summary  ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -0.538 ; -137.090      ;
+; delay:inst5|status_phase2b ; -0.046 ; -0.046        ;
+; delay:inst5|status_phase2a ; 0.089  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 0.110  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 0.121  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.175  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 0.189  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.287  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 0.301  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 0.305  ; 0.000         ;
+; delay:inst5|status_phase1a ; 0.326  ; 0.000         ;
+; delay:inst5|status_phase3a ; 0.375  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 ------------------------------------------------
@@ -178,32 +228,60 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+-------------------------------------------------+
-; Slow 1100mV -40C Model Fmax Summary             ;
-+-----------+-----------------+------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
-+-----------+-----------------+------------+------+
-; 15.22 MHz ; 15.22 MHz       ; clk        ;      ;
-+-----------+-----------------+------------+------+
++------------------------------------------------------------------+
+; Slow 1100mV -40C Model Fmax Summary                              ;
++------------+-----------------+----------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                 ; Note ;
++------------+-----------------+----------------------------+------+
+; 14.97 MHz  ; 14.97 MHz       ; clk                        ;      ;
+; 158.73 MHz ; 158.73 MHz      ; delay:inst5|status_phase2b ;      ;
+; 161.06 MHz ; 161.06 MHz      ; delay:inst5|status_phase3a ;      ;
+; 166.56 MHz ; 166.56 MHz      ; delay:inst5|status_phase3b ;      ;
+; 170.01 MHz ; 170.01 MHz      ; delay:inst5|status_phase1b ;      ;
+; 175.22 MHz ; 175.22 MHz      ; delay:inst5|status_phase2a ;      ;
+; 217.86 MHz ; 217.86 MHz      ; delay:inst5|status_phase1a ;      ;
++------------+-----------------+----------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+--------------------------------------+
-; Slow 1100mV -40C Model Setup Summary ;
-+-------+---------+--------------------+
-; Clock ; Slack   ; End Point TNS      ;
-+-------+---------+--------------------+
-; clk   ; -64.699 ; -10308.101         ;
-+-------+---------+--------------------+
++------------------------------------------------------+
+; Slow 1100mV -40C Model Setup Summary                 ;
++----------------------------+---------+---------------+
+; Clock                      ; Slack   ; End Point TNS ;
++----------------------------+---------+---------------+
+; clk                        ; -65.791 ; -9282.845     ;
+; delay:inst5|cont_3a[0]     ; -15.053 ; -15.053       ;
+; delay:inst5|cont_3b[0]     ; -14.241 ; -14.241       ;
+; delay:inst5|cont_1b[0]     ; -13.255 ; -13.255       ;
+; delay:inst5|cont_2a[0]     ; -12.712 ; -12.712       ;
+; delay:inst5|cont_2b[0]     ; -12.302 ; -12.302       ;
+; delay:inst5|status_phase2b ; -5.300  ; -48.828       ;
+; delay:inst5|status_phase3a ; -5.209  ; -44.272       ;
+; delay:inst5|status_phase3b ; -5.004  ; -47.039       ;
+; delay:inst5|status_phase1b ; -4.882  ; -43.960       ;
+; delay:inst5|status_phase2a ; -4.707  ; -42.448       ;
+; delay:inst5|status_phase1a ; -3.590  ; -32.042       ;
++----------------------------+---------+---------------+
 
 
-+-------------------------------------+
-; Slow 1100mV -40C Model Hold Summary ;
-+-------+-------+---------------------+
-; Clock ; Slack ; End Point TNS       ;
-+-------+-------+---------------------+
-; clk   ; 0.458 ; 0.000               ;
-+-------+-------+---------------------+
++-----------------------------------------------------+
+; Slow 1100mV -40C Model Hold Summary                 ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; delay:inst5|status_phase2a ; -0.156 ; -0.330        ;
+; delay:inst5|status_phase2b ; 0.216  ; 0.000         ;
+; delay:inst5|status_phase1a ; 0.306  ; 0.000         ;
+; clk                        ; 0.447  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.452  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.594  ; 0.000         ;
+; delay:inst5|status_phase3a ; 0.918  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 2.810  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 3.305  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 4.032  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 4.358  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 4.952  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -218,13 +296,24 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------------------+
-; Slow 1100mV -40C Model Minimum Pulse Width Summary ;
-+-------+--------+-----------------------------------+
-; Clock ; Slack  ; End Point TNS                     ;
-+-------+--------+-----------------------------------+
-; clk   ; -0.538 ; -164.069                          ;
-+-------+--------+-----------------------------------+
++-----------------------------------------------------+
+; Slow 1100mV -40C Model Minimum Pulse Width Summary  ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -0.538 ; -148.503      ;
+; delay:inst5|status_phase2b ; -0.079 ; -0.079        ;
+; delay:inst5|status_phase2a ; 0.114  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.128  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 0.162  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 0.188  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 0.255  ; 0.000         ;
+; delay:inst5|status_phase3a ; 0.321  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 0.332  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.344  ; 0.000         ;
+; delay:inst5|status_phase1a ; 0.345  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 0.350  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 ------------------------------------------------
@@ -233,22 +322,44 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------+
-; Fast 1100mV 100C Model Setup Summary ;
-+-------+---------+--------------------+
-; Clock ; Slack   ; End Point TNS      ;
-+-------+---------+--------------------+
-; clk   ; -29.551 ; -4768.612          ;
-+-------+---------+--------------------+
++------------------------------------------------------+
+; Fast 1100mV 100C Model Setup Summary                 ;
++----------------------------+---------+---------------+
+; Clock                      ; Slack   ; End Point TNS ;
++----------------------------+---------+---------------+
+; clk                        ; -30.171 ; -4302.029     ;
+; delay:inst5|cont_3a[0]     ; -7.503  ; -7.503        ;
+; delay:inst5|cont_3b[0]     ; -7.051  ; -7.051        ;
+; delay:inst5|cont_1b[0]     ; -6.389  ; -6.389        ;
+; delay:inst5|cont_2b[0]     ; -5.791  ; -5.791        ;
+; delay:inst5|cont_2a[0]     ; -5.790  ; -5.790        ;
+; delay:inst5|status_phase3a ; -2.196  ; -17.365       ;
+; delay:inst5|status_phase2b ; -2.144  ; -19.598       ;
+; delay:inst5|status_phase3b ; -2.058  ; -18.495       ;
+; delay:inst5|status_phase1b ; -1.979  ; -16.836       ;
+; delay:inst5|status_phase2a ; -1.633  ; -14.452       ;
+; delay:inst5|status_phase1a ; -1.149  ; -8.666        ;
++----------------------------+---------+---------------+
 
 
-+-------------------------------------+
-; Fast 1100mV 100C Model Hold Summary ;
-+-------+-------+---------------------+
-; Clock ; Slack ; End Point TNS       ;
-+-------+-------+---------------------+
-; clk   ; 0.180 ; 0.000               ;
-+-------+-------+---------------------+
++-----------------------------------------------------+
+; Fast 1100mV 100C Model Hold Summary                 ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; delay:inst5|status_phase2a ; -0.146 ; -0.189        ;
+; delay:inst5|status_phase1a ; 0.160  ; 0.000         ;
+; delay:inst5|status_phase2b ; 0.178  ; 0.000         ;
+; clk                        ; 0.184  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.261  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.346  ; 0.000         ;
+; delay:inst5|status_phase3a ; 0.497  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 1.395  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 1.436  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 2.133  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 2.363  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 2.516  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -263,13 +374,24 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------------------+
-; Fast 1100mV 100C Model Minimum Pulse Width Summary ;
-+-------+--------+-----------------------------------+
-; Clock ; Slack  ; End Point TNS                     ;
-+-------+--------+-----------------------------------+
-; clk   ; -0.094 ; -16.758                           ;
-+-------+--------+-----------------------------------+
++-----------------------------------------------------+
+; Fast 1100mV 100C Model Minimum Pulse Width Summary  ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -0.092 ; -15.126       ;
+; delay:inst5|status_phase2b ; -0.026 ; -0.026        ;
+; delay:inst5|status_phase2a ; 0.014  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.088  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 0.193  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 0.203  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 0.209  ; 0.000         ;
+; delay:inst5|status_phase1a ; 0.254  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 0.343  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 0.344  ; 0.000         ;
+; delay:inst5|status_phase3a ; 0.407  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.427  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 ------------------------------------------------
@@ -278,22 +400,44 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------+
-; Fast 1100mV -40C Model Setup Summary ;
-+-------+---------+--------------------+
-; Clock ; Slack   ; End Point TNS      ;
-+-------+---------+--------------------+
-; clk   ; -26.881 ; -4318.214          ;
-+-------+---------+--------------------+
++------------------------------------------------------+
+; Fast 1100mV -40C Model Setup Summary                 ;
++----------------------------+---------+---------------+
+; Clock                      ; Slack   ; End Point TNS ;
++----------------------------+---------+---------------+
+; clk                        ; -27.482 ; -3903.742     ;
+; delay:inst5|cont_3a[0]     ; -6.533  ; -6.533        ;
+; delay:inst5|cont_3b[0]     ; -6.180  ; -6.180        ;
+; delay:inst5|cont_1b[0]     ; -5.583  ; -5.583        ;
+; delay:inst5|cont_2a[0]     ; -5.109  ; -5.109        ;
+; delay:inst5|cont_2b[0]     ; -5.051  ; -5.051        ;
+; delay:inst5|status_phase3a ; -1.767  ; -13.806       ;
+; delay:inst5|status_phase2b ; -1.677  ; -15.541       ;
+; delay:inst5|status_phase3b ; -1.608  ; -14.778       ;
+; delay:inst5|status_phase1b ; -1.526  ; -13.064       ;
+; delay:inst5|status_phase2a ; -1.330  ; -11.799       ;
+; delay:inst5|status_phase1a ; -0.859  ; -6.557        ;
++----------------------------+---------+---------------+
 
 
-+-------------------------------------+
-; Fast 1100mV -40C Model Hold Summary ;
-+-------+-------+---------------------+
-; Clock ; Slack ; End Point TNS       ;
-+-------+-------+---------------------+
-; clk   ; 0.169 ; 0.000               ;
-+-------+-------+---------------------+
++-----------------------------------------------------+
+; Fast 1100mV -40C Model Hold Summary                 ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; delay:inst5|status_phase2a ; -0.107 ; -0.153        ;
+; delay:inst5|status_phase2b ; 0.142  ; 0.000         ;
+; delay:inst5|status_phase1a ; 0.150  ; 0.000         ;
+; clk                        ; 0.169  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.297  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.325  ; 0.000         ;
+; delay:inst5|status_phase3a ; 0.476  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 1.474  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 1.555  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 2.084  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 2.250  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 2.402  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -308,13 +452,24 @@ No paths to report.
 No paths to report.
 
 
-+----------------------------------------------------+
-; Fast 1100mV -40C Model Minimum Pulse Width Summary ;
-+-------+--------+-----------------------------------+
-; Clock ; Slack  ; End Point TNS                     ;
-+-------+--------+-----------------------------------+
-; clk   ; -0.091 ; -16.775                           ;
-+-------+--------+-----------------------------------+
++-----------------------------------------------------+
+; Fast 1100mV -40C Model Minimum Pulse Width Summary  ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -0.091 ; -15.001       ;
+; delay:inst5|status_phase2b ; 0.116  ; 0.000         ;
+; delay:inst5|status_phase2a ; 0.167  ; 0.000         ;
+; delay:inst5|status_phase3b ; 0.186  ; 0.000         ;
+; delay:inst5|cont_3b[0]     ; 0.279  ; 0.000         ;
+; delay:inst5|cont_2a[0]     ; 0.289  ; 0.000         ;
+; delay:inst5|cont_2b[0]     ; 0.312  ; 0.000         ;
+; delay:inst5|status_phase1a ; 0.315  ; 0.000         ;
+; delay:inst5|cont_1b[0]     ; 0.371  ; 0.000         ;
+; delay:inst5|cont_3a[0]     ; 0.372  ; 0.000         ;
+; delay:inst5|status_phase3a ; 0.428  ; 0.000         ;
+; delay:inst5|status_phase1b ; 0.446  ; 0.000         ;
++----------------------------+--------+---------------+
 
 
 ------------------------------------------------
@@ -323,27 +478,52 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                              ;
-+------------------+------------+-------+----------+---------+---------------------+
-; Clock            ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+------------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -64.699    ; 0.169 ; N/A      ; N/A     ; -0.538              ;
-;  clk             ; -64.699    ; 0.169 ; N/A      ; N/A     ; -0.538              ;
-; Design-wide TNS  ; -10308.101 ; 0.0   ; 0.0      ; 0.0     ; -164.069            ;
-;  clk             ; -10308.101 ; 0.000 ; N/A      ; N/A     ; -164.069            ;
-+------------------+------------+-------+----------+---------+---------------------+
++---------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                         ;
++-----------------------------+-----------+--------+----------+---------+---------------------+
+; Clock                       ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------------+-----------+--------+----------+---------+---------------------+
+; Worst-case Slack            ; -65.791   ; -0.225 ; N/A      ; N/A     ; -0.538              ;
+;  clk                        ; -65.791   ; 0.169  ; N/A      ; N/A     ; -0.538              ;
+;  delay:inst5|cont_1b[0]     ; -13.255   ; 2.250  ; N/A      ; N/A     ; 0.305               ;
+;  delay:inst5|cont_2a[0]     ; -12.712   ; 1.436  ; N/A      ; N/A     ; 0.110               ;
+;  delay:inst5|cont_2b[0]     ; -12.302   ; 1.395  ; N/A      ; N/A     ; 0.189               ;
+;  delay:inst5|cont_3a[0]     ; -15.053   ; 2.402  ; N/A      ; N/A     ; 0.301               ;
+;  delay:inst5|cont_3b[0]     ; -14.241   ; 2.084  ; N/A      ; N/A     ; 0.121               ;
+;  delay:inst5|status_phase1a ; -3.590    ; 0.150  ; N/A      ; N/A     ; 0.254               ;
+;  delay:inst5|status_phase1b ; -4.882    ; 0.297  ; N/A      ; N/A     ; 0.287               ;
+;  delay:inst5|status_phase2a ; -4.707    ; -0.225 ; N/A      ; N/A     ; 0.014               ;
+;  delay:inst5|status_phase2b ; -5.300    ; 0.142  ; N/A      ; N/A     ; -0.079              ;
+;  delay:inst5|status_phase3a ; -5.209    ; 0.476  ; N/A      ; N/A     ; 0.321               ;
+;  delay:inst5|status_phase3b ; -5.107    ; 0.261  ; N/A      ; N/A     ; 0.088               ;
+; Design-wide TNS             ; -9608.997 ; -0.33  ; 0.0      ; 0.0     ; -148.582            ;
+;  clk                        ; -9282.845 ; 0.000  ; N/A      ; N/A     ; -148.503            ;
+;  delay:inst5|cont_1b[0]     ; -13.255   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|cont_2a[0]     ; -12.712   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|cont_2b[0]     ; -12.302   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|cont_3a[0]     ; -15.053   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|cont_3b[0]     ; -14.241   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|status_phase1a ; -32.042   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|status_phase1b ; -43.960   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|status_phase2a ; -42.448   ; -0.330 ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|status_phase2b ; -48.828   ; 0.000  ; N/A      ; N/A     ; -0.079              ;
+;  delay:inst5|status_phase3a ; -44.360   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  delay:inst5|status_phase3b ; -47.039   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
++-----------------------------+-----------+--------+----------+---------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                             ;
-+--------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; Pin    ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
-+--------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; phase1 ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; phase2 ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; phase3 ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-+--------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                              ;
++---------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin     ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; phase1a ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; phase2a ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; phase3a ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; phase1b ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; phase2b ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; phase3b ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
 
 +--------------------------------------------------------+
@@ -355,67 +535,111 @@ No synchronizer chains to report.
 +-----+--------------+-----------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Slow 1100mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin    ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; phase1 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.6e-08 V                    ; 2.42 V              ; -0.0509 V           ; 0.197 V                              ; 0.118 V                              ; 4.57e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.6e-08 V                   ; 2.42 V             ; -0.0509 V          ; 0.197 V                             ; 0.118 V                             ; 4.57e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
-; phase2 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.56e-08 V                   ; 2.43 V              ; -0.0617 V           ; 0.35 V                               ; 0.107 V                              ; 3.1e-10 s                   ; 4.28e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.56e-08 V                  ; 2.43 V             ; -0.0617 V          ; 0.35 V                              ; 0.107 V                             ; 3.1e-10 s                  ; 4.28e-10 s                 ; No                        ; No                        ;
-; phase3 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.33e-08 V                   ; 2.36 V              ; -0.0253 V           ; 0.132 V                              ; 0.078 V                              ; 4.45e-10 s                  ; 4.26e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.33e-08 V                  ; 2.36 V             ; -0.0253 V          ; 0.132 V                             ; 0.078 V                             ; 4.45e-10 s                 ; 4.26e-10 s                 ; No                        ; Yes                       ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; phase1a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.6e-08 V                    ; 2.42 V              ; -0.0509 V           ; 0.197 V                              ; 0.118 V                              ; 4.57e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.6e-08 V                   ; 2.42 V             ; -0.0509 V          ; 0.197 V                             ; 0.118 V                             ; 4.57e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; phase2a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.56e-08 V                   ; 2.43 V              ; -0.0617 V           ; 0.35 V                               ; 0.107 V                              ; 3.1e-10 s                   ; 4.28e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.56e-08 V                  ; 2.43 V             ; -0.0617 V          ; 0.35 V                              ; 0.107 V                             ; 3.1e-10 s                  ; 4.28e-10 s                 ; No                        ; No                        ;
+; phase3a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.33e-08 V                   ; 2.36 V              ; -0.0253 V           ; 0.132 V                              ; 0.078 V                              ; 4.45e-10 s                  ; 4.26e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.33e-08 V                  ; 2.36 V             ; -0.0253 V          ; 0.132 V                             ; 0.078 V                             ; 4.45e-10 s                 ; 4.26e-10 s                 ; No                        ; Yes                       ;
+; phase1b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.56e-08 V                   ; 2.43 V              ; -0.0607 V           ; 0.35 V                               ; 0.108 V                              ; 3.1e-10 s                   ; 4.28e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.56e-08 V                  ; 2.43 V             ; -0.0607 V          ; 0.35 V                              ; 0.108 V                             ; 3.1e-10 s                  ; 4.28e-10 s                 ; No                        ; No                        ;
+; phase2b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.56e-08 V                   ; 2.43 V              ; -0.0607 V           ; 0.35 V                               ; 0.108 V                              ; 3.1e-10 s                   ; 4.28e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.56e-08 V                  ; 2.43 V             ; -0.0607 V          ; 0.35 V                              ; 0.108 V                             ; 3.1e-10 s                  ; 4.28e-10 s                 ; No                        ; No                        ;
+; phase3b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.56e-08 V                   ; 2.43 V              ; -0.0617 V           ; 0.35 V                               ; 0.107 V                              ; 3.1e-10 s                   ; 4.28e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 1.56e-08 V                  ; 2.43 V             ; -0.0617 V          ; 0.35 V                              ; 0.107 V                             ; 3.1e-10 s                  ; 4.28e-10 s                 ; No                        ; No                        ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Slow 1100mv 100c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin    ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; phase1 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.81e-05 V                   ; 2.37 V              ; -0.0242 V           ; 0.257 V                              ; 0.097 V                              ; 5.03e-10 s                  ; 6.18e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.81e-05 V                  ; 2.37 V             ; -0.0242 V          ; 0.257 V                             ; 0.097 V                             ; 5.03e-10 s                 ; 6.18e-10 s                 ; No                        ; Yes                       ;
-; phase2 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.73e-05 V                   ; 2.38 V              ; -0.0301 V           ; 0.21 V                               ; 0.2 V                                ; 4.78e-10 s                  ; 4.96e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.73e-05 V                  ; 2.38 V             ; -0.0301 V          ; 0.21 V                              ; 0.2 V                               ; 4.78e-10 s                 ; 4.96e-10 s                 ; No                        ; Yes                       ;
-; phase3 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.28e-05 V                   ; 2.34 V              ; -0.00773 V          ; 0.214 V                              ; 0.065 V                              ; 5.06e-10 s                  ; 5.4e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 4.28e-05 V                  ; 2.34 V             ; -0.00773 V         ; 0.214 V                             ; 0.065 V                             ; 5.06e-10 s                 ; 5.4e-10 s                  ; Yes                       ; Yes                       ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 100c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; phase1a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.81e-05 V                   ; 2.37 V              ; -0.0242 V           ; 0.257 V                              ; 0.097 V                              ; 5.03e-10 s                  ; 6.18e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.81e-05 V                  ; 2.37 V             ; -0.0242 V          ; 0.257 V                             ; 0.097 V                             ; 5.03e-10 s                 ; 6.18e-10 s                 ; No                        ; Yes                       ;
+; phase2a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.73e-05 V                   ; 2.38 V              ; -0.0301 V           ; 0.21 V                               ; 0.2 V                                ; 4.78e-10 s                  ; 4.96e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.73e-05 V                  ; 2.38 V             ; -0.0301 V          ; 0.21 V                              ; 0.2 V                               ; 4.78e-10 s                 ; 4.96e-10 s                 ; No                        ; Yes                       ;
+; phase3a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.28e-05 V                   ; 2.34 V              ; -0.00773 V          ; 0.214 V                              ; 0.065 V                              ; 5.06e-10 s                  ; 5.4e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 4.28e-05 V                  ; 2.34 V             ; -0.00773 V         ; 0.214 V                             ; 0.065 V                             ; 5.06e-10 s                 ; 5.4e-10 s                  ; Yes                       ; Yes                       ;
+; phase1b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.73e-05 V                   ; 2.38 V              ; -0.0297 V           ; 0.21 V                               ; 0.199 V                              ; 4.77e-10 s                  ; 4.97e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.73e-05 V                  ; 2.38 V             ; -0.0297 V          ; 0.21 V                              ; 0.199 V                             ; 4.77e-10 s                 ; 4.97e-10 s                 ; No                        ; Yes                       ;
+; phase2b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.73e-05 V                   ; 2.38 V              ; -0.0297 V           ; 0.21 V                               ; 0.199 V                              ; 4.77e-10 s                  ; 4.97e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.73e-05 V                  ; 2.38 V             ; -0.0297 V          ; 0.21 V                              ; 0.199 V                             ; 4.77e-10 s                 ; 4.97e-10 s                 ; No                        ; Yes                       ;
+; phase3b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.73e-05 V                   ; 2.38 V              ; -0.0301 V           ; 0.21 V                               ; 0.2 V                                ; 4.78e-10 s                  ; 4.96e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.73e-05 V                  ; 2.38 V             ; -0.0301 V          ; 0.21 V                              ; 0.2 V                               ; 4.78e-10 s                 ; 4.96e-10 s                 ; No                        ; Yes                       ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Fast 1100mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin    ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; phase1 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.45e-07 V                   ; 2.93 V              ; -0.127 V            ; 0.351 V                              ; 0.317 V                              ; 2.74e-10 s                  ; 2.82e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 2.45e-07 V                  ; 2.93 V             ; -0.127 V           ; 0.351 V                             ; 0.317 V                             ; 2.74e-10 s                 ; 2.82e-10 s                 ; No                        ; No                        ;
-; phase2 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.38e-07 V                   ; 2.94 V              ; -0.135 V            ; 0.31 V                               ; 0.268 V                              ; 2.65e-10 s                  ; 2.64e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 2.38e-07 V                  ; 2.94 V             ; -0.135 V           ; 0.31 V                              ; 0.268 V                             ; 2.65e-10 s                 ; 2.64e-10 s                 ; No                        ; Yes                       ;
-; phase3 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 1.99e-07 V                   ; 2.83 V              ; -0.0718 V           ; 0.269 V                              ; 0.234 V                              ; 2.77e-10 s                  ; 2.75e-10 s                  ; Yes                        ; Yes                        ; 2.75 V                      ; 1.99e-07 V                  ; 2.83 V             ; -0.0718 V          ; 0.269 V                             ; 0.234 V                             ; 2.77e-10 s                 ; 2.75e-10 s                 ; Yes                       ; Yes                       ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; phase1a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.45e-07 V                   ; 2.93 V              ; -0.127 V            ; 0.351 V                              ; 0.317 V                              ; 2.74e-10 s                  ; 2.82e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 2.45e-07 V                  ; 2.93 V             ; -0.127 V           ; 0.351 V                             ; 0.317 V                             ; 2.74e-10 s                 ; 2.82e-10 s                 ; No                        ; No                        ;
+; phase2a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.38e-07 V                   ; 2.94 V              ; -0.135 V            ; 0.31 V                               ; 0.268 V                              ; 2.65e-10 s                  ; 2.64e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 2.38e-07 V                  ; 2.94 V             ; -0.135 V           ; 0.31 V                              ; 0.268 V                             ; 2.65e-10 s                 ; 2.64e-10 s                 ; No                        ; Yes                       ;
+; phase3a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 1.99e-07 V                   ; 2.83 V              ; -0.0718 V           ; 0.269 V                              ; 0.234 V                              ; 2.77e-10 s                  ; 2.75e-10 s                  ; Yes                        ; Yes                        ; 2.75 V                      ; 1.99e-07 V                  ; 2.83 V             ; -0.0718 V          ; 0.269 V                             ; 0.234 V                             ; 2.77e-10 s                 ; 2.75e-10 s                 ; Yes                       ; Yes                       ;
+; phase1b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.38e-07 V                   ; 2.94 V              ; -0.139 V            ; 0.31 V                               ; 0.268 V                              ; 2.65e-10 s                  ; 2.63e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 2.38e-07 V                  ; 2.94 V             ; -0.139 V           ; 0.31 V                              ; 0.268 V                             ; 2.65e-10 s                 ; 2.63e-10 s                 ; No                        ; Yes                       ;
+; phase2b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.38e-07 V                   ; 2.94 V              ; -0.139 V            ; 0.31 V                               ; 0.268 V                              ; 2.65e-10 s                  ; 2.63e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 2.38e-07 V                  ; 2.94 V             ; -0.139 V           ; 0.31 V                              ; 0.268 V                             ; 2.65e-10 s                 ; 2.63e-10 s                 ; No                        ; Yes                       ;
+; phase3b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.38e-07 V                   ; 2.94 V              ; -0.135 V            ; 0.31 V                               ; 0.268 V                              ; 2.65e-10 s                  ; 2.64e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 2.38e-07 V                  ; 2.94 V             ; -0.135 V           ; 0.31 V                              ; 0.268 V                             ; 2.65e-10 s                 ; 2.64e-10 s                 ; No                        ; Yes                       ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Signal Integrity Metrics (Fast 1100mv 100c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; Pin    ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; phase1 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000419 V                   ; 2.85 V              ; -0.0671 V           ; 0.203 V                              ; 0.19 V                               ; 4.57e-10 s                  ; 4.54e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000419 V                  ; 2.85 V             ; -0.0671 V          ; 0.203 V                             ; 0.19 V                              ; 4.57e-10 s                 ; 4.54e-10 s                 ; No                        ; No                        ;
-; phase2 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.00041 V                    ; 2.85 V              ; -0.076 V            ; 0.363 V                              ; 0.16 V                               ; 3.08e-10 s                  ; 4.37e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.00041 V                   ; 2.85 V             ; -0.076 V           ; 0.363 V                             ; 0.16 V                              ; 3.08e-10 s                 ; 4.37e-10 s                 ; No                        ; No                        ;
-; phase3 ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000362 V                   ; 2.79 V              ; -0.0303 V           ; 0.139 V                              ; 0.127 V                              ; 4.44e-10 s                  ; 4.38e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000362 V                  ; 2.79 V             ; -0.0303 V          ; 0.139 V                             ; 0.127 V                             ; 4.44e-10 s                 ; 4.38e-10 s                 ; No                        ; Yes                       ;
-+--------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 100c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin     ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; phase1a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000419 V                   ; 2.85 V              ; -0.0671 V           ; 0.203 V                              ; 0.19 V                               ; 4.57e-10 s                  ; 4.54e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000419 V                  ; 2.85 V             ; -0.0671 V          ; 0.203 V                             ; 0.19 V                              ; 4.57e-10 s                 ; 4.54e-10 s                 ; No                        ; No                        ;
+; phase2a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.00041 V                    ; 2.85 V              ; -0.076 V            ; 0.363 V                              ; 0.16 V                               ; 3.08e-10 s                  ; 4.37e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.00041 V                   ; 2.85 V             ; -0.076 V           ; 0.363 V                             ; 0.16 V                              ; 3.08e-10 s                 ; 4.37e-10 s                 ; No                        ; No                        ;
+; phase3a ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000362 V                   ; 2.79 V              ; -0.0303 V           ; 0.139 V                              ; 0.127 V                              ; 4.44e-10 s                  ; 4.38e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000362 V                  ; 2.79 V             ; -0.0303 V          ; 0.139 V                             ; 0.127 V                             ; 4.44e-10 s                 ; 4.38e-10 s                 ; No                        ; Yes                       ;
+; phase1b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.00041 V                    ; 2.85 V              ; -0.0763 V           ; 0.365 V                              ; 0.161 V                              ; 3.08e-10 s                  ; 4.37e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.00041 V                   ; 2.85 V             ; -0.0763 V          ; 0.365 V                             ; 0.161 V                             ; 3.08e-10 s                 ; 4.37e-10 s                 ; No                        ; No                        ;
+; phase2b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.00041 V                    ; 2.85 V              ; -0.0763 V           ; 0.365 V                              ; 0.161 V                              ; 3.08e-10 s                  ; 4.37e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.00041 V                   ; 2.85 V             ; -0.0763 V          ; 0.365 V                             ; 0.161 V                             ; 3.08e-10 s                 ; 4.37e-10 s                 ; No                        ; No                        ;
+; phase3b ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.00041 V                    ; 2.85 V              ; -0.076 V            ; 0.363 V                              ; 0.16 V                               ; 3.08e-10 s                  ; 4.37e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.00041 V                   ; 2.85 V             ; -0.076 V           ; 0.363 V                             ; 0.16 V                              ; 3.08e-10 s                 ; 4.37e-10 s                 ; No                        ; No                        ;
++---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Setup Transfers                                                       ;
-+------------+----------+--------------+----------+----------+----------+
-; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
-+------------+----------+--------------+----------+----------+----------+
-; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
-+------------+----------+--------------+----------+----------+----------+
++---------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                         ;
++----------------------------+----------------------------+--------------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+--------------+----------+----------+----------+
+; clk                        ; clk                        ; > 2147483647 ; 0        ; 0        ; 0        ;
+; clk                        ; delay:inst5|cont_1b[0]     ; 0            ; 0        ; 19965    ; 0        ;
+; clk                        ; delay:inst5|cont_2a[0]     ; 0            ; 0        ; 19726    ; 0        ;
+; clk                        ; delay:inst5|cont_2b[0]     ; 0            ; 0        ; 19726    ; 0        ;
+; clk                        ; delay:inst5|cont_3a[0]     ; 0            ; 0        ; 19996    ; 0        ;
+; clk                        ; delay:inst5|cont_3b[0]     ; 0            ; 0        ; 19996    ; 0        ;
+; delay:inst5|status_phase1a ; delay:inst5|status_phase1a ; 155          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_1b[0]     ; delay:inst5|status_phase1b ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase1b ; delay:inst5|status_phase1b ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_2a[0]     ; delay:inst5|status_phase2a ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase2a ; delay:inst5|status_phase2a ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_2b[0]     ; delay:inst5|status_phase2b ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase2b ; delay:inst5|status_phase2b ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_3a[0]     ; delay:inst5|status_phase3a ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase3a ; delay:inst5|status_phase3a ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_3b[0]     ; delay:inst5|status_phase3b ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase3b ; delay:inst5|status_phase3b ; 135          ; 0        ; 0        ; 0        ;
++----------------------------+----------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-----------------------------------------------------------------------+
-; Hold Transfers                                                        ;
-+------------+----------+--------------+----------+----------+----------+
-; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
-+------------+----------+--------------+----------+----------+----------+
-; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
-+------------+----------+--------------+----------+----------+----------+
++---------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                          ;
++----------------------------+----------------------------+--------------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+--------------+----------+----------+----------+
+; clk                        ; clk                        ; > 2147483647 ; 0        ; 0        ; 0        ;
+; clk                        ; delay:inst5|cont_1b[0]     ; 0            ; 0        ; 19965    ; 0        ;
+; clk                        ; delay:inst5|cont_2a[0]     ; 0            ; 0        ; 19726    ; 0        ;
+; clk                        ; delay:inst5|cont_2b[0]     ; 0            ; 0        ; 19726    ; 0        ;
+; clk                        ; delay:inst5|cont_3a[0]     ; 0            ; 0        ; 19996    ; 0        ;
+; clk                        ; delay:inst5|cont_3b[0]     ; 0            ; 0        ; 19996    ; 0        ;
+; delay:inst5|status_phase1a ; delay:inst5|status_phase1a ; 155          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_1b[0]     ; delay:inst5|status_phase1b ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase1b ; delay:inst5|status_phase1b ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_2a[0]     ; delay:inst5|status_phase2a ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase2a ; delay:inst5|status_phase2a ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_2b[0]     ; delay:inst5|status_phase2b ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase2b ; delay:inst5|status_phase2b ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_3a[0]     ; delay:inst5|status_phase3a ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase3a ; delay:inst5|status_phase3a ; 135          ; 0        ; 0        ; 0        ;
+; delay:inst5|cont_3b[0]     ; delay:inst5|status_phase3b ; 20           ; 20       ; 0        ; 0        ;
+; delay:inst5|status_phase3b ; delay:inst5|status_phase3b ; 135          ; 0        ; 0        ; 0        ;
++----------------------------+----------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -440,18 +664,29 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 3     ; 3    ;
-; Unconstrained Output Port Paths ; 87    ; 87   ;
+; Unconstrained Output Ports      ; 6     ; 6    ;
+; Unconstrained Output Port Paths ; 234   ; 234  ;
 +---------------------------------+-------+------+
 
 
-+-------------------------------------+
-; Clock Status Summary                ;
-+--------+-------+------+-------------+
-; Target ; Clock ; Type ; Status      ;
-+--------+-------+------+-------------+
-; clk    ; clk   ; Base ; Constrained ;
-+--------+-------+------+-------------+
++------------------------------------------------------------------------------+
+; Clock Status Summary                                                         ;
++----------------------------+----------------------------+------+-------------+
+; Target                     ; Clock                      ; Type ; Status      ;
++----------------------------+----------------------------+------+-------------+
+; clk                        ; clk                        ; Base ; Constrained ;
+; delay:inst5|cont_1b[0]     ; delay:inst5|cont_1b[0]     ; Base ; Constrained ;
+; delay:inst5|cont_2a[0]     ; delay:inst5|cont_2a[0]     ; Base ; Constrained ;
+; delay:inst5|cont_2b[0]     ; delay:inst5|cont_2b[0]     ; Base ; Constrained ;
+; delay:inst5|cont_3a[0]     ; delay:inst5|cont_3a[0]     ; Base ; Constrained ;
+; delay:inst5|cont_3b[0]     ; delay:inst5|cont_3b[0]     ; Base ; Constrained ;
+; delay:inst5|status_phase1a ; delay:inst5|status_phase1a ; Base ; Constrained ;
+; delay:inst5|status_phase1b ; delay:inst5|status_phase1b ; Base ; Constrained ;
+; delay:inst5|status_phase2a ; delay:inst5|status_phase2a ; Base ; Constrained ;
+; delay:inst5|status_phase2b ; delay:inst5|status_phase2b ; Base ; Constrained ;
+; delay:inst5|status_phase3a ; delay:inst5|status_phase3a ; Base ; Constrained ;
+; delay:inst5|status_phase3b ; delay:inst5|status_phase3b ; Base ; Constrained ;
++----------------------------+----------------------------+------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -459,9 +694,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
-; phase1      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; phase2      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; phase3      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase1a     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase1b     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase2a     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase2b     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase3a     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase3b     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -470,9 +708,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
-; phase1      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; phase2      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; phase3      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase1a     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase1b     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase2a     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase2b     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase3a     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; phase3b     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -482,101 +723,269 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Mar 21 12:24:14 2019
+    Info: Processing started: Fri Mar 22 12:41:48 2019
 Info: Command: quartus_sta spwm_gen -c spwm_gen
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is -40 degrees C
 Info (21077): High junction temperature is 100 degrees C
+Warning (335093): The Timing Analyzer is analyzing 66 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'spwm_gen.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name delay:inst5|cont_2a[0] delay:inst5|cont_2a[0]
+    Info (332105): create_clock -period 1.000 -name delay:inst5|status_phase1a delay:inst5|status_phase1a
+    Info (332105): create_clock -period 1.000 -name delay:inst5|status_phase2a delay:inst5|status_phase2a
+    Info (332105): create_clock -period 1.000 -name delay:inst5|cont_3a[0] delay:inst5|cont_3a[0]
+    Info (332105): create_clock -period 1.000 -name delay:inst5|status_phase3a delay:inst5|status_phase3a
+    Info (332105): create_clock -period 1.000 -name delay:inst5|cont_1b[0] delay:inst5|cont_1b[0]
+    Info (332105): create_clock -period 1.000 -name delay:inst5|status_phase1b delay:inst5|status_phase1b
+    Info (332105): create_clock -period 1.000 -name delay:inst5|cont_2b[0] delay:inst5|cont_2b[0]
+    Info (332105): create_clock -period 1.000 -name delay:inst5|status_phase2b delay:inst5|status_phase2b
+    Info (332105): create_clock -period 1.000 -name delay:inst5|cont_3b[0] delay:inst5|cont_3b[0]
+    Info (332105): create_clock -period 1.000 -name delay:inst5|status_phase3b delay:inst5|status_phase3b
+Warning (332191): Clock target delay:inst5|status_phase1a of clock delay:inst5|status_phase1a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2a of clock delay:inst5|status_phase2a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3a of clock delay:inst5|status_phase3a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase1b of clock delay:inst5|status_phase1b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2b of clock delay:inst5|status_phase2b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3b of clock delay:inst5|status_phase3b is fed by another target of the same clock.
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 100C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -61.291
+Info (332146): Worst-case setup slack is -62.332
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -61.291           -9836.778 clk 
-Info (332146): Worst-case hold slack is 0.440
+    Info (332119):   -62.332           -8852.609 clk 
+    Info (332119):   -14.770             -14.770 delay:inst5|cont_3a[0] 
+    Info (332119):   -13.896             -13.896 delay:inst5|cont_3b[0] 
+    Info (332119):   -12.780             -12.780 delay:inst5|cont_1b[0] 
+    Info (332119):   -12.084             -12.084 delay:inst5|cont_2a[0] 
+    Info (332119):   -11.926             -11.926 delay:inst5|cont_2b[0] 
+    Info (332119):    -5.194             -44.360 delay:inst5|status_phase3a 
+    Info (332119):    -5.107             -47.037 delay:inst5|status_phase3b 
+    Info (332119):    -5.035             -48.267 delay:inst5|status_phase2b 
+    Info (332119):    -4.811             -43.396 delay:inst5|status_phase1b 
+    Info (332119):    -4.452             -40.770 delay:inst5|status_phase2a 
+    Info (332119):    -3.378             -30.760 delay:inst5|status_phase1a 
+Info (332146): Worst-case hold slack is -0.225
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.440               0.000 clk 
+    Info (332119):    -0.225              -0.289 delay:inst5|status_phase2a 
+    Info (332119):     0.184               0.000 delay:inst5|status_phase2b 
+    Info (332119):     0.311               0.000 delay:inst5|status_phase1a 
+    Info (332119):     0.433               0.000 clk 
+    Info (332119):     0.522               0.000 delay:inst5|status_phase1b 
+    Info (332119):     0.772               0.000 delay:inst5|status_phase3b 
+    Info (332119):     1.026               0.000 delay:inst5|status_phase3a 
+    Info (332119):     2.637               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     2.933               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     3.914               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     4.243               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     4.767               0.000 delay:inst5|cont_3a[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538            -152.708 clk 
+    Info (332119):    -0.538            -137.090 clk 
+    Info (332119):    -0.046              -0.046 delay:inst5|status_phase2b 
+    Info (332119):     0.089               0.000 delay:inst5|status_phase2a 
+    Info (332119):     0.110               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     0.121               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     0.175               0.000 delay:inst5|status_phase3b 
+    Info (332119):     0.189               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     0.287               0.000 delay:inst5|status_phase1b 
+    Info (332119):     0.301               0.000 delay:inst5|cont_3a[0] 
+    Info (332119):     0.305               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     0.326               0.000 delay:inst5|status_phase1a 
+    Info (332119):     0.375               0.000 delay:inst5|status_phase3a 
 Info: Analyzing Slow 1100mV -40C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
+Warning (332191): Clock target delay:inst5|status_phase1a of clock delay:inst5|status_phase1a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2a of clock delay:inst5|status_phase2a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3a of clock delay:inst5|status_phase3a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase1b of clock delay:inst5|status_phase1b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2b of clock delay:inst5|status_phase2b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3b of clock delay:inst5|status_phase3b is fed by another target of the same clock.
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -64.699
+Info (332146): Worst-case setup slack is -65.791
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -64.699          -10308.101 clk 
-Info (332146): Worst-case hold slack is 0.458
+    Info (332119):   -65.791           -9282.845 clk 
+    Info (332119):   -15.053             -15.053 delay:inst5|cont_3a[0] 
+    Info (332119):   -14.241             -14.241 delay:inst5|cont_3b[0] 
+    Info (332119):   -13.255             -13.255 delay:inst5|cont_1b[0] 
+    Info (332119):   -12.712             -12.712 delay:inst5|cont_2a[0] 
+    Info (332119):   -12.302             -12.302 delay:inst5|cont_2b[0] 
+    Info (332119):    -5.300             -48.828 delay:inst5|status_phase2b 
+    Info (332119):    -5.209             -44.272 delay:inst5|status_phase3a 
+    Info (332119):    -5.004             -47.039 delay:inst5|status_phase3b 
+    Info (332119):    -4.882             -43.960 delay:inst5|status_phase1b 
+    Info (332119):    -4.707             -42.448 delay:inst5|status_phase2a 
+    Info (332119):    -3.590             -32.042 delay:inst5|status_phase1a 
+Info (332146): Worst-case hold slack is -0.156
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.458               0.000 clk 
+    Info (332119):    -0.156              -0.330 delay:inst5|status_phase2a 
+    Info (332119):     0.216               0.000 delay:inst5|status_phase2b 
+    Info (332119):     0.306               0.000 delay:inst5|status_phase1a 
+    Info (332119):     0.447               0.000 clk 
+    Info (332119):     0.452               0.000 delay:inst5|status_phase1b 
+    Info (332119):     0.594               0.000 delay:inst5|status_phase3b 
+    Info (332119):     0.918               0.000 delay:inst5|status_phase3a 
+    Info (332119):     2.810               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     3.305               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     4.032               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     4.358               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     4.952               0.000 delay:inst5|cont_3a[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538            -164.069 clk 
+    Info (332119):    -0.538            -148.503 clk 
+    Info (332119):    -0.079              -0.079 delay:inst5|status_phase2b 
+    Info (332119):     0.114               0.000 delay:inst5|status_phase2a 
+    Info (332119):     0.128               0.000 delay:inst5|status_phase3b 
+    Info (332119):     0.162               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     0.188               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     0.255               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     0.321               0.000 delay:inst5|status_phase3a 
+    Info (332119):     0.332               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     0.344               0.000 delay:inst5|status_phase1b 
+    Info (332119):     0.345               0.000 delay:inst5|status_phase1a 
+    Info (332119):     0.350               0.000 delay:inst5|cont_3a[0] 
 Info: Analyzing Fast 1100mV 100C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
+Warning (332191): Clock target delay:inst5|status_phase1a of clock delay:inst5|status_phase1a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2a of clock delay:inst5|status_phase2a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3a of clock delay:inst5|status_phase3a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase1b of clock delay:inst5|status_phase1b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2b of clock delay:inst5|status_phase2b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3b of clock delay:inst5|status_phase3b is fed by another target of the same clock.
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -29.551
+Info (332146): Worst-case setup slack is -30.171
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -29.551           -4768.612 clk 
-Info (332146): Worst-case hold slack is 0.180
+    Info (332119):   -30.171           -4302.029 clk 
+    Info (332119):    -7.503              -7.503 delay:inst5|cont_3a[0] 
+    Info (332119):    -7.051              -7.051 delay:inst5|cont_3b[0] 
+    Info (332119):    -6.389              -6.389 delay:inst5|cont_1b[0] 
+    Info (332119):    -5.791              -5.791 delay:inst5|cont_2b[0] 
+    Info (332119):    -5.790              -5.790 delay:inst5|cont_2a[0] 
+    Info (332119):    -2.196             -17.365 delay:inst5|status_phase3a 
+    Info (332119):    -2.144             -19.598 delay:inst5|status_phase2b 
+    Info (332119):    -2.058             -18.495 delay:inst5|status_phase3b 
+    Info (332119):    -1.979             -16.836 delay:inst5|status_phase1b 
+    Info (332119):    -1.633             -14.452 delay:inst5|status_phase2a 
+    Info (332119):    -1.149              -8.666 delay:inst5|status_phase1a 
+Info (332146): Worst-case hold slack is -0.146
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.180               0.000 clk 
+    Info (332119):    -0.146              -0.189 delay:inst5|status_phase2a 
+    Info (332119):     0.160               0.000 delay:inst5|status_phase1a 
+    Info (332119):     0.178               0.000 delay:inst5|status_phase2b 
+    Info (332119):     0.184               0.000 clk 
+    Info (332119):     0.261               0.000 delay:inst5|status_phase3b 
+    Info (332119):     0.346               0.000 delay:inst5|status_phase1b 
+    Info (332119):     0.497               0.000 delay:inst5|status_phase3a 
+    Info (332119):     1.395               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     1.436               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     2.133               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     2.363               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     2.516               0.000 delay:inst5|cont_3a[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.094
+Info (332146): Worst-case minimum pulse width slack is -0.092
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.094             -16.758 clk 
+    Info (332119):    -0.092             -15.126 clk 
+    Info (332119):    -0.026              -0.026 delay:inst5|status_phase2b 
+    Info (332119):     0.014               0.000 delay:inst5|status_phase2a 
+    Info (332119):     0.088               0.000 delay:inst5|status_phase3b 
+    Info (332119):     0.193               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     0.203               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     0.209               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     0.254               0.000 delay:inst5|status_phase1a 
+    Info (332119):     0.343               0.000 delay:inst5|cont_3a[0] 
+    Info (332119):     0.344               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     0.407               0.000 delay:inst5|status_phase3a 
+    Info (332119):     0.427               0.000 delay:inst5|status_phase1b 
 Info: Analyzing Fast 1100mV -40C Model
+Warning (332191): Clock target delay:inst5|status_phase1a of clock delay:inst5|status_phase1a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2a of clock delay:inst5|status_phase2a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3a of clock delay:inst5|status_phase3a is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase1b of clock delay:inst5|status_phase1b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase2b of clock delay:inst5|status_phase2b is fed by another target of the same clock.
+Warning (332191): Clock target delay:inst5|status_phase3b of clock delay:inst5|status_phase3b is fed by another target of the same clock.
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -26.881
+Info (332146): Worst-case setup slack is -27.482
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -26.881           -4318.214 clk 
-Info (332146): Worst-case hold slack is 0.169
+    Info (332119):   -27.482           -3903.742 clk 
+    Info (332119):    -6.533              -6.533 delay:inst5|cont_3a[0] 
+    Info (332119):    -6.180              -6.180 delay:inst5|cont_3b[0] 
+    Info (332119):    -5.583              -5.583 delay:inst5|cont_1b[0] 
+    Info (332119):    -5.109              -5.109 delay:inst5|cont_2a[0] 
+    Info (332119):    -5.051              -5.051 delay:inst5|cont_2b[0] 
+    Info (332119):    -1.767             -13.806 delay:inst5|status_phase3a 
+    Info (332119):    -1.677             -15.541 delay:inst5|status_phase2b 
+    Info (332119):    -1.608             -14.778 delay:inst5|status_phase3b 
+    Info (332119):    -1.526             -13.064 delay:inst5|status_phase1b 
+    Info (332119):    -1.330             -11.799 delay:inst5|status_phase2a 
+    Info (332119):    -0.859              -6.557 delay:inst5|status_phase1a 
+Info (332146): Worst-case hold slack is -0.107
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):    -0.107              -0.153 delay:inst5|status_phase2a 
+    Info (332119):     0.142               0.000 delay:inst5|status_phase2b 
+    Info (332119):     0.150               0.000 delay:inst5|status_phase1a 
     Info (332119):     0.169               0.000 clk 
+    Info (332119):     0.297               0.000 delay:inst5|status_phase1b 
+    Info (332119):     0.325               0.000 delay:inst5|status_phase3b 
+    Info (332119):     0.476               0.000 delay:inst5|status_phase3a 
+    Info (332119):     1.474               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     1.555               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     2.084               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     2.250               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     2.402               0.000 delay:inst5|cont_3a[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.091
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.091             -16.775 clk 
+    Info (332119):    -0.091             -15.001 clk 
+    Info (332119):     0.116               0.000 delay:inst5|status_phase2b 
+    Info (332119):     0.167               0.000 delay:inst5|status_phase2a 
+    Info (332119):     0.186               0.000 delay:inst5|status_phase3b 
+    Info (332119):     0.279               0.000 delay:inst5|cont_3b[0] 
+    Info (332119):     0.289               0.000 delay:inst5|cont_2a[0] 
+    Info (332119):     0.312               0.000 delay:inst5|cont_2b[0] 
+    Info (332119):     0.315               0.000 delay:inst5|status_phase1a 
+    Info (332119):     0.371               0.000 delay:inst5|cont_1b[0] 
+    Info (332119):     0.372               0.000 delay:inst5|cont_3a[0] 
+    Info (332119):     0.428               0.000 delay:inst5|status_phase3a 
+    Info (332119):     0.446               0.000 delay:inst5|status_phase1b 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1182 megabytes
-    Info: Processing ended: Thu Mar 21 12:24:32 2019
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:37
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 1188 megabytes
+    Info: Processing ended: Fri Mar 22 12:42:07 2019
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:39
 
 

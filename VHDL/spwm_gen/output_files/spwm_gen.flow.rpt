@@ -1,5 +1,5 @@
 Flow report for spwm_gen
-Thu Mar 21 12:24:32 2019
+Fri Mar 22 12:42:07 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Thu Mar 21 12:24:12 2019       ;
+; Flow Status                     ; Successful - Fri Mar 22 12:41:47 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; spwm_gen                                    ;
-; Top-level Entity Name           ; spwm_gen                                    ;
+; Top-level Entity Name           ; spwm_gen_delay                              ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 6,885 / 41,910 ( 16 % )                     ;
-; Total registers                 ; 195                                         ;
-; Total pins                      ; 4 / 314 ( 1 % )                             ;
+; Logic utilization (in ALMs)     ; 6,990 / 41,910 ( 17 % )                     ;
+; Total registers                 ; 175                                         ;
+; Total pins                      ; 7 / 314 ( 2 % )                             ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
@@ -67,27 +67,28 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/21/2019 12:21:04 ;
+; Start date & time ; 03/22/2019 12:32:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; spwm_gen            ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 963354629659.155316726411184           ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                           ;
++-------------------------------------+----------------------------------------+---------------+----------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+----------------+------------+
+; COMPILER_SIGNATURE_ID               ; 963354629659.155325437512608           ; --            ; --             ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --             ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --             ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; spwm_gen_delay ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; spwm_gen_delay ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; spwm_gen_delay ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --             ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --             ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --             ; --         ;
+; TOP_LEVEL_ENTITY                    ; spwm_gen_delay                         ; spwm_gen      ; --             ; --         ;
++-------------------------------------+----------------------------------------+---------------+----------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -95,11 +96,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:45     ; 1.4                     ; 1108 MB             ; 00:01:00                           ;
-; Fitter               ; 00:02:04     ; 1.2                     ; 2511 MB             ; 00:04:40                           ;
-; Assembler            ; 00:00:11     ; 1.0                     ; 785 MB              ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:18     ; 2.6                     ; 1182 MB             ; 00:00:37                           ;
-; Total                ; 00:03:18     ; --                      ; --                  ; 00:06:26                           ;
+; Analysis & Synthesis ; 00:01:01     ; 1.3                     ; 1128 MB             ; 00:00:59                           ;
+; Fitter               ; 00:06:19     ; 1.1                     ; 2549 MB             ; 00:09:40                           ;
+; Assembler            ; 00:01:22     ; 1.0                     ; 797 MB              ; 00:00:10                           ;
+; Timing Analyzer      ; 00:00:19     ; 2.5                     ; 1188 MB             ; 00:00:39                           ;
+; Total                ; 00:09:01     ; --                      ; --                  ; 00:11:28                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,14 +1,18 @@
-|spwm_gen
+|spwm_gen_delay
 clk => triangle:inst1.clk
 clk => sin:inst2.clk
 clk => sin_120:inst3.clk
 clk => sin_240:inst4.clk
-phase1 << LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-phase2 << LessThan1.DB_MAX_OUTPUT_PORT_TYPE
-phase3 << LessThan2.DB_MAX_OUTPUT_PORT_TYPE
+clk => delay:inst5.clk
+phase1a <= delay:inst5.phase1a_d
+phase2a <= delay:inst5.phase2a_d
+phase3a <= delay:inst5.phase3a_d
+phase1b <= delay:inst5.phase1b_d
+phase2b <= delay:inst5.phase2b_d
+phase3b <= delay:inst5.phase3b_d
 
 
-|spwm_gen|triangle:inst1
+|spwm_gen_delay|triangle:inst1
 clk => index[0].CLK
 clk => index[1].CLK
 clk => index[2].CLK
@@ -215,7 +219,7 @@ pwm_ctrl[30] <= <GND>
 pwm_ctrl[31] <= <GND>
 
 
-|spwm_gen|sin:inst2
+|spwm_gen_delay|sin:inst2
 clk => index[0].CLK
 clk => index[1].CLK
 clk => index[2].CLK
@@ -439,7 +443,7 @@ pwm_ctrl[30] <= <GND>
 pwm_ctrl[31] <= <GND>
 
 
-|spwm_gen|sin_120:inst3
+|spwm_gen_delay|sin_120:inst3
 clk => index[0].CLK
 clk => index[1].CLK
 clk => index[2].CLK
@@ -663,7 +667,7 @@ pwm_ctrl[30] <= <GND>
 pwm_ctrl[31] <= <GND>
 
 
-|spwm_gen|sin_240:inst4
+|spwm_gen_delay|sin_240:inst4
 clk => index[0].CLK
 clk => index[1].CLK
 clk => index[2].CLK
@@ -885,5 +889,49 @@ pwm_ctrl[28] <= <GND>
 pwm_ctrl[29] <= <GND>
 pwm_ctrl[30] <= <GND>
 pwm_ctrl[31] <= <GND>
+
+
+|spwm_gen_delay|delay:inst5
+clk => ~NO_FANOUT~
+delay[0] => Div0.IN14
+delay[1] => Div0.IN13
+delay[2] => Div0.IN12
+delay[3] => Div0.IN11
+delay[4] => Div0.IN10
+delay[5] => Div0.IN9
+delay[6] => Div0.IN8
+delay[7] => Div0.IN7
+delay[8] => Div0.IN6
+delay[9] => Div0.IN5
+phase1a => process_0.IN1
+phase1a => phase1a_d.DATAA
+phase1a => phase1a_d.DATAA
+phase1a => status_phase1a.DATAIN
+phase2a => process_2.IN1
+phase2a => phase2a_d.DATAA
+phase2a => phase2a_d.DATAA
+phase2a => status_phase2a.DATAIN
+phase3a => process_4.IN1
+phase3a => phase3a_d.DATAA
+phase3a => phase3a_d.DATAA
+phase3a => status_phase3a.DATAIN
+phase1b => process_1.IN1
+phase1b => phase1b_d.DATAA
+phase1b => phase1b_d.DATAA
+phase1b => status_phase1b.DATAIN
+phase2b => process_3.IN1
+phase2b => phase2b_d.DATAA
+phase2b => phase2b_d.DATAA
+phase2b => status_phase2b.DATAIN
+phase3b => process_5.IN1
+phase3b => phase3b_d.DATAA
+phase3b => phase3b_d.DATAA
+phase3b => status_phase3b.DATAIN
+phase1a_d <= phase1a_d.DB_MAX_OUTPUT_PORT_TYPE
+phase2a_d <= phase2a_d.DB_MAX_OUTPUT_PORT_TYPE
+phase3a_d <= phase3a_d.DB_MAX_OUTPUT_PORT_TYPE
+phase1b_d <= phase1b_d.DB_MAX_OUTPUT_PORT_TYPE
+phase2b_d <= phase2b_d.DB_MAX_OUTPUT_PORT_TYPE
+phase3b_d <= phase3b_d.DB_MAX_OUTPUT_PORT_TYPE
 
 
