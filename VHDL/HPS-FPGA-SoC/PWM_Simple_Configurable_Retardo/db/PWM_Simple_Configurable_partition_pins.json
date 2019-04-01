@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PWM_d",
+					"strict" : false
+				},
+				{
+					"name" : "PWMinv_d",
+					"strict" : false
+				},
+				{
+					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

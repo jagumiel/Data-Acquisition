@@ -1,0 +1,44 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+
+entity pruebaPWM is
+    Port ( FPGA_CLK : in  STD_LOGIC;
+           DUTY : in  STD_LOGIC_VECTOR (7 downto 0);
+	   FREQ : in  STD_LOGIC_VECTOR (24 downto 0);
+           PWM_OUT : out  STD_LOGIC);
+end pruebaPWM;
+
+architecture Behavioral of pruebaPWM is
+
+	component PWM is
+	    Port ( CLK : in  STD_LOGIC;
+	           DUTY : in  STD_LOGIC_VECTOR (7 downto 0);
+	           PWM_OUT : out  STD_LOGIC);
+	end component;
+
+	signal clk_pwm : std_logic :='1';
+	signal cnt : std_logic_vector(24 downto 0) := "0000000000000000000000001";
+
+begin
+
+	process (FPGA_CLK)
+	begin
+		if rising_edge(FPGA_CLK) then
+			if(cnt<FREQ)then
+				cnt<=cnt+'1';
+				clk_pwm<=clk_pwm;
+			else
+				clk_pwm<=not(clk_pwm); --Invierto la senal
+				cnt <= "0000000000000000000000001";
+			end if;
+		end if;
+	end process;
+
+inst1: PWM
+Port Map ( CLK => clk_pwm,
+           DUTY => DUTY,
+           PWM_OUT => PWM_OUT);
+
+end Behavioral;

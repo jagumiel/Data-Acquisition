@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "phase1a",
+					"strict" : false
+				},
+				{
+					"name" : "phase2a",
+					"strict" : false
+				},
+				{
+					"name" : "phase3a",
+					"strict" : false
+				},
+				{
+					"name" : "phase1b",
+					"strict" : false
+				},
+				{
+					"name" : "phase2b",
+					"strict" : false
+				},
+				{
+					"name" : "phase3b",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
