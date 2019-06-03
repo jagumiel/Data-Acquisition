@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -6.085
+TNS   : -476.761
+
+Type  : Slow 1100mV 100C Model Setup 'ADS1248_drv:inst1|ep.e0'
+Slack : -2.516
+TNS   : -22.212
+
+Type  : Slow 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'ADS1248_drv:inst1|ep.e0'
+Slack : 0.782
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -1.085
+TNS   : -96.488
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'ADS1248_drv:inst1|ep.e0'
+Slack : -0.538
+TNS   : -8.538
+
+Type  : Slow 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -5.903
+TNS   : -454.048
+
+Type  : Slow 1100mV -40C Model Setup 'ADS1248_drv:inst1|ep.e0'
+Slack : -2.476
+TNS   : -21.677
+
+Type  : Slow 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.211
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'ADS1248_drv:inst1|ep.e0'
+Slack : 0.821
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -1.145
+TNS   : -92.711
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'ADS1248_drv:inst1|ep.e0'
+Slack : -0.538
+TNS   : -8.202
+
+Type  : Fast 1100mV 100C Model Setup 'FPGA_CLK1_50'
+Slack : -3.829
+TNS   : -247.008
+
+Type  : Fast 1100mV 100C Model Setup 'ADS1248_drv:inst1|ep.e0'
+Slack : -1.284
+TNS   : -9.437
+
+Type  : Fast 1100mV 100C Model Hold 'FPGA_CLK1_50'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'ADS1248_drv:inst1|ep.e0'
+Slack : 0.436
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -0.938
+TNS   : -48.180
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'ADS1248_drv:inst1|ep.e0'
+Slack : 0.070
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'FPGA_CLK1_50'
+Slack : -3.035
+TNS   : -186.936
+
+Type  : Fast 1100mV -40C Model Setup 'ADS1248_drv:inst1|ep.e0'
+Slack : -0.942
+TNS   : -7.095
+
+Type  : Fast 1100mV -40C Model Hold 'FPGA_CLK1_50'
+Slack : 0.165
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'ADS1248_drv:inst1|ep.e0'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'FPGA_CLK1_50'
+Slack : -1.049
+TNS   : -64.326
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'ADS1248_drv:inst1|ep.e0'
+Slack : 0.093
+TNS   : 0.000
+
+------------------------------------------------------------
