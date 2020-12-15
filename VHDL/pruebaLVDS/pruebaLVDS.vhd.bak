@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity pruebaLVDS is
+	port(
+		SW 	: in  std_logic_vector(3 downto 0);
+		LED 	: out std_logic_vector(7 downto 0)
+	);
+end pruebaLVDS;
+
+
+
+architecture a of pruebaLVDS is
+BEGIN
+	LED<="0000" & SW(3 downto 0);
+end a;

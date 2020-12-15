@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 10",
+		"os_version" : "10.0"
+	},
+	"error" : {
+		"executable" : "quartus_sta",
+		"comment" : "none",
+		"error_message" : "output != NULL",
+		"source_file" : "/quartus/tsm/a2t/a2t_carry_skip.cpp",
+		"line" : "657",
+		"stack_trace" : "\t0x7fff618a0cba: TSM_A2T + 0xa0cba (l_tdb_netlist_recurse_inputs + 0x6a6)\n\t0x7fff618a0c0d: TSM_A2T + 0xa0c0d (l_tdb_netlist_recurse_inputs + 0x5f9)\n\t0x7fff6189e348: TSM_A2T + 0x9e348 (?create_propegate_to_lab_carry_in_arcs@@YAXAEAV?$vector@VCARRY_SKIP_UNIT@@V?$allocator@VCARRY_SKIP_UNIT@@@std@@@std@@PEAVTDB_NETLIST@@_N@Z + 0x1c0)\n\t0x7fff6181f21b: TSM_A2T + 0x1f21b (A2T_RECURSIVE_VISITOR::carry_skip_post_processing + 0x131c7)\n\t0x7fff61802e1c: TSM_A2T + 0x2e1c (A2T_RECURSIVE_VISITOR::build_or_update_tdb_netlist_for_atoms + 0x43c)\n\t0x7fff61801aa8: TSM_A2T + 0x1aa8 (A2T_VISITOR::call_update_tdb_netlist_for_atoms + 0x9c)\n\t0x7fff60b8f52b: TSM_STA + 0x9f52b (sta_update_tdb_netlist_for_atoms + 0xfb)\n\t0x7fff60af9a14: TSM_STA + 0x9a14 (sta_update_tdb_netlist_for_all_atoms_and_interconnects + 0x144)\n\t0x7fff60b92f21: TSM_STA + 0xa2f21 (sta_set_operating_conditions + 0x2fd)\n\t 0x576061e2: tcl86 + 0x161e2 (TclNRRunCallbacks + 0x62)\n\t 0x57607a65: tcl86 + 0x17a65 (TclEvalEx + 0xa65)\n\t 0x57608257: tcl86 + 0x18257 (Tcl_Eval + 0x37)\n\t0x7fff891736bc: ccl_atcl + 0x236bc (atcl_foreach_in_collection + 0x16c)\n\t 0x576061e2: tcl86 + 0x161e2 (TclNRRunCallbacks + 0x62)\n\t 0x57607a65: tcl86 + 0x17a65 (TclEvalEx + 0xa65)\n\t 0x57696f8b: tcl86 + 0xa6f8b (Tcl_FSEvalFileEx + 0x22b)\n\t 0x57695646: tcl86 + 0xa5646 (Tcl_EvalFile + 0x36)\n\t0x7fff882c2606: comp_qexe + 0x12606 (?qexe_evaluate_tcl_script@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z + 0x376)\n\t0x7fff882c1864: comp_qexe + 0x11864 (qexe_do_tcl + 0x334)\n\t0x7fff882c6755: comp_qexe + 0x16755 (?qexe_run_tcl_option@@YA_NPEAVQEXE_FRAMEWORK@@PEBDPEAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z + 0x585)\n\t0x7fff712f80c3: comp_qcu + 0x380c3 (?qcu_run_tcl_option@@YA_NPEAVQCU_FRAMEWORK@@PEBDPEAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@_N@Z + 0x1003)\n\t0x7fff882c60aa: comp_qexe + 0x160aa (qexe_run + 0x39a)\n\t0x7fff882c6e51: comp_qexe + 0x16e51 (?qexe_standard_main@@YAHPEAVQEXE_FRAMEWORK@@PEAPEBUQEXE_OPTION_DEFINITION@@HPEAPEBD@Z + 0xc1)\n\t0x7ff63984dbae: quartus_sta + 0xdbae (?qsta_main@@YAHHPEAPEBD@Z + 0x6e)\n\t0x7fff891c2e98: CCL_MSG + 0x12e98 (?msg_main_thread@@YAPEAXPEAX@Z + 0x18)\n\t0x7fff891c467e: CCL_MSG + 0x1467e (?msg_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x6e)\n\t0x7fff94496660: ccl_mem + 0x16660 (?mem_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x70)\n\t0x7fff891c2761: CCL_MSG + 0x12761 (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0xa1)\n\t0x7ff63984e2f2: quartus_sta + 0xe2f2 (__tmainCRTStartup + 0x10e)\n\t0x7fffb7998363: KERNEL32 + 0x8363 (BaseThreadInitThunk + 0x13)\n\t0x7fffb7b57090: ntdll + 0x67090 (RtlUserThreadStart + 0x20)\n",
+		"subsystem" : "A2T"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "18.1.0",
+		"build" : "625",
+		"edition" : "Lite Edition"
+	}
+}

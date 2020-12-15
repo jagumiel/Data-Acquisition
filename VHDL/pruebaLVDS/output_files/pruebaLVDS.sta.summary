@@ -1,0 +1,197 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 100C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : -0.921
+TNS   : -3.190
+
+Type  : Slow 1100mV 100C Model Setup 'Clk50'
+Slack : 15.771
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 104.660
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'Clk50'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.676
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 14.981
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 7.790
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'Clk50'
+Slack : 9.322
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 61.734
+TNS   : 0.000
+
+Type  : Slow 1100mV 100C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 62.425
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : -0.827
+TNS   : -2.688
+
+Type  : Slow 1100mV -40C Model Setup 'Clk50'
+Slack : 15.776
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 105.093
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'Clk50'
+Slack : 0.456
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.972
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 14.760
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 7.799
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'Clk50'
+Slack : 9.191
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 61.706
+TNS   : 0.000
+
+Type  : Slow 1100mV -40C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 62.461
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.020
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Setup 'Clk50'
+Slack : 17.831
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 106.963
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'Clk50'
+Slack : 0.204
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 2.152
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 15.302
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 7.797
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'Clk50'
+Slack : 9.416
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 62.071
+TNS   : 0.000
+
+Type  : Fast 1100mV 100C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 62.478
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.228
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'Clk50'
+Slack : 18.089
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Setup 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 107.272
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'Clk50'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 2.161
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Hold 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 15.220
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.562
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_fclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 7.799
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'Clk50'
+Slack : 9.414
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'LVDS_TX_inst|ALTLVDS_TX_component|auto_generated|pll_sclk~PLL_OUTPUT_COUNTER|divclk'
+Slack : 62.060
+TNS   : 0.000
+
+Type  : Fast 1100mV -40C Model Minimum Pulse Width 'PLL_IP_inst|pll_ip_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 62.480
+TNS   : 0.000
+
+------------------------------------------------------------
