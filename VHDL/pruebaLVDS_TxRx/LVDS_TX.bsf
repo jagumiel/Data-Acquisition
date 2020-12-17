@@ -1,0 +1,64 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 0 0 192 96)
+	(text "LVDS_TX" (rect 69 -1 133 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 80 25 92)(font "Arial" ))
+	(port
+		(pt 0 48)
+		(input)
+		(text "tx_in[7..0]" (rect 0 0 55 14)(font "Arial" (font_size 8)))
+		(text "tx_in[7..0]" (rect 4 34 49 47)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 64 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "tx_inclock" (rect 0 0 56 14)(font "Arial" (font_size 8)))
+		(text "tx_inclock" (rect 4 50 50 63)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 64 64))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "tx_out[0]" (rect 0 0 49 14)(font "Arial" (font_size 8)))
+		(text "tx_out[0]" (rect 147 34 187 47)(font "Arial" (font_size 8)))
+		(line (pt 192 48)(pt 128 48)(line_width 3))
+	)
+	(port
+		(pt 192 64)
+		(output)
+		(text "tx_outclock" (rect 0 0 64 14)(font "Arial" (font_size 8)))
+		(text "tx_outclock" (rect 134 50 187 63)(font "Arial" (font_size 8)))
+		(line (pt 192 64)(pt 128 64))
+	)
+	(drawing
+		(line (pt 64 32)(pt 128 32))
+		(line (pt 128 32)(pt 128 80))
+		(line (pt 64 80)(pt 128 80))
+		(line (pt 64 32)(pt 64 80))
+		(line (pt 0 0)(pt 192 0))
+		(line (pt 192 0)(pt 192 96))
+		(line (pt 0 96)(pt 192 96))
+		(line (pt 0 0)(pt 0 96))
+	)
+)
