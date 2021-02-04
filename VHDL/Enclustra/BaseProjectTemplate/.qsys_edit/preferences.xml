@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="111" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/Processors and Peripherals/Hard Processor Systems,Library,Library/Processors and Peripherals/Hard Processor Components,Project,Library/Processors and Peripherals" />
+ <window width="974" height="1047" x="953" y="0" />
+ <hdlexample language="VHDL" />
+ <generation synthesis="VHDL" />
+</preferences>
