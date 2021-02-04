@@ -1,0 +1,42 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate "C:\Users\jagumiel\OneDrive - TEKNIKER\Otros-Proyectos\ELPIVE-PROMISE\Jose\Enclustra\LED_SW_ctrl\system.qsys" --block-symbol-file --output-directory="C:\Users\jagumiel\OneDrive - TEKNIKER\Otros-Proyectos\ELPIVE-PROMISE\Jose\Enclustra\LED_SW_ctrl\system" --family="Cyclone V" --part=5CSTFD6D5F31I7
+Progress: Loading LED_SW_ctrl/system.qsys
+Progress: Reading input file
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: system.system: Module dependency loop involving: "hps_0" (altera_hps 18.1)
+Warning: system.system: Module dependency loop involving: "hps_0" (altera_hps 18.1)
+Info: system.hps_0: HPS Main PLL counter settings: n = 0  m = 31
+Info: system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 19
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\jagumiel\OneDrive - TEKNIKER\Otros-Proyectos\ELPIVE-PROMISE\Jose\Enclustra\LED_SW_ctrl\system.qsys" --synthesis=VHDL --output-directory="C:\Users\jagumiel\OneDrive - TEKNIKER\Otros-Proyectos\ELPIVE-PROMISE\Jose\Enclustra\LED_SW_ctrl\system\synthesis" --family="Cyclone V" --part=5CSTFD6D5F31I7
+Progress: Loading LED_SW_ctrl/system.qsys
+Progress: Reading input file
+Progress: Adding hps_0 [altera_hps 18.1]
+Progress: Parameterizing module hps_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: system.system: Module dependency loop involving: "hps_0" (altera_hps 18.1)
+Warning: system.system: Module dependency loop involving: "hps_0" (altera_hps 18.1)
+Info: system.hps_0: HPS Main PLL counter settings: n = 0  m = 31
+Info: system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 19
+Info: system: Generating system "system" for QUARTUS_SYNTH
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 31
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 19
+Info: hps_0: "system" instantiated altera_hps "hps_0"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: system: Done "system" with 5 modules, 49 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
