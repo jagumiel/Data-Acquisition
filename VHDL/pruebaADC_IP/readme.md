@@ -9,4 +9,4 @@ As I control the potentiometer, the readen value is shown through the in-board l
 
 The following gif shows how the project works.
 
-![Alt text](pruebaADC_IP/demo.gif?raw=true "Title")
+![Alt text](demo.gif?raw=true "Title")
